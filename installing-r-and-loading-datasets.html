@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Installing R and Loading Datasets | Course Notes - IDSC 4210</title>
+  <meta name="description" content="2 Installing R and Loading Datasets | Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Installing R and Loading Datasets | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Installing R and Loading Datasets | Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="exploring-and-communicating-with-data.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-the-dataset-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Load the Dataset for This Course</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#download-the-dataset"><i class="fa fa-check"></i><b>2.2.1</b> Download the Dataset</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#set-working-directory"><i class="fa fa-check"></i><b>2.2.2</b> Set Working Directory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-dataset-into-r"><i class="fa fa-check"></i><b>2.2.3</b> Load Dataset into R</a></li>
+<li class="chapter" data-level="2.2.4" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#examine-the-booking-dataset"><i class="fa fa-check"></i><b>2.2.4</b> Examine the Booking Dataset</a></li>
+<li class="chapter" data-level="2.2.5" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#observations-variables-and-values"><i class="fa fa-check"></i><b>2.2.5</b> Observations, Variables and Values</a></li>
+<li class="chapter" data-level="2.2.6" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#initial-exploration"><i class="fa fa-check"></i><b>2.2.6</b> Initial Exploration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html"><i class="fa fa-check"></i><b>3</b> Exploring and Communicating with Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
+<li class="chapter" data-level="3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="design-fundamentals.html"><a href="design-fundamentals.html"><i class="fa fa-check"></i><b>4</b> Design Fundamentals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
+<li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.3</b> Tufte’s Data Visualization Principles</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="installing-r-and-loading-datasets" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Installing R and Loading Datasets</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="installing-r-rstudio-and-tidyverse" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Installing R, RStudio, and Tidyverse</h2>
+<div id="step-1-install-r" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Step 1: Install R</h3>
+<p>In the first half of the course, we will use the statistical programming language R to construct our visualizations and gain familiarity manipulating data. R is very powerful, free open-source software.</p>
+<p>Download the latest version of R (4.0.3 or later) from <a href="https://www.r-project.org">R-Project.org</a>.</p>
+<p>R is capable of handling massive datasets, querying databases in SQL, creating beautiful visualizations, running complex statistical analysis, and building state-of-the-art machine learning models. You can also easily switch between R and other software packages (like Python) in the same script.</p>
+</div>
+<div id="step-2-install-rstudio" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Step 2: Install RStudio</h3>
+<p>You can interact with R via the command line, but the RStudio IDE (Integrated Developer Environment) offers a much better user experience. Download the latest version of RStudio from <a href="https://rstudio.com/products/rstudio/download/">RStudio.com</a>.</p>
+<p>Once you have R and RStudio installed, open RStudio and it should look something like the figure below. We will only interact with R <em>through</em> RStudio in this course.</p>
+<p><img src="1_RStudio_Install.png" /></p>
+<p>There are excellent resources online if you run into trouble; for example, search YouTube for “RStudio Installation.”</p>
+</div>
+<div id="step-2-install-the-tidyverse-and-ggplot-visualization-package" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Step 2: Install the tidyverse (and ggPlot Visualization Package)</h3>
+<p>We will use the <code>ggplot</code> package developed by Hadley Wickham. We will also use a number of other commands for “data wrangling” (manipulating and working with datasets). Conveniently, these packages are all offered together in a “meta-package” called the <code>tidyverse</code>, which refers to a group of packages that handle data in a “tidy” way.</p>
+<p>Type <code>install.packages("tidyverse")</code> in the Console in RStudio to install the <code>tidyverse</code>. RStudio will download the package from CRAN and install it for you.</p>
+<p><img src="1_TidyverseInstall.png" /></p>
+<p>The <code>tidyverse</code> packages are now installed on your computer (which you only have to do once) but you will have to load them every time you open RStudio.</p>
+<p>Load the <code>tidyverse</code> with the command <code>library(tidyverse)</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="installing-r-and-loading-datasets.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<p>Then, check that it’s working by checking the help file for one of the tidyverse packages like <code>ggplot</code>. Type <code>help("ggplot")</code> and the help screen should pop up on the lower right hand tab. You can also search for help directly in this window.</p>
+</div>
+</div>
+<div id="load-the-dataset-for-this-course" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Load the Dataset for This Course</h2>
+<p>We will primarily be using an excerpt of a set of real data on hotel stays from two hotels.<span class="citation">[@antonio2019]</span></p>
+<p>The dataset is available as a “delimited text file” of “comma-separated values” or .csv which your computer will probably want to open into Microsoft Excel or Apple Numbers. You can take a look at it, but some datasets in the real world are far too large to open in Excel. R can handle them though!</p>
+<p>For the assignments in this class (and in general) it is best to write all your code as a script file so that you can save and edit your work (rather than just typing it directly into the console). The script is typed in the window above the Console. Use the Run Button to run specific lines or the entire script.</p>
+<p><img src="1_Script.png" /></p>
+<div id="download-the-dataset" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Download the Dataset</h3>
+<p>First, download the dataset. It’s a best practice to save everything for a project inside the same folder. Create a folder for the class, and keep everything there.</p>
+<p><img src="1_Folder.png" /></p>
+</div>
+<div id="set-working-directory" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Set Working Directory</h3>
+<p>Next, set your “Working Directory” to that folder you set up and where you’ve saved the dataset to. The working directory is where RStudio will look for files and save exports. You can set your working directory by clicking on the “Session” tab on the menu bar.</p>
+<p><img src="1_SetWD.png" /></p>
+<p>Alternatively, you can use the command <code>setwd()</code> to manually tell RStudio where to look. I usually include the one line of code to set my working directory in every R script that I write.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="installing-r-and-loading-datasets.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set Working Directory</span></span>
+<span id="cb5-2"><a href="installing-r-and-loading-datasets.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Volumes/GoogleDrive/My Drive/6. Teaching/IDSC 4210 - Data Visualization/IDSC 4210 Course Notes&quot;</span>)</span></code></pre></div>
+</div>
+<div id="load-dataset-into-r" class="section level3" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Load Dataset into R</h3>
+<p>We’re going to use <code>read_csv()</code> command from the <code>readr</code> package which is included in the <code>tidyverse</code>. We want to save the dataset in R to a dataframe called <code>bookingdata</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="installing-r-and-loading-datasets.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load tidyverse (Since we need readr and ggplot2)</span></span>
+<span id="cb6-2"><a href="installing-r-and-loading-datasets.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-3"><a href="installing-r-and-loading-datasets.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="installing-r-and-loading-datasets.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load hotel_bookings.csv to a dataframe called bookingdata</span></span>
+<span id="cb6-5"><a href="installing-r-and-loading-datasets.html#cb6-5" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   hotel = col_character(),
+##   arrival_date_month = col_character(),
+##   meal = col_character(),
+##   country = col_character(),
+##   market_segment = col_character(),
+##   reserved_room_type = col_character(),
+##   assigned_room_type = col_character(),
+##   deposit_type = col_character(),
+##   agent = col_character(),
+##   reservation_status = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p>R tells us that it loaded all of the columns with some “specifications,” ie, what type of data is in each column.</p>
+<p><img src="1_5_Environment.png" width="244" /></p>
+<p>And if we look in the top right hand panel, we now have a dataframe called <code>bookingdata</code> with 119,390 observations of 24 variables.</p>
+</div>
+<div id="examine-the-booking-dataset" class="section level3" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Examine the Booking Dataset</h3>
+<p>Whenever you get a new dataset or pull a SQL query, you should always look at the data to make sure it’s what you’re expecting.</p>
+<p>In R, we can either click on the object over in the Environment pane, or you can use the command <code>View(bookingdata)</code></p>
+<p><img src="1_6_ViewDataset.png" /></p>
+<p>We should refer to the <strong>Data Dictionary File</strong>, which is also provided on Canvas, to know what each variable is. In this dataset, some key variables are:</p>
+<blockquote>
+<p><code>hotel</code>: Hotel Location, either “City Hotel” or “Resort Hotel”</p>
+<p><code>is_canceled</code>: A 0/1 indicator for whether the booking was canceled or not</p>
+<p><code>arrival_date_year</code>: The year of the planned arrival date</p>
+<p><code>adr</code>: The “Average Daily Rate” or average price per day for the guest’s stay</p>
+</blockquote>
+<p>Always make sure you know how to describe your dataset, including what each row represents and what data is included. Our hotel dataset can be described like this:</p>
+<blockquote>
+<p>“This dataset has information from about 100K hotel bookings. Each row represents one booking at a hotel, and includes information on the stay (date, price, hotel) and the guest (number of adults, country of origin).”</p>
+</blockquote>
+</div>
+<div id="observations-variables-and-values" class="section level3" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Observations, Variables and Values</h3>
+<p>There are three key terms that have specific meanings when talking about data analysis.</p>
+<ul>
+<li><p>An <strong>observation</strong> is a set of measurements usually made at the same time. For a “tidy” or “long” dataset, each observation is on its own <strong>row</strong>. You may hear observations called rows or records; these terms are often interchangeable (but not always…it depends on the data structure!).</p></li>
+<li><p>A <strong>dimension</strong> or <strong>variable</strong> is something that you can measure (e.g. height, income, destination, win/loss)</p></li>
+<li><p>A <strong>value</strong> is the result or state of a measurement for a variable (e.g. height = 2 meters, win/loss = WIN)</p></li>
+</ul>
+<p>Always make sure you know what the observations are in your datasets, where data from variables comes from (or how it’s calculated), and possible values for every variable.</p>
+</div>
+<div id="initial-exploration" class="section level3" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Initial Exploration</h3>
+<p>Next, Let’s look at our data in more detail. The <code>summary</code> command does that for us nicely, helping us learn what we’re dealing with. (The <code>describe</code> command in the <code>psych</code> package is a little nicer though.)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="installing-r-and-loading-datasets.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bookingdata)</span></code></pre></div>
+<p>Let’s get a sense for the data. How many bookings were at the City Hotel and how many at the Resort Hotel? (To hide the true identity of the hotel names and be more descriptive than Hotel 1 and Hotel 2, they gave use “City” and “Resort”). We can use the command <code>table</code> to easily break it down a bit.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="installing-r-and-loading-datasets.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate by Hotel Location</span></span>
+<span id="cb10-2"><a href="installing-r-and-loading-datasets.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(bookingdata<span class="sc">$</span>hotel)</span></code></pre></div>
+<pre><code>## 
+##   City Hotel Resort Hotel 
+##        79330        40060</code></pre>
+<p>Notice how we use the name of the data object <code>bookingdata</code> followed by a dollar sign and then our variable name, <code>hotel</code>? This is a key point.</p>
+<p>We can also create a two-way table. Let’s look at bookings by month and hotel.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="installing-r-and-loading-datasets.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate by Month and Hotel</span></span>
+<span id="cb12-2"><a href="installing-r-and-loading-datasets.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(bookingdata<span class="sc">$</span>arrival_date_month, bookingdata<span class="sc">$</span>hotel)</span></code></pre></div>
+<pre><code>##            
+##             City Hotel Resort Hotel
+##   April           7480         3609
+##   August          8983         4894
+##   December        4132         2648
+##   February        4965         3103
+##   January         3736         2193
+##   July            8088         4573
+##   June            7894         3045
+##   March           6458         3336
+##   May             8232         3559
+##   November        4357         2437
+##   October         7605         3555
+##   September       7400         3108</code></pre>
+<p>Do some more exploring on your own. What else do you see? It’s hard to get a sense for this many numbers. Some visualizations would help us!</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exploring-and-communicating-with-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Course Notes - IDSC 4210</title>
-  <meta name="description" content="Course Notes - IDSC 4210" />
+  <title>3 Exploring and Communicating with Data | Course Notes - IDSC 4210</title>
+  <meta name="description" content="3 Exploring and Communicating with Data | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Course Notes - IDSC 4210" />
+  <meta property="og:title" content="3 Exploring and Communicating with Data | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="3 Exploring and Communicating with Data | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="installing-r-and-loading-datasets.html"/>
+<link rel="prev" href="installing-r-and-loading-datasets.html"/>
+<link rel="next" href="design-fundamentals.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -126,65 +126,33 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Course Notes - IDSC 4210</h1>
-<p class="author"><em>Prepared by Jeff Clement</em></p>
-<p class="date"><em>11/2/2020</em></p>
-</div>
-<div id="interactive-data-visualization-for-business-analytics" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Interactive Data Visualization for Business Analytics</h1>
+<div id="exploring-and-communicating-with-data" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Exploring and Communicating with Data</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="about-the-course" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> About the Course</h2>
-<p>IDSC 4210 is an elective course for the undergraduate Business Analytics minor at the Carlson School of Management. It focuses on the fundamental and widely used exploratory data analysis technique of interactive visualization that is integral to modern business analytics. The key goal of this course is to prepare students for the rapidly changing digital environment faced by companies as it pertains to data-driven decisions. The students will also have hands-on experience with interactive data visualization using modern, state-of-the-art software on real-world datasets.</p>
-<div id="objectives" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Objectives</h3>
-<ol style="list-style-type: decimal">
-<li><p>Explore a set of data and discover meaningful <strong>patterns, insights, and questions.</strong></p>
-<div>
-<blockquote>
-<ul>
-<li><p>Demonstrate an <strong>effective process</strong> to explore data using interactive visualization</p></li>
-<li><p>Given a <strong>business objective</strong>, describe how data discovery <strong>improves</strong> decision making or performance.</p></li>
-<li><p>Identify data types and apply <strong>Few’s Analytic Patterns</strong> for effective analysis</p></li>
-</ul>
-</blockquote>
-</div></li>
-<li><p>Effectively <strong>communicate</strong> patterns and business insight via <strong>data visualization</strong>.</p>
-<div>
-<blockquote>
-<ul>
-<li><p>Articulate the <strong>story</strong> the visualization attempts to convey, and the resulting <strong>action-oriented decision</strong> it informs.</p></li>
-<li><p>Apply appropriate <strong>visualization models</strong> to data</p></li>
-<li><p>Apply effective <strong>object/attribute</strong> <strong>mappings</strong> to visualizations</p></li>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>visualizations</strong></p></li>
-</ul>
-</blockquote>
-</div></li>
-<li><p>Develop effective <strong>interaction</strong> within individual data <strong>visualizations</strong> and <strong>dashboards</strong></p>
-<div>
-<blockquote>
-<ul>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>user experience</strong></p></li>
-<li><p>Identify effective methods for <strong>Sharing</strong> and <strong>Governance</strong> of Interactive Dashboards</p></li>
-</ul>
-</blockquote>
-</div></li>
-</ol>
+<div id="the-data-science-cycle" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> The Data Science Cycle</h2>
+<p>Wickham and Grolemund propose the <strong>Data Science Cycle</strong> as one way to organize your process. After <strong>importing</strong> your data and <strong>tidying</strong> it (cleaning and arranging it for analysis), you explore and gain understanding. Finally, you communicate your results.</p>
+<p><img src="2_DataScienceCycle.png" width="683" /></p>
 </div>
+<div id="exploratory-vs.-explanatory-data-analysis" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Exploratory vs. Explanatory Data Analysis</h2>
+<p>In <strong>Exploratory Data Analysis (EDA)</strong>, you don’t necessarily know what you’re looking for. You might have an idea that there’s a problem or heterogeneity (something different). Exploratory data analysis takes place in the iterative loop in the Data Science Cycle above.</p>
+<p>EDA is not formal, rigid or defined. Start with questions about your data, and then look at them. Use a combination of transformations (e.g. looking at the mean or median), visualizations (e.g. bar charts, histograms, etc), and models (e.g. linear regression).</p>
+<p>You will often have some initial questions and hypotheses to go on, like “Are sales different in different regions?” or “Do donors give more on Mondays?” or “Do students perform better if they eat a snack?”</p>
+<blockquote>
+<p>"[Exploratory Data Analysis] is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. <em>(Hadley Wickham and Garrett Grolemund, R for Data Science, pg 81)</em></p>
+</blockquote>
+<p>Dashboards are often an important tool to help non-data people who are domain experts (e.g. doctors, sales managers) perform their <em>own</em> EDA.</p>
+<p>After exploratory data analysis, you will often move to the last step of the Data Science Cycle, communicating. This is where <strong>explanatory analysis</strong>, comes in.</p>
+<blockquote>
+<p>“[Explanatory analysis is when] you have something specific you want to communicate to somebody specific” <em>(Cole Nussbaumer Knaflic, <a href="https://youtu.be/8EMW7io4rSI?t=448">Storytelling with Data Talk at Google</a>)</em></p>
+</blockquote>
+<p>Rather than letting people get lost in the data or just presenting a big table, we want to say something very specific <em>using the data</em>.</p>
 </div>
-<div id="design-vs.-programming" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Design vs. Programming</h2>
-<p>This course is more about design and communication than it is about programming. We will gain experience in the programming packages, but there are lots of resources online to help with those. Besides, the specific software package will vary based on where you work or what type of data you’re using. The design and communication fundamentals translate across software and industry.</p>
-<p>That said, you will develop basic fundamentals using modern statistical and visualization tools.</p>
-</div>
-<div id="recommended-books" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Recommended Books</h2>
-<ul>
-<li><p><strong>Storytelling With Data</strong> by Cole Nussbaumer Knaflic, ISBN 978-1119002253 (~$17 used)</p></li>
-<li><p><strong>The Visual Display of Quantitative Information</strong> by Edward Tufte, ISBN 978-0961392147</p></li>
-<li><p><strong>R for Data Science</strong> by Hadley Wickham and Garrett Grolemund, ISBN 978-1491910399 (Free digital version online)</p></li>
-</ul>
+<div id="storytelling-with-data" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Storytelling with Data</h2>
+<p>Cole Nussbaumer Knaflic, author of <em>Storytelling with Data</em>, argues that there are two keys to effectively communicating with data. First, is to <strong>focus attention</strong> using pre-attentive attributes and effective design. Rather than just putting all the information on the page, draw attention to specific parts strategically to cue your readers.</p>
+<p>Second, <strong>tell a story</strong>.</p>
 
 </div>
 </div>
@@ -193,8 +161,8 @@
           </div>
         </div>
       </div>
-
-<a href="installing-r-and-loading-datasets.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installing-r-and-loading-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="design-fundamentals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
