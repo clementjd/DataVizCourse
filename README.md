@@ -4,4 +4,4 @@ This repository contains the materials that I've created for IDSC 4210, an under
 
 ## Acknowledgements
 
-Ken Reilly and Ryan Sougstad hat the University of Minnesota did a lot of work refining and sorting through the various topics to include.
+Ken Reilly and Ryan Sougstad at the University of Minnesota did a lot of work refining and sorting through the various topics to include.
