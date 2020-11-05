@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Communicating with Data: Storytelling | Course Notes - IDSC 4210</title>
+  <meta name="description" content="3 Communicating with Data: Storytelling | Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Communicating with Data: Storytelling | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Communicating with Data: Storytelling | Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="installing-r-and-loading-datasets.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-the-dataset-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Load the Dataset for This Course</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#download-the-dataset"><i class="fa fa-check"></i><b>2.2.1</b> Download the Dataset</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#set-working-directory"><i class="fa fa-check"></i><b>2.2.2</b> Set Working Directory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-dataset-into-r"><i class="fa fa-check"></i><b>2.2.3</b> Load Dataset into R</a></li>
+<li class="chapter" data-level="2.2.4" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#examine-the-booking-dataset"><i class="fa fa-check"></i><b>2.2.4</b> Examine the Booking Dataset</a></li>
+<li class="chapter" data-level="2.2.5" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#observations-variables-and-values"><i class="fa fa-check"></i><b>2.2.5</b> Observations, Variables and Values</a></li>
+<li class="chapter" data-level="2.2.6" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#initial-exploration"><i class="fa fa-check"></i><b>2.2.6</b> Initial Exploration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="communicating-with-data-storytelling.html"><a href="communicating-with-data-storytelling.html"><i class="fa fa-check"></i><b>3</b> Communicating with Data: Storytelling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="communicating-with-data-storytelling.html"><a href="communicating-with-data-storytelling.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
+<li class="chapter" data-level="3.2" data-path="communicating-with-data-storytelling.html"><a href="communicating-with-data-storytelling.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="communicating-with-data-storytelling.html"><a href="communicating-with-data-storytelling.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="communicating-with-data-storytelling" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Communicating with Data: Storytelling</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="the-data-science-cycle" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> The Data Science Cycle</h2>
+<p>Wickham and Grolemund propose the <strong>Data Science Cycle</strong> as one way to organize your process. After <strong>importing</strong> your data and <strong>tidying</strong> it (cleaning and arranging it for analysis), you explore and gain understanding. Finally, you communicate your results.</p>
+<p><img src="2_DataScienceCycle.png" width="683" /></p>
+</div>
+<div id="exploratory-vs.-explanatory-data-analysis" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Exploratory vs. Explanatory Data Analysis</h2>
+<p>In <strong>Exploratory Data Analysis (EDA)</strong>, you don’t necessarily know what you’re looking for. You might have an idea that there’s a problem or heterogeneity (something different). Exploratory data analysis takes place in the iterative loop in the Data Science Cycle above.</p>
+<p>EDA is not formal, rigid or defined. Start with questions about your data, and then look at them. Use a combination of transformations (e.g. looking at the mean or median), visualizations (e.g. bar charts, histograms, etc), and models (e.g. linear regression).</p>
+<p>You will often have some initial questions and hypotheses to go on, like “Are sales different in different regions?” or “Do donors give more on Mondays?” or “Do students perform better if they eat a snack?”</p>
+<blockquote>
+<p>"[Exploratory Data Analysis] is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. <em>(Hadley Wickham and Garrett Grolemund, R for Data Science, pg 81)</em></p>
+</blockquote>
+<p>Dashboards are often an important tool to help non-data people who are domain experts (e.g. doctors, sales managers) perform their <em>own</em> EDA.</p>
+<p>After exploratory data analysis, you will often move to the last step of the Data Science Cycle, communicating. This is where <strong>explanatory analysis</strong>, comes in.</p>
+<blockquote>
+<p>“[Explanatory analysis is when] you have something specific you want to communicate to somebody specific” <em>(Cole Nussbaumer Knaflic, <a href="https://youtu.be/8EMW7io4rSI?t=448">Storytelling with Data Talk at Google</a>)</em></p>
+</blockquote>
+<p>Rather than letting people get lost in the data or just presenting a big table, we want to say something very specific <em>using the data</em>.</p>
+</div>
+<div id="storytelling-with-data" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Storytelling with Data</h2>
+<p>Cole Nussbaumer Knaflic, author of <em>Storytelling with Data</em>, argues that there are two keys to effectively communicating with data. First, is to <strong>focus attention</strong> using pre-attentive attributes and effective design. Rather than just putting all the information on the page, draw attention to specific parts strategically to cue your readers.</p>
+<p>Second, <strong>tell a story</strong>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="installing-r-and-loading-datasets.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

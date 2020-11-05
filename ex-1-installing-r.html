@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Ex 1: Installing R | Course Notes - IDSC 4210</title>
+  <meta name="description" content="These are the course notes for IDSC 4210." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Ex 1: Installing R | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are the course notes for IDSC 4210." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Ex 1: Installing R | Course Notes - IDSC 4210" />
+  
+  <meta name="twitter:description" content="These are the course notes for IDSC 4210." />
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="design-principles.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#interactive-data-visualization-for-business-analytics"><i class="fa fa-check"></i><b>1.1</b> Interactive Data Visualization for Business Analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ex-1-installing-r.html"><a href="ex-1-installing-r.html"><i class="fa fa-check"></i><b>2</b> Ex 1: Installing R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ex-1-installing-r.html"><a href="ex-1-installing-r.html#step-1-installing-r-and-rstudio"><i class="fa fa-check"></i><b>2.1</b> Step 1: Installing R and RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="ex-1-installing-r.html"><a href="ex-1-installing-r.html#step-2-install-the-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.2</b> Step 2: Install the ggPlot Visualization Package</a></li>
+<li class="chapter" data-level="2.3" data-path="ex-1-installing-r.html"><a href="ex-1-installing-r.html#including-plots"><i class="fa fa-check"></i><b>2.3</b> Including Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="design-principles.html"><a href="design-principles.html"><i class="fa fa-check"></i><b>3</b> Design Principles</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="design-principles.html"><a href="design-principles.html#about-idsc-4210---interactive-data-visualization-for-business-analytics"><i class="fa fa-check"></i><b>3.1</b> About IDSC 4210 - Interactive Data Visualization for Business Analytics</a></li>
+<li class="chapter" data-level="3.2" data-path="design-principles.html"><a href="design-principles.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>3.2</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="3.3" data-path="design-principles.html"><a href="design-principles.html#section"><i class="fa fa-check"></i><b>3.3</b> </a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ex-1-installing-r" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Ex 1: Installing R</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="step-1-installing-r-and-rstudio" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Step 1: Installing R and RStudio</h2>
+<p>In the first half of the course, we will use the statistical programming language <code>R</code> to construct our visualizations and gain familiarity manipulating data. <code>R</code> is very powerful, free open-source software, and you can learn more about it here: <a href="https://www.r-project.org/about.html" class="uri">https://www.r-project.org/about.html</a>.</p>
+<p>R is capable of handling massive datasets, querying databases in SQL, creating beautiful visualizations, running complex statistical analysis, and building state-of-the-art machine learning models. You can also easily switch between R and other software packages (like Python) in the same script.</p>
+<p>You can interact with R via the command line, but the RStudio IDE (Integrated Developer Environment) offers a much better user experience.</p>
+</div>
+<div id="step-2-install-the-ggplot-visualization-package" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Step 2: Install the ggPlot Visualization Package</h2>
+<p>We will use the <code>ggplot</code> package developed by Hadley Wickham. We will also use a number of other commands for “data wrangling” (manipulating and working with datasets). Conveniently, these packages are all offered together in a “meta-package” called the <code>tidyverse</code>, which refers to a group of packages that handle data in a “tidy” way.</p>
+<p>To install the tidyverse, type <code>install.packages("tidyverse")</code> in the Console in RStudio. RStudio will download the package from CRAN and install it for you.</p>
+</div>
+<div id="including-plots" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Including Plots</h2>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="design-principles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
