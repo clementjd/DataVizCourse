@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Course Notes - IDSC 4210</title>
+  <meta name="description" content="Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="installing-r-and-loading-datasets.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#datasets-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Datasets for This Course</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="design-principles.html"><a href="design-principles.html"><i class="fa fa-check"></i><b>3</b> Design Principles</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="design-principles.html"><a href="design-principles.html#about-idsc-4210---interactive-data-visualization-for-business-analytics"><i class="fa fa-check"></i><b>3.1</b> About IDSC 4210 - Interactive Data Visualization for Business Analytics</a></li>
+<li class="chapter" data-level="3.2" data-path="design-principles.html"><a href="design-principles.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>3.2</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="3.3" data-path="design-principles.html"><a href="design-principles.html#section"><i class="fa fa-check"></i><b>3.3</b> </a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Course Notes - IDSC 4210</h1>
+<p class="author"><em>Prepared by Jeff Clement</em></p>
+<p class="date"><em>11/2/2020</em></p>
+</div>
+<div id="interactive-data-visualization-for-business-analytics" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Interactive Data Visualization for Business Analytics</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="about-the-course" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> About the Course</h2>
+<p>IDSC 4210 is an elective course for the undergraduate Business Analytics minor at the Carlson School of Management. It focuses on the fundamental and widely used exploratory data analysis technique of interactive visualization that is integral to modern business analytics. The key goal of this course is to prepare students for the rapidly changing digital environment faced by companies as it pertains to data-driven decisions. The students will also have hands-on experience with interactive data visualization using modern, state-of-the-art software on real-world datasets.</p>
+<div id="objectives" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Objectives</h3>
+<ol style="list-style-type: decimal">
+<li><p>Explore a set of data and discover meaningful <strong>patterns, insights, and questions.</strong></p>
+<div>
+<blockquote>
+<ul>
+<li><p>Demonstrate an <strong>effective process</strong> to explore data using interactive visualization</p></li>
+<li><p>Given a <strong>business objective</strong>, describe how data discovery <strong>improves</strong> decision making or performance.</p></li>
+<li><p>Identify data types and apply <strong>Few’s Analytic Patterns</strong> for effective analysis</p></li>
+</ul>
+</blockquote>
+</div></li>
+</ol>
+<!-- -->
+<ol start="2" style="list-style-type: decimal">
+<li><p>Effectively <strong>communicate</strong> patterns and business insight via <strong>data visualization</strong>.</p>
+<div>
+<blockquote>
+<ul>
+<li><p>Articulate the <strong>story</strong> the visualization attempts to convey, and the resulting <strong>action-oriented decision</strong> it informs.</p></li>
+<li><p>Apply appropriate <strong>visualization models</strong> to data</p></li>
+<li><p>Apply effective <strong>object/attribute</strong> <strong>mappings</strong> to visualizations</p></li>
+<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>visualizations</strong></p></li>
+</ul>
+</blockquote>
+</div></li>
+</ol>
+<!-- -->
+<ol start="3" style="list-style-type: decimal">
+<li><p>Develop effective <strong>interaction</strong> within individual data <strong>visualizations</strong> and <strong>dashboards</strong></p>
+<div>
+<blockquote>
+<ul>
+<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>user experience</strong></p></li>
+<li><p>Identify effective methods for <strong>Sharing</strong> and <strong>Governance</strong> of Interactive Dashboards</p></li>
+</ul>
+</blockquote>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="design-vs.-programming" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Design vs. Programming</h2>
+<p>This course is more about design and communication than it is about programming. We will gain experience in the programming packages, but there are lots of resources online to help with those. Besides, the specific software package will vary based on where you work or what type of data you’re using. The design and communication fundamentals translate across software and industry.</p>
+<p>That said, you will develop basic fundamentals using modern statistical and visualization tools.</p>
+</div>
+<div id="recommended-books" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Recommended Books</h2>
+<ul>
+<li><p><strong>Storytelling With Data</strong> by Cole Nussbaumer Knaflic, ISBN 978-1119002253</p></li>
+<li><p><strong>The Visual Display of Quantitative Information</strong> by Edward Tufte, ISBN 978-0961392147</p></li>
+<li><p><strong>R for Data Science</strong> by Hadley Wickham and Garrett Grolemund, ISBN 978-1491910399</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="installing-r-and-loading-datasets.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
