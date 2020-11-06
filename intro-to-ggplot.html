@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Design Fundamentals | Course Notes - IDSC 4210</title>
-  <meta name="description" content="4 Design Fundamentals | Course Notes - IDSC 4210" />
+  <title>5 Intro to ggplot | Course Notes - IDSC 4210</title>
+  <meta name="description" content="5 Intro to ggplot | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Design Fundamentals | Course Notes - IDSC 4210" />
+  <meta property="og:title" content="5 Intro to ggplot | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Design Fundamentals | Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="5 Intro to ggplot | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exploring-and-communicating-with-data.html"/>
-<link rel="next" href="intro-to-ggplot.html"/>
+<link rel="prev" href="design-fundamentals.html"/>
+
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -122,7 +122,7 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>5</b> Intro to ggplot</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>5.1</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="5.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-the-graphics"><i class="fa fa-check"></i><b>5.1</b> Grammar the Graphics</a></li>
 </ul></li>
 </ul>
 
@@ -141,130 +141,13 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="design-fundamentals" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Design Fundamentals</h1>
+<div id="intro-to-ggplot" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Intro to ggplot</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="visual-perception-facts" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Visual Perception Facts</h2>
-<ol style="list-style-type: decimal">
-<li><p>We do not attend to everything we see.</p></li>
-<li><p>Our eyes are drawn to familiar patterns.</p></li>
-<li><p>Memory plays an important role in human cognition, but working memory is limited.</p></li>
-</ol>
-</div>
-<div id="color-theory" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Color Theory</h2>
-<p>Color plays a critical role in how we view and perceive the world.</p>
-<p><strong>Contrast</strong> is [DEFINITION] and is the most important consideration in data visualizations.</p>
-<div id="color-and-accessibility" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Color and Accessibility</h3>
-<p>It’s important to recognize that not everyone perceives color the same way.</p>
-<p><img src="3_1_UMNColorScheme.png" /></p>
-</div>
-</div>
-<div id="preattentive-visual-attributes" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Preattentive Visual Attributes</h2>
-</div>
-<div id="tuftes-data-visualization-principles" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Tufte’s Data Visualization Principles</h2>
-<p>Edward Tufte’s <em>The Visual Display of Quantitative Information</em> is classic book on data visualization.</p>
-</div>
-<div id="second-test" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> 15 Second Test</h2>
-<p>Visualizations should be able to more or less stand on their own (perhaps with some footnotes). I shouldn’t need to read the report to understand what a visualization is showing me. And ideally, it shouldn’t take very long at all for me to understand what a graph is showing me.</p>
-<p>Let’s make a quick visualization showing the number of completed stays, by hotel, over time.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>You can see it, right? We see the annual pattern of bookings by two hotels over two years or so. Which hotel seems to have seasonality in demand?</p>
-</div>
-<div id="fixing-cluttered-visualizations" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Fixing Cluttered Visualizations</h2>
-<p>Sometimes, it feels like there’s no way to keep a visualization clean and intuitive. “But there’s too much I need to include, and I can’t drop any of it!” Here are a couple of strategies to try.</p>
-<div id="facet-to-make-multiple-visualizations" class="section level3" number="4.6.1">
-<h3><span class="header-section-number">4.6.1</span> Facet to make Multiple Visualizations</h3>
-<p>Let’s look at the trend in sales of meal packages over time by hotel. Meals are high margin, so we want more guests to buy them. By looking at the percentage of guests getting meals, we can assess how well our agents are upselling.</p>
-<blockquote>
-<p><strong>Meal Service Classifications</strong></p>
-<ul>
-<li>SC: No Meals Included</li>
-<li>BB: “Bed and Breakfast” (1 Meal per Day included in rate)</li>
-<li>HB: “Half Board” (2 Meals per Day included in rate)</li>
-</ul>
-</blockquote>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>What’s wrong with this figure? It’s cluttered, and hard to follow which line is which. There’s also no clear grouping of the lines by hotel. I could switch the colors, or add some kind of dashes, but then I’m asking people to track two things (color and pattern) <em>instead of doing what I want them to do…</em>actually engage with the data.</p>
-<p>Let’s fix this by faceting, splitting the graph into smaller separate graphs, broken up by some other variable. In <code>ggplot</code>, we add a facet with a <code>facet_wrap()</code> and <code>facet_grid()</code> functions. I usually use <code>facet_grid()</code> because it gives more control and lets you facet by more than one variable, but you can use whichever makes the most sense.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>Now we can see very clearly that there’s been a recent increase in the percentage of bookings with HB (“half-board”) service…the most profitable class. Looks like recent upselling efforts are working and the sales staff should be commended.</p>
-</div>
-<div id="switch-to-a-table" class="section level3" number="4.6.2">
-<h3><span class="header-section-number">4.6.2</span> Switch to a Table</h3>
-<p>It may seem odd that the recommendation in a class about visualizations is, “Don’t make this a visualization.” Going back to our <code>hotel_bookings.csv</code> data, suppose we are having a meeting to discuss the average daily rate quoted to guests from different countries by the meal service (<code>meal</code>) they request. Just $1 makes a big difference times thousands of guests a year, so we want exact numbers to discuss in the meeting.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>What’s wrong with this visual? The colors aren’t great, it’s very cluttered, and my eyes have to jump around, from the legend to the x-axis, and then up to the labels.</p>
-<p>If you need to include many exact values, it’s time to consider a table. The purpose of visualizations is <strong>not</strong> to give the reader exact values for every observation at a particular point in time. It’s to clearly communicate a point, support intuition, and support comparisons. The table below (Table <a href="design-fundamentals.html#tab:adrtable">4.1</a>) shows the same information but in a much more accessible format.</p>
-<table>
-<caption><span id="tab:adrtable">Table 4.1: </span>Average Daily Rate by Country and Meal Service</caption>
-<thead>
-<tr class="header">
-<th align="left">country</th>
-<th align="right">BB</th>
-<th align="right">HB</th>
-<th align="right">SC</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">ARG</td>
-<td align="right">117.81</td>
-<td align="right">142.47</td>
-<td align="right">108.05</td>
-</tr>
-<tr class="even">
-<td align="left">AUS</td>
-<td align="right">119.68</td>
-<td align="right">184.41</td>
-<td align="right">104.63</td>
-</tr>
-<tr class="odd">
-<td align="left">CHN</td>
-<td align="right">114.92</td>
-<td align="right">134.17</td>
-<td align="right">98.31</td>
-</tr>
-<tr class="even">
-<td align="left">DNK</td>
-<td align="right">117.89</td>
-<td align="right">145.28</td>
-<td align="right">105.07</td>
-</tr>
-<tr class="odd">
-<td align="left">IND</td>
-<td align="right">114.88</td>
-<td align="right">151.06</td>
-<td align="right">101.79</td>
-</tr>
-<tr class="even">
-<td align="left">JPN</td>
-<td align="right">127.72</td>
-<td align="right">128.80</td>
-<td align="right">97.27</td>
-</tr>
-<tr class="odd">
-<td align="left">MEX</td>
-<td align="right">119.37</td>
-<td align="right">179.38</td>
-<td align="right">99.74</td>
-</tr>
-<tr class="even">
-<td align="left">USA</td>
-<td align="right">127.83</td>
-<td align="right">167.22</td>
-<td align="right">101.68</td>
-</tr>
-</tbody>
-</table>
+<div id="grammar-the-graphics" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Grammar the Graphics</h2>
+<p>```</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -272,8 +155,8 @@
           </div>
         </div>
       </div>
-<a href="exploring-and-communicating-with-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intro-to-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="design-fundamentals.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

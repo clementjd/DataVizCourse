@@ -98,7 +98,11 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
 <li class="chapter" data-level="3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
-<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a></li>
+<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-1-focus-attention"><i class="fa fa-check"></i><b>3.3.1</b> Step 1: Focus Attention</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-2-tell-a-story"><i class="fa fa-check"></i><b>3.3.2</b> Step 2: Tell a Story</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="design-fundamentals.html"><a href="design-fundamentals.html"><i class="fa fa-check"></i><b>4</b> Design Fundamentals</a>
 <ul>
@@ -107,7 +111,18 @@
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.3</b> Tufte’s Data Visualization Principles</a></li>
+<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
+<li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a></li>
+<li class="chapter" data-level="4.5" data-path="design-fundamentals.html"><a href="design-fundamentals.html#second-test"><i class="fa fa-check"></i><b>4.5</b> 15 Second Test</a></li>
+<li class="chapter" data-level="4.6" data-path="design-fundamentals.html"><a href="design-fundamentals.html#fixing-cluttered-visualizations"><i class="fa fa-check"></i><b>4.6</b> Fixing Cluttered Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#facet-to-make-multiple-visualizations"><i class="fa fa-check"></i><b>4.6.1</b> Facet to make Multiple Visualizations</a></li>
+<li class="chapter" data-level="4.6.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#switch-to-a-table"><i class="fa fa-check"></i><b>4.6.2</b> Switch to a Table</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>5</b> Intro to ggplot</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>5.1</b> Grammar of Graphics</a></li>
 </ul></li>
 </ul>
 
@@ -151,9 +166,18 @@
 </div>
 <div id="storytelling-with-data" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Storytelling with Data</h2>
+<div id="step-1-focus-attention" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Step 1: Focus Attention</h3>
 <p>Cole Nussbaumer Knaflic, author of <em>Storytelling with Data</em>, argues that there are two keys to effectively communicating with data. First, is to <strong>focus attention</strong> using pre-attentive attributes and effective design. Rather than just putting all the information on the page, draw attention to specific parts strategically to cue your readers.</p>
-<p>Second, <strong>tell a story</strong>.</p>
+<p>Thinking about our hotel booking data, suppose we want to compare the average daily rate across marget segments. Below, see two graphs.</p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>They’re very similar. The top graph isn’t bad, but the bottom one cues us in immediately to look at the Direct Sales Market Segment. Even though I haven’t told you anything more, you’re already focused on Direct Sales. Maybe you even started comparing it to the others. In the top one, maybe your brain started comparing Aviation to Complementary, and Corporate to Groups. But with the bottom one, I bet the primary comparisons were X vs Direct. We’ll talk more about <strong>preattentive attributes</strong> in the next section, but this is an example of using <strong>color</strong>.</p>
+</div>
+<div id="step-2-tell-a-story" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Step 2: Tell a Story</h3>
+<p>We’re going to focus attention, but on what and for what purpose? To <strong>tell a story</strong>.</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -204,7 +228,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
