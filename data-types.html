@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Course Notes - IDSC 4210</title>
-  <meta name="description" content="Course Notes - IDSC 4210" />
+  <title>7 Data Types | Course Notes - IDSC 4210</title>
+  <meta name="description" content="7 Data Types | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Course Notes - IDSC 4210" />
+  <meta property="og:title" content="7 Data Types | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="7 Data Types | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="installing-r-and-loading-datasets.html"/>
+<link rel="prev" href="intro-to-ggplot.html"/>
+<link rel="next" href="distribution-analysis.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,68 +260,63 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Course Notes - IDSC 4210</h1>
-<p class="author"><em>Prepared by Jeff Clement</em></p>
-<p class="date"><em>11/2/2020</em></p>
-</div>
-<div id="interactive-data-visualization-for-business-analytics" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Interactive Data Visualization for Business Analytics</h1>
+<div id="data-types" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Data Types</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="about-the-course" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> About the Course</h2>
-<p>IDSC 4210 is an elective course for the undergraduate Business Analytics minor at the Carlson School of Management. It focuses on the fundamental and widely used exploratory data analysis technique of interactive visualization that is integral to modern business analytics. The key goal of this course is to prepare students for the rapidly changing digital environment faced by companies as it pertains to data-driven decisions. The students will also have hands-on experience with interactive data visualization using modern, state-of-the-art software on real-world datasets.</p>
-<div id="objectives" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Objectives</h3>
-<ol style="list-style-type: decimal">
-<li><p>Explore a set of data and discover meaningful <strong>patterns, insights, and questions.</strong></p>
-<div>
+<p>Variables can contain different types of data. These different data types will dictate both what types of analysis are appropriate and what chart types can best help us understand.</p>
+<p>The chart below this shows the different types of data you may commonly encounter. This taxonomy is frequently used and was originally published by <a href="https://science.sciencemag.org/content/103/2684/677">Stanley Stephens in Science</a> in 1946. It is useful but <u>not perfect</u>.</p>
+<p><img src="6_DataTypeDiagram.png" title="Data Types and Examples" /></p>
+<div id="categorical-data" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Categorical Data</h2>
+<p>A variable that contains names or categories is referred to as <strong>categorical data</strong>. Categorical data is always discrete.</p>
+<div id="nominal" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Nominal</h3>
+<p>Nominal data is called that because one definition of nominal is, “of or relating to a name.” The easiest example of nominal data is a <strong>people’s names</strong>! The key is that there is <strong>no inherent order</strong> to this data. Other examples include colors, music genres, movie titles, country names, etc.</p>
+<p>We can count and categorize nominal data, but we can’t really do mathematical transformations on it. How do you “average” green and purple shirts? Brown?</p>
+</div>
+<div id="ordinal" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Ordinal</h3>
+<p>Ordinal data has some <strong>order</strong> to it but is still categorical. Examples include: ratings from dissatisfied to satisfied, level of education (no high school diploma, high school, some college, associate’s degree, bachelor’s degree, graduate degree).</p>
+<p>We can count and take the median, but we can’t “average” ordinal data. If we have a customer who is satisfied and one who is not satisfied, the “average” isn’t “somewhat satisfied.” There can also be big differences in the “distance” between categories. There’s a big difference between a high school diploma and a bachelor’s degree, but not as much difference between a bachelor’s degree and a master’s degree.</p>
+<p><em>Note: You will often see ordinal data represented by numbers (e.g. 1-5 on a Likert scale). This data is often analyzed with statistical techniques such as taking the mean or using regression, but it’s not without controversy. For most things, it’s probably okay to transform well-designed survey data and analyze it using the mean. SS Stevens points out:</em></p>
 <blockquote>
-<ul>
-<li><p>Demonstrate an <strong>effective process</strong> to explore data using interactive visualization</p></li>
-<li><p>Given a <strong>business objective</strong>, describe how data discovery <strong>improves</strong> decision making or performance.</p></li>
-<li><p>Identify data types and apply <strong>Few’s Analytic Patterns</strong> for effective analysis</p></li>
-</ul>
+<p>[F]or this ‘illegal’ statisticizing there can be invoked a kind of pragmatic sanction: In numerous instances it leads to fruitful results. While the outlawing of this procedure would probably serve no good purpose, it is proper to point out that means and standard deviations computed on an ordinal scale are in error to the extent that the successive intervals on the scale are unequal in size. When only the rank-order of data is known, we should proceed cautiously with our statistics, and especially with the conclusions we draw from them.</p>
+<p>“On the Theory of Scales of Measurement.” <em>Science.</em> 1946. Vol 103, No 2684, pg 679</p>
 </blockquote>
-</div></li>
-<li><p>Effectively <strong>communicate</strong> patterns and business insight via <strong>data visualization</strong>.</p>
-<div>
-<blockquote>
-<ul>
-<li><p>Articulate the <strong>story</strong> the visualization attempts to convey, and the resulting <strong>action-oriented decision</strong> it informs.</p></li>
-<li><p>Apply appropriate <strong>visualization models</strong> to data</p></li>
-<li><p>Apply effective <strong>object/attribute</strong> <strong>mappings</strong> to visualizations</p></li>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>visualizations</strong></p></li>
-</ul>
-</blockquote>
-</div></li>
-<li><p>Develop effective <strong>interaction</strong> within individual data <strong>visualizations</strong> and <strong>dashboards</strong></p>
-<div>
-<blockquote>
-<ul>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>user experience</strong></p></li>
-<li><p>Identify effective methods for <strong>Sharing</strong> and <strong>Governance</strong> of Interactive Dashboards</p></li>
-</ul>
-</blockquote>
-</div></li>
-</ol>
 </div>
 </div>
-<div id="design-vs.-programming" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Design vs. Programming</h2>
-<p>This course is about both design/communication and programming. You’ve got to have both aspects to be effective in this area. We will gain experience in the programming packages, but there are lots of resources online to help with those.</p>
-<p>The specific software package may vary based on where you work or what type of data you’re using, but learning how to use one package will yield skills that help you next time you need to learn a new package. The design and communication fundamentals translate across software and industry.</p>
+<div id="numerical-data" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Numerical Data</h2>
+<div id="discrete-vs.-continuous" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Discrete vs. Continuous</h3>
+<p>Numerical data can be either continuous or discrete (sometimes you’ll see people argue that numerical data is all continuous; I disagree). <strong>Discrete data</strong> can only hold certain values. For example, the number of customers who shop in a store, or the number of students in a class. <strong>Continuous data</strong> can take any value in a range. For example, the time between two events.</p>
+<p>We often approximate discrete events as continuous. For large samples, this can often be done without significant impacts. We also convert continuous variables, like income ($48,769), to discrete scales ($30-$50K).</p>
 </div>
-<div id="recommended-books" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Recommended Books</h2>
-<ul>
-<li><p><strong>Storytelling With Data</strong> (2015) by Cole Nussbaumer Knaflic, ISBN 978-1119002253 (~$17 used)</p></li>
-<li><p><strong>The Visual Display of Quantitative Information</strong> (2001) by Edward Tufte, ISBN 978-0961392147</p></li>
-<li><p><strong>R for Data Science</strong> (2017) by Hadley Wickham and Garrett Grolemund, ISBN 978-1491910399 (Free digital version online)</p></li>
-<li><p><strong>How Charts Lie</strong> (2020) by Alberto Cairo, ISBN 978-0393358421 ($16 new)</p></li>
-<li><p><strong>The Wall Street Journal Guide to Information Graphics</strong> (2013) by Dona Wong, ISBN 978-0393347289</p></li>
-</ul>
-<p>I re-read these books in Fall 2020 and they all have some good things to offer. There are some contradictions in them, but that’s okay! People have different preferences and there’s no perfect answer to some problems. Tastes also change over time. Overall, they generally agree on the big points.</p>
+<div id="interval" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Interval</h3>
+<p>Interval data has an inherent order and the difference between every unit on an interval scale must be the same. However, there is no true zero.</p>
+<p>One example is time. The difference between any two intervals on the time scale (e.g. in minutes) is the same, but there’s no zero. Another example is credit scores, which range from 300-850. Finally, Chess player rankings range from 100-3000.</p>
+<p>You cannot multiply or divide interval data (which means you can’t take percentages)! A 1500-ranked chess player <a href="https://en.wikipedia.org/wiki/Elo_rating_system">isn’t “twice as good” as a 750-ranked player</a>.</p>
+</div>
+<div id="ratio" class="section level3" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Ratio</h3>
+<p>Ratio data shares all the characteristics of interval data (ordered values on an equidistant scale) but has a true zero. Revenue, number of acorns, age, height of a building, etc are all ratio values.</p>
+</div>
+</div>
+<div id="measurement-error-and-data-limitations" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Measurement Error and Data Limitations</h2>
+<p>Context and measurement matters. On the stock markets, trades can be made for fractions of a penny, but when you make a purchase in the store it will be rounded to the nearest penny when tax is calculated (Here’s the <a href="https://www.revisor.mn.gov/statutes/cite/297a.76#stat.297A.76.1">Minnesota state law</a> specifying how that’s done).</p>
+<p>Note any limitations of your instruments or of how the measurements are collected. You may have seen the HBO miniseries <em>Chernobyl.</em> Initial estimates were that the radiation levels were 3.6 Roentgen/hr; but the available dosimeters never anticipated such a disaster this was the highest dose they could measure. The <a href="https://www.youtube.com/watch?v=yPRMx2k1NM8">true dose was 15,000 R/h</a>. Anytime you see a “cliff” in your data, ask why.</p>
+</div>
+<div id="tricky-cases" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Tricky Cases</h2>
+<p>It’s important to think through what the data type is because it can affect how you do your analysis. Consider day of the week. We can cross out ratio, because there is no zero-day. There IS a sort of order to them, but does the week start on Sunday or Monday? Does it matter if we just have one week’s worth of data (then we kind of DO have a zero, so maybe DoW represents time)?</p>
+<p>The bottom line is that you need to think it through. Does your analysis make sense?</p>
+</div>
+<div id="calculations-possible-by-data-type" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Calculations Possible by Data Type</h2>
+<p>Different data types allow different types of calculations. Ask yourself, “Is this meaningful in the real world?” Note that your software won’t usually prevent you from attempting to do something “illegal” like average the values of a nominal variable.</p>
+<p><img src="6_DataTypeOperations.png" title="Operations Allowed by Data Type" /></p>
 
 </div>
 </div>
@@ -330,8 +325,8 @@
           </div>
         </div>
       </div>
-
-<a href="installing-r-and-loading-datasets.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro-to-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distribution-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

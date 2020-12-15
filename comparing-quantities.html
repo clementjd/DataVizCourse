@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Design Fundamentals | Course Notes - IDSC 4210</title>
-  <meta name="description" content="4 Design Fundamentals | Course Notes - IDSC 4210" />
+  <title>9 Comparing Quantities | Course Notes - IDSC 4210</title>
+  <meta name="description" content="9 Comparing Quantities | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Design Fundamentals | Course Notes - IDSC 4210" />
+  <meta property="og:title" content="9 Comparing Quantities | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Design Fundamentals | Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="9 Comparing Quantities | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exploring-and-communicating-with-data.html"/>
-<link rel="next" href="r-and-the-tidyverse.html"/>
+<link rel="prev" href="distribution-analysis.html"/>
+<link rel="next" href="correlation-and-regression.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -323,222 +323,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="design-fundamentals" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Design Fundamentals</h1>
+<div id="comparing-quantities" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Comparing Quantities</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="visual-perception-facts" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Visual Perception Facts</h2>
-<ol style="list-style-type: decimal">
-<li><p>We do not attend to everything we see.</p></li>
-<li><p>Our eyes are drawn to familiar patterns.</p></li>
-<li><p>Memory plays an important role in human cognition, but working memory is limited.</p></li>
-</ol>
-</div>
-<div id="color-theory" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Color Theory</h2>
-<p>Color plays a critical role in how we view and perceive the world.</p>
-<p><strong>Contrast</strong> is [DEFINITION] and is the most important consideration in data visualizations.</p>
-<div id="color-and-accessibility" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Color and Accessibility</h3>
-<p>It’s important to recognize that not everyone perceives color the same way. Many companies and government agencies mandate that all documents be accessible to individuals who are colorblind, which you can easily do with a good palette of clearly distinguished colors. Such palettes don’t rely on hue alone but also contrast. There are at least three good reasons to use an accessible palette:</p>
-<ol style="list-style-type: decimal">
-<li><p>Your visualizations will be accessible to everyone, regardless of how they perceive color.</p></li>
-<li><p>Good palettes are easier to interpret for everyone.</p></li>
-<li><p>Your visualizations will be interpretable <strong>when people print them on B&amp;W printers!</strong></p></li>
-</ol>
-<p>Many organizations have an official brand guide with a standard color palette. The brand colors for UMN are shown below.</p>
-<div class="figure">
-<img src="3_1_UMNColorScheme.png" alt="" />
-<p class="caption">The UMN brand colors.</p>
-</div>
-</div>
-</div>
-<div id="preattentive-visual-attributes" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Preattentive Visual Attributes</h2>
-<p>Cognitive psychology has paid a lot of attention to the concept of human attention (that’s a great sentence!). A recurring idea is that certain visual features are so distinctive and stick out such that we don’t need to actively pay attention to them, so they are <strong>preattentive features</strong>. Whether this is actually true or holds absolutely is the subject of some debate, but it’s clear that these features, properly applied, can help people notice and and process information quickly.</p>
-<p><img src="3_PreattentiveAttributes.png" /></p>
-<p>Preattentive attributes can be grouped in four main categories:</p>
-<ul>
-<li><p><strong>Color:</strong> One can spend their entire career on <a href="https://en.wikipedia.org/wiki/Color_theory">color theory.</a> Two main attributes to consider are <strong>hue</strong> and <strong>intensity.</strong> Hue is where on the color wheel you are (roughly, the difference between blue and orange). Intensity is the strength of the color. Color can be used to draw attention, but it can also detract; too many colors can quickly overwhelm the viewer such that they become meaningless or the differences are too subtle.</p></li>
-<li><p><strong>Form:</strong> Form covers shape, size, orientation, and length. Line length (and width) can be very precise (ie, readers can see very slight differences in line lengths on a bar chart).</p></li>
-<li><p><strong>Spatial Arrangement:</strong> Humans will naturally interpret groups of objects and compare their placement to other objects. You may have heard of the <a href="https://en.wikipedia.org/wiki/Gestalt_psychology">Gestalt principles</a>; the Gestalt “Law of Proximity” states that people will tend to group objects that are nearby. 2D arrangement is perhaps one of the most “precise” attributes; viewers will notice very subtle differences between point locations in a scatterplot.</p></li>
-<li><p><strong>Movement:</strong> Objects can move in space (as in animation) or they can flash. This is a very strong preattentive attribute and may dominate everything else. Use it sparingly.</p></li>
-</ul>
-<p>Preattentive attributes, used well, drive the narrative for viewers and help them very quickly interpret what you’re telling them. You can focus attention. Used poorly, they can overwhelm the viewer who will have to wade through lots of information. When we don’t pay attention to these attributes, we can cause problems. For example, if elements in a dashboard aren’t aligned, the viewer might perceive that difference (keying on the position)…instead of the data they’re paying attention to the chart’s design. The idea is that the design should get lost and the viewers should instead be sucked into the data.</p>
-<p><img src="3_PreattentiveExamples.png" /></p>
-</div>
-<div id="tuftes-data-visualization-principles" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Tufte’s Data Visualization Principles</h2>
-<p>Edward Tufte’s <em>The Visual Display of Quantitative Information</em> is classic book on data visualization. Among the many ideas he proposes, two key concepts stick out for me: chartjunk and graphical integrity.</p>
-<div id="chartjunk" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Chartjunk</h3>
-<p><a href="https://en.wikipedia.org/wiki/Chartjunk" title="Wikipedia Entry on Chartjunk">Chartjunk</a> is a visual element that is not necessary to convey the meaning of the graph. Things like shadows, gridlines, icons, labels, gradients, etc can all be chartjunk. A closely related concept is the data-to-ink ratio. How much data are you displaying vs how much ink are you using?</p>
-<p>The core idea is to present your data in a clear, compelling manner, without all of the extra elements that can distract the user (and use all their printer toner!). The example shows two graphs…one with and one without a lot of chartjunk.</p>
+<div id="scatterplot" class="section level3" number="9.0.1">
+<h3><span class="header-section-number">9.0.1</span> Scatterplot</h3>
+<p>When comparing two numerical variables, often the most straightforward plot is a scatterplot. Each observation is plotted on a two-dimensional graph, and we can easily look for patterns or trends. Let’s compare the price paid (Average Daily Rate or <code>adr</code>) with how far out the guest booked the stay (<code>lead_time</code>).</p>
+<p>As we’ll see in a minute, scatterplots aren’t always helpful if there are too many data points, so we’ll take a sample of 800 bookings from our dataset to plot (this also speeds up plotting).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="comparing-quantities.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Scatterplot comparing price and how far out a guest booked the stay</span></span>
+<span id="cb1-2"><a href="comparing-quantities.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="comparing-quantities.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed so that we get the same &quot;random&quot; numbers each time and the plot is reproducible</span></span>
+<span id="cb1-4"><a href="comparing-quantities.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># You can pick any number for the seed, but to get the same result each time </span></span>
+<span id="cb1-5"><a href="comparing-quantities.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># you have to use the same seed</span></span>
+<span id="cb1-6"><a href="comparing-quantities.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">132334</span>)</span>
+<span id="cb1-7"><a href="comparing-quantities.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="comparing-quantities.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a random sample of 800 bookings that weren&#39;t complementary (ie, price = 0)</span></span>
+<span id="cb1-9"><a href="comparing-quantities.html#cb1-9" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="comparing-quantities.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="comparing-quantities.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">800</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="comparing-quantities.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span>  lead_time, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="comparing-quantities.html#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="comparing-quantities.html#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span>   <span class="co"># Reverse the x axis so we &quot;count down&quot;</span></span>
+<span id="cb1-15"><a href="comparing-quantities.html#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb1-16"><a href="comparing-quantities.html#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Lead Time (Days)&quot;</span>,</span>
+<span id="cb1-17"><a href="comparing-quantities.html#cb1-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate (Price $)&quot;</span>,</span>
+<span id="cb1-18"><a href="comparing-quantities.html#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Scatterplot: Distribution of Two Numerical Variables&quot;</span>,</span>
+<span id="cb1-19"><a href="comparing-quantities.html#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Average Daily Rate ($) versus Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="comparing-quantities.html#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb1-21"><a href="comparing-quantities.html#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-22"><a href="comparing-quantities.html#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-23"><a href="comparing-quantities.html#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-24"><a href="comparing-quantities.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-25"><a href="comparing-quantities.html#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
 <p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>What did we strip away? All the lines, except the baseline under the graph (I think it looks nice…it helps “ground” the viewer. The background colors (though I sometimes use a light color behind my plots). The word “hotel” in front of the legend. The whole Y axis, even!</p>
-</div>
-<div id="graphical-integrity" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Graphical Integrity</h3>
-<p>Graphical integrity implies that the representation of a number is proportional to the number. In other words, if one value is twice as large as another, its representation should be twice as large (assuming it’s not on a log scale). Differences in elements (e.g. line length, color) should represent differences in the data. Scales should be consistent (e.g., not switching between years and months on the same graph).</p>
-<p><em>Note: You should almost never put things on a log scale if they’re being viewed by a general audience. What appears to be linear growth on a log scale is actually exponential growth and people struggle with that.</em></p>
-<p>3d pie graphs often violate this principle. Take a look at this pie chart showing the number of bookings by hotel. About 90% of the visual field is occupied by blue, representing the City Hotel. But most of the blue we see is actually just the 3D rotation.</p>
-<center>
-<div class="figure">
-<img src="3_Bad3DPieGraph.png" title="A Bad 3d Pie Graph representing the bookings by hotel" style="width:70.0%" alt="" />
-<p class="caption">A bad 3D pie graph can misrepresent the numbers it’s supposed to display.</p>
-</div>
-</center>
-<p>But how many of the bookings were actually made at the City Hotel, and how many were at the Resort Hotel? A bar graph or waffle chart will more accurately reflect these ratios. These chart types show us that about 1/3 of the bookings were at the Resort Hotel and 2/3 at the City Hotel. Or that the City Hotel had about twice as many bookings.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="design-fundamentals.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a bar chart and tile map</span></span>
-<span id="cb1-2"><a href="design-fundamentals.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="design-fundamentals.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make bar chart</span></span>
-<span id="cb1-4"><a href="design-fundamentals.html#cb1-4" aria-hidden="true" tabindex="-1"></a>barchart <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(bookingdata, <span class="fu">aes</span>(<span class="at">x =</span> hotel)) <span class="sc">+</span> </span>
-<span id="cb1-5"><a href="design-fundamentals.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="design-fundamentals.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;City Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>,</span>
-<span id="cb1-7"><a href="design-fundamentals.html#cb1-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;Resort Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-8"><a href="design-fundamentals.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
-<span id="cb1-9"><a href="design-fundamentals.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb1-10"><a href="design-fundamentals.html#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>,</span>
-<span id="cb1-11"><a href="design-fundamentals.html#cb1-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Hotel Bookings </span><span class="sc">\n</span><span class="st"> (Option 1: Barchart)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="design-fundamentals.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb1-13"><a href="design-fundamentals.html#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-14"><a href="design-fundamentals.html#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-15"><a href="design-fundamentals.html#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-16"><a href="design-fundamentals.html#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-17"><a href="design-fundamentals.html#cb1-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
-<span id="cb1-18"><a href="design-fundamentals.html#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
-<span id="cb1-19"><a href="design-fundamentals.html#cb1-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-20"><a href="design-fundamentals.html#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="design-fundamentals.html#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Waffle Map</span></span>
-<span id="cb1-22"><a href="design-fundamentals.html#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
-<span id="cb1-23"><a href="design-fundamentals.html#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="design-fundamentals.html#cb1-24" aria-hidden="true" tabindex="-1"></a>waffle <span class="ot">&lt;-</span> bookingdata <span class="sc">%&gt;%</span></span>
-<span id="cb1-25"><a href="design-fundamentals.html#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
-<span id="cb1-26"><a href="design-fundamentals.html#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">bookings =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-27"><a href="design-fundamentals.html#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hotel =</span> <span class="fu">relevel</span>(<span class="fu">as.factor</span>(hotel), <span class="st">&quot;Resort Hotel&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-28"><a href="design-fundamentals.html#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> hotel, <span class="at">values =</span> bookings)) <span class="sc">+</span></span>
-<span id="cb1-29"><a href="design-fundamentals.html#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_waffle</span>(<span class="at">n_rows =</span> <span class="dv">10</span>, </span>
-<span id="cb1-30"><a href="design-fundamentals.html#cb1-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="fl">0.5</span>, </span>
-<span id="cb1-31"><a href="design-fundamentals.html#cb1-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;#ffffff&quot;</span>, </span>
-<span id="cb1-32"><a href="design-fundamentals.html#cb1-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">flip =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-33"><a href="design-fundamentals.html#cb1-33" aria-hidden="true" tabindex="-1"></a>                <span class="at">make_proportional =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb1-34"><a href="design-fundamentals.html#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;City Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>,</span>
-<span id="cb1-35"><a href="design-fundamentals.html#cb1-35" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;Resort Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-36"><a href="design-fundamentals.html#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb1-37"><a href="design-fundamentals.html#cb1-37" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Hotel Bookings </span><span class="sc">\n</span><span class="st"> (Option 2, Waffle Chart)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-38"><a href="design-fundamentals.html#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb1-39"><a href="design-fundamentals.html#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-40"><a href="design-fundamentals.html#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_enhance_waffle</span>() <span class="sc">+</span></span>
-<span id="cb1-41"><a href="design-fundamentals.html#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
-<span id="cb1-42"><a href="design-fundamentals.html#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="design-fundamentals.html#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert the two plots as one figure</span></span>
-<span id="cb1-44"><a href="design-fundamentals.html#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(barchart, waffle, </span>
-<span id="cb1-45"><a href="design-fundamentals.html#cb1-45" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>It can be tempting to skew things to create a clean visualization. Taking a map or geographical visualization as an example, some simplifications are okay (e.g. smoothing the borders of a map, omitting rivers, etc). But if you go too far, you risk creating a visual that is misleading. Look at the (real) infographic or stylized map below showing hospitalizations for Covid-19; this “map” implies geographical borders that don’t exist.</p>
-<p>As a rule, don’t imply relationships that don’t exist (e.g. geographical borders) or erase relationships that do exist. Don’t let design overrule substance.</p>
-<div class="figure">
-<img src="3_HexMap.png" title="Stylized Map" alt="" />
-<p class="caption">See the stylized map on the left indicating hospitalizations of Covid-19 compared with the true geography. Note that Rhode Island does not border New Hampshire, and DC does not border Connecticut.</p>
-</div>
-</div>
-</div>
-<div id="second-test" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> 15 Second Test</h2>
-<p>Visualizations should be able to more or less stand on their own (perhaps with some footnotes). I shouldn’t need to read the report to understand what a visualization is showing me. And ideally, it shouldn’t take very long at all for me to understand what a graph is showing me.</p>
-<p>Let’s make a quick visualization showing the number of completed stays, by hotel, over time.</p>
+<p>We see an interesting pattern emerge…there’s kind of a floor around $50 and few rooms are booked below that for a while. We can add a line to the plot to help people see it.</p>
+<p>Let’s look at lead time for prices below versus above $50</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="comparing-quantities.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="comparing-quantities.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(adr<span class="sc">&lt;=</span><span class="dv">50</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="comparing-quantities.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">median_lead =</span> <span class="fu">median</span>(lead_time))</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   `adr &lt;= 50` median_lead
+##   &lt;lgl&gt;             &lt;dbl&gt;
+## 1 FALSE                75
+## 2 TRUE                 19</code></pre>
+<div id="overplotting-and-jittering" class="section level4" number="9.0.1.1">
+<h4><span class="header-section-number">9.0.1.1</span> Overplotting and Jittering</h4>
+<p>We mentioned above that if you plot every one of the ~120K bookings on a plot, it’s going to be very crowded, so we took a smaller sample. But sometimes, even sampling isn’t enough, or it won’t resolve the issue.</p>
+<p>Let’s suppose we want to look for a pattern in parking requirements in last minute stays…does everyone who books at the last minute arrive by car? And does group size matter (families vs business travelers?) So we have three variables here: lead time (numerical), group size (numerical), and whether the guests need a parking spot (nominal). We’ll just look at stays booked in the last week before the stay (and again, just take a small sample of the data since we have so many data points in this dataset).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="comparing-quantities.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a scatterplot comparing group size, booking time </span></span>
+<span id="cb4-2"><a href="comparing-quantities.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">### and whether parking is needed</span></span>
+<span id="cb4-3"><a href="comparing-quantities.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="comparing-quantities.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the seed so that the sample is reproducible</span></span>
+<span id="cb4-5"><a href="comparing-quantities.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">678</span>)</span>
+<span id="cb4-6"><a href="comparing-quantities.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="comparing-quantities.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the plot</span></span>
+<span id="cb4-8"><a href="comparing-quantities.html#cb4-8" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="comparing-quantities.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lead_time<span class="sc">&lt;=</span><span class="dv">7</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="comparing-quantities.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">%&gt;%</span>          <span class="co"># Sample just 5% of the data</span></span>
+<span id="cb4-11"><a href="comparing-quantities.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group_size =</span> children <span class="sc">+</span> adults,</span>
+<span id="cb4-12"><a href="comparing-quantities.html#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">car =</span> <span class="fu">ifelse</span>(required_car_parking_spaces <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;Driving&quot;</span>, <span class="st">&quot;Other transportation&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="comparing-quantities.html#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(group_size<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="comparing-quantities.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lead_time, <span class="at">y =</span> group_size, <span class="at">color =</span> car)) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="comparing-quantities.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-16"><a href="comparing-quantities.html#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Guest Transportation&quot;</span>,</span>
+<span id="cb4-17"><a href="comparing-quantities.html#cb4-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Booking Lead Time (Days)&quot;</span>,</span>
+<span id="cb4-18"><a href="comparing-quantities.html#cb4-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Group Size&quot;</span>,</span>
+<span id="cb4-19"><a href="comparing-quantities.html#cb4-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Transportation Method by Group Size and Booking Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="comparing-quantities.html#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb4-21"><a href="comparing-quantities.html#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#00759a&quot;</span>, <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="comparing-quantities.html#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb4-23"><a href="comparing-quantities.html#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb4-24"><a href="comparing-quantities.html#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-25"><a href="comparing-quantities.html#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb4-26"><a href="comparing-quantities.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>))</span></code></pre></div>
 <p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>You can see it, right? We see the annual pattern of bookings by two hotels over two years or so. Which hotel seems to have seasonality in demand?</p>
-</div>
-<div id="fixing-cluttered-visualizations" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Fixing Cluttered Visualizations</h2>
-<p>Sometimes, it feels like there’s no way to keep a visualization clean and intuitive. “But there’s too much I need to include, and I can’t drop any of it!” Here are a couple of strategies to try.</p>
-<div id="facet-to-make-multiple-visualizations" class="section level3" number="4.6.1">
-<h3><span class="header-section-number">4.6.1</span> Facet to make Multiple Visualizations</h3>
-<p>Let’s look at the trend in sales of meal packages over time by hotel. Meals are high margin, so we want more guests to buy them. By looking at the percentage of guests getting meals, we can assess how well our agents are upselling.</p>
-<blockquote>
-<p><strong>Meal Service Classifications</strong></p>
-<ul>
-<li>SC: No Meals Included</li>
-<li>BB: “Bed and Breakfast” (1 Meal per Day included in rate)</li>
-<li>HB: “Half Board” (2 Meals per Day included in rate)</li>
-</ul>
-</blockquote>
+<p>Okay, so nobody booking on the day of their stay needs parking. Wait, really? Also, we see 32 points. But there are more data points in the dataset (even after sampling). What’s going on here is <strong>overplotting</strong>…there are dots on top of one another.</p>
+<p>One solution is jittering, where we move points slightly to the side so that we can see them. Instead of <code>geom_point</code> we use <code>geom_jitter</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="comparing-quantities.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a jittered scatterplot comparing group size, booking time </span></span>
+<span id="cb5-2"><a href="comparing-quantities.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">### and whether parking is needed</span></span>
+<span id="cb5-3"><a href="comparing-quantities.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="comparing-quantities.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the seed so that the sample is reproducible (and matches the one up above!)</span></span>
+<span id="cb5-5"><a href="comparing-quantities.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">678</span>)</span>
+<span id="cb5-6"><a href="comparing-quantities.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="comparing-quantities.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the plot</span></span>
+<span id="cb5-8"><a href="comparing-quantities.html#cb5-8" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="comparing-quantities.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lead_time<span class="sc">&lt;=</span><span class="dv">7</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="comparing-quantities.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">%&gt;%</span>          <span class="co"># Sample just 5% of the data</span></span>
+<span id="cb5-11"><a href="comparing-quantities.html#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group_size =</span> children <span class="sc">+</span> adults,</span>
+<span id="cb5-12"><a href="comparing-quantities.html#cb5-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">car =</span> <span class="fu">ifelse</span>(required_car_parking_spaces <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;Driving&quot;</span>, <span class="st">&quot;Other transportation&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="comparing-quantities.html#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(group_size<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="comparing-quantities.html#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lead_time, <span class="at">y =</span> group_size, <span class="at">color =</span> car)) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="comparing-quantities.html#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb5-16"><a href="comparing-quantities.html#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Guest Transportation&quot;</span>,</span>
+<span id="cb5-17"><a href="comparing-quantities.html#cb5-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Booking Lead Time (Days)&quot;</span>,</span>
+<span id="cb5-18"><a href="comparing-quantities.html#cb5-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Group Size&quot;</span>,</span>
+<span id="cb5-19"><a href="comparing-quantities.html#cb5-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Transportation Method by Group Size and Booking Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="comparing-quantities.html#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb5-21"><a href="comparing-quantities.html#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#00759a&quot;</span>, <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="comparing-quantities.html#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb5-23"><a href="comparing-quantities.html#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb5-24"><a href="comparing-quantities.html#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-25"><a href="comparing-quantities.html#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb5-26"><a href="comparing-quantities.html#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>))</span></code></pre></div>
 <p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>What’s wrong with this figure? It’s cluttered, and hard to follow which line is which. There’s also no clear grouping of the lines by hotel. I could switch the colors, or add some kind of dashes, but then I’m asking people to track two things (color and pattern) <em>instead of doing what I want them to do…</em>actually engage with the data.</p>
-<p>Let’s fix this by faceting, splitting the graph into smaller separate graphs, broken up by some other variable. In <code>ggplot</code>, we add a facet with a <code>facet_wrap()</code> and <code>facet_grid()</code> functions. I usually use <code>facet_grid()</code> because it gives more control and lets you facet by more than one variable, but you can use whichever makes the most sense.</p>
+<p>Now we can see that there is quite a bit of diversity and the pattern isn’t so clear. We still have some overplotting, but it’s not as bad. What’s the potential downside? Well, it kind of looks like there are groups with 1.5 guests, but we know that’s not true. WIth jittering, you are slightly altering the values so it’s not a true representation of the underlying data; you might see patterns in the jittered version that don’t exist in real life.</p>
+</div>
+</div>
+<div id="bar-chart" class="section level3" number="9.0.2">
+<h3><span class="header-section-number">9.0.2</span> Bar Chart</h3>
+<p>Bar charts allow people to quickly compare quantities. Unlike scatterplots, they may not show every observation and usually require us to <strong>summarize</strong> the data in some way. The default is often the count of observations, but we may also look at the mean, median, max, etc.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="comparing-quantities.html#cb6-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="comparing-quantities.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> reservation_status, <span class="at">y =</span> adr, <span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="comparing-quantities.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">position =</span> <span class="fu">position_dodge2</span>()) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="comparing-quantities.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="fu">aes</span>(<span class="at">y =</span> adr <span class="sc">+</span> <span class="dv">4</span>, <span class="at">label =</span> <span class="fu">dollar</span>(<span class="fu">round</span>(..y..,<span class="dv">0</span>))), <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb6-5"><a href="comparing-quantities.html#cb6-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb6-6"><a href="comparing-quantities.html#cb6-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb6-7"><a href="comparing-quantities.html#cb6-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> .<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="comparing-quantities.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;#00759a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="comparing-quantities.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Reservation Status&quot;</span>,</span>
+<span id="cb6-10"><a href="comparing-quantities.html#cb6-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb6-11"><a href="comparing-quantities.html#cb6-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Mean ADR ($) by Hotel&quot;</span>,</span>
+<span id="cb6-12"><a href="comparing-quantities.html#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="comparing-quantities.html#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-14"><a href="comparing-quantities.html#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;gray40&quot;</span>),</span>
+<span id="cb6-15"><a href="comparing-quantities.html#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-16"><a href="comparing-quantities.html#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-17"><a href="comparing-quantities.html#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-18"><a href="comparing-quantities.html#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-19"><a href="comparing-quantities.html#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-20"><a href="comparing-quantities.html#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb6-21"><a href="comparing-quantities.html#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
 <p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Now we can see very clearly that there’s been a recent increase in the percentage of bookings with HB (“half-board”) service…the most profitable class. Looks like recent upselling efforts are working and the sales staff should be commended.</p>
-</div>
-<div id="switch-to-a-table" class="section level3" number="4.6.2">
-<h3><span class="header-section-number">4.6.2</span> Switch to a Table</h3>
-<p>It may seem odd that the recommendation in a class about visualizations is, “Don’t make this a visualization.” Going back to our <code>hotel_bookings.csv</code> data, suppose we are having a meeting to discuss the average daily rate quoted to guests from different countries by the meal service (<code>meal</code>) they request. Just $1 makes a big difference times thousands of guests a year, so we want exact numbers to discuss in the meeting.</p>
+<p>One critical consideration is to ensure that the <strong>Y axis starts at zero for bar charts</strong>. It can be very misleading to present a bar graph that doesn’t start at zero because the magnitude of the difference isn’t the same as the total magnitude represented. In fact, <code>geom_bar</code> in <code>ggplot</code> won’t even let you start the Y axis anywhere else…to create the figure on the left I had to “brute force” it with <code>geom_rect</code>.</p>
 <p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>What’s wrong with this visual? The colors aren’t great, it’s very cluttered, and my eyes have to jump around, from the legend to the x-axis, and then up to the labels.</p>
-<p>If you need to include many exact values, it’s time to consider a table. The purpose of visualizations is <strong>not</strong> to give the reader exact values for every observation at a particular point in time. It’s to clearly communicate a point, support intuition, and support comparisons. The table below (Table <a href="design-fundamentals.html#tab:adrtable">4.1</a>) shows the same information but in a much more accessible format.</p>
-<table>
-<caption><span id="tab:adrtable">Table 4.1: </span>Average Daily Rate by Country and Meal Service</caption>
-<thead>
-<tr class="header">
-<th align="left">country</th>
-<th align="right">BB</th>
-<th align="right">HB</th>
-<th align="right">SC</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">ARG</td>
-<td align="right">117.81</td>
-<td align="right">142.47</td>
-<td align="right">108.05</td>
-</tr>
-<tr class="even">
-<td align="left">AUS</td>
-<td align="right">119.68</td>
-<td align="right">184.41</td>
-<td align="right">104.63</td>
-</tr>
-<tr class="odd">
-<td align="left">CHN</td>
-<td align="right">114.92</td>
-<td align="right">134.17</td>
-<td align="right">98.31</td>
-</tr>
-<tr class="even">
-<td align="left">DNK</td>
-<td align="right">117.89</td>
-<td align="right">145.28</td>
-<td align="right">105.07</td>
-</tr>
-<tr class="odd">
-<td align="left">IND</td>
-<td align="right">114.88</td>
-<td align="right">151.06</td>
-<td align="right">101.79</td>
-</tr>
-<tr class="even">
-<td align="left">JPN</td>
-<td align="right">127.72</td>
-<td align="right">128.80</td>
-<td align="right">97.27</td>
-</tr>
-<tr class="odd">
-<td align="left">MEX</td>
-<td align="right">119.37</td>
-<td align="right">179.38</td>
-<td align="right">99.74</td>
-</tr>
-<tr class="even">
-<td align="left">USA</td>
-<td align="right">127.83</td>
-<td align="right">167.22</td>
-<td align="right">101.68</td>
-</tr>
-</tbody>
-</table>
 
-</div>
 </div>
 </div>
             </section>
@@ -546,8 +464,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="exploring-and-communicating-with-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="r-and-the-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="distribution-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="correlation-and-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

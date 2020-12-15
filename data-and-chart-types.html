@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Data and Chart Types | Course Notes - IDSC 4210</title>
+  <meta name="description" content="7 Data and Chart Types | Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Data and Chart Types | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Data and Chart Types | Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro-to-ggplot.html"/>
+<link rel="next" href="distribution-analysis.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-the-dataset-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Load the Dataset for This Course</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#download-the-dataset"><i class="fa fa-check"></i><b>2.2.1</b> Download the Dataset</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#set-working-directory"><i class="fa fa-check"></i><b>2.2.2</b> Set Working Directory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-dataset-into-r"><i class="fa fa-check"></i><b>2.2.3</b> Load Dataset into R</a></li>
+<li class="chapter" data-level="2.2.4" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#examine-the-booking-dataset"><i class="fa fa-check"></i><b>2.2.4</b> Examine the Booking Dataset</a></li>
+<li class="chapter" data-level="2.2.5" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#observations-variables-and-values"><i class="fa fa-check"></i><b>2.2.5</b> Observations, Variables and Values</a></li>
+<li class="chapter" data-level="2.2.6" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#initial-exploration"><i class="fa fa-check"></i><b>2.2.6</b> Initial Exploration</a></li>
+<li class="chapter" data-level="2.2.7" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#missing-data"><i class="fa fa-check"></i><b>2.2.7</b> Missing Data</a></li>
+<li class="chapter" data-level="2.2.8" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#tables-and-counts"><i class="fa fa-check"></i><b>2.2.8</b> Tables and Counts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html"><i class="fa fa-check"></i><b>3</b> Exploring and Communicating with Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
+<li class="chapter" data-level="3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-1-focus-attention"><i class="fa fa-check"></i><b>3.3.1</b> Step 1: Focus Attention</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-2-tell-a-story"><i class="fa fa-check"></i><b>3.3.2</b> Step 2: Tell a Story</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="design-fundamentals.html"><a href="design-fundamentals.html"><i class="fa fa-check"></i><b>4</b> Design Fundamentals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#what-not-to-do"><i class="fa fa-check"></i><b>4.1</b> What Not to Do</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#overly-cluttered-and-unclear"><i class="fa fa-check"></i><b>4.1.1</b> Overly cluttered and unclear</a></li>
+<li class="chapter" data-level="4.1.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#uninterpretable"><i class="fa fa-check"></i><b>4.1.2</b> Uninterpretable</a></li>
+<li class="chapter" data-level="4.1.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#skewed-representation"><i class="fa fa-check"></i><b>4.1.3</b> Skewed Representation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.2</b> Visual Perception Facts</a></li>
+<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.3</b> Color Theory</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.3.1</b> Color and Accessibility</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.4</b> Preattentive Visual Attributes</a></li>
+<li class="chapter" data-level="4.5" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.5</b> Tufte’s Data Visualization Principles</a></li>
+<li class="chapter" data-level="4.6" data-path="design-fundamentals.html"><a href="design-fundamentals.html#second-test"><i class="fa fa-check"></i><b>4.6</b> 15 Second Test</a></li>
+<li class="chapter" data-level="4.7" data-path="design-fundamentals.html"><a href="design-fundamentals.html#fixing-cluttered-visualizations"><i class="fa fa-check"></i><b>4.7</b> Fixing Cluttered Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#facet-to-make-multiple-visualizations"><i class="fa fa-check"></i><b>4.7.1</b> Facet to make Multiple Visualizations</a></li>
+<li class="chapter" data-level="4.7.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#switch-to-a-table"><i class="fa fa-check"></i><b>4.7.2</b> Switch to a Table</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>5</b> R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#using-r-and-the-tidyverse"><i class="fa fa-check"></i><b>5.1</b> Using R and the Tidyverse</a></li>
+<li class="chapter" data-level="5.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#basic-commands"><i class="fa fa-check"></i><b>5.2</b> Basic Commands</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#comments"><i class="fa fa-check"></i><b>5.2.1</b> Comments</a></li>
+<li class="chapter" data-level="5.2.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#storing-objects"><i class="fa fa-check"></i><b>5.2.2</b> Storing objects</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#saving-and-loading-in-data"><i class="fa fa-check"></i><b>5.3</b> Saving and Loading in Data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#csv-comma-separated-values"><i class="fa fa-check"></i><b>5.3.1</b> .csv (Comma Separated Values)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#rds-r-data-file"><i class="fa fa-check"></i><b>5.3.2</b> .rds (R Data File)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#long-vs-wide-data"><i class="fa fa-check"></i><b>5.3.3</b> Long vs Wide Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Filtering the Data</a></li>
+<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating new Variables</a></li>
+<li class="chapter" data-level="5.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering"><i class="fa fa-check"></i><b>5.7</b> Logicals and Filtering</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>6</b> Intro to ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#why-ggplot"><i class="fa fa-check"></i><b>6.1</b> Why ggplot?</a></li>
+<li class="chapter" data-level="6.2" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#resources"><i class="fa fa-check"></i><b>6.2</b> Resources</a></li>
+<li class="chapter" data-level="6.3" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#ggplot2-vs-base-r"><i class="fa fa-check"></i><b>6.3</b> ggplot2 vs Base R</a></li>
+<li class="chapter" data-level="6.4" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#themes"><i class="fa fa-check"></i><b>6.4</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html"><i class="fa fa-check"></i><b>7</b> Data and Chart Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#types-of-data"><i class="fa fa-check"></i><b>7.1</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#categorical-data"><i class="fa fa-check"></i><b>7.1.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#numerical-data"><i class="fa fa-check"></i><b>7.1.2</b> Numerical Data</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#tricky-cases"><i class="fa fa-check"></i><b>7.1.3</b> Tricky Cases</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#calculations-possible-by-data-type"><i class="fa fa-check"></i><b>7.1.4</b> Calculations Possible by Data Type</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#chart-types"><i class="fa fa-check"></i><b>7.2</b> Chart types</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#distribution-plots"><i class="fa fa-check"></i><b>7.2.1</b> Distribution Plots</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#Histogram"><i class="fa fa-check"></i><b>7.2.2</b> Bar Chart</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-and-chart-types.html"><a href="data-and-chart-types.html#line-graphs"><i class="fa fa-check"></i><b>7.2.3</b> Line Graphs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="distribution-analysis.html"><a href="distribution-analysis.html"><i class="fa fa-check"></i><b>8</b> Distribution Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="distribution-analysis.html"><a href="distribution-analysis.html#histograms"><i class="fa fa-check"></i><b>8.1</b> Histograms</a></li>
+<li class="chapter" data-level="8.2" data-path="distribution-analysis.html"><a href="distribution-analysis.html#boxplot"><i class="fa fa-check"></i><b>8.2</b> Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>9</b> Correlation and Regression</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-coefficient"><i class="fa fa-check"></i><b>9.1</b> Correlation Coefficient</a></li>
+<li class="chapter" data-level="9.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#linear-regression"><i class="fa fa-check"></i><b>9.2</b> Linear Regression</a></li>
+<li class="chapter" data-level="9.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#advanced-topics-machine-learning"><i class="fa fa-check"></i><b>9.3</b> Advanced Topics: Machine Learning</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html"><i class="fa fa-check"></i><b>10</b> Parts-To-Whole Analysis</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#why-no-pie"><i class="fa fa-check"></i><b>10.1</b> Why no pie?</a></li>
+<li class="chapter" data-level="10.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#bar-charts"><i class="fa fa-check"></i><b>10.2</b> Bar Charts</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="time-series-analysis.html"><a href="time-series-analysis.html"><i class="fa fa-check"></i><b>11</b> Time Series Analysis</a></li>
+<li class="chapter" data-level="12" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>12</b> Multivariate Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#heatmaps"><i class="fa fa-check"></i><b>12.1</b> Heatmaps</a></li>
+<li class="chapter" data-level="12.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>12.2</b> Treemaps</a></li>
+<li class="chapter" data-level="12.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>12.3</b> Maps and Geographic Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html"><i class="fa fa-check"></i><b>13</b> Interactive Dashboards</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#purpose"><i class="fa fa-check"></i><b>13.1</b> Purpose</a></li>
+<li class="chapter" data-level="13.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#common-tools"><i class="fa fa-check"></i><b>13.2</b> Common Tools</a></li>
+<li class="chapter" data-level="13.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#guidelines-for-dashboards"><i class="fa fa-check"></i><b>13.3</b> Guidelines for Dashboards</a></li>
+<li class="chapter" data-level="13.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#visual-layout"><i class="fa fa-check"></i><b>13.4</b> Visual Layout</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#f-and-z-scanning-patterns"><i class="fa fa-check"></i><b>13.4.1</b> F and Z Scanning Patterns</a></li>
+<li class="chapter" data-level="13.4.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#golden-ratio"><i class="fa fa-check"></i><b>13.4.2</b> Golden Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#project-plan"><i class="fa fa-check"></i><b>13.5</b> Project Plan</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#lay-groundwork"><i class="fa fa-check"></i><b>13.5.1</b> Lay Groundwork</a></li>
+<li class="chapter" data-level="13.5.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>13.5.2</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="13.5.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#develop-concept"><i class="fa fa-check"></i><b>13.5.3</b> Develop Concept</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-and-chart-types" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Data and Chart Types</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="types-of-data" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Types of Data</h2>
+<p>Variables can contain different types of data. These different data types will dictate both what types of analysis are appropriate and what chart types can best help us understand.</p>
+<p>The chart below this shows the different types of data you may commonly encounter. This taxonomy is frequently used and was originally published by <a href="https://science.sciencemag.org/content/103/2684/677">Stanley Stephens in Science</a> in 1946. It is useful but <u>not perfect</u>.</p>
+<p><img src="6_DataTypeDiagram.png" title="Data Types and Examples" /></p>
+<div id="categorical-data" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Categorical Data</h3>
+<p>A variable that contains names or categories is referred to as <strong>categorical data</strong>. Categorical data is always discrete.</p>
+<div id="nominal" class="section level4" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> Nominal</h4>
+<p>Nominal data is called that because one definition of nominal is, “of or relating to a name.” The easiest example of nominal data is a <strong>people’s names</strong>! The key is that there is <strong>no inherent order</strong> to this data. Other examples include colors, music genres, movie titles, country names, etc.</p>
+<p>We can count and categorize nominal data, but we can’t really do mathematical transformations on it. How do you “average” green and purple shirts? Brown?</p>
+</div>
+<div id="ordinal" class="section level4" number="7.1.1.2">
+<h4><span class="header-section-number">7.1.1.2</span> Ordinal</h4>
+<p>Ordinal data has some <strong>order</strong> to it but is still categorical. Examples include: ratings from dissatisfied to satisfied, level of education (no high school diploma, high school, some college, associate’s degree, bachelor’s degree, graduate degree).</p>
+<p>We can count and take the median, but we can’t “average” ordinal data. If we have a customer who is satisfied and one who is not satisfied, the “average” isn’t “somewhat satisfied.” There can also be big differences in the “distance” between categories. There’s a big difference between a high school diploma and a bachelor’s degree, but not as much difference between a bachelor’s degree and a master’s degree.</p>
+<p><em>Note: You will often see ordinal data represented by numbers (e.g. 1-5 on a Likert scale). This data is often analyzed with statistical techniques such as taking the mean or using regression, but it’s not without controversy. For most things, it’s probably okay to transform well-designed survey data and analyze it using the mean. SS Stevens points out:</em></p>
+<blockquote>
+<p>[F]or this ‘illegal’ statisticizing there can be invoked a kind of pragmatic sanction: In numerous instances it leads to fruitful results. While the outlawing of this procedure would probably serve no good purpose, it is proper to point out that means and standard deviations computed on an ordinal scale are in error to the extent that the successive intervals on the scale are unequal in size. When only the rank-order of data is known, we should proceed cautiously with our statistics, and especially with the conclusions we draw from them.</p>
+<p>“On the Theory of Scales of Measurement.” <em>Science.</em> 1946. Vol 103, No 2684, pg 679</p>
+</blockquote>
+</div>
+</div>
+<div id="numerical-data" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Numerical Data</h3>
+<div id="discrete-vs.-continuous" class="section level4" number="7.1.2.1">
+<h4><span class="header-section-number">7.1.2.1</span> Discrete vs. Continuous</h4>
+<p>Numerical data can be either continuous or discrete (sometimes you’ll see people argue that numerical data is all continuous; I disagree). <strong>Discrete data</strong> can only hold certain values. For example, the number of customers who shop in a store, or the number of students in a class. <strong>Continuous data</strong> can take any value in a range. For example, the time between two events.</p>
+<p>We often approximate discrete events as continuous. For large samples, this can often be done without significant impacts. We also convert continuous variables, like income ($48,769), to discrete scales ($30-$50K).</p>
+</div>
+<div id="interval" class="section level4" number="7.1.2.2">
+<h4><span class="header-section-number">7.1.2.2</span> Interval</h4>
+<p>Interval data has an inherent order and the difference between every unit on an interval scale must be the same. However, there is no true zero.</p>
+<p>One example is time. The difference between any two intervals on the time scale (e.g. in minutes) is the same, but there’s no zero. Another example is credit scores, which range from 300-850. Finally, Chess player rankings range from 100-3000.</p>
+<p>You cannot multiply or divide interval data (which means you can’t take percentages)! A 1500-ranked chess player <a href="https://en.wikipedia.org/wiki/Elo_rating_system">isn’t “twice as good” as a 750-ranked player</a>.</p>
+</div>
+<div id="ratio" class="section level4" number="7.1.2.3">
+<h4><span class="header-section-number">7.1.2.3</span> Ratio</h4>
+<p>Ratio data shares all the characteristics of interval data (ordered values on an equidistant scale) but has a true zero. Revenue, number of acorns, age, height of a building, etc are all ratio values.</p>
+</div>
+<div id="measurement-error-and-data-limitations" class="section level4" number="7.1.2.4">
+<h4><span class="header-section-number">7.1.2.4</span> Measurement Error and Data Limitations</h4>
+<p>Context and measurement matters. On the stock markets, trades can be made for fractions of a penny, but when you make a purchase in the store it will be rounded to the nearest penny when tax is calculated (Here’s the <a href="https://www.revisor.mn.gov/statutes/cite/297a.76#stat.297A.76.1">Minnesota state law</a> specifying how that’s done).</p>
+<p>Note any limitations of your instruments or of how the measurements are collected. You may have seen the HBO miniseries <em>Chernobyl.</em> Initial estimates were that the radiation levels were 3.6 Roentgen/hr; but the available dosimeters never anticipated such a disaster this was the highest dose they could measure. The <a href="https://www.youtube.com/watch?v=yPRMx2k1NM8">true dose was 15,000 R/h</a>. Anytime you see a “cliff” in your data, ask why.</p>
+</div>
+</div>
+<div id="tricky-cases" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Tricky Cases</h3>
+<p>It’s important to think through what the data type is because it can affect how you do your analysis. Consider day of the week. We can cross out ratio, because there is no zero-day. There IS a sort of order to them, but does the week start on Sunday or Monday? Does it matter if we just have one week’s worth of data (then we kind of DO have a zero, so maybe DoW represents time)?</p>
+<p>The bottom line is that you need to think it through. Does your analysis make sense?</p>
+</div>
+<div id="calculations-possible-by-data-type" class="section level3" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Calculations Possible by Data Type</h3>
+<p>Different data types allow different types of calculations. Ask yourself, “Is this meaningful in the real world?” Note that your software won’t usually prevent you from attempting to do something “illegal” like average the values of a nominal variable.</p>
+<p><img src="6_DataTypeOperations.png" title="Operations Allowed by Data Type" /></p>
+</div>
+</div>
+<div id="chart-types" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Chart types</h2>
+<p>Let’s walk through a few chart types. Note that you often only need to determine the first level in the data type hierarchy (categorical vs. numerical) to determine which type of chart might be best. There dozens of different plot types and variations that have been developed for the <code>ggplot</code> package, and even more in other software packages, but this core set of chart types is a good starting point.</p>
+<p><em>Note: To keep things a little more organized, I’m not going to be showing all of the code used to generate these plots.</em></p>
+<div id="distribution-plots" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Distribution Plots</h3>
+<p>We should always assess the <em>distribution of a numerical variable</em>, look at the dispersion, and check for outliers. Of course, it’s always good to start with a table. Let’s look at the mean and median of the Average Daily Rate (price) charged by the two different hotels in the <code>hotelbookings</code> dataset.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-and-chart-types.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="data-and-chart-types.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="data-and-chart-types.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">Mean ADR</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dollar</span>(<span class="fu">mean</span>(adr)),</span>
+<span id="cb1-4"><a href="data-and-chart-types.html#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Median ADR</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dollar</span>(<span class="fu">median</span>(adr))) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="data-and-chart-types.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Hotel =</span> hotel) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="data-and-chart-types.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Hotel</th>
+<th align="left">Mean ADR</th>
+<th align="left">Median ADR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">City Hotel</td>
+<td align="left">$105.30</td>
+<td align="left">$99.90</td>
+</tr>
+<tr class="even">
+<td align="left">Resort Hotel</td>
+<td align="left">$94.95</td>
+<td align="left">$75</td>
+</tr>
+</tbody>
+</table>
+<div id="histogram" class="section level4" number="7.2.1.1">
+<h4><span class="header-section-number">7.2.1.1</span> Histogram</h4>
+<p>Histograms allow you to assess the distribution of a numerical variable. Histograms display the frequency (count) or proportion (percentage) of observations in each <em>bin.</em> While you can put more than one group on a histogram (and have two colors of bars) histograms seem to work best when there is just one group.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-and-chart-types.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Create a Histogram</span></span>
+<span id="cb2-2"><a href="data-and-chart-types.html#cb2-2" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="data-and-chart-types.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr<span class="sc">&lt;</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="data-and-chart-types.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(adr)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="data-and-chart-types.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>, <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="data-and-chart-types.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb2-7"><a href="data-and-chart-types.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Average Daily Rate ($)&quot;</span>,</span>
+<span id="cb2-8"><a href="data-and-chart-types.html#cb2-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">addline_format</span>(<span class="st">&quot;Frequency /(Count of Bookings)&quot;</span>),</span>
+<span id="cb2-9"><a href="data-and-chart-types.html#cb2-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">addline_format</span>(<span class="st">&quot;Histogram: Distribution of One Numerical Variable </span></span>
+<span id="cb2-10"><a href="data-and-chart-types.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">                              /(Price of Hotel Rooms)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="data-and-chart-types.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb2-12"><a href="data-and-chart-types.html#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb2-13"><a href="data-and-chart-types.html#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-14"><a href="data-and-chart-types.html#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-15"><a href="data-and-chart-types.html#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-16"><a href="data-and-chart-types.html#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>The distribution above shows a peak but is skewed right. (This histogram is a distribution of prices, which makes sense…we see a distribution that looks “normal” but does show a small number of very expensive hotel rooms.) What’s interesting on this histogram? <strong>How about that spike at $0? Those are rooms given away for free (complementary) for whatever reason!</strong></p>
+<p>One critical decision with histograms is the “bin width” and the number of bins. In ggplot you can either specify <code>bin = n</code> to get <code>n</code> bins (bars) or you can specify <code>binwidth = w</code> to have each bin (bar) cover a range of <code>w</code>. In the example above, I set <code>binwidth = 10</code> so that each bar covers $10 (ie, prices $0-$10 go in the first bin, $10-$20 in the second, and so on).</p>
+<p>What’s the right number of bins? Imagine we have prices…how many observations do you group together? Should a bin cover a $5 range of prices or $50 range? If you have too many or too few bins, you’ll have a hard time seeing any patterns. Here’s the same histogram as above but with a bin width of $200 and $0.25.</p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="density-plot" class="section level4" number="7.2.1.2">
+<h4><span class="header-section-number">7.2.1.2</span> Density Plot</h4>
+<p>Density plots are something you’ve seen frequently, though you may not realize it. The common representation of a standard normal distribution is a density plot! It shows the “density” of a variable over its distribution.</p>
+<p>Density plots are constructed using a kernel (function) density estimator to estimate the probability of an observation landing at any particular spot on the distribution. <strong>You can think of a density plot as a “smoothed” histogram.</strong> The figure below on the right shows the same density plot with an overlaid histogram of the same data.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-and-chart-types.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Create a density plot of the standard normal distribution</span></span>
+<span id="cb3-2"><a href="data-and-chart-types.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First, construct a dataset of 10000 draws from the standard normal</span></span>
+<span id="cb3-3"><a href="data-and-chart-types.html#cb3-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x_values =</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>))</span>
+<span id="cb3-4"><a href="data-and-chart-types.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="data-and-chart-types.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a density plot</span></span>
+<span id="cb3-6"><a href="data-and-chart-types.html#cb3-6" aria-hidden="true" tabindex="-1"></a>densityplot <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="data-and-chart-types.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x_values)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="data-and-chart-types.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#ffffff&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb3-9"><a href="data-and-chart-types.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;X&quot;</span>,</span>
+<span id="cb3-10"><a href="data-and-chart-types.html#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Density of X&quot;</span>,</span>
+<span id="cb3-11"><a href="data-and-chart-types.html#cb3-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">addline_format</span>(<span class="st">&quot;Density Plot: Distribution of One </span></span>
+<span id="cb3-12"><a href="data-and-chart-types.html#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">                              /Numeric Variable&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="data-and-chart-types.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>),</span>
+<span id="cb3-14"><a href="data-and-chart-types.html#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-15"><a href="data-and-chart-types.html#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-16"><a href="data-and-chart-types.html#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-17"><a href="data-and-chart-types.html#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-18"><a href="data-and-chart-types.html#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-19"><a href="data-and-chart-types.html#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-20"><a href="data-and-chart-types.html#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb3-21"><a href="data-and-chart-types.html#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="data-and-chart-types.html#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the density plot but overlay it with a histogram</span></span>
+<span id="cb3-23"><a href="data-and-chart-types.html#cb3-23" aria-hidden="true" tabindex="-1"></a>densityplot_w_histogram <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb3-24"><a href="data-and-chart-types.html#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x_values)) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="data-and-chart-types.html#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#ffffff&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb3-26"><a href="data-and-chart-types.html#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="co"># Plot density instead of count</span></span>
+<span id="cb3-27"><a href="data-and-chart-types.html#cb3-27" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">20</span>,</span>
+<span id="cb3-28"><a href="data-and-chart-types.html#cb3-28" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>,</span>
+<span id="cb3-29"><a href="data-and-chart-types.html#cb3-29" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb3-30"><a href="data-and-chart-types.html#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;X&quot;</span>,</span>
+<span id="cb3-31"><a href="data-and-chart-types.html#cb3-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Density of X&quot;</span>,</span>
+<span id="cb3-32"><a href="data-and-chart-types.html#cb3-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">addline_format</span>(<span class="st">&quot;Density Plot with/ Histogram Overlay&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb3-33"><a href="data-and-chart-types.html#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>),</span>
+<span id="cb3-34"><a href="data-and-chart-types.html#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-35"><a href="data-and-chart-types.html#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-36"><a href="data-and-chart-types.html#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-37"><a href="data-and-chart-types.html#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-38"><a href="data-and-chart-types.html#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-39"><a href="data-and-chart-types.html#cb3-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-40"><a href="data-and-chart-types.html#cb3-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb3-41"><a href="data-and-chart-types.html#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="data-and-chart-types.html#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out both plots next to one another as one figure</span></span>
+<span id="cb3-43"><a href="data-and-chart-types.html#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(densityplot, densityplot_w_histogram, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Density plots are particularly useful for comparing distributions (generally better than putting two histograms on the same plot). This allows us to compare the skewness, outliers, and peaks of two different groups.</p>
+<p>Let’s look at the distribution of prices charged at the two different hotels (City Hotel and Resort Hotel) in our <code>bookingdata</code> dataset. Are the prices different? We see that the City Hotel charges higher prices to more of it’s customers, but there is a “bigger tail” on the Resort Hotel prices. And we can see that the City Hotel provides more complementary hotel rooms (where price is near $0). Interesting!</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-and-chart-types.html#cb4-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="data-and-chart-types.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">&lt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> <span class="co">#Filter out the error(?) of adr = $5400</span></span>
+<span id="cb4-3"><a href="data-and-chart-types.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> adr, <span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="data-and-chart-types.html#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb4-5"><a href="data-and-chart-types.html#cb4-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="data-and-chart-types.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#00759a&quot;</span>, <span class="st">&quot;grey80&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="data-and-chart-types.html#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="data-and-chart-types.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Average Daily Rate (Price)&quot;</span>,</span>
+<span id="cb4-9"><a href="data-and-chart-types.html#cb4-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>,</span>
+<span id="cb4-10"><a href="data-and-chart-types.html#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">addline_format</span>(<span class="st">&quot;Density Plot: Average Daily Rate (Price) for Two Hotels&quot;</span>),</span>
+<span id="cb4-11"><a href="data-and-chart-types.html#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Hotel&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="data-and-chart-types.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>),</span>
+<span id="cb4-13"><a href="data-and-chart-types.html#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-14"><a href="data-and-chart-types.html#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-15"><a href="data-and-chart-types.html#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-16"><a href="data-and-chart-types.html#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="box-plot" class="section level4" number="7.2.1.3">
+<h4><span class="header-section-number">7.2.1.3</span> Box Plot</h4>
+<p>Box Plots allow you to compare multiple distributions. Let’s look at the anatomy of a boxplot:</p>
+<ul>
+<li><p><strong>Median</strong> is the center line (the middle datapoint)</p></li>
+<li><p><strong>1st Quartile</strong> line represents the 25th percentile (25% of the data is below that, 75% is above that)</p></li>
+<li><p><strong>3rd Quartile</strong> line is the 75th percentile</p></li>
+<li><p><strong>IQR</strong> is the range between the 1st and 3rd Quartile</p></li>
+<li><p>The “<strong>whiskers</strong>” usually extend 1.5*IQR beyond the box</p></li>
+<li><p>Points beyond the whiskers are denoted with points/dots and are <strong>outliers</strong></p></li>
+</ul>
+<p><img src="6_BoxplotAnatomy.png" title="Anatomy of a Boxplot" /></p>
+<p>Let’s look at a box plot to compare the distribution of the Average Daily Rate (<code>adr</code>) charged at the two hotels.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-and-chart-types.html#cb5-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="data-and-chart-types.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr<span class="sc">&lt;</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="data-and-chart-types.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hotel, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="data-and-chart-types.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="data-and-chart-types.html#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb5-6"><a href="data-and-chart-types.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">addline_format</span>(<span class="st">&quot;Boxplot: Compare Distribution One Numeric Variable Across Groups /(Distribution of Price Between Hotels)&quot;</span>),</span>
+<span id="cb5-7"><a href="data-and-chart-types.html#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Hotel&quot;</span>,</span>
+<span id="cb5-8"><a href="data-and-chart-types.html#cb5-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>)<span class="sc">+</span></span>
+<span id="cb5-9"><a href="data-and-chart-types.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color=</span><span class="st">&quot;black&quot;</span>),</span>
+<span id="cb5-10"><a href="data-and-chart-types.html#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-11"><a href="data-and-chart-types.html#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-12"><a href="data-and-chart-types.html#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-13"><a href="data-and-chart-types.html#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+<div id="Histogram" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Bar Chart</h3>
+<p>One critical consideration is to ensure that the <strong>Y axis starts at zero for bar charts</strong>. It can be very misleading to present a bar graph that doesn’t start at zero because the magnitude of the difference isn’t the same as the total magnitude represented. In fact, <code>geom_bar</code> in <code>ggplot</code> won’t even let you start the Y axis anywhere else…to create the figure on the left I had to “brute force” it with <code>geom_rect</code>.</p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="line-graphs" class="section level3" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Line Graphs</h3>
+<p>Line graphs are ideal when you want to show trends or show the relationship between two categorical variables. For the next few examples, we’ll switch away from our <code>hotel_bookings.csv</code> data and look at another real dataset of purchase card transactions made by employees of the City of San Jose, CA, USA.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-and-chart-types.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by month</span></span>
+<span id="cb6-2"><a href="data-and-chart-types.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in transaction data </span></span>
+<span id="cb6-3"><a href="data-and-chart-types.html#cb6-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">&quot;SanJosePCardTransactions&quot;</span>)</span>
+<span id="cb6-4"><a href="data-and-chart-types.html#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="data-and-chart-types.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb6-6"><a href="data-and-chart-types.html#cb6-6" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="data-and-chart-types.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-8"><a href="data-and-chart-types.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">date =</span> <span class="fu">min</span>(Date), <span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="data-and-chart-types.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="data-and-chart-types.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#7a0019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="data-and-chart-types.html#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb6-12"><a href="data-and-chart-types.html#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb6-13"><a href="data-and-chart-types.html#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Purchase Card Transactions by Month&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="data-and-chart-types.html#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="data-and-chart-types.html#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb6-16"><a href="data-and-chart-types.html#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb6-17"><a href="data-and-chart-types.html#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f9f5eb&quot;</span>),</span>
+<span id="cb6-18"><a href="data-and-chart-types.html#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb6-19"><a href="data-and-chart-types.html#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb6-20"><a href="data-and-chart-types.html#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb6-21"><a href="data-and-chart-types.html#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Sometimes you might want to plot multiple lines on a plot. There’s one employee who has far more transactions than anyone else.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-and-chart-types.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Analyze total number of transactions by month</span></span>
+<span id="cb7-2"><a href="data-and-chart-types.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with transactions by each employee by month</span></span>
+<span id="cb7-3"><a href="data-and-chart-types.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># only looking at employees who had a month with at least 50 transctions</span></span>
+<span id="cb7-4"><a href="data-and-chart-types.html#cb7-4" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="data-and-chart-types.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CardholderName, Year, Month) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="data-and-chart-types.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">date =</span> <span class="fu">min</span>(Date), <span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="data-and-chart-types.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">max</span>(Count)<span class="sc">&gt;</span><span class="dv">60</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="data-and-chart-types.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> Count, <span class="at">color =</span> CardholderName)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="data-and-chart-types.html#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb7-10"><a href="data-and-chart-types.html#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb7-11"><a href="data-and-chart-types.html#cb7-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb7-12"><a href="data-and-chart-types.html#cb7-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Purchase Card Transactions by Month by Employee&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="data-and-chart-types.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>,   <span class="st">&quot;grey50&quot;</span>,  <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb7-14"><a href="data-and-chart-types.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="data-and-chart-types.html#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb7-16"><a href="data-and-chart-types.html#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb7-17"><a href="data-and-chart-types.html#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f9f5eb&quot;</span>),</span>
+<span id="cb7-18"><a href="data-and-chart-types.html#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-19"><a href="data-and-chart-types.html#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-20"><a href="data-and-chart-types.html#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb7-21"><a href="data-and-chart-types.html#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb7-22"><a href="data-and-chart-types.html#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Who is this and what department do they work for? Let’s make a quick table, looking at the top ten people by the number of purchase card transactions they’ve made.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-and-chart-types.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb8-2"><a href="data-and-chart-types.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="data-and-chart-types.html#cb8-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="data-and-chart-types.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CardholderName, Department) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="data-and-chart-types.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Transactions =</span> <span class="fu">n</span>(), <span class="at">MeanAmount =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Amount), <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="data-and-chart-types.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>Transactions) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="data-and-chart-types.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="data-and-chart-types.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Cardholder Name&quot;</span>, <span class="st">&quot;Department&quot;</span>, <span class="st">&quot;Total Transactions&quot;</span>, <span class="st">&quot;Mean Amount&quot;</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Cardholder Name</th>
+<th align="left">Department</th>
+<th align="right">Total Transactions</th>
+<th align="right">Mean Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">MARCIA ROUVELL</td>
+<td align="left">LIBRARY</td>
+<td align="right">2929</td>
+<td align="right">5.67</td>
+</tr>
+<tr class="even">
+<td align="left">TINA YU TAYLOR</td>
+<td align="left">ENVIRONMENTAL SERVICES</td>
+<td align="right">1663</td>
+<td align="right">311.43</td>
+</tr>
+<tr class="odd">
+<td align="left">ALBERT RODRIGUEZ</td>
+<td align="left">PARKS AND REC</td>
+<td align="right">1596</td>
+<td align="right">251.57</td>
+</tr>
+<tr class="even">
+<td align="left">JULIE CHIOU</td>
+<td align="left">CITY MANAGER</td>
+<td align="right">1314</td>
+<td align="right">278.42</td>
+</tr>
+<tr class="odd">
+<td align="left">MICHELLE KAHIHIKOLO</td>
+<td align="left">FIRE</td>
+<td align="right">1305</td>
+<td align="right">427.99</td>
+</tr>
+</tbody>
+</table>
+<p>If you dig into the data, we see that there were a large number of small dollar transactions for postage purchased by this employee.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro-to-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distribution-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Course Notes - IDSC 4210</title>
-  <meta name="description" content="Course Notes - IDSC 4210" />
+  <title>10 Correlation and Regression | Course Notes - IDSC 4210</title>
+  <meta name="description" content="10 Correlation and Regression | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Course Notes - IDSC 4210" />
+  <meta property="og:title" content="10 Correlation and Regression | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="10 Correlation and Regression | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="installing-r-and-loading-datasets.html"/>
+<link rel="prev" href="comparing-quantities.html"/>
+<link rel="next" href="line-graphs-and-time-series.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,69 +260,31 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Course Notes - IDSC 4210</h1>
-<p class="author"><em>Prepared by Jeff Clement</em></p>
-<p class="date"><em>11/2/2020</em></p>
-</div>
-<div id="interactive-data-visualization-for-business-analytics" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Interactive Data Visualization for Business Analytics</h1>
+<div id="correlation-and-regression" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Correlation and Regression</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="about-the-course" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> About the Course</h2>
-<p>IDSC 4210 is an elective course for the undergraduate Business Analytics minor at the Carlson School of Management. It focuses on the fundamental and widely used exploratory data analysis technique of interactive visualization that is integral to modern business analytics. The key goal of this course is to prepare students for the rapidly changing digital environment faced by companies as it pertains to data-driven decisions. The students will also have hands-on experience with interactive data visualization using modern, state-of-the-art software on real-world datasets.</p>
-<div id="objectives" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Objectives</h3>
-<ol style="list-style-type: decimal">
-<li><p>Explore a set of data and discover meaningful <strong>patterns, insights, and questions.</strong></p>
-<div>
-<blockquote>
-<ul>
-<li><p>Demonstrate an <strong>effective process</strong> to explore data using interactive visualization</p></li>
-<li><p>Given a <strong>business objective</strong>, describe how data discovery <strong>improves</strong> decision making or performance.</p></li>
-<li><p>Identify data types and apply <strong>Few’s Analytic Patterns</strong> for effective analysis</p></li>
-</ul>
-</blockquote>
-</div></li>
-<li><p>Effectively <strong>communicate</strong> patterns and business insight via <strong>data visualization</strong>.</p>
-<div>
-<blockquote>
-<ul>
-<li><p>Articulate the <strong>story</strong> the visualization attempts to convey, and the resulting <strong>action-oriented decision</strong> it informs.</p></li>
-<li><p>Apply appropriate <strong>visualization models</strong> to data</p></li>
-<li><p>Apply effective <strong>object/attribute</strong> <strong>mappings</strong> to visualizations</p></li>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>visualizations</strong></p></li>
-</ul>
-</blockquote>
-</div></li>
-<li><p>Develop effective <strong>interaction</strong> within individual data <strong>visualizations</strong> and <strong>dashboards</strong></p>
-<div>
-<blockquote>
-<ul>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>user experience</strong></p></li>
-<li><p>Identify effective methods for <strong>Sharing</strong> and <strong>Governance</strong> of Interactive Dashboards</p></li>
-</ul>
-</blockquote>
-</div></li>
-</ol>
+<div id="correlation-coefficient" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Correlation Coefficient</h2>
+</div>
+<div id="regression-lines" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Regression Lines</h2>
+<p>The details of regression are beyond the scope of this class (as we’re focused on visualization here and not necessarily whether a particular type of regression is appropriate or informative for a particular dataset and analysis.) There are lots of resources online about how/when to do regression. We’ll discuss two types of regression commonly incorporated into visuals: <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a> (often called Ordinary Least Squares or OLS) and <a href="https://en.wikipedia.org/wiki/Local_regression">Loess Smoothing</a>.</p>
+<div id="linear-regression" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Linear Regression</h3>
+</div>
+<div id="loess-smoothing" class="section level3" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Loess Smoothing</h3>
 </div>
 </div>
-<div id="design-vs.-programming" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Design vs. Programming</h2>
-<p>This course is about both design/communication and programming. You’ve got to have both aspects to be effective in this area. We will gain experience in the programming packages, but there are lots of resources online to help with those.</p>
-<p>The specific software package may vary based on where you work or what type of data you’re using, but learning how to use one package will yield skills that help you next time you need to learn a new package. The design and communication fundamentals translate across software and industry.</p>
-</div>
-<div id="recommended-books" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Recommended Books</h2>
-<ul>
-<li><p><strong>Storytelling With Data</strong> (2015) by Cole Nussbaumer Knaflic, ISBN 978-1119002253 (~$17 used)</p></li>
-<li><p><strong>The Visual Display of Quantitative Information</strong> (2001) by Edward Tufte, ISBN 978-0961392147</p></li>
-<li><p><strong>R for Data Science</strong> (2017) by Hadley Wickham and Garrett Grolemund, ISBN 978-1491910399 (Free digital version online)</p></li>
-<li><p><strong>How Charts Lie</strong> (2020) by Alberto Cairo, ISBN 978-0393358421 ($16 new)</p></li>
-<li><p><strong>The Wall Street Journal Guide to Information Graphics</strong> (2013) by Dona Wong, ISBN 978-0393347289</p></li>
-</ul>
-<p>I re-read these books in Fall 2020 and they all have some good things to offer. There are some contradictions in them, but that’s okay! People have different preferences and there’s no perfect answer to some problems. Tastes also change over time. Overall, they generally agree on the big points.</p>
+<div id="advanced-topics-machine-learning" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Advanced Topics: Machine Learning</h2>
+<p>Machine learning is an incredibly broad topic, but it’s increasingly used across industries. People spend their whole careers on niche topics within machine learning. Machine learning is technically beyond the scope of this class, but we’ll cover two basic methods to at least get a flavor for how it can be used.</p>
+<div id="cluster-analysis" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Cluster Analysis</h3>
+<p>You can also do <a href="https://help.tableau.com/current/pro/desktop/en-us/clustering.htm">cluster analysis in Tableau</a>. Let’s look at the San Jose Purchase Card Data. I’ve asked Tableau to give me 2 clusters. Let’s look at how it clusters the transactions when we plot them on a map. The only information I’ve given Tableau to cluster on is the purchase amount and the state. Remember, Tableau knows nothing about where this data was collected, who the city of San Jose is, etc. But the clusters have a distinct, real-world meaning…in-state vs out-of-state purchases!</p>
+<p><img src="9_PCardClusterAnalysisTableau.png" /></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -330,8 +292,8 @@
           </div>
         </div>
       </div>
-
-<a href="installing-r-and-loading-datasets.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="comparing-quantities.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="line-graphs-and-time-series.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
