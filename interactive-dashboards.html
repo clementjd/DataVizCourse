@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>14 Interactive Dashboards | Course Notes - IDSC 4210</title>
+  <meta name="description" content="14 Interactive Dashboards | Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="14 Interactive Dashboards | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="14 Interactive Dashboards | Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="multivariate-analysis.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-the-dataset-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Load the Dataset for This Course</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#download-the-dataset"><i class="fa fa-check"></i><b>2.2.1</b> Download the Dataset</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#set-working-directory"><i class="fa fa-check"></i><b>2.2.2</b> Set Working Directory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-dataset-into-r"><i class="fa fa-check"></i><b>2.2.3</b> Load Dataset into R</a></li>
+<li class="chapter" data-level="2.2.4" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#examine-the-booking-dataset"><i class="fa fa-check"></i><b>2.2.4</b> Examine the Booking Dataset</a></li>
+<li class="chapter" data-level="2.2.5" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#observations-variables-and-values"><i class="fa fa-check"></i><b>2.2.5</b> Observations, Variables and Values</a></li>
+<li class="chapter" data-level="2.2.6" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#initial-exploration"><i class="fa fa-check"></i><b>2.2.6</b> Initial Exploration</a></li>
+<li class="chapter" data-level="2.2.7" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#missing-data"><i class="fa fa-check"></i><b>2.2.7</b> Missing Data</a></li>
+<li class="chapter" data-level="2.2.8" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#tables-and-counts"><i class="fa fa-check"></i><b>2.2.8</b> Tables and Counts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html"><i class="fa fa-check"></i><b>3</b> Exploring and Communicating with Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
+<li class="chapter" data-level="3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-1-focus-attention"><i class="fa fa-check"></i><b>3.3.1</b> Step 1: Focus Attention</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-2-tell-a-story"><i class="fa fa-check"></i><b>3.3.2</b> Step 2: Tell a Story</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="design-fundamentals.html"><a href="design-fundamentals.html"><i class="fa fa-check"></i><b>4</b> Design Fundamentals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
+<li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
+<li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#chartjunk"><i class="fa fa-check"></i><b>4.4.1</b> Chartjunk</a></li>
+<li class="chapter" data-level="4.4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#graphical-integrity"><i class="fa fa-check"></i><b>4.4.2</b> Graphical Integrity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="design-fundamentals.html"><a href="design-fundamentals.html#second-test"><i class="fa fa-check"></i><b>4.5</b> 15 Second Test</a></li>
+<li class="chapter" data-level="4.6" data-path="design-fundamentals.html"><a href="design-fundamentals.html#fixing-cluttered-visualizations"><i class="fa fa-check"></i><b>4.6</b> Fixing Cluttered Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#facet-to-make-multiple-visualizations"><i class="fa fa-check"></i><b>4.6.1</b> Facet to make Multiple Visualizations</a></li>
+<li class="chapter" data-level="4.6.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#switch-to-a-table"><i class="fa fa-check"></i><b>4.6.2</b> Switch to a Table</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>5</b> R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#using-r-and-the-tidyverse"><i class="fa fa-check"></i><b>5.1</b> Using R and the Tidyverse</a></li>
+<li class="chapter" data-level="5.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#basic-commands"><i class="fa fa-check"></i><b>5.2</b> Basic Commands</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#comments"><i class="fa fa-check"></i><b>5.2.1</b> Comments</a></li>
+<li class="chapter" data-level="5.2.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#storing-objects"><i class="fa fa-check"></i><b>5.2.2</b> Storing objects</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#saving-and-loading-in-data"><i class="fa fa-check"></i><b>5.3</b> Saving and Loading in Data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#csv-comma-separated-values"><i class="fa fa-check"></i><b>5.3.1</b> .csv (Comma Separated Values)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#rds-r-data-file"><i class="fa fa-check"></i><b>5.3.2</b> .rds (R Data File)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#long-vs-wide-data"><i class="fa fa-check"></i><b>5.3.3</b> Long vs Wide Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a></li>
+<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating new Variables</a></li>
+<li class="chapter" data-level="5.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.7</b> Grouping and Summarizing</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#outside-ggplot"><i class="fa fa-check"></i><b>5.7.1</b> Outside ggplot</a></li>
+<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.2</b> Inside ggplot with stat_summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>6</b> Intro to ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#why-ggplot"><i class="fa fa-check"></i><b>6.1</b> Why ggplot?</a></li>
+<li class="chapter" data-level="6.2" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#resources"><i class="fa fa-check"></i><b>6.2</b> Resources</a></li>
+<li class="chapter" data-level="6.3" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#ggplot2-vs-base-r"><i class="fa fa-check"></i><b>6.3</b> ggplot2 vs Base R</a></li>
+<li class="chapter" data-level="6.4" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>6.4</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="6.5" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#themes"><i class="fa fa-check"></i><b>6.5</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>7</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-types.html"><a href="data-types.html#categorical-data"><i class="fa fa-check"></i><b>7.1</b> Categorical Data</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="data-types.html"><a href="data-types.html#nominal"><i class="fa fa-check"></i><b>7.1.1</b> Nominal</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-types.html"><a href="data-types.html#ordinal"><i class="fa fa-check"></i><b>7.1.2</b> Ordinal</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-types.html"><a href="data-types.html#numerical-data"><i class="fa fa-check"></i><b>7.2</b> Numerical Data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-types.html"><a href="data-types.html#discrete-vs.-continuous"><i class="fa fa-check"></i><b>7.2.1</b> Discrete vs. Continuous</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-types.html"><a href="data-types.html#interval"><i class="fa fa-check"></i><b>7.2.2</b> Interval</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-types.html"><a href="data-types.html#ratio"><i class="fa fa-check"></i><b>7.2.3</b> Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-types.html"><a href="data-types.html#measurement-error-and-data-limitations"><i class="fa fa-check"></i><b>7.3</b> Measurement Error and Data Limitations</a></li>
+<li class="chapter" data-level="7.4" data-path="data-types.html"><a href="data-types.html#tricky-cases"><i class="fa fa-check"></i><b>7.4</b> Tricky Cases</a></li>
+<li class="chapter" data-level="7.5" data-path="data-types.html"><a href="data-types.html#calculations-possible-by-data-type"><i class="fa fa-check"></i><b>7.5</b> Calculations Possible by Data Type</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="distribution-analysis.html"><a href="distribution-analysis.html"><i class="fa fa-check"></i><b>8</b> Distribution Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="distribution-analysis.html"><a href="distribution-analysis.html#histogram"><i class="fa fa-check"></i><b>8.1</b> Histograms</a></li>
+<li class="chapter" data-level="8.2" data-path="distribution-analysis.html"><a href="distribution-analysis.html#density-plot"><i class="fa fa-check"></i><b>8.2</b> Density Plot</a></li>
+<li class="chapter" data-level="8.3" data-path="distribution-analysis.html"><a href="distribution-analysis.html#box-plot"><i class="fa fa-check"></i><b>8.3</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="comparing-quantities.html"><a href="comparing-quantities.html"><i class="fa fa-check"></i><b>9</b> Comparing Quantities</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="comparing-quantities.html"><a href="comparing-quantities.html#scatterplot"><i class="fa fa-check"></i><b>9.0.1</b> Scatterplot</a></li>
+<li class="chapter" data-level="9.0.2" data-path="comparing-quantities.html"><a href="comparing-quantities.html#bar-chart"><i class="fa fa-check"></i><b>9.0.2</b> Bar Chart</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and Regression</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-coefficient"><i class="fa fa-check"></i><b>10.1</b> Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#regression-lines"><i class="fa fa-check"></i><b>10.2</b> Regression Lines</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#linear-regression"><i class="fa fa-check"></i><b>10.2.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="10.2.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#loess-smoothing"><i class="fa fa-check"></i><b>10.2.2</b> Loess Smoothing</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#advanced-topics-machine-learning"><i class="fa fa-check"></i><b>10.3</b> Advanced Topics: Machine Learning</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#cluster-analysis"><i class="fa fa-check"></i><b>10.3.1</b> Cluster Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html"><i class="fa fa-check"></i><b>11</b> Line Graphs and Time Series</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#line-graphs"><i class="fa fa-check"></i><b>11.1</b> Line Graphs</a></li>
+<li class="chapter" data-level="11.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#other-tools-for-time-series"><i class="fa fa-check"></i><b>11.2</b> Other Tools for Time Series</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#scatterplot-1"><i class="fa fa-check"></i><b>11.2.1</b> Scatterplot</a></li>
+<li class="chapter" data-level="11.2.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#box-plot-1"><i class="fa fa-check"></i><b>11.2.2</b> Box plot</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#seasonality-and-cycles"><i class="fa fa-check"></i><b>11.3</b> Seasonality and Cycles</a></li>
+<li class="chapter" data-level="11.4" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#variations"><i class="fa fa-check"></i><b>11.4</b> Variations</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#slope-graph"><i class="fa fa-check"></i><b>11.4.1</b> <strong>Slope Graph</strong></a></li>
+<li class="chapter" data-level="11.4.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#tufte-style-line-graph"><i class="fa fa-check"></i><b>11.4.2</b> Tufte-Style Line Graph</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html"><i class="fa fa-check"></i><b>12</b> Parts-To-Whole Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#why-no-pie"><i class="fa fa-check"></i><b>12.1</b> Why no pie?</a></li>
+<li class="chapter" data-level="12.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#bar-charts"><i class="fa fa-check"></i><b>12.2</b> Bar Charts</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>13</b> Multivariate Analysis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#heatmaps"><i class="fa fa-check"></i><b>13.1</b> Heatmaps</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>13.2</b> Treemaps</a></li>
+<li class="chapter" data-level="13.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>13.3</b> Maps and Geographic Plots</a></li>
+<li class="chapter" data-level="13.4" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#sankey-plots"><i class="fa fa-check"></i><b>13.4</b> Sankey Plots</a></li>
+<li class="chapter" data-level="13.5" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#network-diagrams"><i class="fa fa-check"></i><b>13.5</b> Network Diagrams</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html"><i class="fa fa-check"></i><b>14</b> Interactive Dashboards</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#purpose"><i class="fa fa-check"></i><b>14.1</b> Purpose</a></li>
+<li class="chapter" data-level="14.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#common-tools"><i class="fa fa-check"></i><b>14.2</b> Common Tools</a></li>
+<li class="chapter" data-level="14.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#guidelines-for-dashboards"><i class="fa fa-check"></i><b>14.3</b> Guidelines for Dashboards</a></li>
+<li class="chapter" data-level="14.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#visual-layout"><i class="fa fa-check"></i><b>14.4</b> Visual Layout</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#f-and-z-scanning-patterns"><i class="fa fa-check"></i><b>14.4.1</b> F and Z Scanning Patterns</a></li>
+<li class="chapter" data-level="14.4.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#golden-ratio"><i class="fa fa-check"></i><b>14.4.2</b> Golden Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#project-plan"><i class="fa fa-check"></i><b>14.5</b> Project Plan</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#lay-groundwork"><i class="fa fa-check"></i><b>14.5.1</b> Lay Groundwork</a></li>
+<li class="chapter" data-level="14.5.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>14.5.2</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="14.5.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#develop-concept"><i class="fa fa-check"></i><b>14.5.3</b> Develop Concept</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactive-dashboards" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> Interactive Dashboards</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="purpose" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> Purpose</h2>
+<p>The goal with an interactive dashboard is often not “tell a story” as much as it is to “enable the user to explore the data for themselves.” <strong>But that doesn’t mean we send them out into the vast reaches of the universe all alone!</strong> They can get lost in the data or miss valuable insights if we don’t design an effective dashboard.</p>
+<p>Here’s an example of an interactive dashboard that allows users to explore purchase card transactions made by municipal employees of the City of San Jose. Purchase cards (credit cards) linked to corporate or government accounts are an important tool that streamline travel and expense reports, but require oversight to keep spending under control.</p>
+<p><a href="https://clementjd.shinyapps.io/pcard_shiny_dashboard/"><img src="12_dashboardscreenshot.png" title="Interactive Dashboard to explore purchase card transactions made by city employees." /></a></p>
+<p><a href="https://clementjd.shinyapps.io/pcard_shiny_dashboard/">You can try it out here.</a> Is this dashboard perfect? Certainly not. (For one thing, it’s not even finished yet…). But it’s pretty good. The exact parameters of the dashboard would need to be determined by the end-user…probably the finance staff or department managers.</p>
+</div>
+<div id="common-tools" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> Common Tools</h2>
+<p>There are a variety of tools commonly used to build dashboards. Which tool you use will depend on your firm, security and pricing requirements.</p>
+<ul>
+<li><p><a href="https://www.tableau.com/">Tableau</a></p></li>
+<li><p><a href="https://powerbi.microsoft.com/en-us/">Microsoft PowerBI</a></p></li>
+<li><p><a href="https://www.qlik.com/us/products/qlik-sense">Qlik Sense</a></p></li>
+<li><p><a href="https://shiny.rstudio.com/">RStudio Shiny</a></p></li>
+<li><p><a href="https://datastudio.google.com/">Google Data Studio</a></p></li>
+</ul>
+<p>Even Microsoft Excel can be used to build powerful dashboards. It’s not about the tool so much as intentional design and thought about how the user will interact with the data.</p>
+</div>
+<div id="guidelines-for-dashboards" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> Guidelines for Dashboards</h2>
+</div>
+<div id="visual-layout" class="section level2" number="14.4">
+<h2><span class="header-section-number">14.4</span> Visual Layout</h2>
+<div id="f-and-z-scanning-patterns" class="section level3" number="14.4.1">
+<h3><span class="header-section-number">14.4.1</span> F and Z Scanning Patterns</h3>
+</div>
+<div id="golden-ratio" class="section level3" number="14.4.2">
+<h3><span class="header-section-number">14.4.2</span> Golden Ratio</h3>
+</div>
+</div>
+<div id="project-plan" class="section level2" number="14.5">
+<h2><span class="header-section-number">14.5</span> Project Plan</h2>
+<div id="lay-groundwork" class="section level3" number="14.5.1">
+<h3><span class="header-section-number">14.5.1</span> Lay Groundwork</h3>
+</div>
+<div id="exploratory-data-analysis" class="section level3" number="14.5.2">
+<h3><span class="header-section-number">14.5.2</span> Exploratory Data Analysis</h3>
+<p>You may begin exploratory data analysis at this point. You should also be familiar with the data and the data dictionary, and familiarize yourself</p>
+</div>
+<div id="develop-concept" class="section level3" number="14.5.3">
+<h3><span class="header-section-number">14.5.3</span> Develop Concept</h3>
+<p>Before you do any coding, you should develop a plan for what you’re going to build. For shorter projects, this may just be a sketch on paper or on a whiteboard. If this is for a client, consider a mockup (eg, in Visio, Powerpoint, or Adobe Illustrator) to get their buy-in. An example of a sketch for a dashboard is below.</p>
+<p><img src="7_DashboardSketch.png" title="Sketch of a Dashboard" width="428" /></p>
+<p>Changes can happen, and it’s expected that as you look at the data, you’ll adjust how you lay things out. Notice that this sketch has some edits and notes on it. The sketch is just intended to help you be deliberate about your dashboard and to gain consensus among the team <strong>before valuable time is spent coding and building.</strong></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="multivariate-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
