@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 Parts-To-Whole Analysis | Course Notes - IDSC 4210</title>
+  <meta name="description" content="12 Parts-To-Whole Analysis | Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 Parts-To-Whole Analysis | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Parts-To-Whole Analysis | Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="line-graphs-and-time-series.html"/>
+<link rel="next" href="multivariate-analysis.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-the-dataset-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Load the Dataset for This Course</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#download-the-dataset"><i class="fa fa-check"></i><b>2.2.1</b> Download the Dataset</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#set-working-directory"><i class="fa fa-check"></i><b>2.2.2</b> Set Working Directory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-dataset-into-r"><i class="fa fa-check"></i><b>2.2.3</b> Load Dataset into R</a></li>
+<li class="chapter" data-level="2.2.4" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#examine-the-booking-dataset"><i class="fa fa-check"></i><b>2.2.4</b> Examine the Booking Dataset</a></li>
+<li class="chapter" data-level="2.2.5" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#observations-variables-and-values"><i class="fa fa-check"></i><b>2.2.5</b> Observations, Variables and Values</a></li>
+<li class="chapter" data-level="2.2.6" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#initial-exploration"><i class="fa fa-check"></i><b>2.2.6</b> Initial Exploration</a></li>
+<li class="chapter" data-level="2.2.7" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#missing-data"><i class="fa fa-check"></i><b>2.2.7</b> Missing Data</a></li>
+<li class="chapter" data-level="2.2.8" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#tables-and-counts"><i class="fa fa-check"></i><b>2.2.8</b> Tables and Counts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html"><i class="fa fa-check"></i><b>3</b> Exploring and Communicating with Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
+<li class="chapter" data-level="3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-1-focus-attention"><i class="fa fa-check"></i><b>3.3.1</b> Step 1: Focus Attention</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-2-tell-a-story"><i class="fa fa-check"></i><b>3.3.2</b> Step 2: Tell a Story</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="design-fundamentals.html"><a href="design-fundamentals.html"><i class="fa fa-check"></i><b>4</b> Design Fundamentals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
+<li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
+<li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#chartjunk"><i class="fa fa-check"></i><b>4.4.1</b> Chartjunk</a></li>
+<li class="chapter" data-level="4.4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#graphical-integrity"><i class="fa fa-check"></i><b>4.4.2</b> Graphical Integrity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="design-fundamentals.html"><a href="design-fundamentals.html#second-test"><i class="fa fa-check"></i><b>4.5</b> 15 Second Test</a></li>
+<li class="chapter" data-level="4.6" data-path="design-fundamentals.html"><a href="design-fundamentals.html#fixing-cluttered-visualizations"><i class="fa fa-check"></i><b>4.6</b> Fixing Cluttered Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#facet-to-make-multiple-visualizations"><i class="fa fa-check"></i><b>4.6.1</b> Facet to make Multiple Visualizations</a></li>
+<li class="chapter" data-level="4.6.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#switch-to-a-table"><i class="fa fa-check"></i><b>4.6.2</b> Switch to a Table</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>5</b> R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#using-r-and-the-tidyverse"><i class="fa fa-check"></i><b>5.1</b> Using R and the Tidyverse</a></li>
+<li class="chapter" data-level="5.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#basic-commands"><i class="fa fa-check"></i><b>5.2</b> Basic Commands</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#comments"><i class="fa fa-check"></i><b>5.2.1</b> Comments</a></li>
+<li class="chapter" data-level="5.2.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#storing-objects"><i class="fa fa-check"></i><b>5.2.2</b> Storing objects</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#saving-and-loading-in-data"><i class="fa fa-check"></i><b>5.3</b> Saving and Loading in Data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#csv-comma-separated-values"><i class="fa fa-check"></i><b>5.3.1</b> .csv (Comma Separated Values)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#rds-r-data-file"><i class="fa fa-check"></i><b>5.3.2</b> .rds (R Data File)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#long-vs-wide-data"><i class="fa fa-check"></i><b>5.3.3</b> Long vs Wide Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a></li>
+<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating new Variables</a></li>
+<li class="chapter" data-level="5.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.7</b> Grouping and Summarizing</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#outside-ggplot"><i class="fa fa-check"></i><b>5.7.1</b> Outside ggplot</a></li>
+<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.2</b> Inside ggplot with stat_summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>6</b> Intro to ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#why-ggplot"><i class="fa fa-check"></i><b>6.1</b> Why ggplot?</a></li>
+<li class="chapter" data-level="6.2" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#resources"><i class="fa fa-check"></i><b>6.2</b> Resources</a></li>
+<li class="chapter" data-level="6.3" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#ggplot2-vs-base-r"><i class="fa fa-check"></i><b>6.3</b> ggplot2 vs Base R</a></li>
+<li class="chapter" data-level="6.4" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>6.4</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="6.5" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#themes"><i class="fa fa-check"></i><b>6.5</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>7</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-types.html"><a href="data-types.html#categorical-data"><i class="fa fa-check"></i><b>7.1</b> Categorical Data</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="data-types.html"><a href="data-types.html#nominal"><i class="fa fa-check"></i><b>7.1.1</b> Nominal</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-types.html"><a href="data-types.html#ordinal"><i class="fa fa-check"></i><b>7.1.2</b> Ordinal</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-types.html"><a href="data-types.html#numerical-data"><i class="fa fa-check"></i><b>7.2</b> Numerical Data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-types.html"><a href="data-types.html#discrete-vs.-continuous"><i class="fa fa-check"></i><b>7.2.1</b> Discrete vs. Continuous</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-types.html"><a href="data-types.html#interval"><i class="fa fa-check"></i><b>7.2.2</b> Interval</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-types.html"><a href="data-types.html#ratio"><i class="fa fa-check"></i><b>7.2.3</b> Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-types.html"><a href="data-types.html#measurement-error-and-data-limitations"><i class="fa fa-check"></i><b>7.3</b> Measurement Error and Data Limitations</a></li>
+<li class="chapter" data-level="7.4" data-path="data-types.html"><a href="data-types.html#tricky-cases"><i class="fa fa-check"></i><b>7.4</b> Tricky Cases</a></li>
+<li class="chapter" data-level="7.5" data-path="data-types.html"><a href="data-types.html#calculations-possible-by-data-type"><i class="fa fa-check"></i><b>7.5</b> Calculations Possible by Data Type</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="distribution-analysis.html"><a href="distribution-analysis.html"><i class="fa fa-check"></i><b>8</b> Distribution Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="distribution-analysis.html"><a href="distribution-analysis.html#histogram"><i class="fa fa-check"></i><b>8.1</b> Histograms</a></li>
+<li class="chapter" data-level="8.2" data-path="distribution-analysis.html"><a href="distribution-analysis.html#density-plot"><i class="fa fa-check"></i><b>8.2</b> Density Plot</a></li>
+<li class="chapter" data-level="8.3" data-path="distribution-analysis.html"><a href="distribution-analysis.html#box-plot"><i class="fa fa-check"></i><b>8.3</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="comparing-quantities.html"><a href="comparing-quantities.html"><i class="fa fa-check"></i><b>9</b> Comparing Quantities</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="comparing-quantities.html"><a href="comparing-quantities.html#scatterplot"><i class="fa fa-check"></i><b>9.0.1</b> Scatterplot</a></li>
+<li class="chapter" data-level="9.0.2" data-path="comparing-quantities.html"><a href="comparing-quantities.html#bar-chart"><i class="fa fa-check"></i><b>9.0.2</b> Bar Chart</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and Regression</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation"><i class="fa fa-check"></i><b>10.1</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-coefficient"><i class="fa fa-check"></i><b>10.1.1</b> Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-vs-causation"><i class="fa fa-check"></i><b>10.1.2</b> Correlation vs Causation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#causal-inference"><i class="fa fa-check"></i><b>10.2</b> Causal Inference</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#resources-for-causal-inference"><i class="fa fa-check"></i><b>10.2.1</b> Resources for Causal Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#regression-lines"><i class="fa fa-check"></i><b>10.3</b> Regression Lines</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#linear-regression"><i class="fa fa-check"></i><b>10.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="10.3.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#loess-smoothing"><i class="fa fa-check"></i><b>10.3.2</b> Loess Smoothing</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#warning-berksons-paradox"><i class="fa fa-check"></i><b>10.4</b> Warning: Berkson’s Paradox</a></li>
+<li class="chapter" data-level="10.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#advanced-topics-machine-learning"><i class="fa fa-check"></i><b>10.5</b> Advanced Topics: Machine Learning</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#classification-tree"><i class="fa fa-check"></i><b>10.5.1</b> Classification Tree</a></li>
+<li class="chapter" data-level="10.5.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#cluster-analysis"><i class="fa fa-check"></i><b>10.5.2</b> Cluster Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html"><i class="fa fa-check"></i><b>11</b> Line Graphs and Time Series</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#line-graphs"><i class="fa fa-check"></i><b>11.1</b> Line Graphs</a></li>
+<li class="chapter" data-level="11.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#other-tools-for-time-series"><i class="fa fa-check"></i><b>11.2</b> Other Tools for Time Series</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#scatterplot-1"><i class="fa fa-check"></i><b>11.2.1</b> Scatterplot</a></li>
+<li class="chapter" data-level="11.2.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#box-plot-1"><i class="fa fa-check"></i><b>11.2.2</b> Box plot</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#seasonality-cycles-and-normalizing-data"><i class="fa fa-check"></i><b>11.3</b> Seasonality, Cycles, and “Normalizing” Data</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#plotting-cyclical-data"><i class="fa fa-check"></i><b>11.3.1</b> Plotting Cyclical Data</a></li>
+<li class="chapter" data-level="11.3.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#normalization"><i class="fa fa-check"></i><b>11.3.2</b> Normalization</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#variations"><i class="fa fa-check"></i><b>11.4</b> Variations</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#slope-graph"><i class="fa fa-check"></i><b>11.4.1</b> <strong>Slope Graph</strong></a></li>
+<li class="chapter" data-level="11.4.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#tufte-style-line-graph"><i class="fa fa-check"></i><b>11.4.2</b> Tufte-Style Line Graph</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html"><i class="fa fa-check"></i><b>12</b> Parts-To-Whole Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#why-no-pie"><i class="fa fa-check"></i><b>12.1</b> Why no pie?</a></li>
+<li class="chapter" data-level="12.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#bar-charts"><i class="fa fa-check"></i><b>12.2</b> Bar Charts</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#to-stack-or-not-to-stack"><i class="fa fa-check"></i><b>12.2.1</b> To Stack or Not to Stack?</a></li>
+<li class="chapter" data-level="12.2.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#waterfall-charts"><i class="fa fa-check"></i><b>12.2.2</b> Waterfall Charts</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#area-plot"><i class="fa fa-check"></i><b>12.3</b> Area Plot</a></li>
+<li class="chapter" data-level="12.4" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#mosaic-plots"><i class="fa fa-check"></i><b>12.4</b> Mosaic Plots</a></li>
+<li class="chapter" data-level="12.5" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#tree-map"><i class="fa fa-check"></i><b>12.5</b> Tree Map</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>13</b> Multivariate Analysis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#heatmaps"><i class="fa fa-check"></i><b>13.1</b> Heatmaps</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>13.2</b> Treemaps</a></li>
+<li class="chapter" data-level="13.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>13.3</b> Maps and Geographic Plots</a></li>
+<li class="chapter" data-level="13.4" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#sankey-plots"><i class="fa fa-check"></i><b>13.4</b> Sankey Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html"><i class="fa fa-check"></i><b>14</b> Interactive Dashboards</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#purpose"><i class="fa fa-check"></i><b>14.1</b> Purpose</a></li>
+<li class="chapter" data-level="14.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#dashboards-defined"><i class="fa fa-check"></i><b>14.2</b> Dashboards Defined</a></li>
+<li class="chapter" data-level="14.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#common-tools"><i class="fa fa-check"></i><b>14.3</b> Common Tools</a></li>
+<li class="chapter" data-level="14.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#guidelines-for-dashboards"><i class="fa fa-check"></i><b>14.4</b> Guidelines for Dashboards</a></li>
+<li class="chapter" data-level="14.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#visual-layout"><i class="fa fa-check"></i><b>14.5</b> Visual Layout</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#f-and-z-scanning-patterns"><i class="fa fa-check"></i><b>14.5.1</b> F and Z Scanning Patterns</a></li>
+<li class="chapter" data-level="14.5.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#negative-space-or-white-space"><i class="fa fa-check"></i><b>14.5.2</b> Negative Space or White Space</a></li>
+<li class="chapter" data-level="14.5.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#colors"><i class="fa fa-check"></i><b>14.5.3</b> Colors</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#dashboard-design-process"><i class="fa fa-check"></i><b>14.6</b> Dashboard Design Process</a>
+<ul>
+<li class="chapter" data-level="14.6.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#define-requirements"><i class="fa fa-check"></i><b>14.6.1</b> Define Requirements</a></li>
+<li class="chapter" data-level="14.6.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#mockup-dashboard"><i class="fa fa-check"></i><b>14.6.2</b> Mockup Dashboard</a></li>
+<li class="chapter" data-level="14.6.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#build-dashboard"><i class="fa fa-check"></i><b>14.6.3</b> Build Dashboard</a></li>
+<li class="chapter" data-level="14.6.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#launch-to-users"><i class="fa fa-check"></i><b>14.6.4</b> Launch to Users</a></li>
+<li class="chapter" data-level="14.6.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#evaluate-performance"><i class="fa fa-check"></i><b>14.6.5</b> Evaluate Performance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="accessible-design.html"><a href="accessible-design.html"><i class="fa fa-check"></i><b>15</b> Accessible Design</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#section"><i class="fa fa-check"></i><b>15.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a></li>
+<li class="chapter" data-level="17" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html"><i class="fa fa-check"></i><b>17</b> Common ggplot Problems</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#common-issues-and-fixes"><i class="fa fa-check"></i><b>17.1</b> Common Issues and Fixes</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1.1</b> Reorder Factor Levels in a Bar Graph</a></li>
+<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates-on-the-x-axis"><i class="fa fa-check"></i><b>17.1.2</b> Fix Dates on the X Axis</a></li>
+<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#currency"><i class="fa fa-check"></i><b>17.1.3</b> Currency</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="parts-to-whole-analysis" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Parts-To-Whole Analysis</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="why-no-pie" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Why no pie?</h2>
+<p>Pie charts are very popular but have fallen out of favor with many data visualization enthusiasts. I’m not quite that fanatical. Still, pie graphs are rarely the <em>best</em> way to display information. Part of the issue is that it’s not particularly easy to compare angular sections, or to tell estimate the magnitude of the difference between circular areas.</p>
+<p>Look at the example below. The circle on the left has an area of 1 unit, the middle circle 2 units, and the right circle 4 units. Is that intuitive and easy to see? For most readers, probably not.</p>
+<p><img src="11_circleareas.png" /></p>
+<p>Compare this to these line lengths. It’s much easier to estimate the magnitude of the difference.</p>
+<p><img src="11_line_lengths.png" /></p>
+<p>This means that most readers will have an easier time interpreting a bar graph than a pie graph. This is especially true when you want to find trends. Let’s look at a quick example.</p>
+<p>Suppose your firm emails every customer a discount, randomly assigning customers to receive a coupon percentage (to save 10%, 12%, 15%, or 18% off their order). You want to see how customers respond, so you make a pie graph of the number of customers who make a purchase.</p>
+<p>There are two possible scenarios below. In the left scenario, higher discounts yield more customers responding and making a purchase. In the right scenario, it’s basically random (no trend).</p>
+<p><img src="11_%20badpiegraph_vs_bar.png" /></p>
+<p>The example above shows two common issues with pie graphs.</p>
+<ol style="list-style-type: decimal">
+<li><p>It can be difficult to tell two pie graphs apart. How different are they?</p></li>
+<li><p>It’s difficult to interpret trends. Yes, you <em>could</em> do it, starting at the 10% segment and moving clockwise…but the bar graph is almost always easier.</p></li>
+</ol>
+</div>
+<div id="bar-charts" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Bar Charts</h2>
+<p>Bar charts are a very effective way to present a parts-to-whole analysis. Let’s look at the revenue contribution of two hotels by year. This is a “grouped” bar chart…for each year we have two bars.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="parts-to-whole-analysis.html#cb1-1" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="parts-to-whole-analysis.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">revenue =</span> adr <span class="sc">*</span> (stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="parts-to-whole-analysis.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel, arrival_date_year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="parts-to-whole-analysis.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">annual_revenue =</span> <span class="fu">sum</span>(revenue)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="parts-to-whole-analysis.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> arrival_date_year, <span class="at">y =</span> annual_revenue, <span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="parts-to-whole-analysis.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">position =</span> <span class="fu">position_dodge2</span>()) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="parts-to-whole-analysis.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="fu">aes</span>(<span class="at">y =</span> annual_revenue <span class="sc">+</span> <span class="dv">500000</span>, <span class="at">label =</span> <span class="fu">dollar</span>(<span class="fu">round</span>(..y..,<span class="dv">0</span>))), <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>,</span>
+<span id="cb1-8"><a href="parts-to-whole-analysis.html#cb1-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb1-9"><a href="parts-to-whole-analysis.html#cb1-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-10"><a href="parts-to-whole-analysis.html#cb1-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> .<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="parts-to-whole-analysis.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;#00759a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="parts-to-whole-analysis.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb1-13"><a href="parts-to-whole-analysis.html#cb1-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb1-14"><a href="parts-to-whole-analysis.html#cb1-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Revenue Contribution by Hotel (2015-2017)&quot;</span>,</span>
+<span id="cb1-15"><a href="parts-to-whole-analysis.html#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="parts-to-whole-analysis.html#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-17"><a href="parts-to-whole-analysis.html#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;gray40&quot;</span>),</span>
+<span id="cb1-18"><a href="parts-to-whole-analysis.html#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-19"><a href="parts-to-whole-analysis.html#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-20"><a href="parts-to-whole-analysis.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-21"><a href="parts-to-whole-analysis.html#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-22"><a href="parts-to-whole-analysis.html#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-23"><a href="parts-to-whole-analysis.html#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-24"><a href="parts-to-whole-analysis.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div id="to-stack-or-not-to-stack" class="section level3" number="12.2.1">
+<h3><span class="header-section-number">12.2.1</span> To Stack or Not to Stack?</h3>
+<p>The chart above was “grouped” or unstacked. Each bar started at 0. Let’s look at the same chart as above, but “stack it”. Also, let’s make it a bit easier to read by putting the units in millions of dollars. This one also has white lines to break up every $5M segment. I’m not always a fan of the lines but they can be helpful.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="parts-to-whole-analysis.html#cb2-1" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="parts-to-whole-analysis.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">revenue =</span> adr <span class="sc">*</span> (stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="parts-to-whole-analysis.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel, arrival_date_year) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="parts-to-whole-analysis.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">annual_revenue =</span> <span class="fu">sum</span>(revenue) <span class="sc">/</span><span class="dv">1000000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="parts-to-whole-analysis.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> arrival_date_year, <span class="at">y =</span> annual_revenue, <span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="parts-to-whole-analysis.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="parts-to-whole-analysis.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="dv">5</span>), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="parts-to-whole-analysis.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="dv">10</span>), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="parts-to-whole-analysis.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="dv">15</span>), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="parts-to-whole-analysis.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;#00759a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="parts-to-whole-analysis.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2015</span>, <span class="dv">2016</span>, <span class="dv">2017</span>)) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="parts-to-whole-analysis.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">prefix=</span><span class="st">&quot;$&quot;</span>, <span class="at">suffix =</span> <span class="st">&quot;M&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="parts-to-whole-analysis.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb2-14"><a href="parts-to-whole-analysis.html#cb2-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb2-15"><a href="parts-to-whole-analysis.html#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Revenue 2015-2017&quot;</span>,</span>
+<span id="cb2-16"><a href="parts-to-whole-analysis.html#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="parts-to-whole-analysis.html#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;gray40&quot;</span>),</span>
+<span id="cb2-18"><a href="parts-to-whole-analysis.html#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-19"><a href="parts-to-whole-analysis.html#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-20"><a href="parts-to-whole-analysis.html#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-21"><a href="parts-to-whole-analysis.html#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-22"><a href="parts-to-whole-analysis.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb2-23"><a href="parts-to-whole-analysis.html#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>So when should you stack bars? When you’re more interested in the <em>total</em> amount, you should stack the bars. When you’re more interested in comparing the contribution of different components, you should unstack them. Both have their place.</p>
+<p>Why did bookings go down in 2017 compared to 2016? <em>(Hint: What dates does the dataset span?)</em></p>
+</div>
+<div id="waterfall-charts" class="section level3" number="12.2.2">
+<h3><span class="header-section-number">12.2.2</span> Waterfall Charts</h3>
+<p>A variation on the stacked bar chart is the waterfall chart which is used to show the impact of introducing a series of positive and negative values. Let’s look at a “toy example” of Profit and Loss.</p>
+<p>We have a series of revenues and then expenses, and want to see how we arrive at our Net.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="parts-to-whole-analysis.html#cb3-1" aria-hidden="true" tabindex="-1"></a>waterfall_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>),</span>
+<span id="cb3-2"><a href="parts-to-whole-analysis.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">description =</span> <span class="fu">c</span>(<span class="st">&quot;Gross Revenue&quot;</span>, <span class="st">&quot;Other Income&quot;</span>, <span class="st">&quot;COGS&quot;</span>,</span>
+<span id="cb3-3"><a href="parts-to-whole-analysis.html#cb3-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Overhead&quot;</span>, <span class="st">&quot;Taxes&quot;</span>, <span class="st">&quot;Net&quot;</span>),</span>
+<span id="cb3-4"><a href="parts-to-whole-analysis.html#cb3-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">amount =</span> <span class="fu">c</span>(<span class="fl">1.2</span>, <span class="fl">0.2</span>, <span class="sc">-</span><span class="fl">0.6</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="sc">-</span><span class="fl">0.1</span>, <span class="sc">-</span><span class="fl">0.3</span>, <span class="fl">0.35</span>),</span>
+<span id="cb3-5"><a href="parts-to-whole-analysis.html#cb3-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;in&quot;</span>,  <span class="st">&quot;in&quot;</span>, <span class="st">&quot;out&quot;</span>, <span class="st">&quot;out&quot;</span>, <span class="st">&quot;out&quot;</span>, <span class="st">&quot;out&quot;</span>, <span class="st">&quot;net&quot;</span>))</span>
+<span id="cb3-6"><a href="parts-to-whole-analysis.html#cb3-6" aria-hidden="true" tabindex="-1"></a>waterfall_data<span class="sc">$</span>end <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(waterfall_data<span class="sc">$</span>amount)</span>
+<span id="cb3-7"><a href="parts-to-whole-analysis.html#cb3-7" aria-hidden="true" tabindex="-1"></a>waterfall_data<span class="sc">$</span>end <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">head</span>(waterfall_data<span class="sc">$</span>end, <span class="sc">-</span><span class="dv">1</span>), <span class="dv">0</span>)</span>
+<span id="cb3-8"><a href="parts-to-whole-analysis.html#cb3-8" aria-hidden="true" tabindex="-1"></a>waterfall_data<span class="sc">$</span>start <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">head</span>(waterfall_data<span class="sc">$</span>end, <span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb3-9"><a href="parts-to-whole-analysis.html#cb3-9" aria-hidden="true" tabindex="-1"></a>waterfall_data<span class="sc">$</span>description <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(waterfall_data<span class="sc">$</span>description)</span>
+<span id="cb3-10"><a href="parts-to-whole-analysis.html#cb3-10" aria-hidden="true" tabindex="-1"></a>waterfall_data <span class="ot">&lt;-</span> waterfall_data <span class="sc">%&gt;%</span> <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">label_y =</span> <span class="fu">max</span>(start, end) <span class="sc">+</span> <span class="fl">0.05</span>)</span>
+<span id="cb3-11"><a href="parts-to-whole-analysis.html#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="parts-to-whole-analysis.html#cb3-12" aria-hidden="true" tabindex="-1"></a>waterfall_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="parts-to-whole-analysis.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="parts-to-whole-analysis.html#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> id <span class="sc">-</span> <span class="fl">0.45</span>, <span class="at">xmax =</span> id <span class="sc">+</span> <span class="fl">0.45</span>, <span class="at">ymin =</span> end, <span class="at">ymax =</span> start)) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="parts-to-whole-analysis.html#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;in&quot;</span> <span class="ot">=</span> <span class="st">&quot;#58a618&quot;</span>, <span class="st">&quot;out&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;net&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="parts-to-whole-analysis.html#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>,<span class="dv">7</span>),</span>
+<span id="cb3-17"><a href="parts-to-whole-analysis.html#cb3-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">as.character</span>(waterfall_data<span class="sc">$</span>description))) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="parts-to-whole-analysis.html#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> id,</span>
+<span id="cb3-19"><a href="parts-to-whole-analysis.html#cb3-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> label_y,</span>
+<span id="cb3-20"><a href="parts-to-whole-analysis.html#cb3-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">&quot;$&quot;</span>, amount, <span class="st">&quot;M&quot;</span>))) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="parts-to-whole-analysis.html#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Revenue/Expense Type&quot;</span>,</span>
+<span id="cb3-22"><a href="parts-to-whole-analysis.html#cb3-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb3-23"><a href="parts-to-whole-analysis.html#cb3-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Flow&quot;</span>,</span>
+<span id="cb3-24"><a href="parts-to-whole-analysis.html#cb3-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;P&amp;L Waterfall Chart Example&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="parts-to-whole-analysis.html#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;gray40&quot;</span>),</span>
+<span id="cb3-26"><a href="parts-to-whole-analysis.html#cb3-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-27"><a href="parts-to-whole-analysis.html#cb3-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-28"><a href="parts-to-whole-analysis.html#cb3-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-29"><a href="parts-to-whole-analysis.html#cb3-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-30"><a href="parts-to-whole-analysis.html#cb3-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-31"><a href="parts-to-whole-analysis.html#cb3-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-32"><a href="parts-to-whole-analysis.html#cb3-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb3-33"><a href="parts-to-whole-analysis.html#cb3-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="area-plot" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Area Plot</h2>
+<p>An area plot is similar to a stacked bar chart, but is helpful for displaying information over time at smaller scale (e.g. days or months instead of years) and is helpful if you have many time points.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="parts-to-whole-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Line graph with bookings by month</span></span>
+<span id="cb4-2"><a href="parts-to-whole-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span>               <span class="co"># Take the booking data</span></span>
+<span id="cb4-3"><a href="parts-to-whole-analysis.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel, arrival_date_year, arrival_date_month) <span class="sc">%&gt;%</span>  <span class="co"># Group observations hotel &amp; month-year</span></span>
+<span id="cb4-4"><a href="parts-to-whole-analysis.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Stays =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span>           <span class="co"># Count number of bookings</span></span>
+<span id="cb4-5"><a href="parts-to-whole-analysis.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">booking_date =</span> <span class="fu">dmy</span>(<span class="fu">paste0</span>(<span class="st">&quot;01&quot;</span>, arrival_date_month, arrival_date_year))) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="parts-to-whole-analysis.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> booking_date, <span class="at">y =</span> Stays, <span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="parts-to-whole-analysis.html#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_area</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="parts-to-whole-analysis.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;#00759a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="parts-to-whole-analysis.html#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">&quot;%b&quot;</span>),</span>
+<span id="cb4-10"><a href="parts-to-whole-analysis.html#cb4-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">breaks =</span> <span class="fu">date_breaks</span>(<span class="st">&quot;3 months&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="parts-to-whole-analysis.html#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="parts-to-whole-analysis.html#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>,</span>
+<span id="cb4-13"><a href="parts-to-whole-analysis.html#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Total Bookings&quot;</span>,</span>
+<span id="cb4-14"><a href="parts-to-whole-analysis.html#cb4-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">title=</span><span class="st">&quot;Number of Bookings&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="parts-to-whole-analysis.html#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
+<span id="cb4-16"><a href="parts-to-whole-analysis.html#cb4-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb4-17"><a href="parts-to-whole-analysis.html#cb4-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-18"><a href="parts-to-whole-analysis.html#cb4-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-19"><a href="parts-to-whole-analysis.html#cb4-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-20"><a href="parts-to-whole-analysis.html#cb4-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb4-21"><a href="parts-to-whole-analysis.html#cb4-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;gray40&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="parts-to-whole-analysis.html#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2017-03-01&quot;</span>), <span class="at">y =</span> <span class="dv">2100</span>, <span class="at">label =</span> <span class="st">&quot;City Hotel&quot;</span>), </span>
+<span id="cb4-23"><a href="parts-to-whole-analysis.html#cb4-23" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-24"><a href="parts-to-whole-analysis.html#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2017-03-01&quot;</span>), <span class="at">y =</span> <span class="dv">1200</span>, <span class="at">label =</span> <span class="st">&quot;Resort Hotel&quot;</span>), </span>
+<span id="cb4-25"><a href="parts-to-whole-analysis.html#cb4-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-26"><a href="parts-to-whole-analysis.html#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2016-01-01&quot;</span>)), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-27"><a href="parts-to-whole-analysis.html#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>)), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-28"><a href="parts-to-whole-analysis.html#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2015-08-01&quot;</span>), <span class="at">y =</span> <span class="dv">200</span>, <span class="at">label =</span> <span class="st">&quot;2015&quot;</span>), </span>
+<span id="cb4-29"><a href="parts-to-whole-analysis.html#cb4-29" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-30"><a href="parts-to-whole-analysis.html#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2016-01-15&quot;</span>), <span class="at">y =</span> <span class="dv">200</span>, <span class="at">label =</span> <span class="st">&quot;2016&quot;</span>), </span>
+<span id="cb4-31"><a href="parts-to-whole-analysis.html#cb4-31" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-32"><a href="parts-to-whole-analysis.html#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2017-01-15&quot;</span>), <span class="at">y =</span> <span class="dv">200</span>, <span class="at">label =</span> <span class="st">&quot;2017&quot;</span>), </span>
+<span id="cb4-33"><a href="parts-to-whole-analysis.html#cb4-33" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Warning: Ignoring unknown parameters: check_overlap
+
+## Warning: Ignoring unknown parameters: check_overlap</code></pre>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="mosaic-plots" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Mosaic Plots</h2>
+<p>The Mosaic Plot or “Marimekko Plot” is useful for comparing two categorical variables. The package <code>ggmosaic</code> can be used to create these plots.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="parts-to-whole-analysis.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Create a Mosaic Plot</span></span>
+<span id="cb6-2"><a href="parts-to-whole-analysis.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare cancellations and deposit</span></span>
+<span id="cb6-3"><a href="parts-to-whole-analysis.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="parts-to-whole-analysis.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the ggmosaic package; this adds a geom_mosaic to ggplot</span></span>
+<span id="cb6-5"><a href="parts-to-whole-analysis.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#remotes::install_github(&#39;haleyjeppson/ggmosaic&#39; )</span></span>
+<span id="cb6-6"><a href="parts-to-whole-analysis.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmosaic)</span>
+<span id="cb6-7"><a href="parts-to-whole-analysis.html#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="parts-to-whole-analysis.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a mosaic plot</span></span>
+<span id="cb6-9"><a href="parts-to-whole-analysis.html#cb6-9" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="parts-to-whole-analysis.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#filter(is_canceled == 0) %&gt;%</span></span>
+<span id="cb6-11"><a href="parts-to-whole-analysis.html#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cancellation =</span> <span class="fu">ifelse</span>(is_canceled <span class="sc">==</span> <span class="dv">1</span>, <span class="st">&quot;Cancelled&quot;</span>, <span class="st">&quot;Not Cancelled&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="parts-to-whole-analysis.html#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-13"><a href="parts-to-whole-analysis.html#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(deposit_type, cancellation),</span>
+<span id="cb6-14"><a href="parts-to-whole-analysis.html#cb6-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">fill =</span> deposit_type)) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="parts-to-whole-analysis.html#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;#00759a&quot;</span>, <span class="st">&quot;#ffcc33&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="parts-to-whole-analysis.html#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cancellation Status&quot;</span>,</span>
+<span id="cb6-17"><a href="parts-to-whole-analysis.html#cb6-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb6-18"><a href="parts-to-whole-analysis.html#cb6-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;No Deposit is Collected for Most Cancellations&quot;</span>,</span>
+<span id="cb6-19"><a href="parts-to-whole-analysis.html#cb6-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-20"><a href="parts-to-whole-analysis.html#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb6-21"><a href="parts-to-whole-analysis.html#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-22"><a href="parts-to-whole-analysis.html#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-23"><a href="parts-to-whole-analysis.html#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-24"><a href="parts-to-whole-analysis.html#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="tree-map" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Tree Map</h2>
+<p>A treemap plots the area in a similar way to a Marimekko Plot, but does not place the same restrictions on dimensions. These work well in interactive dashboards.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="parts-to-whole-analysis.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb7-2"><a href="parts-to-whole-analysis.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(treemap)</span>
+<span id="cb7-3"><a href="parts-to-whole-analysis.html#cb7-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb7-4"><a href="parts-to-whole-analysis.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data</span></span>
+<span id="cb7-5"><a href="parts-to-whole-analysis.html#cb7-5" aria-hidden="true" tabindex="-1"></a>treemapdata <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="parts-to-whole-analysis.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">revenue =</span> adr <span class="sc">*</span> <span class="fu">sum</span>(stays_in_weekend_nights, stays_in_week_nights)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="parts-to-whole-analysis.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel, market_segment) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="parts-to-whole-analysis.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_revenue =</span> <span class="fu">sum</span>(revenue))</span>
+<span id="cb7-9"><a href="parts-to-whole-analysis.html#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="parts-to-whole-analysis.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># basic treemap</span></span>
+<span id="cb7-11"><a href="parts-to-whole-analysis.html#cb7-11" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">treemap</span>(treemapdata,</span>
+<span id="cb7-12"><a href="parts-to-whole-analysis.html#cb7-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">index=</span><span class="fu">c</span>(<span class="st">&quot;hotel&quot;</span>,<span class="st">&quot;market_segment&quot;</span>),</span>
+<span id="cb7-13"><a href="parts-to-whole-analysis.html#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">vSize=</span><span class="st">&quot;total_revenue&quot;</span>,</span>
+<span id="cb7-14"><a href="parts-to-whole-analysis.html#cb7-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">type=</span><span class="st">&quot;index&quot;</span>,</span>
+<span id="cb7-15"><a href="parts-to-whole-analysis.html#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">&quot;Revenue by Hotel and Segment&quot;</span>,</span>
+<span id="cb7-16"><a href="parts-to-whole-analysis.html#cb7-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>,</span>
+<span id="cb7-17"><a href="parts-to-whole-analysis.html#cb7-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">#bg.labels=c(&quot;white&quot;),</span></span>
+<span id="cb7-18"><a href="parts-to-whole-analysis.html#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">align.labels=</span><span class="fu">list</span>(</span>
+<span id="cb7-19"><a href="parts-to-whole-analysis.html#cb7-19" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;top&quot;</span>), </span>
+<span id="cb7-20"><a href="parts-to-whole-analysis.html#cb7-20" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb7-21"><a href="parts-to-whole-analysis.html#cb7-21" aria-hidden="true" tabindex="-1"></a>            )  </span>
+<span id="cb7-22"><a href="parts-to-whole-analysis.html#cb7-22" aria-hidden="true" tabindex="-1"></a>          )            </span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="line-graphs-and-time-series.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multivariate-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

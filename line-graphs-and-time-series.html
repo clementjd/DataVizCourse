@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Line Graphs and Time Series | Course Notes - IDSC 4210</title>
+  <meta name="description" content="11 Line Graphs and Time Series | Course Notes - IDSC 4210" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Line Graphs and Time Series | Course Notes - IDSC 4210" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Line Graphs and Time Series | Course Notes - IDSC 4210" />
+  
+  
+  
+
+<meta name="author" content="Prepared by Jeff Clement" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="correlation-and-regression.html"/>
+<link rel="next" href="parts-to-whole-analysis.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Interactive Data Visualization for Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i><b>1.1</b> About the Course</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#design-vs.-programming"><i class="fa fa-check"></i><b>1.2</b> Design vs. Programming</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#recommended-books"><i class="fa fa-check"></i><b>1.3</b> Recommended Books</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html"><i class="fa fa-check"></i><b>2</b> Installing R and Loading Datasets</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#installing-r-rstudio-and-tidyverse"><i class="fa fa-check"></i><b>2.1</b> Installing R, RStudio, and Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-1-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Install RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#step-2-install-the-tidyverse-and-ggplot-visualization-package"><i class="fa fa-check"></i><b>2.1.3</b> Step 2: Install the tidyverse (and ggPlot Visualization Package)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-the-dataset-for-this-course"><i class="fa fa-check"></i><b>2.2</b> Load the Dataset for This Course</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#download-the-dataset"><i class="fa fa-check"></i><b>2.2.1</b> Download the Dataset</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#set-working-directory"><i class="fa fa-check"></i><b>2.2.2</b> Set Working Directory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#load-dataset-into-r"><i class="fa fa-check"></i><b>2.2.3</b> Load Dataset into R</a></li>
+<li class="chapter" data-level="2.2.4" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#examine-the-booking-dataset"><i class="fa fa-check"></i><b>2.2.4</b> Examine the Booking Dataset</a></li>
+<li class="chapter" data-level="2.2.5" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#observations-variables-and-values"><i class="fa fa-check"></i><b>2.2.5</b> Observations, Variables and Values</a></li>
+<li class="chapter" data-level="2.2.6" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#initial-exploration"><i class="fa fa-check"></i><b>2.2.6</b> Initial Exploration</a></li>
+<li class="chapter" data-level="2.2.7" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#missing-data"><i class="fa fa-check"></i><b>2.2.7</b> Missing Data</a></li>
+<li class="chapter" data-level="2.2.8" data-path="installing-r-and-loading-datasets.html"><a href="installing-r-and-loading-datasets.html#tables-and-counts"><i class="fa fa-check"></i><b>2.2.8</b> Tables and Counts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html"><i class="fa fa-check"></i><b>3</b> Exploring and Communicating with Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#the-data-science-cycle"><i class="fa fa-check"></i><b>3.1</b> The Data Science Cycle</a></li>
+<li class="chapter" data-level="3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#exploratory-vs.-explanatory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Exploratory vs. Explanatory Data Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#storytelling-with-data"><i class="fa fa-check"></i><b>3.3</b> Storytelling with Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-1-focus-attention"><i class="fa fa-check"></i><b>3.3.1</b> Step 1: Focus Attention</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exploring-and-communicating-with-data.html"><a href="exploring-and-communicating-with-data.html#step-2-tell-a-story"><i class="fa fa-check"></i><b>3.3.2</b> Step 2: Tell a Story</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="design-fundamentals.html"><a href="design-fundamentals.html"><i class="fa fa-check"></i><b>4</b> Design Fundamentals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
+<li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
+<li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#chartjunk"><i class="fa fa-check"></i><b>4.4.1</b> Chartjunk</a></li>
+<li class="chapter" data-level="4.4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#graphical-integrity"><i class="fa fa-check"></i><b>4.4.2</b> Graphical Integrity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="design-fundamentals.html"><a href="design-fundamentals.html#second-test"><i class="fa fa-check"></i><b>4.5</b> 15 Second Test</a></li>
+<li class="chapter" data-level="4.6" data-path="design-fundamentals.html"><a href="design-fundamentals.html#fixing-cluttered-visualizations"><i class="fa fa-check"></i><b>4.6</b> Fixing Cluttered Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#facet-to-make-multiple-visualizations"><i class="fa fa-check"></i><b>4.6.1</b> Facet to make Multiple Visualizations</a></li>
+<li class="chapter" data-level="4.6.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#switch-to-a-table"><i class="fa fa-check"></i><b>4.6.2</b> Switch to a Table</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>5</b> R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#using-r-and-the-tidyverse"><i class="fa fa-check"></i><b>5.1</b> Using R and the Tidyverse</a></li>
+<li class="chapter" data-level="5.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#basic-commands"><i class="fa fa-check"></i><b>5.2</b> Basic Commands</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#comments"><i class="fa fa-check"></i><b>5.2.1</b> Comments</a></li>
+<li class="chapter" data-level="5.2.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#storing-objects"><i class="fa fa-check"></i><b>5.2.2</b> Storing objects</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#saving-and-loading-in-data"><i class="fa fa-check"></i><b>5.3</b> Saving and Loading in Data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#csv-comma-separated-values"><i class="fa fa-check"></i><b>5.3.1</b> .csv (Comma Separated Values)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#rds-r-data-file"><i class="fa fa-check"></i><b>5.3.2</b> .rds (R Data File)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#long-vs-wide-data"><i class="fa fa-check"></i><b>5.3.3</b> Long vs Wide Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a></li>
+<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating new Variables</a></li>
+<li class="chapter" data-level="5.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.7</b> Grouping and Summarizing</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#outside-ggplot"><i class="fa fa-check"></i><b>5.7.1</b> Outside ggplot</a></li>
+<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.2</b> Inside ggplot with stat_summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>6</b> Intro to ggplot</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#why-ggplot"><i class="fa fa-check"></i><b>6.1</b> Why ggplot?</a></li>
+<li class="chapter" data-level="6.2" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#resources"><i class="fa fa-check"></i><b>6.2</b> Resources</a></li>
+<li class="chapter" data-level="6.3" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#ggplot2-vs-base-r"><i class="fa fa-check"></i><b>6.3</b> ggplot2 vs Base R</a></li>
+<li class="chapter" data-level="6.4" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>6.4</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="6.5" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#themes"><i class="fa fa-check"></i><b>6.5</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>7</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-types.html"><a href="data-types.html#categorical-data"><i class="fa fa-check"></i><b>7.1</b> Categorical Data</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="data-types.html"><a href="data-types.html#nominal"><i class="fa fa-check"></i><b>7.1.1</b> Nominal</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-types.html"><a href="data-types.html#ordinal"><i class="fa fa-check"></i><b>7.1.2</b> Ordinal</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-types.html"><a href="data-types.html#numerical-data"><i class="fa fa-check"></i><b>7.2</b> Numerical Data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-types.html"><a href="data-types.html#discrete-vs.-continuous"><i class="fa fa-check"></i><b>7.2.1</b> Discrete vs. Continuous</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-types.html"><a href="data-types.html#interval"><i class="fa fa-check"></i><b>7.2.2</b> Interval</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-types.html"><a href="data-types.html#ratio"><i class="fa fa-check"></i><b>7.2.3</b> Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-types.html"><a href="data-types.html#measurement-error-and-data-limitations"><i class="fa fa-check"></i><b>7.3</b> Measurement Error and Data Limitations</a></li>
+<li class="chapter" data-level="7.4" data-path="data-types.html"><a href="data-types.html#tricky-cases"><i class="fa fa-check"></i><b>7.4</b> Tricky Cases</a></li>
+<li class="chapter" data-level="7.5" data-path="data-types.html"><a href="data-types.html#calculations-possible-by-data-type"><i class="fa fa-check"></i><b>7.5</b> Calculations Possible by Data Type</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="distribution-analysis.html"><a href="distribution-analysis.html"><i class="fa fa-check"></i><b>8</b> Distribution Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="distribution-analysis.html"><a href="distribution-analysis.html#histogram"><i class="fa fa-check"></i><b>8.1</b> Histograms</a></li>
+<li class="chapter" data-level="8.2" data-path="distribution-analysis.html"><a href="distribution-analysis.html#density-plot"><i class="fa fa-check"></i><b>8.2</b> Density Plot</a></li>
+<li class="chapter" data-level="8.3" data-path="distribution-analysis.html"><a href="distribution-analysis.html#box-plot"><i class="fa fa-check"></i><b>8.3</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="comparing-quantities.html"><a href="comparing-quantities.html"><i class="fa fa-check"></i><b>9</b> Comparing Quantities</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="comparing-quantities.html"><a href="comparing-quantities.html#scatterplot"><i class="fa fa-check"></i><b>9.0.1</b> Scatterplot</a></li>
+<li class="chapter" data-level="9.0.2" data-path="comparing-quantities.html"><a href="comparing-quantities.html#bar-chart"><i class="fa fa-check"></i><b>9.0.2</b> Bar Chart</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and Regression</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation"><i class="fa fa-check"></i><b>10.1</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-coefficient"><i class="fa fa-check"></i><b>10.1.1</b> Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-vs-causation"><i class="fa fa-check"></i><b>10.1.2</b> Correlation vs Causation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#causal-inference"><i class="fa fa-check"></i><b>10.2</b> Causal Inference</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#resources-for-causal-inference"><i class="fa fa-check"></i><b>10.2.1</b> Resources for Causal Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#regression-lines"><i class="fa fa-check"></i><b>10.3</b> Regression Lines</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#linear-regression"><i class="fa fa-check"></i><b>10.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="10.3.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#loess-smoothing"><i class="fa fa-check"></i><b>10.3.2</b> Loess Smoothing</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#warning-berksons-paradox"><i class="fa fa-check"></i><b>10.4</b> Warning: Berkson’s Paradox</a></li>
+<li class="chapter" data-level="10.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#advanced-topics-machine-learning"><i class="fa fa-check"></i><b>10.5</b> Advanced Topics: Machine Learning</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#classification-tree"><i class="fa fa-check"></i><b>10.5.1</b> Classification Tree</a></li>
+<li class="chapter" data-level="10.5.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#cluster-analysis"><i class="fa fa-check"></i><b>10.5.2</b> Cluster Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html"><i class="fa fa-check"></i><b>11</b> Line Graphs and Time Series</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#line-graphs"><i class="fa fa-check"></i><b>11.1</b> Line Graphs</a></li>
+<li class="chapter" data-level="11.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#other-tools-for-time-series"><i class="fa fa-check"></i><b>11.2</b> Other Tools for Time Series</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#scatterplot-1"><i class="fa fa-check"></i><b>11.2.1</b> Scatterplot</a></li>
+<li class="chapter" data-level="11.2.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#box-plot-1"><i class="fa fa-check"></i><b>11.2.2</b> Box plot</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#seasonality-cycles-and-normalizing-data"><i class="fa fa-check"></i><b>11.3</b> Seasonality, Cycles, and “Normalizing” Data</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#plotting-cyclical-data"><i class="fa fa-check"></i><b>11.3.1</b> Plotting Cyclical Data</a></li>
+<li class="chapter" data-level="11.3.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#normalization"><i class="fa fa-check"></i><b>11.3.2</b> Normalization</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#variations"><i class="fa fa-check"></i><b>11.4</b> Variations</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#slope-graph"><i class="fa fa-check"></i><b>11.4.1</b> <strong>Slope Graph</strong></a></li>
+<li class="chapter" data-level="11.4.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#tufte-style-line-graph"><i class="fa fa-check"></i><b>11.4.2</b> Tufte-Style Line Graph</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html"><i class="fa fa-check"></i><b>12</b> Parts-To-Whole Analysis</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#why-no-pie"><i class="fa fa-check"></i><b>12.1</b> Why no pie?</a></li>
+<li class="chapter" data-level="12.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#bar-charts"><i class="fa fa-check"></i><b>12.2</b> Bar Charts</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#to-stack-or-not-to-stack"><i class="fa fa-check"></i><b>12.2.1</b> To Stack or Not to Stack?</a></li>
+<li class="chapter" data-level="12.2.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#waterfall-charts"><i class="fa fa-check"></i><b>12.2.2</b> Waterfall Charts</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#area-plot"><i class="fa fa-check"></i><b>12.3</b> Area Plot</a></li>
+<li class="chapter" data-level="12.4" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#mosaic-plots"><i class="fa fa-check"></i><b>12.4</b> Mosaic Plots</a></li>
+<li class="chapter" data-level="12.5" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#tree-map"><i class="fa fa-check"></i><b>12.5</b> Tree Map</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>13</b> Multivariate Analysis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#heatmaps"><i class="fa fa-check"></i><b>13.1</b> Heatmaps</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>13.2</b> Treemaps</a></li>
+<li class="chapter" data-level="13.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>13.3</b> Maps and Geographic Plots</a></li>
+<li class="chapter" data-level="13.4" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#sankey-plots"><i class="fa fa-check"></i><b>13.4</b> Sankey Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html"><i class="fa fa-check"></i><b>14</b> Interactive Dashboards</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#purpose"><i class="fa fa-check"></i><b>14.1</b> Purpose</a></li>
+<li class="chapter" data-level="14.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#dashboards-defined"><i class="fa fa-check"></i><b>14.2</b> Dashboards Defined</a></li>
+<li class="chapter" data-level="14.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#common-tools"><i class="fa fa-check"></i><b>14.3</b> Common Tools</a></li>
+<li class="chapter" data-level="14.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#guidelines-for-dashboards"><i class="fa fa-check"></i><b>14.4</b> Guidelines for Dashboards</a></li>
+<li class="chapter" data-level="14.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#visual-layout"><i class="fa fa-check"></i><b>14.5</b> Visual Layout</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#f-and-z-scanning-patterns"><i class="fa fa-check"></i><b>14.5.1</b> F and Z Scanning Patterns</a></li>
+<li class="chapter" data-level="14.5.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#negative-space-or-white-space"><i class="fa fa-check"></i><b>14.5.2</b> Negative Space or White Space</a></li>
+<li class="chapter" data-level="14.5.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#colors"><i class="fa fa-check"></i><b>14.5.3</b> Colors</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#dashboard-design-process"><i class="fa fa-check"></i><b>14.6</b> Dashboard Design Process</a>
+<ul>
+<li class="chapter" data-level="14.6.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#define-requirements"><i class="fa fa-check"></i><b>14.6.1</b> Define Requirements</a></li>
+<li class="chapter" data-level="14.6.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#mockup-dashboard"><i class="fa fa-check"></i><b>14.6.2</b> Mockup Dashboard</a></li>
+<li class="chapter" data-level="14.6.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#build-dashboard"><i class="fa fa-check"></i><b>14.6.3</b> Build Dashboard</a></li>
+<li class="chapter" data-level="14.6.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#launch-to-users"><i class="fa fa-check"></i><b>14.6.4</b> Launch to Users</a></li>
+<li class="chapter" data-level="14.6.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#evaluate-performance"><i class="fa fa-check"></i><b>14.6.5</b> Evaluate Performance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="accessible-design.html"><a href="accessible-design.html"><i class="fa fa-check"></i><b>15</b> Accessible Design</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#section"><i class="fa fa-check"></i><b>15.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a></li>
+<li class="chapter" data-level="17" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html"><i class="fa fa-check"></i><b>17</b> Common ggplot Problems</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#common-issues-and-fixes"><i class="fa fa-check"></i><b>17.1</b> Common Issues and Fixes</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1.1</b> Reorder Factor Levels in a Bar Graph</a></li>
+<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates-on-the-x-axis"><i class="fa fa-check"></i><b>17.1.2</b> Fix Dates on the X Axis</a></li>
+<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#currency"><i class="fa fa-check"></i><b>17.1.3</b> Currency</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes - IDSC 4210</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="line-graphs-and-time-series" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Line Graphs and Time Series</h1>
+<p><img src="IDSC4210CanvasBanner.png" /></p>
+<div id="line-graphs" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Line Graphs</h2>
+<p>Line graphs are ideal when you want to show trends or show the relationship between two numerical variables.</p>
+<p>For the next few examples, we’ll switch away from our <code>hotel_bookings.csv</code> data and look at another real dataset of purchase card transactions made by employees of the City of San Jose, CA, USA.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="line-graphs-and-time-series.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by month</span></span>
+<span id="cb1-2"><a href="line-graphs-and-time-series.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb1-3"><a href="line-graphs-and-time-series.html#cb1-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="line-graphs-and-time-series.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="line-graphs-and-time-series.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">date =</span> <span class="fu">min</span>(Date), <span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="line-graphs-and-time-series.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="line-graphs-and-time-series.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#7a0019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="line-graphs-and-time-series.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb1-9"><a href="line-graphs-and-time-series.html#cb1-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb1-10"><a href="line-graphs-and-time-series.html#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Purchase Card Transactions by Month&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="line-graphs-and-time-series.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="line-graphs-and-time-series.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb1-13"><a href="line-graphs-and-time-series.html#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb1-14"><a href="line-graphs-and-time-series.html#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-15"><a href="line-graphs-and-time-series.html#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-16"><a href="line-graphs-and-time-series.html#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-17"><a href="line-graphs-and-time-series.html#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb1-18"><a href="line-graphs-and-time-series.html#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb1-19"><a href="line-graphs-and-time-series.html#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb1-20"><a href="line-graphs-and-time-series.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Sometimes you might want to plot multiple lines on a plot. There’s one employee who has far more transactions than anyone else.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="line-graphs-and-time-series.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Analyze total number of transactions by month</span></span>
+<span id="cb2-2"><a href="line-graphs-and-time-series.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with transactions by each employee by month</span></span>
+<span id="cb2-3"><a href="line-graphs-and-time-series.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># only looking at employees who had a month with at least 50 transctions</span></span>
+<span id="cb2-4"><a href="line-graphs-and-time-series.html#cb2-4" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="line-graphs-and-time-series.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CardholderName, Year, Month) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="line-graphs-and-time-series.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">date =</span> <span class="fu">min</span>(Date), <span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="line-graphs-and-time-series.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">max</span>(Count)<span class="sc">&gt;</span><span class="dv">60</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="line-graphs-and-time-series.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> Count, <span class="at">color =</span> CardholderName)) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="line-graphs-and-time-series.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-10"><a href="line-graphs-and-time-series.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb2-11"><a href="line-graphs-and-time-series.html#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb2-12"><a href="line-graphs-and-time-series.html#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Purchase Card Transactions by Month by Employee&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="line-graphs-and-time-series.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>,   <span class="st">&quot;grey50&quot;</span>,  <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb2-14"><a href="line-graphs-and-time-series.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="line-graphs-and-time-series.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb2-16"><a href="line-graphs-and-time-series.html#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb2-17"><a href="line-graphs-and-time-series.html#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-18"><a href="line-graphs-and-time-series.html#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-19"><a href="line-graphs-and-time-series.html#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-20"><a href="line-graphs-and-time-series.html#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb2-21"><a href="line-graphs-and-time-series.html#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb2-22"><a href="line-graphs-and-time-series.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb2-23"><a href="line-graphs-and-time-series.html#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Who is this and what department do they work for? Let’s make a quick table, looking at the top five people by the number of purchase card transactions they’ve made.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="line-graphs-and-time-series.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-2"><a href="line-graphs-and-time-series.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="line-graphs-and-time-series.html#cb3-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="line-graphs-and-time-series.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CardholderName, Department) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="line-graphs-and-time-series.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Transactions =</span> <span class="fu">n</span>(), <span class="at">MeanAmount =</span> <span class="fu">dollar</span>(<span class="fu">mean</span>(Amount))) <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="line-graphs-and-time-series.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>Transactions) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="line-graphs-and-time-series.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="line-graphs-and-time-series.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Cardholder Name&quot;</span>, <span class="st">&quot;Department&quot;</span>, <span class="st">&quot;Total Transactions&quot;</span>, <span class="st">&quot;Mean Amount&quot;</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Cardholder Name</th>
+<th align="left">Department</th>
+<th align="right">Total Transactions</th>
+<th align="left">Mean Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">MARCIA ROUVELL</td>
+<td align="left">LIBRARY</td>
+<td align="right">2929</td>
+<td align="left">$5.67</td>
+</tr>
+<tr class="even">
+<td align="left">TINA YU TAYLOR</td>
+<td align="left">ENVIRONMENTAL SERVICES</td>
+<td align="right">1663</td>
+<td align="left">$311.43</td>
+</tr>
+<tr class="odd">
+<td align="left">ALBERT RODRIGUEZ</td>
+<td align="left">PARKS AND REC</td>
+<td align="right">1596</td>
+<td align="left">$251.57</td>
+</tr>
+<tr class="even">
+<td align="left">JULIE CHIOU</td>
+<td align="left">CITY MANAGER</td>
+<td align="right">1314</td>
+<td align="left">$278.42</td>
+</tr>
+<tr class="odd">
+<td align="left">MICHELLE KAHIHIKOLO</td>
+<td align="left">FIRE</td>
+<td align="right">1305</td>
+<td align="left">$427.99</td>
+</tr>
+</tbody>
+</table>
+<p>If you dig into the data, we see a large number of small dollar transactions for postage purchased by this employee.</p>
+</div>
+<div id="other-tools-for-time-series" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Other Tools for Time Series</h2>
+<p>Suppose we want to see if the distribution has changed over time? We can’t aggregate with the sum or count and use a line graph (because then we wouldn’t see all the points.)</p>
+<div id="scatterplot-1" class="section level3" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Scatterplot</h3>
+<p>We can use a scatterplot to plot each point. Let’s switch back to the hotel dataset for a minute. Let’s plot the price paid by month (and considering our earlier concerns about overplotting, we’ll look at a sample, jitter, and use transparency.)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="line-graphs-and-time-series.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Use a scatterplot to plot the ADR (Average Daily Rate, $) by month</span></span>
+<span id="cb4-2"><a href="line-graphs-and-time-series.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;ll take a sample</span></span>
+<span id="cb4-3"><a href="line-graphs-and-time-series.html#cb4-3" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="line-graphs-and-time-series.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="fl">0.05</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="line-graphs-and-time-series.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">arrival_date_month =</span> <span class="fu">factor</span>(arrival_date_month,</span>
+<span id="cb4-6"><a href="line-graphs-and-time-series.html#cb4-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;February&quot;</span>, <span class="st">&quot;March&quot;</span>,</span>
+<span id="cb4-7"><a href="line-graphs-and-time-series.html#cb4-7" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;April&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;June&quot;</span>, <span class="st">&quot;July&quot;</span>,</span>
+<span id="cb4-8"><a href="line-graphs-and-time-series.html#cb4-8" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;August&quot;</span>, <span class="st">&quot;September&quot;</span>, <span class="st">&quot;October&quot;</span>,</span>
+<span id="cb4-9"><a href="line-graphs-and-time-series.html#cb4-9" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;November&quot;</span>, <span class="st">&quot;December&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="line-graphs-and-time-series.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> arrival_date_month, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="line-graphs-and-time-series.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="line-graphs-and-time-series.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb4-13"><a href="line-graphs-and-time-series.html#cb4-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate&quot;</span>,</span>
+<span id="cb4-14"><a href="line-graphs-and-time-series.html#cb4-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ADR ($) Over Month&quot;</span>,</span>
+<span id="cb4-15"><a href="line-graphs-and-time-series.html#cb4-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Each point represents one booking&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="line-graphs-and-time-series.html#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="line-graphs-and-time-series.html#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span> <span class="ot">=</span> <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;February&quot;</span> <span class="ot">=</span> <span class="st">&quot;Feb&quot;</span>, <span class="st">&quot;March&quot;</span> <span class="ot">=</span> <span class="st">&quot;Mar&quot;</span>,</span>
+<span id="cb4-18"><a href="line-graphs-and-time-series.html#cb4-18" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;April&quot;</span> <span class="ot">=</span> <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;August&quot;</span> <span class="ot">=</span> <span class="st">&quot;Aug&quot;</span>, <span class="st">&quot;September&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sept&quot;</span>,</span>
+<span id="cb4-19"><a href="line-graphs-and-time-series.html#cb4-19" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;October&quot;</span> <span class="ot">=</span> <span class="st">&quot;Oct&quot;</span>, <span class="st">&quot;November&quot;</span> <span class="ot">=</span> <span class="st">&quot;Nov&quot;</span>, <span class="st">&quot;December&quot;</span> <span class="ot">=</span> <span class="st">&quot;Dec&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="line-graphs-and-time-series.html#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
+<span id="cb4-21"><a href="line-graphs-and-time-series.html#cb4-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb4-22"><a href="line-graphs-and-time-series.html#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-23"><a href="line-graphs-and-time-series.html#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-24"><a href="line-graphs-and-time-series.html#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-25"><a href="line-graphs-and-time-series.html#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb4-26"><a href="line-graphs-and-time-series.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+Well look at that!</p>
+</div>
+<div id="box-plot-1" class="section level3" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Box plot</h3>
+<p>Box plots are excellent for looking at changes in a distribution over time. Suppose we want to look at prices by month. Here I’m using a style proposed by Tufte which uses a dot for the median, a gap for the interquartile range, and lines for whiskers. It’s useful when there are so many values side by side and a dataset (like the <code>hotelbookings</code> dataset) that has many outliers).</p>
+<p>It’s not perfect though; I struggle sometimes visualizing the “blank space” where the bulk of the data points are.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="line-graphs-and-time-series.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a Tufte-style boxplot</span></span>
+<span id="cb5-2"><a href="line-graphs-and-time-series.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This plots the median as a dot, the IQR as a blank space, and the whiskers+outliers as a line.</span></span>
+<span id="cb5-3"><a href="line-graphs-and-time-series.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="line-graphs-and-time-series.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load ggthemes package</span></span>
+<span id="cb5-5"><a href="line-graphs-and-time-series.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb5-6"><a href="line-graphs-and-time-series.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="line-graphs-and-time-series.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Tufte-style boxplot</span></span>
+<span id="cb5-8"><a href="line-graphs-and-time-series.html#cb5-8" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="line-graphs-and-time-series.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hotel <span class="sc">==</span> <span class="st">&quot;City Hotel&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="line-graphs-and-time-series.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">arrival_date_month =</span> <span class="fu">factor</span>(arrival_date_month,</span>
+<span id="cb5-11"><a href="line-graphs-and-time-series.html#cb5-11" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;February&quot;</span>, <span class="st">&quot;March&quot;</span>,</span>
+<span id="cb5-12"><a href="line-graphs-and-time-series.html#cb5-12" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;April&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;June&quot;</span>, <span class="st">&quot;July&quot;</span>,</span>
+<span id="cb5-13"><a href="line-graphs-and-time-series.html#cb5-13" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;August&quot;</span>, <span class="st">&quot;September&quot;</span>, <span class="st">&quot;October&quot;</span>,</span>
+<span id="cb5-14"><a href="line-graphs-and-time-series.html#cb5-14" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;November&quot;</span>, <span class="st">&quot;December&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb5-15"><a href="line-graphs-and-time-series.html#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> arrival_date_month, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="line-graphs-and-time-series.html#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tufteboxplot</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="line-graphs-and-time-series.html#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb5-18"><a href="line-graphs-and-time-series.html#cb5-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate&quot;</span>,</span>
+<span id="cb5-19"><a href="line-graphs-and-time-series.html#cb5-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Boxplot Time Series (Tufte-Style Dot+Whisker)&quot;</span>,</span>
+<span id="cb5-20"><a href="line-graphs-and-time-series.html#cb5-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;City Hotel Average Daily Rate ($) by Month (2015-2017)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a href="line-graphs-and-time-series.html#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="line-graphs-and-time-series.html#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span> <span class="ot">=</span> <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;February&quot;</span> <span class="ot">=</span> <span class="st">&quot;Feb&quot;</span>, <span class="st">&quot;March&quot;</span> <span class="ot">=</span> <span class="st">&quot;Mar&quot;</span>,</span>
+<span id="cb5-23"><a href="line-graphs-and-time-series.html#cb5-23" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;April&quot;</span> <span class="ot">=</span> <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;August&quot;</span> <span class="ot">=</span> <span class="st">&quot;Aug&quot;</span>, <span class="st">&quot;September&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sept&quot;</span>,</span>
+<span id="cb5-24"><a href="line-graphs-and-time-series.html#cb5-24" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;October&quot;</span> <span class="ot">=</span> <span class="st">&quot;Oct&quot;</span>, <span class="st">&quot;November&quot;</span> <span class="ot">=</span> <span class="st">&quot;Nov&quot;</span>, <span class="st">&quot;December&quot;</span> <span class="ot">=</span> <span class="st">&quot;Dec&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="line-graphs-and-time-series.html#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
+<span id="cb5-26"><a href="line-graphs-and-time-series.html#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb5-27"><a href="line-graphs-and-time-series.html#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-28"><a href="line-graphs-and-time-series.html#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-29"><a href="line-graphs-and-time-series.html#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb5-30"><a href="line-graphs-and-time-series.html#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb5-31"><a href="line-graphs-and-time-series.html#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+</div>
+<div id="seasonality-cycles-and-normalizing-data" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Seasonality, Cycles, and “Normalizing” Data</h2>
+<div id="plotting-cyclical-data" class="section level3" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Plotting Cyclical Data</h3>
+<p>Identifying cycles or seasonality in data is often important for forecasting. Let’s plot the number of purchase card transactions by month, with a separate line for each year.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="line-graphs-and-time-series.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by month</span></span>
+<span id="cb6-2"><a href="line-graphs-and-time-series.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb6-3"><a href="line-graphs-and-time-series.html#cb6-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="line-graphs-and-time-series.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="line-graphs-and-time-series.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>(), <span class="at">Year =</span> <span class="fu">factor</span>(Year)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="line-graphs-and-time-series.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Count, <span class="at">color =</span> Year)) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="line-graphs-and-time-series.html#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb6-8"><a href="line-graphs-and-time-series.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;GnBu&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="line-graphs-and-time-series.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;March&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;July&quot;</span>, <span class="st">&quot;September&quot;</span>, <span class="st">&quot;November&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="line-graphs-and-time-series.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb6-11"><a href="line-graphs-and-time-series.html#cb6-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb6-12"><a href="line-graphs-and-time-series.html#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Purchase Card Transactions by Month&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="line-graphs-and-time-series.html#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb6-14"><a href="line-graphs-and-time-series.html#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb6-15"><a href="line-graphs-and-time-series.html#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb6-16"><a href="line-graphs-and-time-series.html#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb6-17"><a href="line-graphs-and-time-series.html#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb6-18"><a href="line-graphs-and-time-series.html#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb6-19"><a href="line-graphs-and-time-series.html#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb6-20"><a href="line-graphs-and-time-series.html#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb6-21"><a href="line-graphs-and-time-series.html#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Interestingly, we see that in 2014 and 2015, there was a huge drop-off around the middle of the year. Maybe they ran out of funding then? But in recent years, it’s more controlled and even throughout the year.</p>
+<p>There are some advanced prediction methods called ARIMA that can help make predictions with this kind of data. They’re outside the scope of this class, but are commonly used in finance.</p>
+<p>What could be improved on this graph? Well, the colors aren’t perfect. Some are a little hard to see. And maybe we could add year labels for 2014 and 2015.</p>
+</div>
+<div id="normalization" class="section level3" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Normalization</h3>
+<p>Okay, let’s look at the graph above. But maybe just a couple years, 2016-2018, so it’s a little easier to see. And for this, the year doesn’t really matter, so we’ll just make everything blue again.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="line-graphs-and-time-series.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by month</span></span>
+<span id="cb7-2"><a href="line-graphs-and-time-series.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb7-3"><a href="line-graphs-and-time-series.html#cb7-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="line-graphs-and-time-series.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year<span class="sc">&gt;</span><span class="dv">2015</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="line-graphs-and-time-series.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="line-graphs-and-time-series.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="line-graphs-and-time-series.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">factor</span>(Year)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="line-graphs-and-time-series.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Count, <span class="at">group =</span> Year)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="line-graphs-and-time-series.html#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="line-graphs-and-time-series.html#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;March&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;July&quot;</span>, <span class="st">&quot;September&quot;</span>, <span class="st">&quot;November&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="line-graphs-and-time-series.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb7-12"><a href="line-graphs-and-time-series.html#cb7-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb7-13"><a href="line-graphs-and-time-series.html#cb7-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Purchase Card Transactions by Month: 2016-2019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="line-graphs-and-time-series.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb7-15"><a href="line-graphs-and-time-series.html#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb7-16"><a href="line-graphs-and-time-series.html#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-17"><a href="line-graphs-and-time-series.html#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-18"><a href="line-graphs-and-time-series.html#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-19"><a href="line-graphs-and-time-series.html#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb7-20"><a href="line-graphs-and-time-series.html#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb7-21"><a href="line-graphs-and-time-series.html#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb7-22"><a href="line-graphs-and-time-series.html#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Quite a consistent sawtooth pattern year-to-year. You’ll see this a lot in finance, sales, marketing, donation, etc data. Why?</p>
+<p>Let’s go back to the data generating process. Where did this data come from? Well, this is purchase card data that people made for their jobs. Most people do most of their work…on workdays! And different months have different numbers of days, and different numbers of workdays.</p>
+<p>We’ll assume that 2019 is representative (though it does vary year to year!). <em>30 days has November, April, June and September…</em></p>
+<table style="width:99%;">
+<caption>Number of Days and Workdays Per Month for 2019</caption>
+<colgroup>
+<col width="25%" />
+<col width="34%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Month</th>
+<th>Days in Month</th>
+<th>Workdays (US)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>January</td>
+<td>31</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>February</td>
+<td>28</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>March</td>
+<td>31</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>April</td>
+<td>30</td>
+<td>22</td>
+</tr>
+<tr class="odd">
+<td>May</td>
+<td>31</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>June</td>
+<td>30</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>July</td>
+<td>31</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>August</td>
+<td>31</td>
+<td>22</td>
+</tr>
+<tr class="odd">
+<td>September</td>
+<td>30</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>October</td>
+<td>31</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td>November</td>
+<td>30</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>December</td>
+<td>31</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s normalize the number of transactions by the number of workdays and see what happens. Does this explain the sawtooth pattern? If it did, we should see, more or less, flat lines.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="line-graphs-and-time-series.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by month</span></span>
+<span id="cb8-2"><a href="line-graphs-and-time-series.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb8-3"><a href="line-graphs-and-time-series.html#cb8-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="line-graphs-and-time-series.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year<span class="sc">&gt;</span><span class="dv">2015</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="line-graphs-and-time-series.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="line-graphs-and-time-series.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="line-graphs-and-time-series.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">factor</span>(Year), <span class="at">Count =</span> <span class="fu">as.numeric</span>(Count),</span>
+<span id="cb8-8"><a href="line-graphs-and-time-series.html#cb8-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">Normalized_Count =</span> <span class="fu">case_when</span>(Month <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">23</span>,</span>
+<span id="cb8-9"><a href="line-graphs-and-time-series.html#cb8-9" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">20</span>,</span>
+<span id="cb8-10"><a href="line-graphs-and-time-series.html#cb8-10" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">21</span>,</span>
+<span id="cb8-11"><a href="line-graphs-and-time-series.html#cb8-11" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">22</span>,</span>
+<span id="cb8-12"><a href="line-graphs-and-time-series.html#cb8-12" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">5</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">23</span>,</span>
+<span id="cb8-13"><a href="line-graphs-and-time-series.html#cb8-13" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">6</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">20</span>,</span>
+<span id="cb8-14"><a href="line-graphs-and-time-series.html#cb8-14" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">7</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">23</span>,</span>
+<span id="cb8-15"><a href="line-graphs-and-time-series.html#cb8-15" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">8</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">22</span>,</span>
+<span id="cb8-16"><a href="line-graphs-and-time-series.html#cb8-16" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">9</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">21</span>,</span>
+<span id="cb8-17"><a href="line-graphs-and-time-series.html#cb8-17" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">10</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">23</span>,</span>
+<span id="cb8-18"><a href="line-graphs-and-time-series.html#cb8-18" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">11</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">21</span>,</span>
+<span id="cb8-19"><a href="line-graphs-and-time-series.html#cb8-19" aria-hidden="true" tabindex="-1"></a>                                    Month <span class="sc">==</span> <span class="dv">12</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">21</span>,</span>
+<span id="cb8-20"><a href="line-graphs-and-time-series.html#cb8-20" aria-hidden="true" tabindex="-1"></a>                                    <span class="cn">TRUE</span> <span class="sc">~</span> Count <span class="sc">/</span> <span class="dv">22</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-21"><a href="line-graphs-and-time-series.html#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Normalized_Count, <span class="at">group =</span> Year)) <span class="sc">+</span></span>
+<span id="cb8-22"><a href="line-graphs-and-time-series.html#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-23"><a href="line-graphs-and-time-series.html#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;March&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;July&quot;</span>, <span class="st">&quot;September&quot;</span>, <span class="st">&quot;November&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb8-24"><a href="line-graphs-and-time-series.html#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
+<span id="cb8-25"><a href="line-graphs-and-time-series.html#cb8-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb8-26"><a href="line-graphs-and-time-series.html#cb8-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Purchase Card Transactions Per Workday by Month: 2016-2019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-27"><a href="line-graphs-and-time-series.html#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb8-28"><a href="line-graphs-and-time-series.html#cb8-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb8-29"><a href="line-graphs-and-time-series.html#cb8-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb8-30"><a href="line-graphs-and-time-series.html#cb8-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb8-31"><a href="line-graphs-and-time-series.html#cb8-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb8-32"><a href="line-graphs-and-time-series.html#cb8-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb8-33"><a href="line-graphs-and-time-series.html#cb8-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb8-34"><a href="line-graphs-and-time-series.html#cb8-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb8-35"><a href="line-graphs-and-time-series.html#cb8-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>It looks like we don’t see that here. So perhaps there really is a cyclical nature to the purchasing patterns. This is something you could look at in your Lab…is there specific cycle to any one department?</p>
+<p>It looks like the number of workdays in the month doesn’t matter. But do people make more purchases on weekdays? Let’s check.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="line-graphs-and-time-series.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by weekday</span></span>
+<span id="cb9-2"><a href="line-graphs-and-time-series.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb9-3"><a href="line-graphs-and-time-series.html#cb9-3" aria-hidden="true" tabindex="-1"></a>PCard <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="line-graphs-and-time-series.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weekday =</span> <span class="fu">factor</span>(<span class="fu">weekdays</span>(Date), <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>,</span>
+<span id="cb9-5"><a href="line-graphs-and-time-series.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>, <span class="st">&quot;Saturday&quot;</span>,</span>
+<span id="cb9-6"><a href="line-graphs-and-time-series.html#cb9-6" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">&quot;Sunday&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="line-graphs-and-time-series.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(weekday) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="line-graphs-and-time-series.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="line-graphs-and-time-series.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> weekday, <span class="at">y =</span> Count, <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="line-graphs-and-time-series.html#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="line-graphs-and-time-series.html#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Day of the Week&quot;</span>,</span>
+<span id="cb9-12"><a href="line-graphs-and-time-series.html#cb9-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb9-13"><a href="line-graphs-and-time-series.html#cb9-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Purchase Card Transactions Per Weekday&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-14"><a href="line-graphs-and-time-series.html#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb9-15"><a href="line-graphs-and-time-series.html#cb9-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb9-16"><a href="line-graphs-and-time-series.html#cb9-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb9-17"><a href="line-graphs-and-time-series.html#cb9-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb9-18"><a href="line-graphs-and-time-series.html#cb9-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb9-19"><a href="line-graphs-and-time-series.html#cb9-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb9-20"><a href="line-graphs-and-time-series.html#cb9-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb9-21"><a href="line-graphs-and-time-series.html#cb9-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb9-22"><a href="line-graphs-and-time-series.html#cb9-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>So there is a drop off! Notice, though that we grouped everything by day, regardless of year. Was it different year-to-year?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="line-graphs-and-time-series.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by weekday</span></span>
+<span id="cb10-2"><a href="line-graphs-and-time-series.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
+<span id="cb10-3"><a href="line-graphs-and-time-series.html#cb10-3" aria-hidden="true" tabindex="-1"></a>linegraph_data <span class="ot">&lt;-</span> PCard <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="line-graphs-and-time-series.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weekday =</span> <span class="fu">factor</span>(<span class="fu">weekdays</span>(Date), <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>,</span>
+<span id="cb10-5"><a href="line-graphs-and-time-series.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>, <span class="st">&quot;Saturday&quot;</span>,</span>
+<span id="cb10-6"><a href="line-graphs-and-time-series.html#cb10-6" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">&quot;Sunday&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="line-graphs-and-time-series.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, weekday) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="line-graphs-and-time-series.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb10-9"><a href="line-graphs-and-time-series.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">factor</span>(Year),</span>
+<span id="cb10-10"><a href="line-graphs-and-time-series.html#cb10-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">y_pos =</span> <span class="fu">as.numeric</span>(Count), </span>
+<span id="cb10-11"><a href="line-graphs-and-time-series.html#cb10-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">y_pos =</span> <span class="fu">case_when</span>(Year <span class="sc">==</span> <span class="st">&quot;2018&quot;</span> <span class="sc">~</span> y_pos <span class="sc">-</span> <span class="dv">500</span>,</span>
+<span id="cb10-12"><a href="line-graphs-and-time-series.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                           Year <span class="sc">==</span> <span class="st">&quot;2016&quot;</span> <span class="sc">~</span> y_pos <span class="sc">+</span> <span class="dv">500</span>,</span>
+<span id="cb10-13"><a href="line-graphs-and-time-series.html#cb10-13" aria-hidden="true" tabindex="-1"></a>                           <span class="cn">TRUE</span> <span class="sc">~</span> y_pos))</span>
+<span id="cb10-14"><a href="line-graphs-and-time-series.html#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="line-graphs-and-time-series.html#cb10-15" aria-hidden="true" tabindex="-1"></a>  linegraph_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> weekday, <span class="at">y =</span> Count, <span class="at">color =</span> Year, <span class="at">group =</span> Year)) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="line-graphs-and-time-series.html#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb10-17"><a href="line-graphs-and-time-series.html#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> linegraph_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(weekday <span class="sc">==</span> <span class="st">&quot;Sunday&quot;</span>),</span>
+<span id="cb10-18"><a href="line-graphs-and-time-series.html#cb10-18" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">label =</span> Year, <span class="at">color =</span> Year, <span class="at">x =</span> <span class="fl">7.3</span>, <span class="at">y =</span> y_pos)) <span class="sc">+</span></span>
+<span id="cb10-19"><a href="line-graphs-and-time-series.html#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;2014&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;2015&quot;</span> <span class="ot">=</span> <span class="st">&quot;#5b0013&quot;</span>, <span class="st">&quot;2016&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>, <span class="st">&quot;2017&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ffcc33&quot;</span>, <span class="st">&quot;2018&quot;</span> <span class="ot">=</span> <span class="st">&quot;gray40&quot;</span>, <span class="st">&quot;2019&quot;</span> <span class="ot">=</span> <span class="st">&quot;black&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb10-20"><a href="line-graphs-and-time-series.html#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Day of the Week&quot;</span>,</span>
+<span id="cb10-21"><a href="line-graphs-and-time-series.html#cb10-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Total Transactions&quot;</span>,</span>
+<span id="cb10-22"><a href="line-graphs-and-time-series.html#cb10-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Purchase Card Transactions Per Weekday&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-23"><a href="line-graphs-and-time-series.html#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb10-24"><a href="line-graphs-and-time-series.html#cb10-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#ffffff&quot;</span>),</span>
+<span id="cb10-25"><a href="line-graphs-and-time-series.html#cb10-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb10-26"><a href="line-graphs-and-time-series.html#cb10-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb10-27"><a href="line-graphs-and-time-series.html#cb10-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb10-28"><a href="line-graphs-and-time-series.html#cb10-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb10-29"><a href="line-graphs-and-time-series.html#cb10-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb10-30"><a href="line-graphs-and-time-series.html#cb10-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb10-31"><a href="line-graphs-and-time-series.html#cb10-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+</div>
+<div id="variations" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Variations</h2>
+<div id="slope-graph" class="section level3" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> <strong>Slope Graph</strong></h3>
+<p>Slope graphs can show changes over an interval (say, start to finish, or between two years) and are ideal for showing changes between groups or categories. They can make it easy to show changes in position or ranking. They often show just two periods (two points/one line per category) but they can be extended to more than two periods if the data isn’t too crowded.</p>
+<p>Let’s look at the change in some NBA team rankings.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="line-graphs-and-time-series.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a Slope Graph to examine NBA team rankings</span></span>
+<span id="cb11-2"><a href="line-graphs-and-time-series.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Eastern Conference Rankings</span></span>
+<span id="cb11-3"><a href="line-graphs-and-time-series.html#cb11-3" aria-hidden="true" tabindex="-1"></a>NBA_rankings <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb11-4"><a href="line-graphs-and-time-series.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">team =</span> <span class="fu">c</span>(<span class="st">&quot;Bucks&quot;</span>, <span class="st">&quot;Raptors&quot;</span>, <span class="st">&quot;76ers&quot;</span>, <span class="st">&quot;Celtics&quot;</span>, <span class="st">&quot;Pacers&quot;</span>, <span class="st">&quot;Nets&quot;</span>, <span class="st">&quot;Magic&quot;</span>, <span class="st">&quot;Heat&quot;</span>),</span>
+<span id="cb11-5"><a href="line-graphs-and-time-series.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">rank2018 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">10</span>),</span>
+<span id="cb11-6"><a href="line-graphs-and-time-series.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">rank2019 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">5</span>),</span>
+<span id="cb11-7"><a href="line-graphs-and-time-series.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">rank2020 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">5</span>)</span>
+<span id="cb11-8"><a href="line-graphs-and-time-series.html#cb11-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-9"><a href="line-graphs-and-time-series.html#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="line-graphs-and-time-series.html#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform the wide data into long data</span></span>
+<span id="cb11-11"><a href="line-graphs-and-time-series.html#cb11-11" aria-hidden="true" tabindex="-1"></a>NBA_rankings <span class="ot">&lt;-</span> NBA_rankings <span class="sc">%&gt;%</span></span>
+<span id="cb11-12"><a href="line-graphs-and-time-series.html#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>team,</span>
+<span id="cb11-13"><a href="line-graphs-and-time-series.html#cb11-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb11-14"><a href="line-graphs-and-time-series.html#cb11-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_prefix =</span> <span class="st">&quot;rank&quot;</span>,</span>
+<span id="cb11-15"><a href="line-graphs-and-time-series.html#cb11-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;Rank&quot;</span>)</span>
+<span id="cb11-16"><a href="line-graphs-and-time-series.html#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="line-graphs-and-time-series.html#cb11-17" aria-hidden="true" tabindex="-1"></a>NBA_rankings <span class="ot">&lt;-</span> NBA_rankings <span class="sc">%&gt;%</span> </span>
+<span id="cb11-18"><a href="line-graphs-and-time-series.html#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">as.numeric</span>(Year))</span>
+<span id="cb11-19"><a href="line-graphs-and-time-series.html#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="line-graphs-and-time-series.html#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the Slope Graph</span></span>
+<span id="cb11-21"><a href="line-graphs-and-time-series.html#cb11-21" aria-hidden="true" tabindex="-1"></a>NBA_rankings <span class="sc">%&gt;%</span></span>
+<span id="cb11-22"><a href="line-graphs-and-time-series.html#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Rank, <span class="at">color =</span> team)) <span class="sc">+</span></span>
+<span id="cb11-23"><a href="line-graphs-and-time-series.html#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb11-24"><a href="line-graphs-and-time-series.html#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> NBA_rankings <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2020</span>), </span>
+<span id="cb11-25"><a href="line-graphs-and-time-series.html#cb11-25" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">label =</span> team, <span class="at">y =</span> Rank, <span class="at">x =</span> <span class="fl">2020.2</span>, <span class="at">color =</span> team)) <span class="sc">+</span></span>
+<span id="cb11-26"><a href="line-graphs-and-time-series.html#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> Rank, <span class="at">color =</span> team), <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">label.size =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb11-27"><a href="line-graphs-and-time-series.html#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2018</span>, <span class="dv">2019</span>, <span class="dv">2020</span>), <span class="at">position =</span> <span class="st">&quot;top&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-28"><a href="line-graphs-and-time-series.html#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>() <span class="sc">+</span></span>
+<span id="cb11-29"><a href="line-graphs-and-time-series.html#cb11-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Bucks&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00471B&quot;</span>, <span class="st">&quot;76ers&quot;</span> <span class="ot">=</span> <span class="st">&quot;#006BB6&quot;</span>,</span>
+<span id="cb11-30"><a href="line-graphs-and-time-series.html#cb11-30" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Celtics&quot;</span> <span class="ot">=</span> <span class="st">&quot;#007A33&quot;</span>, <span class="st">&quot;Nets&quot;</span> <span class="ot">=</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb11-31"><a href="line-graphs-and-time-series.html#cb11-31" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Magic&quot;</span> <span class="ot">=</span> <span class="st">&quot;gray40&quot;</span>, <span class="st">&quot;Pacers&quot;</span> <span class="ot">=</span> <span class="st">&quot;#002D62&quot;</span>, </span>
+<span id="cb11-32"><a href="line-graphs-and-time-series.html#cb11-32" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Raptors&quot;</span> <span class="ot">=</span> <span class="st">&quot;#CE1141&quot;</span>, <span class="st">&quot;Heat&quot;</span> <span class="ot">=</span> <span class="st">&quot;#98002E&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb11-33"><a href="line-graphs-and-time-series.html#cb11-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;NBA Team Rankings&quot;</span>,</span>
+<span id="cb11-34"><a href="line-graphs-and-time-series.html#cb11-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb11-35"><a href="line-graphs-and-time-series.html#cb11-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-36"><a href="line-graphs-and-time-series.html#cb11-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb11-37"><a href="line-graphs-and-time-series.html#cb11-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb11-38"><a href="line-graphs-and-time-series.html#cb11-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb11-39"><a href="line-graphs-and-time-series.html#cb11-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb11-40"><a href="line-graphs-and-time-series.html#cb11-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb11-41"><a href="line-graphs-and-time-series.html#cb11-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb11-42"><a href="line-graphs-and-time-series.html#cb11-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-43"><a href="line-graphs-and-time-series.html#cb11-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-44"><a href="line-graphs-and-time-series.html#cb11-44" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-45"><a href="line-graphs-and-time-series.html#cb11-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb11-46"><a href="line-graphs-and-time-series.html#cb11-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>You’re really looking for two things on slope graphs:</p>
+<ul>
+<li><p><strong>Parallel lines</strong> which mean that relative positions stayed the same or there was no change</p></li>
+<li><p><strong>Slopes and Intersections</strong> which reflect changes</p></li>
+</ul>
+<p>In the NBA example above, there are two big changes…the Miami Heat shoot from 10th place to 5th from 2018 to 2019, and the Philadelphia 76ers drop from 3rd to 6th. What happens between 2019 and 2020? Everything stayed the same, hence the parallel lines.</p>
+</div>
+<div id="tufte-style-line-graph" class="section level3" number="11.4.2">
+<h3><span class="header-section-number">11.4.2</span> Tufte-Style Line Graph</h3>
+<p>An extension of the slope graph is the line graph style espoused by Tufte. These can work well with a few groups and enough space on the plot, but they don’t work as well if things are very complicated/crowded.</p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>They certainly don’t work if you have many values (e.g. daily data over many years).</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="correlation-and-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parts-to-whole-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

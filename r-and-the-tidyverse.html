@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Intro to ggplot | Course Notes - IDSC 4210</title>
-  <meta name="description" content="6 Intro to ggplot | Course Notes - IDSC 4210" />
+  <title>5 R and the Tidyverse | Course Notes - IDSC 4210</title>
+  <meta name="description" content="5 R and the Tidyverse | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Intro to ggplot | Course Notes - IDSC 4210" />
+  <meta property="og:title" content="5 R and the Tidyverse | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Intro to ggplot | Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="5 R and the Tidyverse | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="r-and-the-tidyverse.html"/>
-<link rel="next" href="data-types.html"/>
+<link rel="prev" href="design-fundamentals.html"/>
+<link rel="next" href="intro-to-ggplot.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -363,95 +363,256 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro-to-ggplot" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Intro to ggplot</h1>
+<div id="r-and-the-tidyverse" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> R and the Tidyverse</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="why-ggplot" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Why ggplot?</h2>
-<p>R comes with a default plotting package, but the ggplot package is very powerful and (in my opinion) much more intuitive. ggplot is a package developed by Hadley Wickham; the work began while he was working on his <a href="http://had.co.nz/thesis/practical-tools-hadley-wickham.pdf">PhD thesis in statistics</a>. It’s free, widely used, and is well-supported.</p>
+<div id="using-r-and-the-tidyverse" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Using R and the Tidyverse</h2>
+<p>This course is not a comprehensive introduction to R for Data Science (there are many excellent resources online, as well as great “bootcamps”). But we need to have a basic understanding of how R works and how to use some of the data manipulation (“wrangling”) tools.</p>
+<p>I will walk through some typical tasks and common functions.</p>
 </div>
-<div id="resources" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Resources</h2>
-<p>These course notes are not intended to be a complete guide to ggplot2. There are excellent resources online, including:</p>
-<blockquote>
-<ul>
-<li>The <a href="https://ggplot2.tidyverse.org/">ggplot2 website</a> which also includes this excellent <a href="https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf">cheatsheet</a></li>
-<li><a href="https://ggplot2-book.org/">ggplot2 book</a> by Hadley Wickham, Danielle Navarro, and Thomas Lin Pederson</li>
-</ul>
-</blockquote>
-<p>We’ll walk through some basic examples, though. There are also examples of many other graphs throughout the notes. It’s important to know how to tweaak and adjust your code, using search engines and help files to learn how to do specific things.</p>
+<div id="basic-commands" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Basic Commands</h2>
+<div id="comments" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Comments</h3>
+<p>Good code has lots of comments. You might think you’ll remember how your code works, but you won’t! Not a year from now! More importantly, your collaborators might not understand it. Putting the hashtag <code>#</code> in front of the text to “comments it out” so that it won’t run.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="r-and-the-tidyverse.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Start your code sections with 3-5 hashtags</span></span>
+<span id="cb1-2"><a href="r-and-the-tidyverse.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;Subcomments&quot; only get one hashtag</span></span></code></pre></div>
+<p>Organized, well-commented code is a hallmark of a thoughtful professional, but we all fall short sometimes.</p>
 </div>
-<div id="ggplot2-vs-base-r" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> ggplot2 vs Base R</h2>
-<p>First, let’s compare ggplot2 to the Base R graphics package. (There is another package called <code>lattice</code> but it’s much less popular.)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro-to-ggplot.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Compare the capabilities of base R vs ggplot</span></span>
-<span id="cb1-2"><a href="intro-to-ggplot.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="intro-to-ggplot.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb1-4"><a href="intro-to-ggplot.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb1-5"><a href="intro-to-ggplot.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="intro-to-ggplot.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppress summarise info</span></span>
-<span id="cb1-7"><a href="intro-to-ggplot.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">dplyr.summarise.inform =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-8"><a href="intro-to-ggplot.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="intro-to-ggplot.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load booking data</span></span>
-<span id="cb1-10"><a href="intro-to-ggplot.html#cb1-10" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span>
-<span id="cb1-11"><a href="intro-to-ggplot.html#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="intro-to-ggplot.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a quick scatterplot with the base R package</span></span>
-<span id="cb1-13"><a href="intro-to-ggplot.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bookingdata<span class="sc">$</span>adr, bookingdata<span class="sc">$</span>total_of_special_requests, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro-to-ggplot.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now make a quick scatterplot with ggplot</span></span>
-<span id="cb2-2"><a href="intro-to-ggplot.html#cb2-2" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="intro-to-ggplot.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> adr, <span class="at">y =</span> total_of_special_requests)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="intro-to-ggplot.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<p>The two plots aren’t that different, but the syntax is quite a bit different. Also, the appearance of the ggplot graph is much nicer, which hints that it’s maybe more advanced.</p>
-<p>ggplot2 is much more flexible and powerful than the Base R plots package though. Notice that outlier, with an <code>adr</code> (Average Daily Rate) of nearly $6000? Sure would be nice to quickly filter that out. And clean up the labels. And…and…and…</p>
-<p>You can probably do most things in the Base R plotting functions. But it’s not as flexible, or powerful, or common.</p>
+<div id="storing-objects" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Storing objects</h3>
+<p>You can either use the “assignment operator” <code>&lt;-</code> or the equals sign <code>=</code> when you want to assign a value/data to a variable.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="r-and-the-tidyverse.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Demonstrate two ways of assigning values to variables</span></span>
+<span id="cb2-2"><a href="r-and-the-tidyverse.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First use assignment operator</span></span>
+<span id="cb2-3"><a href="r-and-the-tidyverse.html#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb2-4"><a href="r-and-the-tidyverse.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="r-and-the-tidyverse.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Then use the equal sign</span></span>
+<span id="cb4-2"><a href="r-and-the-tidyverse.html#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb4-3"><a href="r-and-the-tidyverse.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>Stylistically, I recommend the assignment operator, but you may see the equal sign when looking at some help files.</p>
+<p>The “double equal sign” <code>==</code> is used to <em>test</em> whether two things are equal (which we’ll talk about later).</p>
 </div>
-<div id="grammar-of-graphics" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Grammar of Graphics</h2>
-<p>Aesthetics, geom_ Layers, and Facets</p>
 </div>
-<div id="themes" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Themes</h2>
-<p>The <code>theme()</code> layer lets you control many aspects of the appearance of a graph. There are a number of pre-developed themes you can use, or you can define your own.</p>
-<p>The <code>ggthemes</code> package includes some additional themes that you may want to try out, including <code>theme_tufte()</code> which is similar to that used in Tufte’s work, and <code>theme_economist()</code> which is (surprise) like the graphs used in The Economist.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro-to-ggplot.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Plot the same line graph with different themes</span></span>
-<span id="cb3-2"><a href="intro-to-ggplot.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load ggthemes package</span></span>
-<span id="cb3-3"><a href="intro-to-ggplot.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb3-4"><a href="intro-to-ggplot.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="intro-to-ggplot.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot default theme</span></span>
-<span id="cb3-6"><a href="intro-to-ggplot.html#cb3-6" aria-hidden="true" tabindex="-1"></a>base_graph <span class="ot">&lt;-</span> bookingdata <span class="sc">%&gt;%</span></span>
-<span id="cb3-7"><a href="intro-to-ggplot.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(arrival_date_year, arrival_date_month, hotel) <span class="sc">%&gt;%</span></span>
-<span id="cb3-8"><a href="intro-to-ggplot.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">bookings =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb3-9"><a href="intro-to-ggplot.html#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">booking_date =</span> <span class="fu">dmy</span>(<span class="fu">paste0</span>(<span class="st">&quot;01&quot;</span>, arrival_date_month, arrival_date_year))) <span class="sc">%&gt;%</span></span>
-<span id="cb3-10"><a href="intro-to-ggplot.html#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> booking_date, <span class="at">y =</span> bookings, <span class="at">color =</span> hotel)) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="intro-to-ggplot.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb3-12"><a href="intro-to-ggplot.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;blue4&quot;</span>, <span class="st">&quot;darkred&quot;</span>))<span class="sc">+</span></span>
-<span id="cb3-13"><a href="intro-to-ggplot.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">&quot;%b-%Y&quot;</span>), <span class="at">breaks =</span> <span class="fu">date_breaks</span>(<span class="st">&quot;4 months&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="intro-to-ggplot.html#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Month&quot;</span>,</span>
-<span id="cb3-15"><a href="intro-to-ggplot.html#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Total Bookings&quot;</span>,</span>
-<span id="cb3-16"><a href="intro-to-ggplot.html#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Hotel&quot;</span>)</span>
-<span id="cb3-17"><a href="intro-to-ggplot.html#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="intro-to-ggplot.html#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the graph with the default ggplot theme</span></span>
-<span id="cb3-19"><a href="intro-to-ggplot.html#cb3-19" aria-hidden="true" tabindex="-1"></a>base_graph <span class="sc">+</span></span>
-<span id="cb3-20"><a href="intro-to-ggplot.html#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Default Theme - Total Bookings by Month&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="intro-to-ggplot.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the ggplot theme_bw</span></span>
-<span id="cb4-2"><a href="intro-to-ggplot.html#cb4-2" aria-hidden="true" tabindex="-1"></a>base_graph <span class="sc">+</span></span>
-<span id="cb4-3"><a href="intro-to-ggplot.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;ggplot theme_bw - Total Bookings by Month&quot;</span>) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="intro-to-ggplot.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro-to-ggplot.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try the ggthemes tufte theme</span></span>
-<span id="cb5-2"><a href="intro-to-ggplot.html#cb5-2" aria-hidden="true" tabindex="-1"></a>base_graph <span class="sc">+</span></span>
-<span id="cb5-3"><a href="intro-to-ggplot.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;GGThemes theme_tufte - Total Bookings by Month&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="intro-to-ggplot.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_tufte</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="intro-to-ggplot.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try the Economist theme</span></span>
-<span id="cb6-2"><a href="intro-to-ggplot.html#cb6-2" aria-hidden="true" tabindex="-1"></a>base_graph <span class="sc">+</span></span>
-<span id="cb6-3"><a href="intro-to-ggplot.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;GGThemes theme_economist - Total Bookings by Month&quot;</span>) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="intro-to-ggplot.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_economist</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
+<div id="saving-and-loading-in-data" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Saving and Loading in Data</h2>
+<p>I won’t go into detail here, but there is lots of information available on <a href="https://readr.tidyverse.org/">the <code>readr</code> package</a> which lets you import/export data into/from R. There are also Base R functions (which are a little slower and less intuitive) and <code>data.table</code> functions (which are faster but less intuitive). Personally, I use <code>readr</code>.</p>
+<div id="csv-comma-separated-values" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> .csv (Comma Separated Values)</h3>
+<p>Data is often stored as text separated by commas. You’ve probably downloaded one of these files before, and if you just double click on it, your computer will probably try to open it with Excel or Numbers. We can read these files into R using the <code>read_csv</code> command from the <code>readr</code> package (included in the <code>tidyverse</code>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="r-and-the-tidyverse.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load tidyverse</span></span>
+<span id="cb6-2"><a href="r-and-the-tidyverse.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.3
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="r-and-the-tidyverse.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in booking data, note we have to &quot;put&quot; it somewhere</span></span>
+<span id="cb10-2"><a href="r-and-the-tidyverse.html#cb10-2" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   hotel = col_character(),
+##   arrival_date_month = col_character(),
+##   meal = col_character(),
+##   country = col_character(),
+##   market_segment = col_character(),
+##   reserved_room_type = col_character(),
+##   assigned_room_type = col_character(),
+##   deposit_type = col_character(),
+##   agent = col_character(),
+##   reservation_status = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p>If we’ve manipulated the data and want to save it, send it to a colleague, or perhaps analyze it in another program, we might want to save the “new” file back as a <code>.csv</code>.</p>
+<p>We can do that with the <code>write_csv</code> command.</p>
+</div>
+<div id="rds-r-data-file" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> .rds (R Data File)</h3>
+<p>Another data format we’ll see in this class is the <code>.rds</code> file. This is R’s native data format. We use the <code>read_rds</code> command. Loading tends to be very fast (much faster than a <code>.csv</code>)</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-and-the-tidyverse.html#cb13-1" aria-hidden="true" tabindex="-1"></a>PCard <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">&quot;SanJosePCardTransactions&quot;</span>)</span></code></pre></div>
+<p>If we need to save the file, we do that with the <code>write_rds</code> command.</p>
+</div>
+<div id="long-vs-wide-data" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Long vs Wide Data</h3>
+<p>In this course, you will be provided with data that has (mostly) been scrubbed for you and is already in a “long” format. Most analysis (e.g. plotting, regression) works best on long data, but we often present tables in wide format because a long table is hard for a human to interpret.</p>
+<p>Long data has one “observation” on each row. This is often the most intuitive way to record data. Consider the hotel booking data…how else would we present it beside one booking per row?!</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">hotel</th>
+<th align="left">arrival_date</th>
+<th align="right">adr</th>
+<th align="left">market_segment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Resort Hotel</td>
+<td align="left">2015-07-01</td>
+<td align="right">98.0</td>
+<td align="left">Online TA</td>
+</tr>
+<tr class="even">
+<td align="left">Resort Hotel</td>
+<td align="left">2015-07-01</td>
+<td align="right">98.0</td>
+<td align="left">Online TA</td>
+</tr>
+<tr class="odd">
+<td align="left">Resort Hotel</td>
+<td align="left">2015-07-01</td>
+<td align="right">107.0</td>
+<td align="left">Direct</td>
+</tr>
+<tr class="even">
+<td align="left">Resort Hotel</td>
+<td align="left">2015-07-01</td>
+<td align="right">103.0</td>
+<td align="left">Direct</td>
+</tr>
+<tr class="odd">
+<td align="left">Resort Hotel</td>
+<td align="left">2015-07-01</td>
+<td align="right">82.0</td>
+<td align="left">Online TA</td>
+</tr>
+<tr class="even">
+<td align="left">Resort Hotel</td>
+<td align="left">2015-07-01</td>
+<td align="right">105.5</td>
+<td align="left">Offline TA/TO</td>
+</tr>
+</tbody>
+</table>
+<p>But sometimes we consolidate data. Or you might receive data that is aggregated in some way for you already. Let’s say we were looking at the total bookings per month by hotel…the hotels might be the rows and the months might be the columns.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">hotel</th>
+<th align="right">August</th>
+<th align="right">September</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">City Hotel</td>
+<td align="right">5381</td>
+<td align="right">4290</td>
+</tr>
+<tr class="even">
+<td align="left">Resort Hotel</td>
+<td align="right">3257</td>
+<td align="right">2102</td>
+</tr>
+</tbody>
+</table>
+<p>This data is in <em>wide</em> format and while it’s easy to read, it’s not ideal for plotting or regression. Notice that each row is no longer one “observation” (where an observation is the number of stays at a given hotel in a month). Each row has three observations…the number of stays in each hotel for July, for August, and for September.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">arrival_date_month</th>
+<th align="right">City Hotel</th>
+<th align="right">Resort Hotel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Aug</td>
+<td align="right">5381</td>
+<td align="right">3257</td>
+</tr>
+<tr class="even">
+<td align="left">Sep</td>
+<td align="right">4290</td>
+<td align="right">2102</td>
+</tr>
+</tbody>
+</table>
+<p>How about now? No, still wide format, just in a different way.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">hotel</th>
+<th align="left">arrival_date_month</th>
+<th align="right">Total_bookings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">City Hotel</td>
+<td align="left">August</td>
+<td align="right">5381</td>
+</tr>
+<tr class="even">
+<td align="left">City Hotel</td>
+<td align="left">September</td>
+<td align="right">4290</td>
+</tr>
+<tr class="odd">
+<td align="left">Resort Hotel</td>
+<td align="left">August</td>
+<td align="right">3257</td>
+</tr>
+<tr class="even">
+<td align="left">Resort Hotel</td>
+<td align="left">September</td>
+<td align="right">2102</td>
+</tr>
+</tbody>
+</table>
+<p>Here we go…long data ready for analysis. Harder for a human to interpret, though!</p>
+</div>
+</div>
+<div id="the-pipe-operator" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> The Pipe Operator</h2>
+<p>The “pipe operator” <code>%&gt;%</code> is one of the handiest function in R. It takes whatever comes on the left and “passes it” to the function on the right. Why might that be helpful? Let’s look at an example of what happens when we <em>don’t</em> use the pipe.</p>
+<p>Let’s say we want to find the mean daily rate <code>adr</code> (and the min and the max) for guests at the City Hotel from Great Britain (GBR), Ireland (IRL), the US (USA), or Spain (ESP).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-and-the-tidyverse.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Mean ADR by country for ONLY City Hotel</span></span>
+<span id="cb14-2"><a href="r-and-the-tidyverse.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Without pipe operator</span></span>
+<span id="cb14-3"><a href="r-and-the-tidyverse.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="fu">group_by</span>(<span class="fu">filter</span>(bookingdata, hotel <span class="sc">==</span> <span class="st">&quot;City Hotel&quot;</span>, country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;GBR&quot;</span>, <span class="st">&quot;USA&quot;</span>, <span class="st">&quot;IRL&quot;</span>, <span class="st">&quot;ESP&quot;</span>)), country), <span class="at">Mean_ADR =</span> <span class="fu">mean</span>(adr))</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 2
+##   country Mean_ADR
+## * &lt;chr&gt;      &lt;dbl&gt;
+## 1 ESP         114.
+## 2 GBR         115.
+## 3 IRL         116.
+## 4 USA         120.</code></pre>
+<p>This works but…wow is it confusing. We have to summarise something that we grouped, that was filtered, that started as the <code>bookingdata</code>. One thing is nested inside another.</p>
+<p>Try it with the pipe. We take the bookingdata, filter it, then group it, and finally summarize it. With the pipe, the code matches our thought process and it’s much easier to debug.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-and-the-tidyverse.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># With pipe operator</span></span>
+<span id="cb16-2"><a href="r-and-the-tidyverse.html#cb16-2" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="r-and-the-tidyverse.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hotel <span class="sc">==</span> <span class="st">&quot;City Hotel&quot;</span>, country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;GBR&quot;</span>, <span class="st">&quot;USA&quot;</span>, <span class="st">&quot;IRL&quot;</span>, <span class="st">&quot;ESP&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="r-and-the-tidyverse.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="r-and-the-tidyverse.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_ADR =</span> <span class="fu">mean</span>(adr))</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 2
+##   country Mean_ADR
+## * &lt;chr&gt;      &lt;dbl&gt;
+## 1 ESP         114.
+## 2 GBR         115.
+## 3 IRL         116.
+## 4 USA         120.</code></pre>
+</div>
+<div id="logicals-and-filtering-the-data" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Logicals and Filtering the Data</h2>
+</div>
+<div id="creating-new-variables" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Creating new Variables</h2>
+</div>
+<div id="grouping-and-summarizing" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Grouping and Summarizing</h2>
+<div id="outside-ggplot" class="section level3" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Outside ggplot</h3>
+</div>
+<div id="inside-ggplot-with-stat_summary" class="section level3" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Inside ggplot with stat_summary</h3>
 
+</div>
 </div>
 </div>
             </section>
@@ -459,8 +620,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="r-and-the-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="design-fundamentals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro-to-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
