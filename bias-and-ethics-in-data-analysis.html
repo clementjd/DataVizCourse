@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Exploring and Communicating with Data | Course Notes - IDSC 4210</title>
-  <meta name="description" content="3 Exploring and Communicating with Data | Course Notes - IDSC 4210" />
+  <title>16 Bias and Ethics in Data Analysis | Course Notes - IDSC 4210</title>
+  <meta name="description" content="16 Bias and Ethics in Data Analysis | Course Notes - IDSC 4210" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Exploring and Communicating with Data | Course Notes - IDSC 4210" />
+  <meta property="og:title" content="16 Bias and Ethics in Data Analysis | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Exploring and Communicating with Data | Course Notes - IDSC 4210" />
+  <meta name="twitter:title" content="16 Bias and Ethics in Data Analysis | Course Notes - IDSC 4210" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="installing-r-and-loading-datasets.html"/>
-<link rel="next" href="design-fundamentals.html"/>
+<link rel="prev" href="accessible-design.html"/>
+<link rel="next" href="common-ggplot-problems.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,69 +54,6 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 </head>
 
@@ -363,115 +300,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exploring-and-communicating-with-data" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Exploring and Communicating with Data</h1>
+<div id="bias-and-ethics-in-data-analysis" class="section level1" number="16">
+<h1><span class="header-section-number">16</span> Bias and Ethics in Data Analysis</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="the-data-science-cycle" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> The Data Science Cycle</h2>
-<p>Wickham and Grolemund propose the <strong>Data Science Cycle</strong> as one way to organize your process. After <strong>importing</strong> your data and <strong>tidying</strong> it (cleaning and arranging it for analysis), you explore and gain understanding. Finally, you communicate your results.</p>
-<p><img src="2_DataScienceCycle.png" width="683" /></p>
-</div>
-<div id="exploratory-vs.-explanatory-data-analysis" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Exploratory vs. Explanatory Data Analysis</h2>
-<p>In <strong>Exploratory Data Analysis (EDA)</strong>, you don’t necessarily know what you’re looking for. You might have an idea that there’s a problem or heterogeneity (something different). Exploratory data analysis takes place in the iterative loop in the Data Science Cycle above.</p>
-<p>EDA is not formal, rigid or defined. Start with questions about your data, and then look at them. Use a combination of transformations (e.g. looking at the mean or median), visualizations (e.g. bar charts, histograms, etc), and models (e.g. linear regression).</p>
-<p>You will often have some initial questions and hypotheses to go on, like “Are sales different in different regions?” or “Do donors give more on Mondays?” or “Do students perform better if they eat a snack?”</p>
-<blockquote>
-<p>"[Exploratory Data Analysis] is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. <em>(Hadley Wickham and Garrett Grolemund, R for Data Science, pg 81)</em></p>
-</blockquote>
-<p>Dashboards are often an important tool to help non-data people who are domain experts (e.g. doctors, sales managers) perform their <em>own</em> EDA.</p>
-<p>After exploratory data analysis, you will often move to the last step of the Data Science Cycle, communicating. This is where <strong>explanatory analysis</strong>, comes in.</p>
-<blockquote>
-<p>“[Explanatory analysis is when] you have something specific you want to communicate to somebody specific” <em>(Cole Nussbaumer Knaflic, <a href="https://youtu.be/8EMW7io4rSI?t=448">Storytelling with Data Talk at Google</a>)</em></p>
-</blockquote>
-<p>Rather than letting people get lost in the data or just presenting a big table, we want to say something very specific <em>using the data</em>.</p>
-</div>
-<div id="storytelling-with-data" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Storytelling with Data</h2>
-<div id="step-1-focus-attention" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Step 1: Focus Attention</h3>
-<p>Cole Nussbaumer Knaflic, author of <em>Storytelling with Data</em>, argues that there are two keys to effectively communicating with data. First, is to <strong>focus attention</strong> using pre-attentive attributes and effective design. Rather than just putting all the information on the page, draw attention to specific parts strategically to cue your readers.</p>
-<p>Thinking about our hotel booking data, suppose we want to compare the average daily rate across marget segments. Below, see two graphs.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="exploring-and-communicating-with-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Create a figure with two bar charts</span></span>
-<span id="cb1-2"><a href="exploring-and-communicating-with-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages. gridExtra package arranges multiple plots in a figure</span></span>
-<span id="cb1-3"><a href="exploring-and-communicating-with-data.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a href="exploring-and-communicating-with-data.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb1-5"><a href="exploring-and-communicating-with-data.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="exploring-and-communicating-with-data.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load booking data</span></span>
-<span id="cb1-7"><a href="exploring-and-communicating-with-data.html#cb1-7" aria-hidden="true" tabindex="-1"></a>booking_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span>
-<span id="cb1-8"><a href="exploring-and-communicating-with-data.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="exploring-and-communicating-with-data.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two plots with our booking data</span></span>
-<span id="cb1-10"><a href="exploring-and-communicating-with-data.html#cb1-10" aria-hidden="true" tabindex="-1"></a>topplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
-<span id="cb1-11"><a href="exploring-and-communicating-with-data.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(market_segment) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-12"><a href="exploring-and-communicating-with-data.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">adr =</span> <span class="fu">mean</span>(adr)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-13"><a href="exploring-and-communicating-with-data.html#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> market_segment, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
-<span id="cb1-14"><a href="exploring-and-communicating-with-data.html#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-15"><a href="exploring-and-communicating-with-data.html#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
-<span id="cb1-16"><a href="exploring-and-communicating-with-data.html#cb1-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>)</span>
-<span id="cb1-17"><a href="exploring-and-communicating-with-data.html#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="exploring-and-communicating-with-data.html#cb1-18" aria-hidden="true" tabindex="-1"></a>bottomplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
-<span id="cb1-19"><a href="exploring-and-communicating-with-data.html#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(market_segment) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-20"><a href="exploring-and-communicating-with-data.html#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">adr =</span> <span class="fu">mean</span>(adr)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-21"><a href="exploring-and-communicating-with-data.html#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(market_segment, <span class="sc">-</span>adr), <span class="at">y =</span> adr, <span class="at">fill =</span> market_segment)) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="exploring-and-communicating-with-data.html#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-23"><a href="exploring-and-communicating-with-data.html#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>, <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="exploring-and-communicating-with-data.html#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
-<span id="cb1-25"><a href="exploring-and-communicating-with-data.html#cb1-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="exploring-and-communicating-with-data.html#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
-<span id="cb1-27"><a href="exploring-and-communicating-with-data.html#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-28"><a href="exploring-and-communicating-with-data.html#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-29"><a href="exploring-and-communicating-with-data.html#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-30"><a href="exploring-and-communicating-with-data.html#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>())</span>
-<span id="cb1-31"><a href="exploring-and-communicating-with-data.html#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="exploring-and-communicating-with-data.html#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots side by side with a shared title</span></span>
-<span id="cb1-33"><a href="exploring-and-communicating-with-data.html#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(topplot, bottomplot, <span class="at">ncol=</span><span class="dv">1</span>,</span>
-<span id="cb1-34"><a href="exploring-and-communicating-with-data.html#cb1-34" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Hotel Bookings - Avg Daily Rate by Segment&quot;</span>)</span></code></pre></div>
-<div class="figure">
-<img src="IDSC4210_Course_Notes_files/figure-html/Segment%20ADR%20Bar%20Chart-1.png" alt="Bar Charts showing Average Daily Rate by Market Segment" width="672" />
-<p class="caption">
-(#fig:Segment ADR Bar Chart)Bar Charts showing Average Daily Rate by Market Segment
-</p>
-</div>
-<p>They’re very similar. The top graph isn’t bad, but the bottom one cues us in immediately to look at the Direct Sales Market Segment. Even though I haven’t told you anything more, you’re already focused on Direct Sales. Maybe you even started comparing it to the others. In the top one, maybe your brain started comparing Aviation to Complementary, and Corporate to Groups. But with the bottom one, I bet the primary comparisons were X vs Direct. We’ll talk more about <strong>preattentive attributes</strong> in the next section, but this is an example of using <strong>color</strong>.</p>
-</div>
-<div id="step-2-tell-a-story" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Step 2: Tell a Story</h3>
-<p>We’re going to focus attention, but on what and for what purpose? To <strong>tell a story</strong>. Humans love stories…we have told each other stories and passed them down for centuries! As we think about crafting the story and incorporating our data, there are a few things to keep in mind.</p>
-<div id="audience-whowhathow" class="section level4" number="3.3.2.1">
-<h4><span class="header-section-number">3.3.2.1</span> Audience: Who/What/How</h4>
-<p><u>Who</u> the audience is will drive everything in your presentation. Are you presenting to salespeople technical engineers? Are you presenting to management (internal) or customers (external)? Consider also who <u>you</u> are. Are you an expert or are you new? If you’re an external consultant, you are going to need to back up your statements with data.</p>
-<p><u>What</u> do you want your audience to know? This connects with the Bottom Line Up Front (BLUF) and the Elevator Pitch below. It should be clear!</p>
-<p><u>How</u> are you going to convince your audience? What data will you show them?</p>
-<p>Turning to our <code>hotel_bookings.csv</code> data again, suppose we are evaluating where to spend money. You will present your findings to the hotel management.</p>
-<blockquote>
-<ul>
-<li><p>Who: Hotel management that can approve where we spend/allocate marketing dollars</p></li>
-<li><p>What: Direct bookings generate a higher Average Daily Rate than any other sector, so we should reallocate marketing dollars to support Direct Bookings</p></li>
-<li><p>How: Showing Figure <a href="#fig:Segment"><strong>??</strong></a> with the average daily rate (ADR) generated by different marketing segments, showing that Direct bookings generate higher revenues.</p></li>
-</ul>
-</blockquote>
-</div>
-<div id="bottom-line-up-front-bluf" class="section level4" number="3.3.2.2">
-<h4><span class="header-section-number">3.3.2.2</span> Bottom Line Up Front (BLUF)</h4>
-<p>The Bottom Line Up Front or BLUF is the takeaway. Consider giving this to your audience right at the outset…“Here’s what I’m going to tell you.” Sometimes it’s good to leave your audience in suspense, wondering what’s going to happen. Oftentimes, not. The BLUF is a complete sentence that takes a position</p>
-<p>✅ <strong>Good BLUF:</strong> The Direct Channel yields one of the highest Average Daily Rates (more than most other booking channels) but receives no marketing support; to increase the bookings with High ADR, allocate more spending to Google Search ads.</p>
-<p>❌ <strong>Bad BLUF:</strong> Different channels have different rates. (This is general, somewhat descriptive, and doesn’t imply action.)</p>
-</div>
-<div id="elevator-pitch-3-minute-story" class="section level4" number="3.3.2.3">
-<h4><span class="header-section-number">3.3.2.3</span> Elevator Pitch (“3 Minute Story”)</h4>
-<p>It’s a useful exercise to be able to tell the complete story in 3 minutes. This ensures that it’s clear to you. It means conveying the whole story, from top to bottom, in just 3 minutes. Start with the problem/objective, how we might address it, results of the analysis, and what can be done about it.</p>
+<p>[Coming Soon - Feb 2021]</p>
 
-</div>
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="installing-r-and-loading-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="design-fundamentals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="accessible-design.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-ggplot-problems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

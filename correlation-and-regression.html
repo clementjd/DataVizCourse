@@ -54,6 +54,69 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 </head>
 
@@ -112,6 +175,8 @@
 <li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
 <li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
@@ -187,15 +252,25 @@
 </ul></li>
 <li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and Regression</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-coefficient"><i class="fa fa-check"></i><b>10.1</b> Correlation Coefficient</a></li>
-<li class="chapter" data-level="10.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#regression-lines"><i class="fa fa-check"></i><b>10.2</b> Regression Lines</a>
+<li class="chapter" data-level="10.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation"><i class="fa fa-check"></i><b>10.1</b> Correlation</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#linear-regression"><i class="fa fa-check"></i><b>10.2.1</b> Linear Regression</a></li>
-<li class="chapter" data-level="10.2.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#loess-smoothing"><i class="fa fa-check"></i><b>10.2.2</b> Loess Smoothing</a></li>
+<li class="chapter" data-level="10.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-coefficient"><i class="fa fa-check"></i><b>10.1.1</b> Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#correlation-vs-causation"><i class="fa fa-check"></i><b>10.1.2</b> Correlation vs Causation</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#advanced-topics-machine-learning"><i class="fa fa-check"></i><b>10.3</b> Advanced Topics: Machine Learning</a>
+<li class="chapter" data-level="10.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#causal-inference"><i class="fa fa-check"></i><b>10.2</b> Causal Inference</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#cluster-analysis"><i class="fa fa-check"></i><b>10.3.1</b> Cluster Analysis</a></li>
+<li class="chapter" data-level="10.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#resources-for-causal-inference"><i class="fa fa-check"></i><b>10.2.1</b> Resources for Causal Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#regression-lines"><i class="fa fa-check"></i><b>10.3</b> Regression Lines</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#linear-regression"><i class="fa fa-check"></i><b>10.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="10.3.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#loess-smoothing"><i class="fa fa-check"></i><b>10.3.2</b> Loess Smoothing</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#warning-berksons-paradox"><i class="fa fa-check"></i><b>10.4</b> Warning: Berkson’s Paradox</a></li>
+<li class="chapter" data-level="10.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#advanced-topics-machine-learning"><i class="fa fa-check"></i><b>10.5</b> Advanced Topics: Machine Learning</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#classification-tree"><i class="fa fa-check"></i><b>10.5.1</b> Classification Tree</a></li>
+<li class="chapter" data-level="10.5.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#cluster-analysis"><i class="fa fa-check"></i><b>10.5.2</b> Cluster Analysis</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html"><i class="fa fa-check"></i><b>11</b> Line Graphs and Time Series</a>
@@ -206,7 +281,11 @@
 <li class="chapter" data-level="11.2.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#scatterplot-1"><i class="fa fa-check"></i><b>11.2.1</b> Scatterplot</a></li>
 <li class="chapter" data-level="11.2.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#box-plot-1"><i class="fa fa-check"></i><b>11.2.2</b> Box plot</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#seasonality-and-cycles"><i class="fa fa-check"></i><b>11.3</b> Seasonality and Cycles</a></li>
+<li class="chapter" data-level="11.3" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#seasonality-cycles-and-normalizing-data"><i class="fa fa-check"></i><b>11.3</b> Seasonality, Cycles, and “Normalizing” Data</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#plotting-cyclical-data"><i class="fa fa-check"></i><b>11.3.1</b> Plotting Cyclical Data</a></li>
+<li class="chapter" data-level="11.3.2" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#normalization"><i class="fa fa-check"></i><b>11.3.2</b> Normalization</a></li>
+</ul></li>
 <li class="chapter" data-level="11.4" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#variations"><i class="fa fa-check"></i><b>11.4</b> Variations</a>
 <ul>
 <li class="chapter" data-level="11.4.1" data-path="line-graphs-and-time-series.html"><a href="line-graphs-and-time-series.html#slope-graph"><i class="fa fa-check"></i><b>11.4.1</b> <strong>Slope Graph</strong></a></li>
@@ -216,7 +295,14 @@
 <li class="chapter" data-level="12" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html"><i class="fa fa-check"></i><b>12</b> Parts-To-Whole Analysis</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#why-no-pie"><i class="fa fa-check"></i><b>12.1</b> Why no pie?</a></li>
-<li class="chapter" data-level="12.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#bar-charts"><i class="fa fa-check"></i><b>12.2</b> Bar Charts</a></li>
+<li class="chapter" data-level="12.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#bar-charts"><i class="fa fa-check"></i><b>12.2</b> Bar Charts</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#to-stack-or-not-to-stack"><i class="fa fa-check"></i><b>12.2.1</b> To Stack or Not to Stack?</a></li>
+<li class="chapter" data-level="12.2.2" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#waterfall-charts"><i class="fa fa-check"></i><b>12.2.2</b> Waterfall Charts</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#area-plot"><i class="fa fa-check"></i><b>12.3</b> Area Plot</a></li>
+<li class="chapter" data-level="12.4" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#mosaic-plots"><i class="fa fa-check"></i><b>12.4</b> Mosaic Plots</a></li>
+<li class="chapter" data-level="12.5" data-path="parts-to-whole-analysis.html"><a href="parts-to-whole-analysis.html#tree-map"><i class="fa fa-check"></i><b>12.5</b> Tree Map</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>13</b> Multivariate Analysis</a>
 <ul>
@@ -224,23 +310,40 @@
 <li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>13.2</b> Treemaps</a></li>
 <li class="chapter" data-level="13.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>13.3</b> Maps and Geographic Plots</a></li>
 <li class="chapter" data-level="13.4" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#sankey-plots"><i class="fa fa-check"></i><b>13.4</b> Sankey Plots</a></li>
-<li class="chapter" data-level="13.5" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#network-diagrams"><i class="fa fa-check"></i><b>13.5</b> Network Diagrams</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html"><i class="fa fa-check"></i><b>14</b> Interactive Dashboards</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#purpose"><i class="fa fa-check"></i><b>14.1</b> Purpose</a></li>
-<li class="chapter" data-level="14.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#common-tools"><i class="fa fa-check"></i><b>14.2</b> Common Tools</a></li>
-<li class="chapter" data-level="14.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#guidelines-for-dashboards"><i class="fa fa-check"></i><b>14.3</b> Guidelines for Dashboards</a></li>
-<li class="chapter" data-level="14.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#visual-layout"><i class="fa fa-check"></i><b>14.4</b> Visual Layout</a>
+<li class="chapter" data-level="14.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#dashboards-defined"><i class="fa fa-check"></i><b>14.2</b> Dashboards Defined</a></li>
+<li class="chapter" data-level="14.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#common-tools"><i class="fa fa-check"></i><b>14.3</b> Common Tools</a></li>
+<li class="chapter" data-level="14.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#guidelines-for-dashboards"><i class="fa fa-check"></i><b>14.4</b> Guidelines for Dashboards</a></li>
+<li class="chapter" data-level="14.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#visual-layout"><i class="fa fa-check"></i><b>14.5</b> Visual Layout</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#f-and-z-scanning-patterns"><i class="fa fa-check"></i><b>14.4.1</b> F and Z Scanning Patterns</a></li>
-<li class="chapter" data-level="14.4.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#golden-ratio"><i class="fa fa-check"></i><b>14.4.2</b> Golden Ratio</a></li>
+<li class="chapter" data-level="14.5.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#f-and-z-scanning-patterns"><i class="fa fa-check"></i><b>14.5.1</b> F and Z Scanning Patterns</a></li>
+<li class="chapter" data-level="14.5.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#negative-space-or-white-space"><i class="fa fa-check"></i><b>14.5.2</b> Negative Space or White Space</a></li>
+<li class="chapter" data-level="14.5.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#colors"><i class="fa fa-check"></i><b>14.5.3</b> Colors</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#project-plan"><i class="fa fa-check"></i><b>14.5</b> Project Plan</a>
+<li class="chapter" data-level="14.6" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#dashboard-design-process"><i class="fa fa-check"></i><b>14.6</b> Dashboard Design Process</a>
 <ul>
-<li class="chapter" data-level="14.5.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#lay-groundwork"><i class="fa fa-check"></i><b>14.5.1</b> Lay Groundwork</a></li>
-<li class="chapter" data-level="14.5.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>14.5.2</b> Exploratory Data Analysis</a></li>
-<li class="chapter" data-level="14.5.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#develop-concept"><i class="fa fa-check"></i><b>14.5.3</b> Develop Concept</a></li>
+<li class="chapter" data-level="14.6.1" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#define-requirements"><i class="fa fa-check"></i><b>14.6.1</b> Define Requirements</a></li>
+<li class="chapter" data-level="14.6.2" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#mockup-dashboard"><i class="fa fa-check"></i><b>14.6.2</b> Mockup Dashboard</a></li>
+<li class="chapter" data-level="14.6.3" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#build-dashboard"><i class="fa fa-check"></i><b>14.6.3</b> Build Dashboard</a></li>
+<li class="chapter" data-level="14.6.4" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#launch-to-users"><i class="fa fa-check"></i><b>14.6.4</b> Launch to Users</a></li>
+<li class="chapter" data-level="14.6.5" data-path="interactive-dashboards.html"><a href="interactive-dashboards.html#evaluate-performance"><i class="fa fa-check"></i><b>14.6.5</b> Evaluate Performance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="accessible-design.html"><a href="accessible-design.html"><i class="fa fa-check"></i><b>15</b> Accessible Design</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#section"><i class="fa fa-check"></i><b>15.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a></li>
+<li class="chapter" data-level="17" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html"><i class="fa fa-check"></i><b>17</b> Common ggplot Problems</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#common-issues-and-fixes"><i class="fa fa-check"></i><b>17.1</b> Common Issues and Fixes</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1.1</b> Reorder Factor Levels in a Bar Graph</a></li>
+<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates-on-the-x-axis"><i class="fa fa-check"></i><b>17.1.2</b> Fix Dates on the X Axis</a></li>
+<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#currency"><i class="fa fa-check"></i><b>17.1.3</b> Currency</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -263,25 +366,523 @@
 <div id="correlation-and-regression" class="section level1" number="10">
 <h1><span class="header-section-number">10</span> Correlation and Regression</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="correlation-coefficient" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Correlation Coefficient</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="correlation-and-regression.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Compare the capabilities of base R vs ggplot</span></span>
+<span id="cb1-2"><a href="correlation-and-regression.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages. gridExtra package arranges multiple plots in a figure</span></span>
+<span id="cb1-3"><a href="correlation-and-regression.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="correlation-and-regression.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-5"><a href="correlation-and-regression.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-6"><a href="correlation-and-regression.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb1-7"><a href="correlation-and-regression.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-8"><a href="correlation-and-regression.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-9"><a href="correlation-and-regression.html#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="correlation-and-regression.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppress summarise info</span></span>
+<span id="cb1-11"><a href="correlation-and-regression.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">dplyr.summarise.inform =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-12"><a href="correlation-and-regression.html#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="correlation-and-regression.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set working directory</span></span>
+<span id="cb1-14"><a href="correlation-and-regression.html#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Volumes/GoogleDrive/My Drive/6. Teaching/IDSC 4210 - Data Visualization/IDSC 4210 Course Notes&quot;</span>)</span>
+<span id="cb1-15"><a href="correlation-and-regression.html#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="correlation-and-regression.html#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Load booking data</span></span>
+<span id="cb1-17"><a href="correlation-and-regression.html#cb1-17" aria-hidden="true" tabindex="-1"></a>booking_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span>
+<span id="cb1-18"><a href="correlation-and-regression.html#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="correlation-and-regression.html#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out erroneous adr</span></span>
+<span id="cb1-20"><a href="correlation-and-regression.html#cb1-20" aria-hidden="true" tabindex="-1"></a>booking_data <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-21"><a href="correlation-and-regression.html#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">&lt;</span> <span class="dv">1000</span>)</span></code></pre></div>
+<p>Thinking back to the data science cycle, after we create our visualization we often want to model our data. A model is an abstraction or set of rules that describes how something works.</p>
+<p><img src="2_DataScienceCycle.png" /></p>
+<p>Let’s look at a scatterplot of lead time vs price again.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="correlation-and-regression.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Scatterplot comparing price and how far out a guest booked the stay</span></span>
+<span id="cb2-2"><a href="correlation-and-regression.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="correlation-and-regression.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed so that we get the same &quot;random&quot; numbers each time and the plot is reproducible</span></span>
+<span id="cb2-4"><a href="correlation-and-regression.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># You can pick any number for the seed, but to get the same result each time </span></span>
+<span id="cb2-5"><a href="correlation-and-regression.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># you have to use the same seed</span></span>
+<span id="cb2-6"><a href="correlation-and-regression.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">132</span>)</span>
+<span id="cb2-7"><a href="correlation-and-regression.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="correlation-and-regression.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a random sample of 800 bookings that weren&#39;t complementary (ie, price = 0)</span></span>
+<span id="cb2-9"><a href="correlation-and-regression.html#cb2-9" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="correlation-and-regression.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="correlation-and-regression.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">800</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-12"><a href="correlation-and-regression.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span>  lead_time, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="correlation-and-regression.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="correlation-and-regression.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span>   <span class="co"># Reverse the x axis so we &quot;count down&quot;</span></span>
+<span id="cb2-15"><a href="correlation-and-regression.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb2-16"><a href="correlation-and-regression.html#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Lead Time (Days)&quot;</span>,</span>
+<span id="cb2-17"><a href="correlation-and-regression.html#cb2-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate (Price $)&quot;</span>,</span>
+<span id="cb2-18"><a href="correlation-and-regression.html#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Average Daily Rate ($) versus Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="correlation-and-regression.html#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb2-20"><a href="correlation-and-regression.html#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb2-21"><a href="correlation-and-regression.html#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-22"><a href="correlation-and-regression.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-23"><a href="correlation-and-regression.html#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-24"><a href="correlation-and-regression.html#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>What is the relationship between lead time and price? It would be good to have some way to characterize this relationship.</p>
+<div id="correlation" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Correlation</h2>
+<div id="correlation-coefficient" class="section level3" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Correlation Coefficient</h3>
+<p>Pearson’s correlation coefficient is one of the most common ways to quantify the relationship between two variables; <strong>it is a measure of the strength of the linear relationship between two variables.</strong> There’s a good explanation of the math <a href="https://en.wikipedia.org/wiki/Correlation_and_dependence#Pearson&#39;s_product-moment_coefficient">on Wikipedia</a> which I won’t repeat here. You also have to be sure that it’s appropriate to use Pearson’s correlation coefficient. Seven assumptions must hold for the results to be valid:</p>
+<ol style="list-style-type: decimal">
+<li><p>Both variables are continuous (interval or ratio data)</p></li>
+<li><p>You have measurements on each variable for each observation.</p></li>
+<li><p>Each observation is independent (unrelated)</p></li>
+<li><p>There is a linear relationship between the variables</p></li>
+<li><p>Data are normally distributed (hypothetically you need a bivariate normal); this is subject to some debate.</p></li>
+<li><p>Variances are homoscedastic (constant variance)</p></li>
+<li><p>No outliers</p></li>
+</ol>
+<p>Discussion of these outliers is beyond the scope of this class, but it’s important to know that there are assumptions for any of the tests you are performing.</p>
+<p>Let’s calculate the correlation coefficient for the data we looked in the scatterplot above, comparing lead time and price.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="correlation-and-regression.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Calculate Pearson&#39;s Correlation Coefficient between Lead Time and Price</span></span>
+<span id="cb3-2"><a href="correlation-and-regression.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(booking_data<span class="sc">$</span>lead_time, booking_data<span class="sc">$</span>adr)</span></code></pre></div>
+<pre><code>## [1] -0.0656026</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="correlation-and-regression.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s look at the correlation when we exclude &quot;free&quot; bookings</span></span>
+<span id="cb5-2"><a href="correlation-and-regression.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the corrr package from tidymodels</span></span>
+<span id="cb5-3"><a href="correlation-and-regression.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It&#39;s a little more user-friendly than the base R function</span></span>
+<span id="cb5-4"><a href="correlation-and-regression.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrr)</span>
+<span id="cb5-5"><a href="correlation-and-regression.html#cb5-5" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="correlation-and-regression.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="correlation-and-regression.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lead_time, adr) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="correlation-and-regression.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  corrr<span class="sc">::</span><span class="fu">correlate</span>(<span class="at">x =</span> .)</span></code></pre></div>
+<pre><code>## 
+## Correlation method: &#39;pearson&#39;
+## Missing treated using: &#39;pairwise.complete.obs&#39;</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   term      lead_time     adr
+##   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;
+## 1 lead_time   NA      -0.0910
+## 2 adr         -0.0910 NA</code></pre>
+<p>What does a correlation of -0.06 mean? It implies that, on average, as lead time increases, price decreases slightly (and conversely, as price increases, lead time decreases), but that the relationship is not particularly strong. Correlation can range from -1 to 1; 0 implies no relationship, whereas 1 implies a perfect relationship (the two variables are in “lockstep”). We’ll look at this idea some more when we discuss linear regression.</p>
+<p>One particularly powerful visualization tool is the correlation matrix, which presents the correlations among many variables.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="correlation-and-regression.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Calculate the corellation matrix for multiple variables</span></span>
+<span id="cb8-2"><a href="correlation-and-regression.html#cb8-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="correlation-and-regression.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lead_time, </span>
+<span id="cb8-4"><a href="correlation-and-regression.html#cb8-4" aria-hidden="true" tabindex="-1"></a>         stays_in_week_nights, </span>
+<span id="cb8-5"><a href="correlation-and-regression.html#cb8-5" aria-hidden="true" tabindex="-1"></a>         stays_in_weekend_nights) <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="correlation-and-regression.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="correlation-and-regression.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##                         lead_time stays_in_week_nights stays_in_weekend_nights
+## lead_time                    1.00                 0.17                    0.09
+## stays_in_week_nights         0.17                 1.00                    0.50
+## stays_in_weekend_nights      0.09                 0.50                    1.00</code></pre>
+<p>We see that the correlation between <code>stays_in_week_nights</code> and the <code>stays_in_weekend_nights</code> is 0.50. This means that guests staying more weeknights also tend to stay more weekend nights. You can look at large numbers of variables this way to help identify variables we might want to explore more. A visual way to do this is with a correlagram…a visual correlation matrix.</p>
+<p>The correlagram isn’t something I’d necessarily include in a presentation to the C-suite, but it’s useful for exploratory data analysis.</p>
+<p>We’ll use the <code>corrplot</code> package (which you’ll need to install the first time). <code>corrplot</code> takes a correlation matrix and plots it.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="correlation-and-regression.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a correlation plot or correlagram</span></span>
+<span id="cb10-2"><a href="correlation-and-regression.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="correlation-and-regression.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the corrplot and RColorBrewer packages</span></span>
+<span id="cb10-4"><a href="correlation-and-regression.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code></pre></div>
+<pre><code>## corrplot 0.84 loaded</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="correlation-and-regression.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb12-2"><a href="correlation-and-regression.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="correlation-and-regression.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a corrplot of some of the numeric variables in the hotel bookings dataset</span></span>
+<span id="cb12-4"><a href="correlation-and-regression.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># First, save the correlation matrix</span></span>
+<span id="cb12-5"><a href="correlation-and-regression.html#cb12-5" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="correlation-and-regression.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">&quot;Lead Time&quot;</span> <span class="ot">=</span> lead_time, </span>
+<span id="cb12-7"><a href="correlation-and-regression.html#cb12-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Weekdays =</span> stays_in_week_nights, </span>
+<span id="cb12-8"><a href="correlation-and-regression.html#cb12-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;Weekend Days&quot;</span> <span class="ot">=</span> stays_in_weekend_nights,</span>
+<span id="cb12-9"><a href="correlation-and-regression.html#cb12-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Rate =</span> adr,</span>
+<span id="cb12-10"><a href="correlation-and-regression.html#cb12-10" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;Special Requests&quot;</span> <span class="ot">=</span> total_of_special_requests,</span>
+<span id="cb12-11"><a href="correlation-and-regression.html#cb12-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;Changes&quot;</span> <span class="ot">=</span> booking_changes) <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="correlation-and-regression.html#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span>
+<span id="cb12-13"><a href="correlation-and-regression.html#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="correlation-and-regression.html#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Then plot it</span></span>
+<span id="cb12-15"><a href="correlation-and-regression.html#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(B, <span class="at">type=</span><span class="st">&quot;lower&quot;</span>, <span class="at">order=</span><span class="st">&quot;hclust&quot;</span>,</span>
+<span id="cb12-16"><a href="correlation-and-regression.html#cb12-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.col=</span><span class="st">&quot;black&quot;</span>,</span>
+<span id="cb12-17"><a href="correlation-and-regression.html#cb12-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">col=</span><span class="fu">brewer.pal</span>(<span class="at">n=</span><span class="dv">8</span>, <span class="at">name=</span><span class="st">&quot;RdYlBu&quot;</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>The smaller, lighter circles indicate a smaller correlation, whereas the bigger stronger circles indicate larger positive or negative correlations.</p>
+<div id="correlation-between-a-continuous-and-dichotomous-variable" class="section level4" number="10.1.1.1">
+<h4><span class="header-section-number">10.1.1.1</span> Correlation between a continuous and dichotomous variable</h4>
+<p>We saw above that Pearson’s correlation coefficient assumes data is continuous. But what about dichotomous variables? Well, if your data is stored as 1s and 0s, your software will calculate it but the assumptions aren’t satisfied.</p>
+<p>There are many ways to handle this situation, but the point-biserial correlation coefficient is one way to evaluate this. Let’s look at the point-biserial correlation between lead time and whether or not the guest cancels the booking (in the case of two variables, the math reduces to yield the same result as the Pearson correlation).</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="correlation-and-regression.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Calculate the point-biserial correlation between lead time and cancellations</span></span>
+<span id="cb13-2"><a href="correlation-and-regression.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(booking_data<span class="sc">$</span>lead_time, booking_data<span class="sc">$</span>is_canceled)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  booking_data$lead_time and booking_data$is_canceled
+## t = 105.94, df = 119387, p-value &lt; 2.2e-16
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.2879394 0.2983094
+## sample estimates:
+##      cor 
+## 0.293133</code></pre>
+<p>It looks like bookings further out are more likely to to be cancelled. Good to know! Detailed discussions of different tests by data point are beyond the scope of this class, but it’s worth knowing that these issues are out there.</p>
 </div>
-<div id="regression-lines" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Regression Lines</h2>
-<p>The details of regression are beyond the scope of this class (as we’re focused on visualization here and not necessarily whether a particular type of regression is appropriate or informative for a particular dataset and analysis.) There are lots of resources online about how/when to do regression. We’ll discuss two types of regression commonly incorporated into visuals: <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a> (often called Ordinary Least Squares or OLS) and <a href="https://en.wikipedia.org/wiki/Local_regression">Loess Smoothing</a>.</p>
-<div id="linear-regression" class="section level3" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> Linear Regression</h3>
+<div id="correlation-is-not-slope" class="section level4" number="10.1.1.2">
+<h4><span class="header-section-number">10.1.1.2</span> Correlation is not slope</h4>
+<p>So is the correlation the slope of the relationship? No! Correlation measures the strength of the relationship. Let’s simulate some data and look at why.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="correlation-and-regression.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Simulate two datasets, with an X and two Ys and plot them</span></span>
+<span id="cb15-2"><a href="correlation-and-regression.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># X goes from -10 to 10</span></span>
+<span id="cb15-3"><a href="correlation-and-regression.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># y1 = x * 2</span></span>
+<span id="cb15-4"><a href="correlation-and-regression.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># y2 = x</span></span>
+<span id="cb15-5"><a href="correlation-and-regression.html#cb15-5" aria-hidden="true" tabindex="-1"></a>slope_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="correlation-and-regression.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y1 =</span> x,</span>
+<span id="cb15-7"><a href="correlation-and-regression.html#cb15-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y2 =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb15-8"><a href="correlation-and-regression.html#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="correlation-and-regression.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the correlations</span></span>
+<span id="cb15-10"><a href="correlation-and-regression.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Both correlations are 1 since the relationships are perfectly linear!</span></span>
+<span id="cb15-11"><a href="correlation-and-regression.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(slope_data<span class="sc">$</span>x, slope_data<span class="sc">$</span>y1)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="correlation-and-regression.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(slope_data<span class="sc">$</span>x, slope_data<span class="sc">$</span>y2)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="correlation-and-regression.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To make graphing easier, lets pivot the data from wide to long format</span></span>
+<span id="cb19-2"><a href="correlation-and-regression.html#cb19-2" aria-hidden="true" tabindex="-1"></a>slope_data <span class="ot">&lt;-</span> slope_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="correlation-and-regression.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;y1&quot;</span>, <span class="st">&quot;y2&quot;</span>),</span>
+<span id="cb19-4"><a href="correlation-and-regression.html#cb19-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Dataset&quot;</span>,</span>
+<span id="cb19-5"><a href="correlation-and-regression.html#cb19-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_prefix =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb19-6"><a href="correlation-and-regression.html#cb19-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;y&quot;</span>) </span>
+<span id="cb19-7"><a href="correlation-and-regression.html#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="correlation-and-regression.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data</span></span>
+<span id="cb19-9"><a href="correlation-and-regression.html#cb19-9" aria-hidden="true" tabindex="-1"></a>slope_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb19-10"><a href="correlation-and-regression.html#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-11"><a href="correlation-and-regression.html#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb19-12"><a href="correlation-and-regression.html#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Dataset)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>These datasets have <em>different slopes but the correlation for both is 1</em> because they both have a perfectly linear relationship.</p>
 </div>
-<div id="loess-smoothing" class="section level3" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> Loess Smoothing</h3>
+</div>
+<div id="correlation-vs-causation" class="section level3" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Correlation vs Causation</h3>
+<p>We are often interested in identifying casual effects. Does X cause Y? Some examples of causal questions (with links to papers that analyze them…if you’re interested):</p>
+<ul>
+<li><p>Does providing a <a href="https://escholarship.org/uc/item/69n9j5xs">free preview of a book (X) increase sales (Y)?</a></p></li>
+<li><p>Does <a href="https://link.springer.com/chapter/10.1007/0-387-29175-X_11">years of schooling (X) increase wages (Y)</a>?</p></li>
+<li><p>Does having a <a href="https://doi.org/10.1177/0963721411415220">pet (X) improve health outcomes (Y)</a>?</p></li>
+</ul>
+<p>We would take actions accordingly. Doctors might recommend that people get pets, publishers might put authors on book covers (or take them off), and we could encourage people to go to college (e.g. by making it free).</p>
+<p>So it’s simple, right? Compare X to Y, and call it a day. But not so fast. What is different books are more likely to get previews? Many factors affect how much schooling someone can access. And maybe different people are more or less likely to have a pet. In each of these cases, we cannot simply compare X to Y and claim that our result is the effect of X on Y.</p>
+<p>You have probably heard that “correlation is not causation.” The thing is:</p>
+<blockquote>
+<p>"[S]imply finding an association between two variables might be suggestive of a causal effect, but it also might not.</p>
+<p><em>Causal Inference: The Mixtape</em>, Scott Cunningham, pg 15</p>
+</blockquote>
+<p>But even academics who know this well will sometimes slip into language that implies causation. I’ve done this even when I was deliberately trying not to. As humans, we naturally gather information from the world around us, and formulate explanations or make predictions.</p>
 </div>
 </div>
-<div id="advanced-topics-machine-learning" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Advanced Topics: Machine Learning</h2>
+<div id="causal-inference" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Causal Inference</h2>
+<p>This is not a class on causal inference, but it’s important to think along these lines and at least ask these questions. Even if you may not have the tools or data to address the limitations of your analysis, it’s important to acknowledge them.</p>
+<p>Causal inference is “the leveraging of theory and deep knowledge of institutional details to estimate the impact of events and choices on a given outcome of interest” [Cunningham 2021, pg 4]. In other words, we have to apply both our intuition <em>and the</em> data to estimate the effect of X on Y. The math will ALWAYS give you an answer. Whether it means anything is a separate question.</p>
+<p>Let’s think about the earlier example about how pet ownership could affect health, just thinking about dogs for now. Perhaps owning a dog improves health because dogs are sociable, could encourage owners to take daily walks, and it can be beneficial to have something to care for. On the other hand, taking care of pets can be stressful and expensive, and dogs can wake you up at night, interrupting your sleep, so maybe owning a dog negatively impacts health. In any case, we want to know if dog ownership (D) impacts health (H).</p>
+<p>“Directed Acyclic Graphs” or DAGs are a tool to help us clarify the thinking around our analysis. So we think that Dog Ownership is affected Health Outcomes.</p>
+<p><img src="9_dag1.png" style="width:5in" /></p>
+<p>But could anything else be affecting these things? In particular, we’re concerned about things that could be driving BOTH of these variables. Socioeconomic factors (like income, housing situation, etc) could affect someone’s ability to take care of a dog <em>and</em> their health outcomes.</p>
+<p><img src="9_dag2.png" style="width:5in" /></p>
+<p>Unless we control for socioeconomic factors, we can’t really know whether or not dog ownership <em>causes</em> improved health. One approach is a randomized experiment, but we often can’t randomly assign people to own pets (or whatever it is we are analyzing).</p>
+<p>For this class, you are not required to make causal inferences (or defend why your results definitively show that X causes Y), but your analyses should try to acknowledge any shortcomings or limitations of your dataset. Especially once you’re in the “real world” it’s valuable to think along these lines.</p>
+<div id="resources-for-causal-inference" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Resources for Causal Inference</h3>
+<p><a href="https://carlsonschool.umn.edu/degrees/master-science-in-business-analytics/academics/one-year-msba/program-structure">MSBA 6440</a> (Causal Inference via Econometrics and Experimentation) is an excellent primer class. It is taught in the Fall Semester. If you pursue the MSBA program (here or at another institution), this is one of the classes that I would make sure you understand the “Why” behind. Any applied economics or policy analysis (often in public policy schools like Humphrey) should have a foundational course in</p>
+<p>Some books that are great:</p>
+<ul>
+<li><p><a href="https://mixtape.scunning.com/">Causal Inference: The Mixtape</a>, by Scott Cunningham is excellent. It is written for masters students as a first primer in causal inference, but sharp undergraduates should be able to work through it. It includes code in R and Stata (and the datasets) so that you can run the examples and analysis as you go along. Best of all, it’s free <a href="https://mixtape.scunning.com/">on Prof Cunningham’s website.</a></p></li>
+<li><p><a href="http://bayes.cs.ucla.edu/WHY/">The Book of Why</a> by Pearl and Mackenzie is solid. It helps you really pick apart the assumptions that you are making.</p></li>
+<li><p><a href="https://www.masteringmetrics.com/">Mastering Metrics</a> by Angrist and Pischke is a little math-heavy but it is approachable. It does not include code that you can run, but its explanations are solid.</p></li>
+</ul>
+</div>
+</div>
+<div id="regression-lines" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Regression Lines</h2>
+<p>The details of regression are beyond the scope of this class (as we’re focused on visualization here and not necessarily whether a particular type of regression is appropriate or informative for a particular dataset and analysis.) There are lots of resources online about how/when to do regression. But regressions are a common way of summarizing a trend in a way that can be incorporated into visuals. We’ll discuss two common methods: <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a> (often called Ordinary Least Squares or OLS) and <a href="https://en.wikipedia.org/wiki/Local_regression">Loess Smoothing</a>.</p>
+<div id="linear-regression" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Linear Regression</h3>
+<p>Let’s return to the example of comparing lead time and the price paid.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="correlation-and-regression.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed so that we get the same &quot;random&quot; numbers each time and the plot is reproducible</span></span>
+<span id="cb21-2"><a href="correlation-and-regression.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># You can pick any number for the seed, but to get the same result each time </span></span>
+<span id="cb21-3"><a href="correlation-and-regression.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># you have to use the same seed</span></span>
+<span id="cb21-4"><a href="correlation-and-regression.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">132</span>)</span>
+<span id="cb21-5"><a href="correlation-and-regression.html#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="correlation-and-regression.html#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a random sample of 800 bookings that weren&#39;t complementary (ie, price = 0)</span></span>
+<span id="cb21-7"><a href="correlation-and-regression.html#cb21-7" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb21-8"><a href="correlation-and-regression.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-9"><a href="correlation-and-regression.html#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">800</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-10"><a href="correlation-and-regression.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span>  lead_time, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="correlation-and-regression.html#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="correlation-and-regression.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span>   <span class="co"># Reverse the x axis so we &quot;count down&quot;</span></span>
+<span id="cb21-13"><a href="correlation-and-regression.html#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb21-14"><a href="correlation-and-regression.html#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Lead Time (Days)&quot;</span>,</span>
+<span id="cb21-15"><a href="correlation-and-regression.html#cb21-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate (Price $)&quot;</span>,</span>
+<span id="cb21-16"><a href="correlation-and-regression.html#cb21-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Average Daily Rate ($) versus Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb21-17"><a href="correlation-and-regression.html#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb21-18"><a href="correlation-and-regression.html#cb21-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb21-19"><a href="correlation-and-regression.html#cb21-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb21-20"><a href="correlation-and-regression.html#cb21-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb21-21"><a href="correlation-and-regression.html#cb21-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb21-22"><a href="correlation-and-regression.html#cb21-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>The question we ask is “Is lead time associated with ADR?” Linear regression minimizes the sum of squared error (hence its other name, “least squares”).</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="correlation-and-regression.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Run a linear regression on the data</span></span>
+<span id="cb22-2"><a href="correlation-and-regression.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out adr = 0 (complementary stays)</span></span>
+<span id="cb22-3"><a href="correlation-and-regression.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># We use the &quot;dot pronoun&quot; since the formula usually comes first</span></span>
+<span id="cb22-4"><a href="correlation-and-regression.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the model as lm_leadtime (&quot;linear model - lead time&quot;)</span></span>
+<span id="cb22-5"><a href="correlation-and-regression.html#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="correlation-and-regression.html#cb22-6" aria-hidden="true" tabindex="-1"></a>lm_leadtime <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb22-7"><a href="correlation-and-regression.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-8"><a href="correlation-and-regression.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(adr <span class="sc">~</span> lead_time, <span class="at">data =</span> .)</span>
+<span id="cb22-9"><a href="correlation-and-regression.html#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="correlation-and-regression.html#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display a summary of the model</span></span>
+<span id="cb22-11"><a href="correlation-and-regression.html#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_leadtime)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = adr ~ lead_time, data = .)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -106.50  -31.55   -8.05   22.79  402.34 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 107.66210    0.19034  565.64   &lt;2e-16 ***
+## lead_time    -0.03975    0.00127  -31.31   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 46.52 on 117428 degrees of freedom
+## Multiple R-squared:  0.008278,   Adjusted R-squared:  0.008269 
+## F-statistic: 980.2 on 1 and 117428 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>There is a good explanation of each term in this summary <a href="https://feliperego.github.io/blog/2015/10/23/Interpreting-Model-Output-In-R">here</a>. For this class, we’ll focus on three things…the Estimates of the Coefficients, the P values, and the Adjusted R-squared.</p>
+<p>The estimates of the Intercept is the Y intercept, and Pr(&gt;|t|) is the p-value, or the probability of observing a t value greater than or equal this one. 0.05 is a good cut-off, though in the real world we often don’t see p-values that meet this criteria but we still need to make decisions.</p>
+<p>The lead_time estimate is the slope…in other words, on average, for each additional day of lead time, price will decrease by $0.039.</p>
+<p>Adjusted R-squared estimates what proportion of the variance in the Y variable (ADR or price) is explained by the X variables. This can range from 0 to 1; a value of 0.008 is quite low. In other words, lead time explains a very small proportion of this variance. Not surprising since the correlation was so low!</p>
+<p>Let’s plot it. You can add a linear regression line to a ggplot object with the <code>geom_smooth()</code> geom. Specify <code>method = "lm"</code> to get linear regression trendline.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="correlation-and-regression.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Scatterplot with a linear regression line</span></span>
+<span id="cb24-2"><a href="correlation-and-regression.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a random sample of 800 bookings that weren&#39;t complementary (ie, price = 0)</span></span>
+<span id="cb24-3"><a href="correlation-and-regression.html#cb24-3" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="correlation-and-regression.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="correlation-and-regression.html#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">800</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-6"><a href="correlation-and-regression.html#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span>  lead_time, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb24-7"><a href="correlation-and-regression.html#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb24-8"><a href="correlation-and-regression.html#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb24-9"><a href="correlation-and-regression.html#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span>   <span class="co"># Reverse the x axis so we &quot;count down&quot;</span></span>
+<span id="cb24-10"><a href="correlation-and-regression.html#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb24-11"><a href="correlation-and-regression.html#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Lead Time (Days)&quot;</span>,</span>
+<span id="cb24-12"><a href="correlation-and-regression.html#cb24-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate (Price $)&quot;</span>,</span>
+<span id="cb24-13"><a href="correlation-and-regression.html#cb24-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Average Daily Rate ($) versus Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb24-14"><a href="correlation-and-regression.html#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb24-15"><a href="correlation-and-regression.html#cb24-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb24-16"><a href="correlation-and-regression.html#cb24-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb24-17"><a href="correlation-and-regression.html#cb24-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb24-18"><a href="correlation-and-regression.html#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb24-19"><a href="correlation-and-regression.html#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="loess-smoothing" class="section level3" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Loess Smoothing</h3>
+<p>Another common trendline is a loess smoother; in fact, it’s the default method used by <code>geom_smooth</code>. A benefit is loess is that you do not have to specify whether the function will be linear, quadratic, exponential, etc. For details on loess, you can <a href="https://en.wikipedia.org/wiki/Local_regression">read the Wikipedia article</a> (but the math is beyond the scope of this class).</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="correlation-and-regression.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Scatterplot with a loess regression line</span></span>
+<span id="cb26-2"><a href="correlation-and-regression.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a random sample of 800 bookings that weren&#39;t complementary (ie, price = 0)</span></span>
+<span id="cb26-3"><a href="correlation-and-regression.html#cb26-3" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="correlation-and-regression.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(adr <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="correlation-and-regression.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">800</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-6"><a href="correlation-and-regression.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span>  lead_time, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="correlation-and-regression.html#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="correlation-and-regression.html#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="correlation-and-regression.html#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span>   <span class="co"># Reverse the x axis so we &quot;count down&quot;</span></span>
+<span id="cb26-10"><a href="correlation-and-regression.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>())<span class="sc">+</span></span>
+<span id="cb26-11"><a href="correlation-and-regression.html#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Lead Time (Days)&quot;</span>,</span>
+<span id="cb26-12"><a href="correlation-and-regression.html#cb26-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Daily Rate (Price $)&quot;</span>,</span>
+<span id="cb26-13"><a href="correlation-and-regression.html#cb26-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Average Daily Rate ($) versus Lead Time&quot;</span>) <span class="sc">+</span></span>
+<span id="cb26-14"><a href="correlation-and-regression.html#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb26-15"><a href="correlation-and-regression.html#cb26-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb26-16"><a href="correlation-and-regression.html#cb26-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb26-17"><a href="correlation-and-regression.html#cb26-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb26-18"><a href="correlation-and-regression.html#cb26-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb26-19"><a href="correlation-and-regression.html#cb26-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Very interesting! We see that price seems to increase over time and then they go down again (on average) right before the stay.</p>
+</div>
+</div>
+<div id="warning-berksons-paradox" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Warning: Berkson’s Paradox</h2>
+<p>Regression analysis is incredibly powerful, but it can be tempting to take the results of a regression analysis and interpret those estimates as the ground truth. But there are many cases where the way you are analyzing the data or the observations comprising your dataset mean that the relationships you observe are spurious.</p>
+<p><a href="https://en.wikipedia.org/wiki/Berkson%27s_paradox">Berkson’s Paradox</a> is a type of sampling or selection bias where a set of data appears to show a relationship between two variables where in fact none exists.</p>
+<p>Suppose there is a test that measures students’ abilities in R programming, and further suppose that how students perform is <em>unrelated</em> to their GPA. Let’s simulate this data and plot it.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="correlation-and-regression.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Simulate data for the test and GPA</span></span>
+<span id="cb28-2"><a href="correlation-and-regression.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="correlation-and-regression.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed so we get the same results every time even though we generate random numbers</span></span>
+<span id="cb28-4"><a href="correlation-and-regression.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">75</span>)</span>
+<span id="cb28-5"><a href="correlation-and-regression.html#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="correlation-and-regression.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a dataset by simulating some data</span></span>
+<span id="cb28-7"><a href="correlation-and-regression.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># GPA is normally distributed with a mean of 3, standard deviation of 0.25</span></span>
+<span id="cb28-8"><a href="correlation-and-regression.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Test score is normally distributed with mean of 70, standard deviation of 10</span></span>
+<span id="cb28-9"><a href="correlation-and-regression.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 1000 points, round GPA to 2 decimal places and test score to closest integer</span></span>
+<span id="cb28-10"><a href="correlation-and-regression.html#cb28-10" aria-hidden="true" tabindex="-1"></a>student_scores <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">GPA =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="fl">3.0</span>, <span class="at">sd =</span> <span class="fl">0.25</span>), <span class="dv">2</span>),</span>
+<span id="cb28-11"><a href="correlation-and-regression.html#cb28-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">test_score =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>), <span class="dv">0</span>))</span>
+<span id="cb28-12"><a href="correlation-and-regression.html#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="correlation-and-regression.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data</span></span>
+<span id="cb28-14"><a href="correlation-and-regression.html#cb28-14" aria-hidden="true" tabindex="-1"></a>student_scores <span class="sc">%&gt;%</span></span>
+<span id="cb28-15"><a href="correlation-and-regression.html#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> test_score, <span class="at">y =</span> GPA)) <span class="sc">+</span></span>
+<span id="cb28-16"><a href="correlation-and-regression.html#cb28-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-17"><a href="correlation-and-regression.html#cb28-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;R Programming Test Score&quot;</span>,</span>
+<span id="cb28-18"><a href="correlation-and-regression.html#cb28-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Undergrad GPA&quot;</span>,</span>
+<span id="cb28-19"><a href="correlation-and-regression.html#cb28-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;R Programming Test Score vs Undergraduate GPA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-20"><a href="correlation-and-regression.html#cb28-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb28-21"><a href="correlation-and-regression.html#cb28-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb28-22"><a href="correlation-and-regression.html#cb28-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb28-23"><a href="correlation-and-regression.html#cb28-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb28-24"><a href="correlation-and-regression.html#cb28-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb28-25"><a href="correlation-and-regression.html#cb28-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Let’s look at the correlation of this data.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="correlation-and-regression.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Check correlation of test score vs GPA</span></span>
+<span id="cb29-2"><a href="correlation-and-regression.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(student_scores<span class="sc">$</span>GPA, student_scores<span class="sc">$</span>test_score)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  student_scores$GPA and student_scores$test_score
+## t = 1.2896, df = 998, p-value = 0.1975
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.02125938  0.10252131
+## sample estimates:
+##        cor 
+## 0.04078745</code></pre>
+<p>The correlation is very low and not statistically significant. It’s basically 0…there is no apparent relationship between these. Remember, we specifically constructed these two variables to have NO relationship…each was randomly drawn.</p>
+<p>Now suppose some data analytics company decides to hire people who have either an above average GPA <em>or</em> an above average test score (or both). Let’s add a variable to signify this, and then plot the new data. We’ll include a linear regression line.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="correlation-and-regression.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Add a signifier for above average scores and plot &quot;eligible&quot; candidates</span></span>
+<span id="cb31-2"><a href="correlation-and-regression.html#cb31-2" aria-hidden="true" tabindex="-1"></a>student_scores <span class="ot">&lt;-</span> student_scores <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="correlation-and-regression.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hiring_eligibility =</span> <span class="fu">case_when</span>(</span>
+<span id="cb31-4"><a href="correlation-and-regression.html#cb31-4" aria-hidden="true" tabindex="-1"></a>                                GPA <span class="sc">&gt;</span> <span class="fu">mean</span>(GPA) <span class="sc">&amp;</span> test_score <span class="sc">&gt;</span> <span class="fu">mean</span>(test_score) <span class="sc">~</span> <span class="st">&quot;Both Measures&quot;</span>,</span>
+<span id="cb31-5"><a href="correlation-and-regression.html#cb31-5" aria-hidden="true" tabindex="-1"></a>                                GPA <span class="sc">&gt;</span> <span class="fu">mean</span>(GPA) <span class="sc">~</span> <span class="st">&quot;GPA&quot;</span>,</span>
+<span id="cb31-6"><a href="correlation-and-regression.html#cb31-6" aria-hidden="true" tabindex="-1"></a>                                test_score <span class="sc">&gt;</span> <span class="fu">mean</span>(test_score) <span class="sc">~</span> <span class="st">&quot;Test Score&quot;</span>,</span>
+<span id="cb31-7"><a href="correlation-and-regression.html#cb31-7" aria-hidden="true" tabindex="-1"></a>                                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not eligible&quot;</span>))</span>
+<span id="cb31-8"><a href="correlation-and-regression.html#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="correlation-and-regression.html#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the revised data, with color to signify eligibility</span></span>
+<span id="cb31-10"><a href="correlation-and-regression.html#cb31-10" aria-hidden="true" tabindex="-1"></a>student_scores <span class="sc">%&gt;%</span></span>
+<span id="cb31-11"><a href="correlation-and-regression.html#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> test_score, <span class="at">y =</span> GPA)) <span class="sc">+</span></span>
+<span id="cb31-12"><a href="correlation-and-regression.html#cb31-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> hiring_eligibility)) <span class="sc">+</span></span>
+<span id="cb31-13"><a href="correlation-and-regression.html#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-14"><a href="correlation-and-regression.html#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;GPA&quot;</span> <span class="ot">=</span> <span class="st">&quot;firebrick&quot;</span>, <span class="st">&quot;Test Score&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue2&quot;</span>, <span class="st">&quot;Both Measures&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkorchid4&quot;</span>, <span class="st">&quot;Not eligible&quot;</span> <span class="ot">=</span> <span class="st">&quot;gray50&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb31-15"><a href="correlation-and-regression.html#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;R Programming Test Score&quot;</span>,</span>
+<span id="cb31-16"><a href="correlation-and-regression.html#cb31-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Undergrad GPA&quot;</span>,</span>
+<span id="cb31-17"><a href="correlation-and-regression.html#cb31-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;R Programming Test Score vs Undergraduate GPA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-18"><a href="correlation-and-regression.html#cb31-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb31-19"><a href="correlation-and-regression.html#cb31-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb31-20"><a href="correlation-and-regression.html#cb31-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb31-21"><a href="correlation-and-regression.html#cb31-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb31-22"><a href="correlation-and-regression.html#cb31-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb31-23"><a href="correlation-and-regression.html#cb31-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>The linear regression line is practically flat…as it should be. We found that there was essentially no correlation (because we created this data to not be correlated).</p>
+<p>So suppose this data analytics company hires all of the eligible employees. And then looks at their employee records, and says, “We find that students who do well on the test had lower GPAs on average. And vice versa, those with high GPAs do poorly on the test.” How can this be. Well, remember they ONLY hired the people who met their eligibility criteria. Let’s look at the plot again, this time leaving out people who weren’t eligible to be hired.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="correlation-and-regression.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot only the employees eligible to be hired</span></span>
+<span id="cb33-2"><a href="correlation-and-regression.html#cb33-2" aria-hidden="true" tabindex="-1"></a>student_scores <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="correlation-and-regression.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hiring_eligibility <span class="sc">!=</span> <span class="st">&quot;Not eligible&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="correlation-and-regression.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> test_score, <span class="at">y =</span> GPA)) <span class="sc">+</span></span>
+<span id="cb33-5"><a href="correlation-and-regression.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> hiring_eligibility)) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="correlation-and-regression.html#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-7"><a href="correlation-and-regression.html#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;GPA&quot;</span> <span class="ot">=</span> <span class="st">&quot;firebrick&quot;</span>, <span class="st">&quot;Test Score&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue2&quot;</span>, <span class="st">&quot;Both Measures&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkorchid4&quot;</span>, <span class="st">&quot;Not eligible&quot;</span> <span class="ot">=</span> <span class="st">&quot;gray50&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="correlation-and-regression.html#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;R Programming Test Score&quot;</span>,</span>
+<span id="cb33-9"><a href="correlation-and-regression.html#cb33-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Undergrad GPA&quot;</span>,</span>
+<span id="cb33-10"><a href="correlation-and-regression.html#cb33-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;R Programming Test Score vs Undergraduate GPA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-11"><a href="correlation-and-regression.html#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb33-12"><a href="correlation-and-regression.html#cb33-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb33-13"><a href="correlation-and-regression.html#cb33-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb33-14"><a href="correlation-and-regression.html#cb33-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb33-15"><a href="correlation-and-regression.html#cb33-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb33-16"><a href="correlation-and-regression.html#cb33-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="correlation-and-regression.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the correlation</span></span>
+<span id="cb35-2"><a href="correlation-and-regression.html#cb35-2" aria-hidden="true" tabindex="-1"></a>student_scores <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="correlation-and-regression.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hiring_eligibility <span class="sc">!=</span> <span class="st">&quot;Not eligible&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="correlation-and-regression.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(GPA, test_score) <span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="correlation-and-regression.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
+<pre><code>##                   GPA test_score
+## GPA         1.0000000 -0.2849255
+## test_score -0.2849255  1.0000000</code></pre>
+<p>Among this set, we now see a strong downward trend, and the correlation is quite strong. Whenever we interpret regression results, or any analysis really, we need to think about where the data come from, and whether the data answer the question we think they answer.</p>
+</div>
+<div id="advanced-topics-machine-learning" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Advanced Topics: Machine Learning</h2>
 <p>Machine learning is an incredibly broad topic, but it’s increasingly used across industries. People spend their whole careers on niche topics within machine learning. Machine learning is technically beyond the scope of this class, but we’ll cover two basic methods to at least get a flavor for how it can be used.</p>
-<div id="cluster-analysis" class="section level3" number="10.3.1">
-<h3><span class="header-section-number">10.3.1</span> Cluster Analysis</h3>
-<p>You can also do <a href="https://help.tableau.com/current/pro/desktop/en-us/clustering.htm">cluster analysis in Tableau</a>. Let’s look at the San Jose Purchase Card Data. I’ve asked Tableau to give me 2 clusters. Let’s look at how it clusters the transactions when we plot them on a map. The only information I’ve given Tableau to cluster on is the purchase amount and the state. Remember, Tableau knows nothing about where this data was collected, who the city of San Jose is, etc. But the clusters have a distinct, real-world meaning…in-state vs out-of-state purchases!</p>
+<div id="classification-tree" class="section level3" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> Classification Tree</h3>
+<p>Classification trees are relatively simple models, but they have the benefit of being very interpretable, and can be quite effective for simple data. Suppose we want to predict whether or not a guest is going to cancel their stay or not.</p>
+<p>R has a very powerful machine learning library called <code>caret</code>. Let’s build a classification tree to try to predict if a guest is going to cancel or not…we might want to use this data to determine whether or guest has to pay a deposit.</p>
+<p>Note that I have to pull out the <code>reservation_status</code> variable because it is perfectly collinear with the cancellations! (I actually forgot to do this at first and the computer, very correctly, identified that it could just see whether the guest checked out. And if they had, it knew they didn’t cancel!)</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="correlation-and-regression.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Build a classification tree for booking cancellations.</span></span>
+<span id="cb37-2"><a href="correlation-and-regression.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="correlation-and-regression.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the caret machine learning package</span></span>
+<span id="cb37-4"><a href="correlation-and-regression.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(caret))</span>
+<span id="cb37-5"><a href="correlation-and-regression.html#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="correlation-and-regression.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Only include lines without missing values and remove the reservation status variable</span></span>
+<span id="cb37-7"><a href="correlation-and-regression.html#cb37-7" aria-hidden="true" tabindex="-1"></a>training_data <span class="ot">&lt;-</span> booking_data[<span class="fu">complete.cases</span>(booking_data), ] <span class="sc">%&gt;%</span></span>
+<span id="cb37-8"><a href="correlation-and-regression.html#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">is_canceled =</span> <span class="fu">as.factor</span>(is_canceled),</span>
+<span id="cb37-9"><a href="correlation-and-regression.html#cb37-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">is_repeated_guest =</span> <span class="fu">as.factor</span>(is_repeated_guest),</span>
+<span id="cb37-10"><a href="correlation-and-regression.html#cb37-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">previous_bookings_not_canceled =</span> <span class="fu">as.factor</span>(previous_bookings_not_canceled),</span>
+<span id="cb37-11"><a href="correlation-and-regression.html#cb37-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">Portugal =</span> country <span class="sc">==</span> <span class="st">&quot;PRT&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-12"><a href="correlation-and-regression.html#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>reservation_status,</span>
+<span id="cb37-13"><a href="correlation-and-regression.html#cb37-13" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>country,</span>
+<span id="cb37-14"><a href="correlation-and-regression.html#cb37-14" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>assigned_room_type,</span>
+<span id="cb37-15"><a href="correlation-and-regression.html#cb37-15" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>deposit_type)</span>
+<span id="cb37-16"><a href="correlation-and-regression.html#cb37-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-17"><a href="correlation-and-regression.html#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Next, create an index to decide which data goes in our &quot;test&quot; set and which in the &quot;train&quot; set</span></span>
+<span id="cb37-18"><a href="correlation-and-regression.html#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="co"># This is standard practice for machine learning</span></span>
+<span id="cb37-19"><a href="correlation-and-regression.html#cb37-19" aria-hidden="true" tabindex="-1"></a>index <span class="ot">=</span> <span class="fu">createDataPartition</span>(<span class="at">y =</span> training_data<span class="sc">$</span>is_canceled, <span class="at">p =</span> <span class="fl">0.6</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb37-20"><a href="correlation-and-regression.html#cb37-20" aria-hidden="true" tabindex="-1"></a>train.set <span class="ot">&lt;-</span> training_data[index, ]</span></code></pre></div>
+<pre><code>## Warning: The `i` argument of ``[`()` can&#39;t be a matrix as of tibble 3.0.0.
+## Convert to a vector.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="correlation-and-regression.html#cb39-1" aria-hidden="true" tabindex="-1"></a>test.set <span class="ot">&lt;-</span> training_data[<span class="sc">-</span>index, ] <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="correlation-and-regression.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(market_segment <span class="sc">%in%</span> <span class="fu">unique</span>(train.set<span class="sc">$</span>market_segment),</span>
+<span id="cb39-3"><a href="correlation-and-regression.html#cb39-3" aria-hidden="true" tabindex="-1"></a>         reserved_room_type <span class="sc">%in%</span> <span class="fu">unique</span>(train.set<span class="sc">$</span>reserved_room_type),</span>
+<span id="cb39-4"><a href="correlation-and-regression.html#cb39-4" aria-hidden="true" tabindex="-1"></a>         agent <span class="sc">%in%</span> <span class="fu">unique</span>(train.set<span class="sc">$</span>agent))</span>
+<span id="cb39-5"><a href="correlation-and-regression.html#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="correlation-and-regression.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model and save it as &quot;cancellations.tree&quot;</span></span>
+<span id="cb39-7"><a href="correlation-and-regression.html#cb39-7" aria-hidden="true" tabindex="-1"></a>cancellations.tree <span class="ot">&lt;-</span> <span class="fu">train</span>(is_canceled <span class="sc">~</span> .,</span>
+<span id="cb39-8"><a href="correlation-and-regression.html#cb39-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> train.set,</span>
+<span id="cb39-9"><a href="correlation-and-regression.html#cb39-9" aria-hidden="true" tabindex="-1"></a>                            <span class="at">method =</span> <span class="st">&quot;rpart&quot;</span>,</span>
+<span id="cb39-10"><a href="correlation-and-regression.html#cb39-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>),</span>
+<span id="cb39-11"><a href="correlation-and-regression.html#cb39-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">na.action =</span> na.pass)</span>
+<span id="cb39-12"><a href="correlation-and-regression.html#cb39-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-13"><a href="correlation-and-regression.html#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the tree</span></span>
+<span id="cb39-14"><a href="correlation-and-regression.html#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Load package rattle to plot a &quot;fancy picture&quot; of the tree</span></span>
+<span id="cb39-15"><a href="correlation-and-regression.html#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(rattle))</span>
+<span id="cb39-16"><a href="correlation-and-regression.html#cb39-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-17"><a href="correlation-and-regression.html#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the tree</span></span>
+<span id="cb39-18"><a href="correlation-and-regression.html#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="fu">fancyRpartPlot</span>(cancellations.tree<span class="sc">$</span>finalModel)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Let’s see how well the model performs.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="correlation-and-regression.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Check the cancellations.tree model performance</span></span>
+<span id="cb40-2"><a href="correlation-and-regression.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  Predict the values for on the hold-out test set</span></span>
+<span id="cb40-3"><a href="correlation-and-regression.html#cb40-3" aria-hidden="true" tabindex="-1"></a>cancellations.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(cancellations.tree, <span class="at">newdata =</span> test.set)</span>
+<span id="cb40-4"><a href="correlation-and-regression.html#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="correlation-and-regression.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the &quot;confusion matrix&quot;</span></span>
+<span id="cb40-6"><a href="correlation-and-regression.html#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(cancellations.pred, test.set<span class="sc">$</span>is_canceled)</span></code></pre></div>
+<pre><code>##                   
+## cancellations.pred     0     1
+##                  0 24995  5030
+##                  1  5039 12654</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="correlation-and-regression.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the error rate</span></span>
+<span id="cb42-2"><a href="correlation-and-regression.html#cb42-2" aria-hidden="true" tabindex="-1"></a>error.rate <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(cancellations.pred <span class="sc">!=</span> test.set<span class="sc">$</span>is_canceled), <span class="dv">2</span>)</span>
+<span id="cb42-3"><a href="correlation-and-regression.html#cb42-3" aria-hidden="true" tabindex="-1"></a>error.rate</span></code></pre></div>
+<pre><code>## [1] 0.21</code></pre>
+<p>Only a 19% error rate! Not bad for a fairly simple model. Would this model outperform our current policy regarding reservations (assuming all the same people would still book a room)?</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="correlation-and-regression.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Look at the deposits the hotel has required from guests that cancel</span></span>
+<span id="cb44-2"><a href="correlation-and-regression.html#cb44-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="correlation-and-regression.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_canceled <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb44-4"><a href="correlation-and-regression.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(deposit_type) <span class="sc">%&gt;%</span></span>
+<span id="cb44-5"><a href="correlation-and-regression.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   deposit_type count
+## * &lt;chr&gt;        &lt;int&gt;
+## 1 No Deposit   29694
+## 2 Non Refund   14493
+## 3 Refundable      36</code></pre>
+<p>We allow people who cancel to make reservations without deposits twice as often as we request a deposit. So we’re only “accurate” 1/3 of the time under the current policy…maybe the machine learning model could help us out. Of course, we need to think about other effects, maybe people won’t book, etc. It’s complicated! (Perhaps we should just ask for a $5 deposit…that would bring in $150k!)</p>
+</div>
+<div id="cluster-analysis" class="section level3" number="10.5.2">
+<h3><span class="header-section-number">10.5.2</span> Cluster Analysis</h3>
+<p>Cluster analysis groups observations into a number of clusters based on similarity. It’s commonly used for things like market segmentation.</p>
+<p>Let’s do <a href="https://help.tableau.com/current/pro/desktop/en-us/clustering.htm">cluster analysis in Tableau</a>. Let’s look at the San Jose Purchase Card Data. I’ve asked Tableau to give me 2 clusters. Let’s look at how it clusters the transactions when we plot them on a map. The only information I’ve given Tableau to cluster on is the purchase amount and the state. Remember, Tableau knows nothing about where this data was collected, who the city of San Jose is, etc. But the clusters have a distinct, real-world meaning…in-state vs out-of-state purchases!</p>
 <p><img src="9_PCardClusterAnalysisTableau.png" /></p>
 
 </div>
