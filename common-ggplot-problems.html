@@ -54,6 +54,69 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 </head>
 
@@ -143,13 +206,24 @@
 <li class="chapter" data-level="5.3.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#long-vs-wide-data"><i class="fa fa-check"></i><b>5.3.3</b> Long vs Wide Data</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The Pipe Operator</a></li>
-<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a></li>
-<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating new Variables</a></li>
+<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#equal-greater-less-than"><i class="fa fa-check"></i><b>5.5.1</b> Equal, Greater, Less Than</a></li>
+<li class="chapter" data-level="5.5.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#filter-dataset"><i class="fa fa-check"></i><b>5.5.2</b> Filter dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating New Variables</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#making-dates"><i class="fa fa-check"></i><b>5.6.1</b> Making Dates</a></li>
+<li class="chapter" data-level="5.6.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#if_else"><i class="fa fa-check"></i><b>5.6.2</b> if_else</a></li>
+<li class="chapter" data-level="5.6.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#case_when"><i class="fa fa-check"></i><b>5.6.3</b> case_when</a></li>
+</ul></li>
 <li class="chapter" data-level="5.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.7</b> Grouping and Summarizing</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#outside-ggplot"><i class="fa fa-check"></i><b>5.7.1</b> Outside ggplot</a></li>
-<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.2</b> Inside ggplot with stat_summary</a></li>
+<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping"><i class="fa fa-check"></i><b>5.7.1</b> Grouping</a></li>
+<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#summarize-outside-ggplot"><i class="fa fa-check"></i><b>5.7.2</b> Summarize Outside ggplot</a></li>
+<li class="chapter" data-level="5.7.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.3</b> Inside ggplot with stat_summary</a></li>
 </ul></li>
+<li class="chapter" data-level="5.8" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#joining-data"><i class="fa fa-check"></i><b>5.8</b> Joining Data</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>6</b> Intro to ggplot</a>
 <ul>
@@ -244,7 +318,7 @@
 <li class="chapter" data-level="13" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>13</b> Multivariate Analysis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#heatmaps"><i class="fa fa-check"></i><b>13.1</b> Heatmaps</a></li>
-<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>13.2</b> Treemaps</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#parallel-coordinate-plots"><i class="fa fa-check"></i><b>13.2</b> Parallel Coordinate Plots</a></li>
 <li class="chapter" data-level="13.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>13.3</b> Maps and Geographic Plots</a></li>
 <li class="chapter" data-level="13.4" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#sankey-plots"><i class="fa fa-check"></i><b>13.4</b> Sankey Plots</a></li>
 </ul></li>
@@ -271,16 +345,47 @@
 </ul></li>
 <li class="chapter" data-level="15" data-path="accessible-design.html"><a href="accessible-design.html"><i class="fa fa-check"></i><b>15</b> Accessible Design</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#section"><i class="fa fa-check"></i><b>15.1</b> </a></li>
+<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#include-a-summary"><i class="fa fa-check"></i><b>15.1</b> Include a Summary</a></li>
+<li class="chapter" data-level="15.2" data-path="accessible-design.html"><a href="accessible-design.html#clearly-label-data"><i class="fa fa-check"></i><b>15.2</b> Clearly Label Data</a></li>
+<li class="chapter" data-level="15.3" data-path="accessible-design.html"><a href="accessible-design.html#supporting-screen-readers-e.g.-voiceover"><i class="fa fa-check"></i><b>15.3</b> Supporting Screen Readers (e.g. VoiceOver)</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="accessible-design.html"><a href="accessible-design.html#careful-with-interactions"><i class="fa fa-check"></i><b>15.3.1</b> Careful with Interactions</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-defined"><i class="fa fa-check"></i><b>16.1</b> Bias Defined</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#mathematical-bias"><i class="fa fa-check"></i><b>16.1.1</b> Mathematical Bias</a></li>
+<li class="chapter" data-level="16.1.2" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-more-broadly"><i class="fa fa-check"></i><b>16.1.2</b> Bias more broadly</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#sources-of-bias"><i class="fa fa-check"></i><b>16.2</b> Sources of Bias</a></li>
+<li class="chapter" data-level="16.3" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-from-the-real-world"><i class="fa fa-check"></i><b>16.3</b> Bias from the Real World</a></li>
+<li class="chapter" data-level="16.4" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-introduced-at-data-collection"><i class="fa fa-check"></i><b>16.4</b> Bias introduced at Data Collection</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#selection-bias"><i class="fa fa-check"></i><b>16.4.1</b> Selection Bias</a></li>
+<li class="chapter" data-level="16.4.2" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#measurement-error"><i class="fa fa-check"></i><b>16.4.2</b> Measurement Error</a></li>
+<li class="chapter" data-level="16.4.3" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-in-analysis"><i class="fa fa-check"></i><b>16.4.3</b> Bias in Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#what-to-do"><i class="fa fa-check"></i><b>16.5</b> What to Do</a></li>
+</ul></li>
 <li class="chapter" data-level="17" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html"><i class="fa fa-check"></i><b>17</b> Common ggplot Problems</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#common-issues-and-fixes"><i class="fa fa-check"></i><b>17.1</b> Common Issues and Fixes</a>
+<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1</b> Reorder Factor Levels in a Bar Graph</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1.1</b> Reorder Factor Levels in a Bar Graph</a></li>
-<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates-on-the-x-axis"><i class="fa fa-check"></i><b>17.1.2</b> Fix Dates on the X Axis</a></li>
-<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#currency"><i class="fa fa-check"></i><b>17.1.3</b> Currency</a></li>
+<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-by-a-different-value"><i class="fa fa-check"></i><b>17.1.1</b> Reorder by a different value</a></li>
+<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-by-frequency"><i class="fa fa-check"></i><b>17.1.2</b> Reorder by frequency</a></li>
+<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#only-show-n-levels-other"><i class="fa fa-check"></i><b>17.1.3</b> Only show n levels + “Other”</a></li>
+<li class="chapter" data-level="17.1.4" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#manually-relevel"><i class="fa fa-check"></i><b>17.1.4</b> Manually relevel</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates"><i class="fa fa-check"></i><b>17.2</b> Fix Dates</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#extract-days-of-the-week-from-a-date"><i class="fa fa-check"></i><b>17.2.1</b> Extract Days of the Week from a Date</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#scaling-axes"><i class="fa fa-check"></i><b>17.3</b> Scaling Axes</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#rescaling-and-rounding-currency"><i class="fa fa-check"></i><b>17.3.1</b> Rescaling and Rounding Currency</a></li>
+<li class="chapter" data-level="17.3.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#percent-format"><i class="fa fa-check"></i><b>17.3.2</b> Percent Format</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -303,24 +408,240 @@
 <div id="common-ggplot-problems" class="section level1" number="17">
 <h1><span class="header-section-number">17</span> Common ggplot Problems</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="common-issues-and-fixes" class="section level2" number="17.1">
-<h2><span class="header-section-number">17.1</span> Common Issues and Fixes</h2>
 <p>Here are a bunch of issues that I have run into and how to solve them.</p>
-<div id="reorder-factor-levels-in-a-bar-graph" class="section level3" number="17.1.1">
-<h3><span class="header-section-number">17.1.1</span> Reorder Factor Levels in a Bar Graph</h3>
-<p>[Coming Soon - Feb 2021]</p>
+<div id="reorder-factor-levels-in-a-bar-graph" class="section level2" number="17.1">
+<h2><span class="header-section-number">17.1</span> Reorder Factor Levels in a Bar Graph</h2>
+<p>Factors should be deliberately ordered. Days of the week should be in order; other things might best be alphabetically. Other times you want to put them in order by frequency/amount.</p>
+<p>The <code>forcats</code> package is your friend! There’s a great <a href="https://github.com/rstudio/cheatsheets/raw/master/factors.pdf">cheat sheet here</a>.</p>
+<div id="reorder-by-a-different-value" class="section level3" number="17.1.1">
+<h3><span class="header-section-number">17.1.1</span> Reorder by a different value</h3>
+<p>In this case, we want to order the bar graph in descending order by mean <code>adr</code> (which we are providing to ggplot). Here, we enclose the x variable in the <code>reorder</code> command and tell it how to reorder the factor (in this case, by descending adr).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="common-ggplot-problems.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Use &quot;reorder&quot; to rearrange the factor levels on the x axis</span></span>
+<span id="cb1-2"><a href="common-ggplot-problems.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two plots with our booking data</span></span>
+<span id="cb1-3"><a href="common-ggplot-problems.html#cb1-3" aria-hidden="true" tabindex="-1"></a>topplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="common-ggplot-problems.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(market_segment) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="common-ggplot-problems.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">adr =</span> <span class="fu">mean</span>(adr)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="common-ggplot-problems.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> market_segment, <span class="at">y =</span> adr)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="common-ggplot-problems.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="common-ggplot-problems.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
+<span id="cb1-9"><a href="common-ggplot-problems.html#cb1-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>)</span>
+<span id="cb1-10"><a href="common-ggplot-problems.html#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="common-ggplot-problems.html#cb1-11" aria-hidden="true" tabindex="-1"></a>bottomplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a href="common-ggplot-problems.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(market_segment) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a href="common-ggplot-problems.html#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">adr =</span> <span class="fu">mean</span>(adr)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-14"><a href="common-ggplot-problems.html#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(market_segment, <span class="sc">-</span>adr), <span class="at">y =</span> adr, <span class="at">fill =</span> market_segment)) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="common-ggplot-problems.html#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="common-ggplot-problems.html#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="fu">rep</span>(<span class="st">&quot;grey70&quot;</span>, <span class="dv">7</span>))) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="common-ggplot-problems.html#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
+<span id="cb1-18"><a href="common-ggplot-problems.html#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="common-ggplot-problems.html#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
+<span id="cb1-20"><a href="common-ggplot-problems.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-21"><a href="common-ggplot-problems.html#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-22"><a href="common-ggplot-problems.html#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-23"><a href="common-ggplot-problems.html#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>())</span>
+<span id="cb1-24"><a href="common-ggplot-problems.html#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="common-ggplot-problems.html#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots side by side with a shared title</span></span>
+<span id="cb1-26"><a href="common-ggplot-problems.html#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(topplot, bottomplot, <span class="at">ncol=</span><span class="dv">1</span>,</span>
+<span id="cb1-27"><a href="common-ggplot-problems.html#cb1-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Hotel Bookings - Avg Daily Rate by Segment&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
-<div id="fix-dates-on-the-x-axis" class="section level3" number="17.1.2">
-<h3><span class="header-section-number">17.1.2</span> Fix Dates on the X Axis</h3>
-<p>[Coming Soon - Feb 2021]</p>
+<div id="reorder-by-frequency" class="section level3" number="17.1.2">
+<h3><span class="header-section-number">17.1.2</span> Reorder by frequency</h3>
+<p>You often want to reorder by frequency (ie, showing the most common item first). The <code>fct_infreq</code>command does this in one step.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="common-ggplot-problems.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Use &quot;fct_infreq&quot; to rearrange by frequency</span></span>
+<span id="cb2-2"><a href="common-ggplot-problems.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two plots with our booking data</span></span>
+<span id="cb2-3"><a href="common-ggplot-problems.html#cb2-3" aria-hidden="true" tabindex="-1"></a>topplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a href="common-ggplot-problems.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(assigned_room_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="common-ggplot-problems.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-6"><a href="common-ggplot-problems.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> assigned_room_type, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="common-ggplot-problems.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="common-ggplot-problems.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Room Type&quot;</span>,</span>
+<span id="cb2-9"><a href="common-ggplot-problems.html#cb2-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>)</span>
+<span id="cb2-10"><a href="common-ggplot-problems.html#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="common-ggplot-problems.html#cb2-11" aria-hidden="true" tabindex="-1"></a>bottomplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb2-12"><a href="common-ggplot-problems.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reorder the factor</span></span>
+<span id="cb2-13"><a href="common-ggplot-problems.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">assigned_room_type =</span> <span class="fu">fct_infreq</span>(assigned_room_type)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="common-ggplot-problems.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the new data</span></span>
+<span id="cb2-15"><a href="common-ggplot-problems.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> assigned_room_type)) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="common-ggplot-problems.html#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb2-17"><a href="common-ggplot-problems.html#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Room Type&quot;</span>,</span>
+<span id="cb2-18"><a href="common-ggplot-problems.html#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="common-ggplot-problems.html#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-20"><a href="common-ggplot-problems.html#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="common-ggplot-problems.html#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots side by side with a shared title</span></span>
+<span id="cb2-22"><a href="common-ggplot-problems.html#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(topplot, bottomplot, <span class="at">ncol=</span><span class="dv">1</span>,</span>
+<span id="cb2-23"><a href="common-ggplot-problems.html#cb2-23" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Hotel Bookings - Bookings by Room Type&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="currency" class="section level3" number="17.1.3">
-<h3><span class="header-section-number">17.1.3</span> Currency</h3>
-<div id="rescaling-and-rounding" class="section level4" number="17.1.3.1">
-<h4><span class="header-section-number">17.1.3.1</span> Rescaling and Rounding</h4>
-<p>[Coming Soon - Feb 2021]</p>
+<div id="only-show-n-levels-other" class="section level3" number="17.1.3">
+<h3><span class="header-section-number">17.1.3</span> Only show n levels + “Other”</h3>
+<p>Often, only the top few levels are important. Let’s look at the number of bookings from Portugal and Spain (the neighboring country). Any other country should be tallied as “Other Countries”. The <code>fct_other</code> function works lets us specify which levels to keep (anything else goes in the “other” category. The <code>fct_lump</code> function works similarly but it lets us specify just a number of factors to keep.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="common-ggplot-problems.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Bookings by country (Portugal, Spain, And &quot;Other Countries&quot;)</span></span>
+<span id="cb3-2"><a href="common-ggplot-problems.html#cb3-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="common-ggplot-problems.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reorder the factor</span></span>
+<span id="cb3-4"><a href="common-ggplot-problems.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">fct_other</span>(country,</span>
+<span id="cb3-5"><a href="common-ggplot-problems.html#cb3-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">keep =</span> <span class="fu">c</span>(<span class="st">&quot;PRT&quot;</span>, <span class="st">&quot;ESP&quot;</span>),</span>
+<span id="cb3-6"><a href="common-ggplot-problems.html#cb3-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">other_level =</span> <span class="st">&quot;Other Countries&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="common-ggplot-problems.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the new data</span></span>
+<span id="cb3-8"><a href="common-ggplot-problems.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country)) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="common-ggplot-problems.html#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;#7a0019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="common-ggplot-problems.html#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Room Type&quot;</span>,</span>
+<span id="cb3-11"><a href="common-ggplot-problems.html#cb3-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="common-ggplot-problems.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-13"><a href="common-ggplot-problems.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="manually-relevel" class="section level3" number="17.1.4">
+<h3><span class="header-section-number">17.1.4</span> Manually relevel</h3>
+<p>Sometimes we just need to specify things manually (or it’s the fastest way to do something! Let’s rearrange the graph we created above to show Portugal up top, Spain in the middle and “Other Countries” last.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="common-ggplot-problems.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Bookings by country (Portugal, Spain, And &quot;Other Countries&quot;)</span></span>
+<span id="cb4-2"><a href="common-ggplot-problems.html#cb4-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="common-ggplot-problems.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reorder the factor</span></span>
+<span id="cb4-4"><a href="common-ggplot-problems.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">fct_other</span>(country,</span>
+<span id="cb4-5"><a href="common-ggplot-problems.html#cb4-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">keep =</span> <span class="fu">c</span>(<span class="st">&quot;PRT&quot;</span>, <span class="st">&quot;ESP&quot;</span>),</span>
+<span id="cb4-6"><a href="common-ggplot-problems.html#cb4-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">other_level =</span> <span class="st">&quot;Other Countries&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="common-ggplot-problems.html#cb4-7" aria-hidden="true" tabindex="-1"></a>                   <span class="co"># Force the new levels into this arrangement</span></span>
+<span id="cb4-8"><a href="common-ggplot-problems.html#cb4-8" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">fct_relevel</span>(<span class="fu">c</span>(<span class="st">&quot;Other Countries&quot;</span>, <span class="st">&quot;ESP&quot;</span>, <span class="st">&quot;PRT&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="common-ggplot-problems.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot the new data</span></span>
+<span id="cb4-10"><a href="common-ggplot-problems.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="common-ggplot-problems.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;#7a0019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="common-ggplot-problems.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Room Type&quot;</span>,</span>
+<span id="cb4-13"><a href="common-ggplot-problems.html#cb4-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="common-ggplot-problems.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-15"><a href="common-ggplot-problems.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+</div>
+<div id="fix-dates" class="section level2" number="17.2">
+<h2><span class="header-section-number">17.2</span> Fix Dates</h2>
+<div id="extract-days-of-the-week-from-a-date" class="section level3" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> Extract Days of the Week from a Date</h3>
+<p>We often have data as a date. Or we want it as a date. Remember how we created a proper date from the unusual variables (separate day, month, year) in the hotel bookings data?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="common-ggplot-problems.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a consolidated arrival_date field</span></span>
+<span id="cb5-2"><a href="common-ggplot-problems.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First, &quot;paste&quot; together the day, month, and year into a single string</span></span>
+<span id="cb5-3"><a href="common-ggplot-problems.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, use the dmy() or &quot;daymonthyear&quot; function from lubridate to turn it into a date</span></span>
+<span id="cb5-4"><a href="common-ggplot-problems.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># There are similar ymd and mdy functions.</span></span>
+<span id="cb5-5"><a href="common-ggplot-problems.html#cb5-5" aria-hidden="true" tabindex="-1"></a>booking_data <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="common-ggplot-problems.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">arrival_date =</span> <span class="fu">paste0</span>(arrival_date_day_of_month, </span>
+<span id="cb5-7"><a href="common-ggplot-problems.html#cb5-7" aria-hidden="true" tabindex="-1"></a>                                   arrival_date_month, </span>
+<span id="cb5-8"><a href="common-ggplot-problems.html#cb5-8" aria-hidden="true" tabindex="-1"></a>                                   arrival_date_year) <span class="sc">%&gt;%</span> <span class="fu">dmy</span>())</span></code></pre></div>
+<p>Suppose we want to ask which day has the most check-ins? We need to know whether a given date was a Monday, Tuesday, etc. The <code>wday</code> function from the <code>lubridate</code> package can do this for us.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="common-ggplot-problems.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Extract weekday from the date field with the wday function</span></span>
+<span id="cb6-2"><a href="common-ggplot-problems.html#cb6-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="common-ggplot-problems.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">checkin_dayofweek =</span> <span class="fu">wday</span>(arrival_date,</span>
+<span id="cb6-4"><a href="common-ggplot-problems.html#cb6-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="co"># If FALSE, gives number instead of name</span></span>
+<span id="cb6-5"><a href="common-ggplot-problems.html#cb6-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">abbr =</span> <span class="cn">TRUE</span>)) <span class="co"># If FALSE, spells out whole day name</span></span>
+<span id="cb6-6"><a href="common-ggplot-problems.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="common-ggplot-problems.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at a few random records</span></span>
+<span id="cb6-8"><a href="common-ggplot-problems.html#cb6-8" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb6-9"><a href="common-ggplot-problems.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="common-ggplot-problems.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hotel, country, arrival_date, checkin_dayofweek)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 4
+##    hotel        country arrival_date checkin_dayofweek
+##    &lt;chr&gt;        &lt;chr&gt;   &lt;date&gt;       &lt;ord&gt;            
+##  1 Resort Hotel GBR     2017-06-04   Sun              
+##  2 Resort Hotel PRT     2016-08-02   Tue              
+##  3 Resort Hotel PRT     2015-10-30   Fri              
+##  4 City Hotel   GBR     2017-05-26   Fri              
+##  5 City Hotel   DEU     2017-08-25   Fri              
+##  6 City Hotel   PRT     2015-09-04   Fri              
+##  7 Resort Hotel BGR     2017-04-21   Fri              
+##  8 City Hotel   FRA     2017-03-01   Wed              
+##  9 City Hotel   PRT     2016-04-13   Wed              
+## 10 Resort Hotel IRL     2016-07-17   Sun</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="common-ggplot-problems.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make barchart with looking at most popular check-in day</span></span>
+<span id="cb8-2"><a href="common-ggplot-problems.html#cb8-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="common-ggplot-problems.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> checkin_dayofweek)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="common-ggplot-problems.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="common-ggplot-problems.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Check-In </span><span class="sc">\n</span><span class="st">Day&quot;</span>,</span>
+<span id="cb8-6"><a href="common-ggplot-problems.html#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>,</span>
+<span id="cb8-7"><a href="common-ggplot-problems.html#cb8-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Bookings by Check-In Day&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-8"><a href="common-ggplot-problems.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb8-9"><a href="common-ggplot-problems.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="sc">+</span></span>
+<span id="cb8-10"><a href="common-ggplot-problems.html#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>But…it starts at the bottom (with Sunday). I want Sunday on the top. Let’s reverse the factor ordering (inside the ggplot command) with <code>fct_rev</code> and we should be all set.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="common-ggplot-problems.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make barchart with looking at most popular check-in day</span></span>
+<span id="cb9-2"><a href="common-ggplot-problems.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Reverse the factor to have a nice order with Sunday up top.</span></span>
+<span id="cb9-3"><a href="common-ggplot-problems.html#cb9-3" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="common-ggplot-problems.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(checkin_dayofweek))) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="common-ggplot-problems.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="common-ggplot-problems.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Check-In </span><span class="sc">\n</span><span class="st">Day&quot;</span>,</span>
+<span id="cb9-7"><a href="common-ggplot-problems.html#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>,</span>
+<span id="cb9-8"><a href="common-ggplot-problems.html#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Number of Bookings by Check-In Day&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="common-ggplot-problems.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb9-10"><a href="common-ggplot-problems.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a href="common-ggplot-problems.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>That’s it!</p>
+</div>
+</div>
+<div id="scaling-axes" class="section level2" number="17.3">
+<h2><span class="header-section-number">17.3</span> Scaling Axes</h2>
+<div id="rescaling-and-rounding-currency" class="section level3" number="17.3.1">
+<h3><span class="header-section-number">17.3.1</span> Rescaling and Rounding Currency</h3>
+<p>When you have large numbers, readers may end up having to count the zeros to see the size of the numbers. Instead of focusing on the data, they’re trying to understand the scale of it…that’s no good. You have a couple choices:</p>
+<ul>
+<li><p>Add dividers (usually a comma in the US, often a period in the rest of the world), e.g. 13,456 instead of 13456</p></li>
+<li><p>Round and use K, M, etc. This is common for financial statements, e.g. $42K instead of 42356.48</p></li>
+</ul>
+<p>The <code>scales</code> package has many useful functions to help with this.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="common-ggplot-problems.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Revenue by hotel</span></span>
+<span id="cb10-2"><a href="common-ggplot-problems.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="common-ggplot-problems.html#cb10-3" aria-hidden="true" tabindex="-1"></a>left_graph <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="common-ggplot-problems.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_canceled <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="common-ggplot-problems.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_length_of_stay =</span> stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights,</span>
+<span id="cb10-6"><a href="common-ggplot-problems.html#cb10-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">revenue =</span> adr <span class="sc">*</span> total_length_of_stay) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="common-ggplot-problems.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="common-ggplot-problems.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">revenue =</span> <span class="fu">sum</span>(revenue)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-9"><a href="common-ggplot-problems.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hotel, <span class="at">y =</span> revenue)) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="common-ggplot-problems.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>,</span>
+<span id="cb10-11"><a href="common-ggplot-problems.html#cb10-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="common-ggplot-problems.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb10-13"><a href="common-ggplot-problems.html#cb10-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Revenue ($)&quot;</span>,</span>
+<span id="cb10-14"><a href="common-ggplot-problems.html#cb10-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Without Scaling on Y Axis&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-15"><a href="common-ggplot-problems.html#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb10-16"><a href="common-ggplot-problems.html#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="common-ggplot-problems.html#cb10-17" aria-hidden="true" tabindex="-1"></a>right_graph <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-18"><a href="common-ggplot-problems.html#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_canceled <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-19"><a href="common-ggplot-problems.html#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_length_of_stay =</span> stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights,</span>
+<span id="cb10-20"><a href="common-ggplot-problems.html#cb10-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">revenue =</span> adr <span class="sc">*</span> total_length_of_stay) <span class="sc">%&gt;%</span></span>
+<span id="cb10-21"><a href="common-ggplot-problems.html#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
+<span id="cb10-22"><a href="common-ggplot-problems.html#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">revenue =</span> <span class="fu">sum</span>(revenue)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-23"><a href="common-ggplot-problems.html#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hotel, <span class="at">y =</span> revenue)) <span class="sc">+</span></span>
+<span id="cb10-24"><a href="common-ggplot-problems.html#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>,</span>
+<span id="cb10-25"><a href="common-ggplot-problems.html#cb10-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-26"><a href="common-ggplot-problems.html#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb10-27"><a href="common-ggplot-problems.html#cb10-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Revenue ($)&quot;</span>,</span>
+<span id="cb10-28"><a href="common-ggplot-problems.html#cb10-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;With Scaling on Y Axis&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-29"><a href="common-ggplot-problems.html#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">scale =</span> <span class="fl">0.000001</span>, <span class="at">suffix =</span> <span class="st">&quot;MM&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb10-30"><a href="common-ggplot-problems.html#cb10-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb10-31"><a href="common-ggplot-problems.html#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="common-ggplot-problems.html#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(left_graph, right_graph, <span class="at">ncol=</span><span class="dv">2</span>,</span>
+<span id="cb10-33"><a href="common-ggplot-problems.html#cb10-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Total Revenue by Hotel&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="percent-format" class="section level3" number="17.3.2">
+<h3><span class="header-section-number">17.3.2</span> Percent Format</h3>
+<p>Similar to the example above, with parts to whole we sometimes want to display percentages. Let’s plot the percentage of bookings cancelled by month. The <code>scales</code> package includes the helpful <code>label_percent</code> function.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="common-ggplot-problems.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Line graph with percentage of bookings cancelled per month</span></span>
+<span id="cb11-2"><a href="common-ggplot-problems.html#cb11-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="common-ggplot-problems.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(arrival_date_year, arrival_date_month) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="common-ggplot-problems.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_bookings =</span> <span class="fu">n</span>(),</span>
+<span id="cb11-5"><a href="common-ggplot-problems.html#cb11-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">cancellations =</span> <span class="fu">sum</span>(is_canceled),</span>
+<span id="cb11-6"><a href="common-ggplot-problems.html#cb11-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">pct_cancelled =</span> cancellations<span class="sc">/</span>total_bookings) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="common-ggplot-problems.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">arrival_date =</span> <span class="fu">dmy</span>(<span class="fu">paste0</span>(<span class="st">&quot;01&quot;</span>, arrival_date_month, arrival_date_year))) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="common-ggplot-problems.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> arrival_date, <span class="at">y =</span> pct_cancelled)) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="common-ggplot-problems.html#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#00759a&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="common-ggplot-problems.html#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Scheduled Arrival Date (by Month)&quot;</span>,</span>
+<span id="cb11-11"><a href="common-ggplot-problems.html#cb11-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Percent of Cancelled&quot;</span>,</span>
+<span id="cb11-12"><a href="common-ggplot-problems.html#cb11-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Percent of Bookings Cancelled by Month&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="common-ggplot-problems.html#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use label_percent to change to a percentage format</span></span>
+<span id="cb11-14"><a href="common-ggplot-problems.html#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">accuracy =</span> 1L)) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="common-ggplot-problems.html#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-16"><a href="common-ggplot-problems.html#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 
-</div>
 </div>
 </div>
 </div>
@@ -372,7 +693,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["IDSC4210_Course_Notes.pdf"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

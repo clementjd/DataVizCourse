@@ -54,6 +54,69 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 </head>
 
@@ -143,13 +206,24 @@
 <li class="chapter" data-level="5.3.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#long-vs-wide-data"><i class="fa fa-check"></i><b>5.3.3</b> Long vs Wide Data</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The Pipe Operator</a></li>
-<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a></li>
-<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating new Variables</a></li>
+<li class="chapter" data-level="5.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#logicals-and-filtering-the-data"><i class="fa fa-check"></i><b>5.5</b> Logicals and Filtering the Data</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#equal-greater-less-than"><i class="fa fa-check"></i><b>5.5.1</b> Equal, Greater, Less Than</a></li>
+<li class="chapter" data-level="5.5.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#filter-dataset"><i class="fa fa-check"></i><b>5.5.2</b> Filter dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#creating-new-variables"><i class="fa fa-check"></i><b>5.6</b> Creating New Variables</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#making-dates"><i class="fa fa-check"></i><b>5.6.1</b> Making Dates</a></li>
+<li class="chapter" data-level="5.6.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#if_else"><i class="fa fa-check"></i><b>5.6.2</b> if_else</a></li>
+<li class="chapter" data-level="5.6.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#case_when"><i class="fa fa-check"></i><b>5.6.3</b> case_when</a></li>
+</ul></li>
 <li class="chapter" data-level="5.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.7</b> Grouping and Summarizing</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#outside-ggplot"><i class="fa fa-check"></i><b>5.7.1</b> Outside ggplot</a></li>
-<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.2</b> Inside ggplot with stat_summary</a></li>
+<li class="chapter" data-level="5.7.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#grouping"><i class="fa fa-check"></i><b>5.7.1</b> Grouping</a></li>
+<li class="chapter" data-level="5.7.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#summarize-outside-ggplot"><i class="fa fa-check"></i><b>5.7.2</b> Summarize Outside ggplot</a></li>
+<li class="chapter" data-level="5.7.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#inside-ggplot-with-stat_summary"><i class="fa fa-check"></i><b>5.7.3</b> Inside ggplot with stat_summary</a></li>
 </ul></li>
+<li class="chapter" data-level="5.8" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#joining-data"><i class="fa fa-check"></i><b>5.8</b> Joining Data</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html"><i class="fa fa-check"></i><b>6</b> Intro to ggplot</a>
 <ul>
@@ -244,7 +318,7 @@
 <li class="chapter" data-level="13" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html"><i class="fa fa-check"></i><b>13</b> Multivariate Analysis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#heatmaps"><i class="fa fa-check"></i><b>13.1</b> Heatmaps</a></li>
-<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#treemaps"><i class="fa fa-check"></i><b>13.2</b> Treemaps</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#parallel-coordinate-plots"><i class="fa fa-check"></i><b>13.2</b> Parallel Coordinate Plots</a></li>
 <li class="chapter" data-level="13.3" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#maps-and-geographic-plots"><i class="fa fa-check"></i><b>13.3</b> Maps and Geographic Plots</a></li>
 <li class="chapter" data-level="13.4" data-path="multivariate-analysis.html"><a href="multivariate-analysis.html#sankey-plots"><i class="fa fa-check"></i><b>13.4</b> Sankey Plots</a></li>
 </ul></li>
@@ -271,16 +345,47 @@
 </ul></li>
 <li class="chapter" data-level="15" data-path="accessible-design.html"><a href="accessible-design.html"><i class="fa fa-check"></i><b>15</b> Accessible Design</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#section"><i class="fa fa-check"></i><b>15.1</b> </a></li>
+<li class="chapter" data-level="15.1" data-path="accessible-design.html"><a href="accessible-design.html#include-a-summary"><i class="fa fa-check"></i><b>15.1</b> Include a Summary</a></li>
+<li class="chapter" data-level="15.2" data-path="accessible-design.html"><a href="accessible-design.html#clearly-label-data"><i class="fa fa-check"></i><b>15.2</b> Clearly Label Data</a></li>
+<li class="chapter" data-level="15.3" data-path="accessible-design.html"><a href="accessible-design.html#supporting-screen-readers-e.g.-voiceover"><i class="fa fa-check"></i><b>15.3</b> Supporting Screen Readers (e.g. VoiceOver)</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="accessible-design.html"><a href="accessible-design.html#careful-with-interactions"><i class="fa fa-check"></i><b>15.3.1</b> Careful with Interactions</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html"><i class="fa fa-check"></i><b>16</b> Bias and Ethics in Data Analysis</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-defined"><i class="fa fa-check"></i><b>16.1</b> Bias Defined</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#mathematical-bias"><i class="fa fa-check"></i><b>16.1.1</b> Mathematical Bias</a></li>
+<li class="chapter" data-level="16.1.2" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-more-broadly"><i class="fa fa-check"></i><b>16.1.2</b> Bias more broadly</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#sources-of-bias"><i class="fa fa-check"></i><b>16.2</b> Sources of Bias</a></li>
+<li class="chapter" data-level="16.3" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-from-the-real-world"><i class="fa fa-check"></i><b>16.3</b> Bias from the Real World</a></li>
+<li class="chapter" data-level="16.4" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-introduced-at-data-collection"><i class="fa fa-check"></i><b>16.4</b> Bias introduced at Data Collection</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#selection-bias"><i class="fa fa-check"></i><b>16.4.1</b> Selection Bias</a></li>
+<li class="chapter" data-level="16.4.2" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#measurement-error"><i class="fa fa-check"></i><b>16.4.2</b> Measurement Error</a></li>
+<li class="chapter" data-level="16.4.3" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#bias-in-analysis"><i class="fa fa-check"></i><b>16.4.3</b> Bias in Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="bias-and-ethics-in-data-analysis.html"><a href="bias-and-ethics-in-data-analysis.html#what-to-do"><i class="fa fa-check"></i><b>16.5</b> What to Do</a></li>
+</ul></li>
 <li class="chapter" data-level="17" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html"><i class="fa fa-check"></i><b>17</b> Common ggplot Problems</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#common-issues-and-fixes"><i class="fa fa-check"></i><b>17.1</b> Common Issues and Fixes</a>
+<li class="chapter" data-level="17.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1</b> Reorder Factor Levels in a Bar Graph</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-factor-levels-in-a-bar-graph"><i class="fa fa-check"></i><b>17.1.1</b> Reorder Factor Levels in a Bar Graph</a></li>
-<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates-on-the-x-axis"><i class="fa fa-check"></i><b>17.1.2</b> Fix Dates on the X Axis</a></li>
-<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#currency"><i class="fa fa-check"></i><b>17.1.3</b> Currency</a></li>
+<li class="chapter" data-level="17.1.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-by-a-different-value"><i class="fa fa-check"></i><b>17.1.1</b> Reorder by a different value</a></li>
+<li class="chapter" data-level="17.1.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#reorder-by-frequency"><i class="fa fa-check"></i><b>17.1.2</b> Reorder by frequency</a></li>
+<li class="chapter" data-level="17.1.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#only-show-n-levels-other"><i class="fa fa-check"></i><b>17.1.3</b> Only show n levels + “Other”</a></li>
+<li class="chapter" data-level="17.1.4" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#manually-relevel"><i class="fa fa-check"></i><b>17.1.4</b> Manually relevel</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#fix-dates"><i class="fa fa-check"></i><b>17.2</b> Fix Dates</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#extract-days-of-the-week-from-a-date"><i class="fa fa-check"></i><b>17.2.1</b> Extract Days of the Week from a Date</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#scaling-axes"><i class="fa fa-check"></i><b>17.3</b> Scaling Axes</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#rescaling-and-rounding-currency"><i class="fa fa-check"></i><b>17.3.1</b> Rescaling and Rounding Currency</a></li>
+<li class="chapter" data-level="17.3.2" data-path="common-ggplot-problems.html"><a href="common-ggplot-problems.html#percent-format"><i class="fa fa-check"></i><b>17.3.2</b> Percent Format</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -303,9 +408,56 @@
 <div id="accessible-design" class="section level1" number="15">
 <h1><span class="header-section-number">15</span> Accessible Design</h1>
 <p><img src="IDSC4210CanvasBanner.png" /></p>
-<div id="section" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> </h2>
+<p>Generally, you should want to communicate to the widest possible audience. After all, if you’re saying something, don’t you want everyone to be able to get that information? Additionally, many organizations (e.g. government agencies) are required to provide information in an accessible format. The <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines</a> are probably the “core” of accessibility guidelines for web content (and many other guidelines or requirements are based on these).</p>
+<p>We can take some basic steps to improve the accessibility of our data visualizations, particularly if they will be web-based.</p>
+<div id="include-a-summary" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> Include a Summary</h2>
+<p>One best practice is to include a brief caption that describes what the visualization shows, and any key trends or takeaways. As with the discussion about good use of color, this description can benefit all readers regardless of how they interact with your content. Additionally, this description can help search engines better index your content. Everybody wins. There’s really no downside here!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="accessible-design.html#cb1-1" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="accessible-design.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_canceled <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="accessible-design.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">revenue =</span> adr <span class="sc">*</span> (stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="accessible-design.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel, arrival_date_year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="accessible-design.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">annual_revenue =</span> <span class="fu">sum</span>(revenue)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="accessible-design.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> arrival_date_year, <span class="at">y =</span> annual_revenue, <span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="accessible-design.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">position =</span> <span class="fu">position_dodge2</span>()) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="accessible-design.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="fu">aes</span>(<span class="at">y =</span> annual_revenue <span class="sc">+</span> <span class="dv">500000</span>, <span class="at">label =</span> <span class="fu">dollar</span>(<span class="fu">round</span>(..y..,<span class="dv">0</span>))), <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>,</span>
+<span id="cb1-9"><a href="accessible-design.html#cb1-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">geom =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb1-10"><a href="accessible-design.html#cb1-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-11"><a href="accessible-design.html#cb1-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> .<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="accessible-design.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;#00759a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="accessible-design.html#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb1-14"><a href="accessible-design.html#cb1-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb1-15"><a href="accessible-design.html#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Revenue Contribution by Hotel (2015-2017)&quot;</span>,</span>
+<span id="cb1-16"><a href="accessible-design.html#cb1-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="accessible-design.html#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-18"><a href="accessible-design.html#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;gray40&quot;</span>),</span>
+<span id="cb1-19"><a href="accessible-design.html#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-20"><a href="accessible-design.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-21"><a href="accessible-design.html#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-22"><a href="accessible-design.html#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-23"><a href="accessible-design.html#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-24"><a href="accessible-design.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-25"><a href="accessible-design.html#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" alt="Summary: Both the City and Resort Hotel have demonstrated revenue growth, but the City Hotel has grown much more. While revenue was similar in 2015, in 2016 and 2017, the City Revenue brought in far more revenue than the Resort Hotel" width="672" />
+<p class="caption">
+Figure 15.1: Summary: Both the City and Resort Hotel have demonstrated revenue growth, but the City Hotel has grown much more. While revenue was similar in 2015, in 2016 and 2017, the City Revenue brought in far more revenue than the Resort Hotel
+</p>
+</div>
+</div>
+<div id="clearly-label-data" class="section level2" number="15.2">
+<h2><span class="header-section-number">15.2</span> Clearly Label Data</h2>
+<p>Clearly label the data when possible. For example, labeled values on bar graphs are one effective tool (but make sure the user knows what each label corresponds to).</p>
+<p>When not possible (e.g. with a line graph), a data table can be a good supplemental option.</p>
+</div>
+<div id="supporting-screen-readers-e.g.-voiceover" class="section level2" number="15.3">
+<h2><span class="header-section-number">15.3</span> Supporting Screen Readers (e.g. VoiceOver)</h2>
+<p>Many people interact with web-based content via a screen reader. There are tools available (like scalable vector graphics or SVGs) that allow you to include much more detail than you show in the image. For example, you can add hidden labels which will allow the screenreader to “read” more than somebody looking at the image would see.</p>
+<div id="careful-with-interactions" class="section level3" number="15.3.1">
+<h3><span class="header-section-number">15.3.1</span> Careful with Interactions</h3>
+<p>In this class, we’ve highlighted the role of interactions, but if all of the content is “hidden” behind interactions (such as tooltips that only appear on hovering) screen readers won’t be able to access them.</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -356,7 +508,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["IDSC4210_Course_Notes.pdf"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
