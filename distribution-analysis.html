@@ -472,11 +472,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-23"><a href="distribution-analysis.html#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb2-24"><a href="distribution-analysis.html#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb2-25"><a href="distribution-analysis.html#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/histogram-1.png" width="672" /></p>
 <p>The distribution above shows a peak but is skewed right. (This histogram is a distribution of prices, which makes sense…we see a distribution that looks “normal” but does show a small number of very expensive hotel rooms.) What’s interesting on this histogram? <strong>How about that spike at $0? Those are rooms given away for free (complementary) for whatever reason!</strong></p>
 <p>One critical decision with histograms is the “bin width” and the number of bins. In ggplot you can either specify <code>bin = n</code> to get <code>n</code> bins (bars) or you can specify <code>binwidth = w</code> to have each bin (bar) cover a range of <code>w</code>. In the example above, I set <code>binwidth = 10</code> so that each bar covers $10 (ie, prices $0-$10 go in the first bin, $10-$20 in the second, and so on).</p>
 <p>What’s the right number of bins? Imagine we have prices…how many observations do you group together? Should a bin cover a $5 range of prices or $50 range? If you have too many or too few bins, you’ll have a hard time seeing any patterns. Here’s the same histogram as above but with a bin width of $200 and $0.25.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/histogram2-1.png" width="672" /></p>
 </div>
 <div id="density-plot" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Density Plot</h2>
@@ -525,7 +525,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-41"><a href="distribution-analysis.html#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-42"><a href="distribution-analysis.html#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out both plots next to one another as one figure</span></span>
 <span id="cb3-43"><a href="distribution-analysis.html#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(densityplot, densityplot_w_histogram, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/density%20plot-1.png" width="672" /></p>
 <p>Density plots are particularly useful for comparing distributions (generally better than putting two histograms on the same plot). This allows us to compare the skewness, outliers, and peaks of two different groups.</p>
 <p>Let’s look at the distribution of prices charged at the two different hotels (City Hotel and Resort Hotel) in our <code>bookingdata</code> dataset. Are the prices different? We see that the City Hotel charges higher prices to more of it’s customers, but there is a “bigger tail” on the Resort Hotel prices. And we can see that the City Hotel provides more complementary hotel rooms (where price is near $0). Interesting!</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="distribution-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
@@ -544,7 +544,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-14"><a href="distribution-analysis.html#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb4-15"><a href="distribution-analysis.html#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb4-16"><a href="distribution-analysis.html#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/densityplot3-1.png" width="672" /></p>
 </div>
 <div id="box-plot" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Box Plot</h2>
@@ -573,7 +573,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-12"><a href="distribution-analysis.html#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb5-13"><a href="distribution-analysis.html#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb5-14"><a href="distribution-analysis.html#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/boxplot-1.png" width="672" /></p>
 <p>Not bad. They all have their place, but when your dataset has as many outliers as this one does, I think a density plot does a better job.</p>
 
 </div>
