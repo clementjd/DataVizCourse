@@ -456,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-22"><a href="correlation-and-regression.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb2-23"><a href="correlation-and-regression.html#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb2-24"><a href="correlation-and-regression.html#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/scatterplot%20lead%20time%20vs%20price-1.png" width="672" /></p>
 <p>What is the relationship between lead time and price? It would be good to have some way to characterize this relationship.</p>
 <div id="correlation" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Correlation</h2>
@@ -531,7 +531,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-15"><a href="correlation-and-regression.html#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(B, <span class="at">type=</span><span class="st">&quot;lower&quot;</span>, <span class="at">order=</span><span class="st">&quot;hclust&quot;</span>,</span>
 <span id="cb12-16"><a href="correlation-and-regression.html#cb12-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.col=</span><span class="st">&quot;black&quot;</span>,</span>
 <span id="cb12-17"><a href="correlation-and-regression.html#cb12-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">col=</span><span class="fu">brewer.pal</span>(<span class="at">n=</span><span class="dv">8</span>, <span class="at">name=</span><span class="st">&quot;RdYlBu&quot;</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/corrplot-1.png" width="672" /></p>
 <p>The smaller, lighter circles indicate a smaller correlation, whereas the bigger stronger circles indicate larger positive or negative correlations.</p>
 <div id="correlation-between-a-continuous-and-dichotomous-variable" class="section level4" number="10.1.1.1">
 <h4><span class="header-section-number">10.1.1.1</span> Correlation between a continuous and dichotomous variable</h4>
@@ -582,7 +582,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-11"><a href="correlation-and-regression.html#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
 <span id="cb19-12"><a href="correlation-and-regression.html#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Dataset)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/correlation%20vs%20slope-1.png" width="672" /></p>
 <p>These datasets have <em>different slopes but the correlation for both is 1</em> because they both have a perfectly linear relationship.</p>
 </div>
 </div>
@@ -654,7 +654,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-20"><a href="correlation-and-regression.html#cb21-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb21-21"><a href="correlation-and-regression.html#cb21-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb21-22"><a href="correlation-and-regression.html#cb21-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/leadtime%20vs%20price-1.png" width="672" /></p>
 <p>The question we ask is “Is lead time associated with ADR?” Linear regression minimizes the sum of squared error (hence its other name, “least squares”).</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="correlation-and-regression.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Run a linear regression on the data</span></span>
 <span id="cb22-2"><a href="correlation-and-regression.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out adr = 0 (complementary stays)</span></span>
@@ -710,7 +710,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-18"><a href="correlation-and-regression.html#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb24-19"><a href="correlation-and-regression.html#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/scatterplot%20with%20linear%20regression-1.png" width="672" /></p>
 </div>
 <div id="loess-smoothing" class="section level3" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Loess Smoothing</h3>
@@ -735,7 +735,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-18"><a href="correlation-and-regression.html#cb26-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb26-19"><a href="correlation-and-regression.html#cb26-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/scatterplot%20with%20loess%20line-1.png" width="672" /></p>
 <p>Very interesting! We see that price seems to increase over time and then they go down again (on average) right before the stay.</p>
 </div>
 </div>
@@ -769,7 +769,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb28-23"><a href="correlation-and-regression.html#cb28-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb28-24"><a href="correlation-and-regression.html#cb28-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb28-25"><a href="correlation-and-regression.html#cb28-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/scores-1.png" width="672" /></p>
 <p>Let’s look at the correlation of this data.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="correlation-and-regression.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Check correlation of test score vs GPA</span></span>
 <span id="cb29-2"><a href="correlation-and-regression.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(student_scores<span class="sc">$</span>GPA, student_scores<span class="sc">$</span>test_score)</span></code></pre></div>
@@ -811,7 +811,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb31-23"><a href="correlation-and-regression.html#cb31-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb31-24"><a href="correlation-and-regression.html#cb31-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/avg%20score%20eligibility-1.png" width="672" /></p>
 <p>The linear regression line is practically flat…as it should be. We found that there was essentially no correlation (because we created this data to not be correlated).</p>
 <p>So suppose this data analytics company hires all of the eligible employees. And then looks at their employee records, and says, “We find that students who do well on the test had lower GPAs on average. And vice versa, those with high GPAs do poorly on the test.” How can this be. Well, remember they ONLY hired the people who met their eligibility criteria. Let’s look at the plot again, this time leaving out people who weren’t eligible to be hired.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="correlation-and-regression.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot only the employees eligible to be hired</span></span>
@@ -831,7 +831,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb33-15"><a href="correlation-and-regression.html#cb33-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb33-16"><a href="correlation-and-regression.html#cb33-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/plot%20only%20eligible-1.png" width="672" /></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="correlation-and-regression.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the correlation</span></span>
 <span id="cb35-2"><a href="correlation-and-regression.html#cb35-2" aria-hidden="true" tabindex="-1"></a>student_scores <span class="sc">%&gt;%</span></span>
 <span id="cb35-3"><a href="correlation-and-regression.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hiring_eligibility <span class="sc">!=</span> <span class="st">&quot;Not eligible&quot;</span>) <span class="sc">%&gt;%</span></span>
@@ -893,7 +893,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb37-50"><a href="correlation-and-regression.html#cb37-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Relationship between test score and GPA among {closest_state}&#39;</span>) <span class="sc">+</span></span>
 <span id="cb37-51"><a href="correlation-and-regression.html#cb37-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exit_shrink</span>()</span>
 <span id="cb37-52"><a href="correlation-and-regression.html#cb37-52" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(anim, <span class="at">duration =</span> <span class="dv">5</span>, <span class="at">fps =</span> <span class="dv">20</span>, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>())</span></code></pre></div>
-<p><img src="9_BerksonParadox.gif" /></p>
+<p>[Animated gif not included in PDF]</p>
 </div>
 <div id="advanced-topics-machine-learning" class="section level2" number="10.5">
 <h2><span class="header-section-number">10.5</span> Advanced Topics: Machine Learning</h2>
@@ -945,7 +945,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb40-16"><a href="correlation-and-regression.html#cb40-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-17"><a href="correlation-and-regression.html#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the tree</span></span>
 <span id="cb40-18"><a href="correlation-and-regression.html#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="fu">fancyRpartPlot</span>(cancellations.tree<span class="sc">$</span>finalModel)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/classification%20tree-1.png" width="672" /></p>
 <p>Let’s see how well the model performs.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="correlation-and-regression.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Check the cancellations.tree model performance</span></span>
 <span id="cb41-2"><a href="correlation-and-regression.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  Predict the values for on the hold-out test set</span></span>
