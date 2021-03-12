@@ -437,7 +437,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-23"><a href="comparing-quantities.html#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb1-24"><a href="comparing-quantities.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb1-25"><a href="comparing-quantities.html#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/sampled%20scatterplot-1.png" width="672" /></p>
 <p>We see an interesting pattern emerge…there’s kind of a floor around $50 and few rooms are booked below that for a while. We can add a line to the plot to help people see it.</p>
 <p>Let’s look at lead time for prices below versus above $50</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="comparing-quantities.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span></span>
@@ -478,7 +478,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-24"><a href="comparing-quantities.html#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb4-25"><a href="comparing-quantities.html#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
 <span id="cb4-26"><a href="comparing-quantities.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/scatterplot%20of%20group%20size%20vs%20booking%20vs%20parking-1.png" width="672" /></p>
 <p>Okay, so nobody booking on the day of their stay needs parking. Wait, really? Also, we see 32 points. But there are more data points in the dataset (even after sampling). What’s going on here is <strong>overplotting</strong>…there are dots on top of one another.</p>
 <p>Three solutions to overplotting are to:</p>
 <ol style="list-style-type: decimal">
@@ -515,14 +515,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-24"><a href="comparing-quantities.html#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb5-25"><a href="comparing-quantities.html#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
 <span id="cb5-26"><a href="comparing-quantities.html#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/jittered%20scatterplot-1.png" width="672" /></p>
 <p>Now we can see that there is quite a bit of diversity and the pattern isn’t so clear. We still have some overplotting, but it’s not as bad. What’s the potential downside? Well, it kind of looks like there are groups with 1.5 guests, but we know that’s not true. WIth jittering, you are slightly altering the values so it’s not a true representation of the underlying data; you might see patterns in the jittered version that don’t exist in real life.</p>
 </div>
 <div id="adjust-transparency-alpha" class="section level5" number="9.0.1.1.2">
 <h5><span class="header-section-number">9.0.1.1.2</span> Adjust Transparency Alpha</h5>
+<p>Adjusting the alpha value will change the transparency of your points or density plot etc. Thus, darker points indicate a greater density. This can be useful but it’s hard to tell exact differences in magnitude.</p>
 </div>
 <div id="sample-data" class="section level5" number="9.0.1.1.3">
 <h5><span class="header-section-number">9.0.1.1.3</span> Sample Data</h5>
+<p>Sometimes there’s just no way to fit everything on the scatterplot. The previous examples have used <code>sample_n</code> or <code>sample_frac</code> to select either a set number or a fraction of the dataset. This can be very helpful, but you have to be careful…is the sample representative of the overall dataset?</p>
 </div>
 </div>
 </div>
@@ -550,9 +552,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-19"><a href="comparing-quantities.html#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb6-20"><a href="comparing-quantities.html#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
 <span id="cb6-21"><a href="comparing-quantities.html#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/barchart1-1.png" width="672" /></p>
 <p>One critical consideration is to ensure that the <strong>Y axis starts at zero for bar charts</strong>. It can be very misleading to present a bar graph that doesn’t start at zero because the magnitude of the difference isn’t the same as the total magnitude represented. In fact, <code>geom_bar</code> in <code>ggplot</code> won’t even let you start the Y axis anywhere else…to create the figure on the left I had to “brute force” it with <code>geom_rect</code>.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/barchart2-1.png" width="672" /></p>
 
 </div>
 </div>
