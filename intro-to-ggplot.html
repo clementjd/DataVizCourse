@@ -440,12 +440,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-11"><a href="intro-to-ggplot.html#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="intro-to-ggplot.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a quick scatterplot with the base R package</span></span>
 <span id="cb1-13"><a href="intro-to-ggplot.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bookingdata<span class="sc">$</span>adr, bookingdata<span class="sc">$</span>total_of_special_requests, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/base_r_plots-1.png" width="672" /></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro-to-ggplot.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now make a quick scatterplot with ggplot</span></span>
 <span id="cb2-2"><a href="intro-to-ggplot.html#cb2-2" aria-hidden="true" tabindex="-1"></a>bookingdata <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="intro-to-ggplot.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> adr, <span class="at">y =</span> total_of_special_requests)) <span class="sc">+</span></span>
 <span id="cb2-4"><a href="intro-to-ggplot.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/base_r_plots-2.png" width="672" /></p>
 <p>The two plots aren’t that different, but the syntax is quite a bit different. Also, the appearance of the ggplot graph is much nicer, which hints that it’s maybe more advanced.</p>
 <p>ggplot2 is much more flexible and powerful than the Base R plots package though. Notice that outlier, with an <code>adr</code> (Average Daily Rate) of nearly $6000? Sure would be nice to quickly filter that out. And clean up the labels. And…and…and…</p>
 <p>You can probably do most things in the Base R plotting functions. But it’s not as flexible, or powerful, or common.</p>
