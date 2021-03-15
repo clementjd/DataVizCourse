@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
 <head>
- 
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Design Fundamentals | Course Notes - IDSC 4210</title>
@@ -174,9 +174,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
 <li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
-<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
-<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#specifying-colors"><i class="fa fa-check"></i><b>4.2.1</b> Specifying colors</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.2</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.3</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.4</b> Red-Yellow-Green “Stoplight” Scales</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
 <li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
@@ -419,10 +420,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="color-theory" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Color Theory</h2>
 <p>Color plays a critical role in how we view and perceive the world.</p>
-<p><strong>Contrast</strong> is [DEFINITION] and is the most important consideration in data visualizations.</p>
-<div id="color-and-accessibility" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Color and Accessibility</h3>
-<p>It’s important to recognize that not everyone perceives color the same way. Many companies and government agencies mandate that all documents be accessible to individuals who are colorblind, which you can easily do with a good palette of clearly distinguished colors. Such palettes don’t rely on hue alone but also contrast. There are at least three good reasons to use an accessible palette:</p>
+<p><strong>Contrast</strong> is the perceived difference between colors and is the most important consideration in data visualizations. We should especially pay attention to the contrast between colors used in the background and foreground (e.g. text and the text box) and different elements in a visualization (e.g. two different lines on a line graph).</p>
+<div id="specifying-colors" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Specifying colors</h3>
+<p>There are a variety of systems used to specify colors. One system is the “Pantone Matching System” which is commonly used in graphic design. It refers to a specific ink, so it will give a very consistent, “true” color. However, we can’t use a different ink for every single color in a publication (if we want full color), and objects displayed on a screen don’t use ink at all.</p>
+<p>CMYK colors refer to colors made up of a ratio of four inks (Cyan, Magenta, Yellow, and Black). RGB refers to “red green blue” and is how most digital displays create color by combining different output levels from red, green and blue pixels placed very close together. Hex colors (e.g. #ffcc33) also refer to an RGB process.</p>
+<p><img src="2_pantone.png" /></p>
+<p>Within R, you can specify colors either with the hex code, or you can use one of the colors that has a nickname. There’s a <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">list of colors here</a>. I especially like <code>steelblue4</code> and <code>firebrick4</code>. You can also specify any shade of gray ranging from <code>black</code>, to <code>gray1</code>, to <code>gray99</code>, to <code>white</code> by changing the number after the word gray.</p>
+<p>You can also name you own colors. If want to reuse the UMN Maroon color, we could give it a name and use that when specifying color.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="design-fundamentals.html#cb1-1" aria-hidden="true" tabindex="-1"></a>minnesota_maroon <span class="ot">&lt;-</span> <span class="st">&quot;#7a0019&quot;</span></span></code></pre></div>
+</div>
+<div id="color-and-accessibility" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Color and Accessibility</h3>
+<p>It’s important to recognize that not everyone perceives color the same way. For example, let’s look at an example (which, I acknowledge, will be perceived differently by different people).</p>
+<p><img src="2_accessibility.png" /></p>
+<p>Many companies and government agencies mandate that all documents be accessible to individuals who are colorblind, which you can easily do with a good palette of clearly distinguished colors. Such palettes don’t rely on hue alone but also contrast. There are at least three good reasons to use an accessible palette:</p>
 <ol style="list-style-type: decimal">
 <li><p>Your visualizations will be accessible to everyone, regardless of how they perceive color.</p></li>
 <li><p>Good palettes are easier to interpret for everyone.</p></li>
@@ -434,79 +446,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="caption">The UMN brand colors.</p>
 </div>
 </div>
-<div id="consistency" class="section level3" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Consistency</h3>
+<div id="consistency" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Consistency</h3>
 <p>Colors should be consistent across plots–they should mean (roughly) the same thing everywhere they appear.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="design-fundamentals.html#cb1-1" aria-hidden="true" tabindex="-1"></a>barplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="design-fundamentals.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(market_segment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span>, <span class="st">&quot;Corporate&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="design-fundamentals.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(market_segment) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="design-fundamentals.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">adr =</span> <span class="fu">mean</span>(adr)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="design-fundamentals.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(market_segment, <span class="sc">-</span>adr), <span class="at">y =</span> adr, <span class="at">fill =</span> market_segment)) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="design-fundamentals.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-7"><a href="design-fundamentals.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;Corporate&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-8"><a href="design-fundamentals.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
-<span id="cb1-9"><a href="design-fundamentals.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
-<span id="cb1-10"><a href="design-fundamentals.html#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>,</span>
-<span id="cb1-11"><a href="design-fundamentals.html#cb1-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Mean ADR ($) by Market Segment&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="design-fundamentals.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
-<span id="cb1-13"><a href="design-fundamentals.html#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-14"><a href="design-fundamentals.html#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-15"><a href="design-fundamentals.html#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-16"><a href="design-fundamentals.html#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>())</span>
-<span id="cb1-17"><a href="design-fundamentals.html#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="design-fundamentals.html#cb1-18" aria-hidden="true" tabindex="-1"></a>scatterplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-19"><a href="design-fundamentals.html#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="at">size =</span> <span class="fl">0.01</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="design-fundamentals.html#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(market_segment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span>, <span class="st">&quot;Corporate&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-21"><a href="design-fundamentals.html#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lengthofstay =</span> stays_in_week_nights <span class="sc">+</span> stays_in_weekend_nights) <span class="sc">%&gt;%</span></span>
-<span id="cb1-22"><a href="design-fundamentals.html#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lengthofstay <span class="sc">&lt;</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-23"><a href="design-fundamentals.html#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lengthofstay, <span class="at">y =</span> adr, <span class="at">color =</span> market_segment)) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="design-fundamentals.html#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb1-25"><a href="design-fundamentals.html#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;Corporate&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="design-fundamentals.html#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">pretty_breaks</span>()) <span class="sc">+</span></span>
-<span id="cb1-27"><a href="design-fundamentals.html#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
-<span id="cb1-28"><a href="design-fundamentals.html#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">color=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
-<span id="cb1-29"><a href="design-fundamentals.html#cb1-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>,</span>
-<span id="cb1-30"><a href="design-fundamentals.html#cb1-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Length of Stay (days)&quot;</span>,</span>
-<span id="cb1-31"><a href="design-fundamentals.html#cb1-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Mean ADR ($) by Market Segment&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-32"><a href="design-fundamentals.html#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-33"><a href="design-fundamentals.html#cb1-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-34"><a href="design-fundamentals.html#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb1-35"><a href="design-fundamentals.html#cb1-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
-<span id="cb1-36"><a href="design-fundamentals.html#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
-<span id="cb1-37"><a href="design-fundamentals.html#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>))</span>
-<span id="cb1-38"><a href="design-fundamentals.html#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="design-fundamentals.html#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(barplot, scatterplot, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="design-fundamentals.html#cb2-1" aria-hidden="true" tabindex="-1"></a>barplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="design-fundamentals.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(market_segment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span>, <span class="st">&quot;Corporate&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="design-fundamentals.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(market_segment) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a href="design-fundamentals.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">adr =</span> <span class="fu">mean</span>(adr)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="design-fundamentals.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(market_segment, <span class="sc">-</span>adr), <span class="at">y =</span> adr, <span class="at">fill =</span> market_segment)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="design-fundamentals.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="design-fundamentals.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;Corporate&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="design-fundamentals.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="design-fundamentals.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
+<span id="cb2-10"><a href="design-fundamentals.html#cb2-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>,</span>
+<span id="cb2-11"><a href="design-fundamentals.html#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Mean ADR ($) by Market Segment&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="design-fundamentals.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,  <span class="co"># Hide legend</span></span>
+<span id="cb2-13"><a href="design-fundamentals.html#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-14"><a href="design-fundamentals.html#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-15"><a href="design-fundamentals.html#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-16"><a href="design-fundamentals.html#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>())</span>
+<span id="cb2-17"><a href="design-fundamentals.html#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="design-fundamentals.html#cb2-18" aria-hidden="true" tabindex="-1"></a>scatterplot <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-19"><a href="design-fundamentals.html#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="at">size =</span> <span class="fl">0.01</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-20"><a href="design-fundamentals.html#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(market_segment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span>, <span class="st">&quot;Corporate&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-21"><a href="design-fundamentals.html#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lengthofstay =</span> stays_in_week_nights <span class="sc">+</span> stays_in_weekend_nights) <span class="sc">%&gt;%</span></span>
+<span id="cb2-22"><a href="design-fundamentals.html#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lengthofstay <span class="sc">&lt;</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-23"><a href="design-fundamentals.html#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lengthofstay, <span class="at">y =</span> adr, <span class="at">color =</span> market_segment)) <span class="sc">+</span></span>
+<span id="cb2-24"><a href="design-fundamentals.html#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb2-25"><a href="design-fundamentals.html#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Direct&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;Corporate&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey50&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="design-fundamentals.html#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">pretty_breaks</span>()) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="design-fundamentals.html#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb2-28"><a href="design-fundamentals.html#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">color=</span><span class="st">&quot;Market Segment&quot;</span>,</span>
+<span id="cb2-29"><a href="design-fundamentals.html#cb2-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Avg Daily Rate ($)&quot;</span>,</span>
+<span id="cb2-30"><a href="design-fundamentals.html#cb2-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Length of Stay (days)&quot;</span>,</span>
+<span id="cb2-31"><a href="design-fundamentals.html#cb2-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Mean ADR ($) by Market Segment&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="design-fundamentals.html#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-33"><a href="design-fundamentals.html#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-34"><a href="design-fundamentals.html#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-35"><a href="design-fundamentals.html#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb2-36"><a href="design-fundamentals.html#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb2-37"><a href="design-fundamentals.html#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>))</span>
+<span id="cb2-38"><a href="design-fundamentals.html#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="design-fundamentals.html#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(barplot, scatterplot, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/consistent%20colors-1.png" width="672" /></p>
 </div>
-<div id="red-yellow-green-stoplight-scales" class="section level3" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> Red-Yellow-Green “Stoplight” Scales</h3>
+<div id="red-yellow-green-stoplight-scales" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Red-Yellow-Green “Stoplight” Scales</h3>
 <p>Scales using red, yellow and green (or just red and green) are commonly employed to highlight things that are going well (green) or poorly (red). This isn’t necessarily bad, but something to be mindful of.</p>
 <p>There can be cultural differences in how these colors are perceived.</p>
 <p>Also, be careful about referring to employee or team performance with these scales. It sends a clear good/bad judgment on their performance when they may actually be performing to standard or were impacted by circumstances out of there control.</p>
 <p>Consider the graph below. Employee C is well above goal and only a bit below the median. Is it fair to said Employee D is “green”, but Employee C is “red”?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="design-fundamentals.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Employee graph with good/bad performance</span></span>
-<span id="cb2-2"><a href="design-fundamentals.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="design-fundamentals.html#cb2-3" aria-hidden="true" tabindex="-1"></a>employee_sales <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">employee =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>),</span>
-<span id="cb2-4"><a href="design-fundamentals.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">sales =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">138</span>, <span class="dv">140</span>, <span class="dv">150</span>, <span class="dv">151</span>, <span class="dv">155</span>),</span>
-<span id="cb2-5"><a href="design-fundamentals.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;Below&quot;</span>, <span class="st">&quot;Below&quot;</span>, <span class="st">&quot;Below&quot;</span>, <span class="st">&quot;Above&quot;</span>, <span class="st">&quot;Above&quot;</span>, <span class="st">&quot;Above&quot;</span>, <span class="st">&quot;Above&quot;</span>))</span>
-<span id="cb2-6"><a href="design-fundamentals.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="design-fundamentals.html#cb2-7" aria-hidden="true" tabindex="-1"></a>employee_sales <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> employee, <span class="at">y =</span> sales)) <span class="sc">+</span></span>
-<span id="cb2-8"><a href="design-fundamentals.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> color), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb2-9"><a href="design-fundamentals.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Below&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;Above&quot;</span> <span class="ot">=</span> <span class="st">&quot;#58a618&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="design-fundamentals.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">110</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="design-fundamentals.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">140</span>, <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>) <span class="sc">+</span></span>
-<span id="cb2-12"><a href="design-fundamentals.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;F&quot;</span>, <span class="at">y =</span> <span class="dv">110</span>, <span class="at">label =</span> <span class="st">&quot;Sales Target&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb2-13"><a href="design-fundamentals.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;F&quot;</span>, <span class="at">y =</span> <span class="dv">140</span>, <span class="at">label =</span> <span class="st">&quot;Median Sales&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb2-14"><a href="design-fundamentals.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="design-fundamentals.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sales ($)&quot;</span>,</span>
-<span id="cb2-16"><a href="design-fundamentals.html#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Employee Name&quot;</span>,</span>
-<span id="cb2-17"><a href="design-fundamentals.html#cb2-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Sales ($) by Employee&quot;</span>) <span class="sc">+</span></span>
-<span id="cb2-18"><a href="design-fundamentals.html#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb2-19"><a href="design-fundamentals.html#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb2-20"><a href="design-fundamentals.html#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb2-21"><a href="design-fundamentals.html#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
-<span id="cb2-22"><a href="design-fundamentals.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="design-fundamentals.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Employee graph with good/bad performance</span></span>
+<span id="cb3-2"><a href="design-fundamentals.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="design-fundamentals.html#cb3-3" aria-hidden="true" tabindex="-1"></a>employee_sales <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">employee =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>),</span>
+<span id="cb3-4"><a href="design-fundamentals.html#cb3-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">sales =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">138</span>, <span class="dv">140</span>, <span class="dv">150</span>, <span class="dv">151</span>, <span class="dv">155</span>),</span>
+<span id="cb3-5"><a href="design-fundamentals.html#cb3-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;Below&quot;</span>, <span class="st">&quot;Below&quot;</span>, <span class="st">&quot;Below&quot;</span>, <span class="st">&quot;Above&quot;</span>, <span class="st">&quot;Above&quot;</span>, <span class="st">&quot;Above&quot;</span>, <span class="st">&quot;Above&quot;</span>))</span>
+<span id="cb3-6"><a href="design-fundamentals.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="design-fundamentals.html#cb3-7" aria-hidden="true" tabindex="-1"></a>employee_sales <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> employee, <span class="at">y =</span> sales)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="design-fundamentals.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> color), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="design-fundamentals.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Below&quot;</span> <span class="ot">=</span> <span class="st">&quot;#7a0019&quot;</span>, <span class="st">&quot;Above&quot;</span> <span class="ot">=</span> <span class="st">&quot;#58a618&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="design-fundamentals.html#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">110</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="design-fundamentals.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">140</span>, <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="design-fundamentals.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;F&quot;</span>, <span class="at">y =</span> <span class="dv">110</span>, <span class="at">label =</span> <span class="st">&quot;Sales Target&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="design-fundamentals.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;F&quot;</span>, <span class="at">y =</span> <span class="dv">140</span>, <span class="at">label =</span> <span class="st">&quot;Median Sales&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="design-fundamentals.html#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="design-fundamentals.html#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sales ($)&quot;</span>,</span>
+<span id="cb3-16"><a href="design-fundamentals.html#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Employee Name&quot;</span>,</span>
+<span id="cb3-17"><a href="design-fundamentals.html#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Sales ($) by Employee&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="design-fundamentals.html#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-19"><a href="design-fundamentals.html#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-20"><a href="design-fundamentals.html#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb3-21"><a href="design-fundamentals.html#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
+<span id="cb3-22"><a href="design-fundamentals.html#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/stoplight%20graph-1.png" width="672" /></p>
 </div>
 </div>
 <div id="preattentive-visual-attributes" class="section level2" number="4.3">
@@ -530,7 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.4.1</span> Chartjunk</h3>
 <p><a href="https://en.wikipedia.org/wiki/Chartjunk" title="Wikipedia Entry on Chartjunk">Chartjunk</a> is a visual element that is not necessary to convey the meaning of the graph. Things like shadows, gridlines, icons, labels, gradients, etc can all be chartjunk. A closely related concept is the data-to-ink ratio. How much data are you displaying vs how much ink are you using?</p>
 <p>The core idea is to present your data in a clear, compelling manner, without all of the extra elements that can distract the user (and use all their printer toner!). The example shows two graphs…one with and one without a lot of chartjunk.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/chartjunk-1.png" width="672" /></p>
 <p>What did we strip away? All the lines, except the baseline under the graph (I think it looks nice…it helps “ground” the viewer. The background colors (though I sometimes use a light color behind my plots). The word “hotel” in front of the legend. The whole Y axis, even!</p>
 </div>
 <div id="graphical-integrity" class="section level3" number="4.4.2">
@@ -545,53 +557,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </center>
 <p>But how many of the bookings were actually made at the City Hotel, and how many were at the Resort Hotel? A bar graph or waffle chart will more accurately reflect these ratios. These chart types show us that about 1/3 of the bookings were at the Resort Hotel and 2/3 at the City Hotel. Or that the City Hotel had about twice as many bookings.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="design-fundamentals.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a bar chart and tile map</span></span>
-<span id="cb3-2"><a href="design-fundamentals.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="design-fundamentals.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make bar chart</span></span>
-<span id="cb3-4"><a href="design-fundamentals.html#cb3-4" aria-hidden="true" tabindex="-1"></a>barchart <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(booking_data, <span class="fu">aes</span>(<span class="at">x =</span> hotel)) <span class="sc">+</span> </span>
-<span id="cb3-5"><a href="design-fundamentals.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="design-fundamentals.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;City Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>,</span>
-<span id="cb3-7"><a href="design-fundamentals.html#cb3-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;Resort Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="design-fundamentals.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
-<span id="cb3-9"><a href="design-fundamentals.html#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb3-10"><a href="design-fundamentals.html#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>,</span>
-<span id="cb3-11"><a href="design-fundamentals.html#cb3-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Hotel Bookings </span><span class="sc">\n</span><span class="st"> (Barchart)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="design-fundamentals.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb3-13"><a href="design-fundamentals.html#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb3-14"><a href="design-fundamentals.html#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb3-15"><a href="design-fundamentals.html#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb3-16"><a href="design-fundamentals.html#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb3-17"><a href="design-fundamentals.html#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
-<span id="cb3-18"><a href="design-fundamentals.html#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
-<span id="cb3-19"><a href="design-fundamentals.html#cb3-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-20"><a href="design-fundamentals.html#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="design-fundamentals.html#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Waffle Map</span></span>
-<span id="cb3-22"><a href="design-fundamentals.html#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
-<span id="cb3-23"><a href="design-fundamentals.html#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="design-fundamentals.html#cb3-24" aria-hidden="true" tabindex="-1"></a>waffle <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
-<span id="cb3-25"><a href="design-fundamentals.html#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
-<span id="cb3-26"><a href="design-fundamentals.html#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">bookings =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-27"><a href="design-fundamentals.html#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hotel =</span> <span class="fu">relevel</span>(<span class="fu">as.factor</span>(hotel), <span class="st">&quot;Resort Hotel&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-28"><a href="design-fundamentals.html#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> hotel, <span class="at">values =</span> bookings)) <span class="sc">+</span></span>
-<span id="cb3-29"><a href="design-fundamentals.html#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_waffle</span>(<span class="at">n_rows =</span> <span class="dv">10</span>, </span>
-<span id="cb3-30"><a href="design-fundamentals.html#cb3-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="fl">0.5</span>, </span>
-<span id="cb3-31"><a href="design-fundamentals.html#cb3-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;#ffffff&quot;</span>, </span>
-<span id="cb3-32"><a href="design-fundamentals.html#cb3-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">flip =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-33"><a href="design-fundamentals.html#cb3-33" aria-hidden="true" tabindex="-1"></a>                <span class="at">make_proportional =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-34"><a href="design-fundamentals.html#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;City Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>,</span>
-<span id="cb3-35"><a href="design-fundamentals.html#cb3-35" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;Resort Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb3-36"><a href="design-fundamentals.html#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb3-37"><a href="design-fundamentals.html#cb3-37" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Hotel Bookings </span><span class="sc">\n</span><span class="st"> (Waffle Chart)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb3-38"><a href="design-fundamentals.html#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb3-39"><a href="design-fundamentals.html#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb3-40"><a href="design-fundamentals.html#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_enhance_waffle</span>() <span class="sc">+</span></span>
-<span id="cb3-41"><a href="design-fundamentals.html#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb3-42"><a href="design-fundamentals.html#cb3-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
-<span id="cb3-43"><a href="design-fundamentals.html#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="design-fundamentals.html#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert the two plots as one figure</span></span>
-<span id="cb3-45"><a href="design-fundamentals.html#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(barchart, waffle, </span>
-<span id="cb3-46"><a href="design-fundamentals.html#cb3-46" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="design-fundamentals.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a bar chart and tile map</span></span>
+<span id="cb4-2"><a href="design-fundamentals.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="design-fundamentals.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make bar chart</span></span>
+<span id="cb4-4"><a href="design-fundamentals.html#cb4-4" aria-hidden="true" tabindex="-1"></a>barchart <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(booking_data, <span class="fu">aes</span>(<span class="at">x =</span> hotel)) <span class="sc">+</span> </span>
+<span id="cb4-5"><a href="design-fundamentals.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="design-fundamentals.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;City Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>,</span>
+<span id="cb4-7"><a href="design-fundamentals.html#cb4-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;Resort Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="design-fundamentals.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="design-fundamentals.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb4-10"><a href="design-fundamentals.html#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>,</span>
+<span id="cb4-11"><a href="design-fundamentals.html#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Hotel Bookings </span><span class="sc">\n</span><span class="st"> (Barchart)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="design-fundamentals.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb4-13"><a href="design-fundamentals.html#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-14"><a href="design-fundamentals.html#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-15"><a href="design-fundamentals.html#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-16"><a href="design-fundamentals.html#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb4-17"><a href="design-fundamentals.html#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb4-18"><a href="design-fundamentals.html#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb4-19"><a href="design-fundamentals.html#cb4-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-20"><a href="design-fundamentals.html#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="design-fundamentals.html#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Waffle Map</span></span>
+<span id="cb4-22"><a href="design-fundamentals.html#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
+<span id="cb4-23"><a href="design-fundamentals.html#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="design-fundamentals.html#cb4-24" aria-hidden="true" tabindex="-1"></a>waffle <span class="ot">&lt;-</span> booking_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-25"><a href="design-fundamentals.html#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
+<span id="cb4-26"><a href="design-fundamentals.html#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">bookings =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-27"><a href="design-fundamentals.html#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hotel =</span> <span class="fu">relevel</span>(<span class="fu">as.factor</span>(hotel), <span class="st">&quot;Resort Hotel&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-28"><a href="design-fundamentals.html#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> hotel, <span class="at">values =</span> bookings)) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="design-fundamentals.html#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_waffle</span>(<span class="at">n_rows =</span> <span class="dv">10</span>, </span>
+<span id="cb4-30"><a href="design-fundamentals.html#cb4-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="fl">0.5</span>, </span>
+<span id="cb4-31"><a href="design-fundamentals.html#cb4-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;#ffffff&quot;</span>, </span>
+<span id="cb4-32"><a href="design-fundamentals.html#cb4-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">flip =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-33"><a href="design-fundamentals.html#cb4-33" aria-hidden="true" tabindex="-1"></a>                <span class="at">make_proportional =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-34"><a href="design-fundamentals.html#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;City Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;#00759a&quot;</span>,</span>
+<span id="cb4-35"><a href="design-fundamentals.html#cb4-35" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;Resort Hotel&quot;</span> <span class="ot">=</span> <span class="st">&quot;grey70&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-36"><a href="design-fundamentals.html#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb4-37"><a href="design-fundamentals.html#cb4-37" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Hotel Bookings </span><span class="sc">\n</span><span class="st"> (Waffle Chart)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-38"><a href="design-fundamentals.html#cb4-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb4-39"><a href="design-fundamentals.html#cb4-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-40"><a href="design-fundamentals.html#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_enhance_waffle</span>() <span class="sc">+</span></span>
+<span id="cb4-41"><a href="design-fundamentals.html#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb4-42"><a href="design-fundamentals.html#cb4-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb4-43"><a href="design-fundamentals.html#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="design-fundamentals.html#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert the two plots as one figure</span></span>
+<span id="cb4-45"><a href="design-fundamentals.html#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(barchart, waffle, </span>
+<span id="cb4-46"><a href="design-fundamentals.html#cb4-46" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/graphical%20integrity-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>It can be tempting to skew things to create a clean visualization. Taking a map or geographical visualization as an example, some simplifications are okay (e.g. smoothing the borders of a map, omitting rivers, etc). But if you go too far, you risk creating a visual that is misleading. Look at the (real) infographic or stylized map below showing hospitalizations for Covid-19; this “map” implies geographical borders that don’t exist.</p>
 <p>As a rule, don’t imply relationships that don’t exist (e.g. geographical borders) or erase relationships that do exist. Don’t let design overrule substance.</p>
 <div class="figure">
@@ -604,7 +616,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.5</span> 15 Second Test</h2>
 <p>Visualizations should be able to more or less stand on their own (perhaps with some footnotes). I shouldn’t need to read the report to understand what a visualization is showing me. And ideally, it shouldn’t take very long at all for me to understand what a graph is showing me.</p>
 <p>Let’s make a quick visualization showing the number of completed stays, by hotel, over time.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/15second-1.png" width="672" /></p>
 <p>You can see it, right? We see the annual pattern of bookings by two hotels over two years or so. Which hotel seems to have seasonality in demand?</p>
 </div>
 <div id="fixing-cluttered-visualizations" class="section level2" number="4.6">
@@ -621,16 +633,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>HB: “Half Board” (2 Meals per Day included in rate)</li>
 </ul>
 </blockquote>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/faceting-1.png" width="672" /></p>
 <p>What’s wrong with this figure? It’s cluttered, and hard to follow which line is which. There’s also no clear grouping of the lines by hotel. I could switch the colors, or add some kind of dashes, but then I’m asking people to track two things (color and pattern) <em>instead of doing what I want them to do…</em>actually engage with the data.</p>
 <p>Let’s fix this by faceting, splitting the graph into smaller separate graphs, broken up by some other variable. In <code>ggplot</code>, we add a facet with a <code>facet_wrap()</code> and <code>facet_grid()</code> functions. I usually use <code>facet_grid()</code> because it gives more control and lets you facet by more than one variable, but you can use whichever makes the most sense.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/faceting2-1.png" width="672" /></p>
 <p>Now we can see very clearly that there’s been a recent increase in the percentage of bookings with HB (“half-board”) service…the most profitable class. Looks like recent upselling efforts are working and the sales staff should be commended.</p>
 </div>
 <div id="switch-to-a-table" class="section level3" number="4.6.2">
 <h3><span class="header-section-number">4.6.2</span> Switch to a Table</h3>
 <p>It may seem odd that the recommendation in a class about visualizations is, “Don’t make this a visualization.” Going back to our <code>hotel_bookings.csv</code> data, suppose we are having a meeting to discuss the average daily rate quoted to guests from different countries by the meal service (<code>meal</code>) they request. Just $1 makes a big difference times thousands of guests a year, so we want exact numbers to discuss in the meeting.</p>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/shouldbeatable-1.png" width="672" /></p>
 <p>What’s wrong with this visual? The colors aren’t great, it’s very cluttered, and my eyes have to jump around, from the legend to the x-axis, and then up to the labels.</p>
 <p>If you need to include many exact values, it’s time to consider a table. The purpose of visualizations is <strong>not</strong> to give the reader exact values for every observation at a particular point in time. It’s to clearly communicate a point, support intuition, and support comparisons. The table below (Table <a href="design-fundamentals.html#tab:adrtable">4.1</a>) shows the same information but in a much more accessible format.</p>
 <table>
