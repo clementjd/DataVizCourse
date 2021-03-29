@@ -174,9 +174,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
 <li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
-<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
-<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#specifying-colors"><i class="fa fa-check"></i><b>4.2.1</b> Specifying colors</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.2</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.3</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.4</b> Red-Yellow-Green “Stoplight” Scales</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
 <li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
@@ -443,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-25"><a href="common-ggplot-problems.html#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots side by side with a shared title</span></span>
 <span id="cb1-26"><a href="common-ggplot-problems.html#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(topplot, bottomplot, <span class="at">ncol=</span><span class="dv">1</span>,</span>
 <span id="cb1-27"><a href="common-ggplot-problems.html#cb1-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Hotel Bookings - Avg Daily Rate by Segment&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems1-1.png" width="672" /></p>
 </div>
 <div id="reorder-by-frequency" class="section level3" number="17.1.2">
 <h3><span class="header-section-number">17.1.2</span> Reorder by frequency</h3>
@@ -471,7 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-21"><a href="common-ggplot-problems.html#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots side by side with a shared title</span></span>
 <span id="cb2-22"><a href="common-ggplot-problems.html#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(topplot, bottomplot, <span class="at">ncol=</span><span class="dv">1</span>,</span>
 <span id="cb2-23"><a href="common-ggplot-problems.html#cb2-23" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Hotel Bookings - Bookings by Room Type&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems_frequency-1.png" width="672" /></p>
 </div>
 <div id="only-show-n-levels-other" class="section level3" number="17.1.3">
 <h3><span class="header-section-number">17.1.3</span> Only show n levels + “Other”</h3>
@@ -489,7 +490,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-11"><a href="common-ggplot-problems.html#cb3-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>) <span class="sc">+</span></span>
 <span id="cb3-12"><a href="common-ggplot-problems.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb3-13"><a href="common-ggplot-problems.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems_nlevels-1.png" width="672" /></p>
 </div>
 <div id="manually-relevel" class="section level3" number="17.1.4">
 <h3><span class="header-section-number">17.1.4</span> Manually relevel</h3>
@@ -509,7 +510,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-13"><a href="common-ggplot-problems.html#cb4-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Bookings&quot;</span>) <span class="sc">+</span></span>
 <span id="cb4-14"><a href="common-ggplot-problems.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb4-15"><a href="common-ggplot-problems.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems_manuallyrelevel-1.png" width="672" /></p>
 </div>
 </div>
 <div id="fix-dates" class="section level2" number="17.2">
@@ -539,16 +540,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 10 x 4
 ##    hotel        country arrival_date checkin_dayofweek
 ##    &lt;chr&gt;        &lt;chr&gt;   &lt;date&gt;       &lt;ord&gt;            
-##  1 Resort Hotel GBR     2017-06-04   Sun              
-##  2 Resort Hotel PRT     2016-08-02   Tue              
-##  3 Resort Hotel PRT     2015-10-30   Fri              
-##  4 City Hotel   GBR     2017-05-26   Fri              
-##  5 City Hotel   DEU     2017-08-25   Fri              
-##  6 City Hotel   PRT     2015-09-04   Fri              
-##  7 Resort Hotel BGR     2017-04-21   Fri              
-##  8 City Hotel   FRA     2017-03-01   Wed              
-##  9 City Hotel   PRT     2016-04-13   Wed              
-## 10 Resort Hotel IRL     2016-07-17   Sun</code></pre>
+##  1 Resort Hotel PRT     2017-02-11   Sat              
+##  2 City Hotel   USA     2016-08-17   Wed              
+##  3 Resort Hotel IRL     2017-07-27   Thu              
+##  4 Resort Hotel GBR     2017-07-28   Fri              
+##  5 City Hotel   USA     2016-03-29   Tue              
+##  6 Resort Hotel GBR     2017-04-22   Sat              
+##  7 City Hotel   PRT     2017-05-22   Mon              
+##  8 City Hotel   NLD     2017-02-23   Thu              
+##  9 Resort Hotel BRA     2017-08-28   Mon              
+## 10 Resort Hotel PRT     2017-08-26   Sat</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="common-ggplot-problems.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make barchart with looking at most popular check-in day</span></span>
 <span id="cb8-2"><a href="common-ggplot-problems.html#cb8-2" aria-hidden="true" tabindex="-1"></a>booking_data <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a href="common-ggplot-problems.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> checkin_dayofweek)) <span class="sc">+</span></span>
@@ -559,7 +560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-8"><a href="common-ggplot-problems.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb8-9"><a href="common-ggplot-problems.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="sc">+</span></span>
 <span id="cb8-10"><a href="common-ggplot-problems.html#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problemsdayofweek-1.png" width="672" /></p>
 <p>But…it starts at the bottom (with Sunday). I want Sunday on the top. Let’s reverse the factor ordering (inside the ggplot command) with <code>fct_rev</code> and we should be all set.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="common-ggplot-problems.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make barchart with looking at most popular check-in day</span></span>
 <span id="cb9-2"><a href="common-ggplot-problems.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Reverse the factor to have a nice order with Sunday up top.</span></span>
@@ -572,7 +573,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-9"><a href="common-ggplot-problems.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb9-10"><a href="common-ggplot-problems.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb9-11"><a href="common-ggplot-problems.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems_reverse-1.png" width="672" /></p>
 <p>That’s it!</p>
 </div>
 </div>
@@ -619,7 +620,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-31"><a href="common-ggplot-problems.html#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-32"><a href="common-ggplot-problems.html#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(left_graph, right_graph, <span class="at">ncol=</span><span class="dv">2</span>,</span>
 <span id="cb10-33"><a href="common-ggplot-problems.html#cb10-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">top=</span><span class="st">&quot;Total Revenue by Hotel&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems_scale_axes-1.png" width="672" /></p>
 </div>
 <div id="percent-format" class="section level3" number="17.3.2">
 <h3><span class="header-section-number">17.3.2</span> Percent Format</h3>
@@ -640,7 +641,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-14"><a href="common-ggplot-problems.html#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">accuracy =</span> 1L)) <span class="sc">+</span></span>
 <span id="cb11-15"><a href="common-ggplot-problems.html#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb11-16"><a href="common-ggplot-problems.html#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/common_problems_percent-1.png" width="672" /></p>
 
 </div>
 </div>

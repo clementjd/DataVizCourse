@@ -174,9 +174,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
 <li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
-<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
-<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#specifying-colors"><i class="fa fa-check"></i><b>4.2.1</b> Specifying colors</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.2</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.3</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.4</b> Red-Yellow-Green “Stoplight” Scales</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
 <li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
@@ -432,7 +433,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-18"><a href="line-graphs-and-time-series.html#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb1-19"><a href="line-graphs-and-time-series.html#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb1-20"><a href="line-graphs-and-time-series.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/Pcard_by_month-1.png" width="672" /></p>
 <p>Sometimes you might want to plot multiple lines on a plot. There’s one employee who has far more transactions than anyone else.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="line-graphs-and-time-series.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Analyze total number of transactions by month</span></span>
 <span id="cb2-2"><a href="line-graphs-and-time-series.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with transactions by each employee by month</span></span>
@@ -457,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-21"><a href="line-graphs-and-time-series.html#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb2-22"><a href="line-graphs-and-time-series.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb2-23"><a href="line-graphs-and-time-series.html#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/Pcard_by_month_by_user-1.png" width="672" /></p>
 <p>Who is this and what department do they work for? Let’s make a quick table, looking at the top five people by the number of purchase card transactions they’ve made.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="line-graphs-and-time-series.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb3-2"><a href="line-graphs-and-time-series.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -543,7 +544,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-24"><a href="line-graphs-and-time-series.html#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb4-25"><a href="line-graphs-and-time-series.html#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
 <span id="cb4-26"><a href="line-graphs-and-time-series.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<p><img src="IDSC4210_Course_Notes_files/figure-html/scatterplot_time_series-1.png" width="672" />
 Well look at that!</p>
 </div>
 <div id="box-plot-1" class="section level3" number="11.2.2">
@@ -581,7 +582,7 @@ Well look at that!</p>
 <span id="cb5-29"><a href="line-graphs-and-time-series.html#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb5-30"><a href="line-graphs-and-time-series.html#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x=</span><span class="fu">element_line</span>(),</span>
 <span id="cb5-31"><a href="line-graphs-and-time-series.html#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/tufte-boxplot%20timeseries-1.png" width="672" /></p>
 </div>
 </div>
 <div id="seasonality-cycles-and-normalizing-data" class="section level2" number="11.3">
@@ -610,7 +611,7 @@ Well look at that!</p>
 <span id="cb6-19"><a href="line-graphs-and-time-series.html#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb6-20"><a href="line-graphs-and-time-series.html#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb6-21"><a href="line-graphs-and-time-series.html#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/seasonality_cycle-1.png" width="672" /></p>
 <p>Interestingly, we see that in 2014 and 2015, there was a huge drop-off around the middle of the year. Maybe they ran out of funding then? But in recent years, it’s more controlled and even throughout the year.</p>
 <p>There are some advanced prediction methods called ARIMA that can help make predictions with this kind of data. They’re outside the scope of this class, but are commonly used in finance.</p>
 <p>What could be improved on this graph? Well, the colors aren’t perfect. Some are a little hard to see. And maybe we could add year labels for 2014 and 2015.</p>
@@ -640,7 +641,7 @@ Well look at that!</p>
 <span id="cb7-20"><a href="line-graphs-and-time-series.html#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb7-21"><a href="line-graphs-and-time-series.html#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb7-22"><a href="line-graphs-and-time-series.html#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/normalization-1.png" width="672" /></p>
 <p>Quite a consistent sawtooth pattern year-to-year. You’ll see this a lot in finance, sales, marketing, donation, etc data. Why?</p>
 <p>Let’s go back to the data generating process. Where did this data come from? Well, this is purchase card data that people made for their jobs. Most people do most of their work…on workdays! And different months have different numbers of days, and different numbers of workdays.</p>
 <p>We’ll assume that 2019 is representative (though it does vary year to year!). <em>30 days has November, April, June and September…</em></p>
@@ -757,7 +758,7 @@ Well look at that!</p>
 <span id="cb8-33"><a href="line-graphs-and-time-series.html#cb8-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb8-34"><a href="line-graphs-and-time-series.html#cb8-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb8-35"><a href="line-graphs-and-time-series.html#cb8-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/transactions_per_workday-1.png" width="672" /></p>
 <p>It looks like we don’t see that here. So perhaps there really is a cyclical nature to the purchasing patterns. This is something you could look at in your Lab…is there specific cycle to any one department?</p>
 <p>It looks like the number of workdays in the month doesn’t matter. But do people make more purchases on weekdays? Let’s check.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="line-graphs-and-time-series.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by weekday</span></span>
@@ -782,7 +783,7 @@ Well look at that!</p>
 <span id="cb9-20"><a href="line-graphs-and-time-series.html#cb9-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb9-21"><a href="line-graphs-and-time-series.html#cb9-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb9-22"><a href="line-graphs-and-time-series.html#cb9-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/transactions_per_weekday-1.png" width="672" /></p>
 <p>So there is a drop off! Notice, though that we grouped everything by day, regardless of year. Was it different year-to-year?</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="line-graphs-and-time-series.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Make a line graph of total transactions by weekday</span></span>
 <span id="cb10-2"><a href="line-graphs-and-time-series.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data and feed it to ggplot</span></span>
@@ -817,7 +818,7 @@ Well look at that!</p>
 <span id="cb10-31"><a href="line-graphs-and-time-series.html#cb10-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb10-32"><a href="line-graphs-and-time-series.html#cb10-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb10-33"><a href="line-graphs-and-time-series.html#cb10-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/weekdays_by_year-1.png" width="672" /></p>
 </div>
 </div>
 <div id="variations" class="section level2" number="11.4">
@@ -872,7 +873,7 @@ Well look at that!</p>
 <span id="cb11-44"><a href="line-graphs-and-time-series.html#cb11-44" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb11-45"><a href="line-graphs-and-time-series.html#cb11-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb11-46"><a href="line-graphs-and-time-series.html#cb11-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/slope_graph_time_series-1.png" width="672" /></p>
 <p>You’re really looking for two things on slope graphs:</p>
 <ul>
 <li><p><strong>Parallel lines</strong> which mean that relative positions stayed the same or there was no change</p></li>
@@ -914,7 +915,7 @@ Well look at that!</p>
 <span id="cb12-29"><a href="line-graphs-and-time-series.html#cb12-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb12-30"><a href="line-graphs-and-time-series.html#cb12-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb12-31"><a href="line-graphs-and-time-series.html#cb12-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
-<p><img src="IDSC4210_Course_Notes_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="IDSC4210_Course_Notes_files/figure-html/tuftelinegraph_timeseries-1.png" width="672" /></p>
 <p>They certainly don’t work if you have many values (e.g. daily data over many years).</p>
 
 </div>
