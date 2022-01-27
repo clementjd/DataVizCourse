@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
 <head>
-  
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Course Notes - IDSC 4210</title>
   <meta name="description" content="Course Notes - IDSC 4210" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 
 <link rel="next" href="installing-r-and-loading-datasets.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,9 +50,9 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -111,9 +112,10 @@
 <li class="chapter" data-level="4.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#visual-perception-facts"><i class="fa fa-check"></i><b>4.1</b> Visual Perception Facts</a></li>
 <li class="chapter" data-level="4.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-theory"><i class="fa fa-check"></i><b>4.2</b> Color Theory</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.1</b> Color and Accessibility</a></li>
-<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.2</b> Consistency</a></li>
-<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.3</b> Red-Yellow-Green “Stoplight” Scales</a></li>
+<li class="chapter" data-level="4.2.1" data-path="design-fundamentals.html"><a href="design-fundamentals.html#specifying-colors"><i class="fa fa-check"></i><b>4.2.1</b> Specifying colors</a></li>
+<li class="chapter" data-level="4.2.2" data-path="design-fundamentals.html"><a href="design-fundamentals.html#color-and-accessibility"><i class="fa fa-check"></i><b>4.2.2</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="4.2.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#consistency"><i class="fa fa-check"></i><b>4.2.3</b> Consistency</a></li>
+<li class="chapter" data-level="4.2.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#red-yellow-green-stoplight-scales"><i class="fa fa-check"></i><b>4.2.4</b> Red-Yellow-Green “Stoplight” Scales</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="design-fundamentals.html"><a href="design-fundamentals.html#preattentive-visual-attributes"><i class="fa fa-check"></i><b>4.3</b> Preattentive Visual Attributes</a></li>
 <li class="chapter" data-level="4.4" data-path="design-fundamentals.html"><a href="design-fundamentals.html#tuftes-data-visualization-principles"><i class="fa fa-check"></i><b>4.4</b> Tufte’s Data Visualization Principles</a>
@@ -381,8 +383,7 @@
 <div>
 <blockquote>
 <ul>
-<li><p>Apply appropriate <strong>design principals</strong> to create effective <strong>user experience</strong></p></li>
-<li><p>Identify effective methods for <strong>Sharing</strong> and <strong>Governance</strong> of Interactive Dashboards</p></li>
+<li>Apply appropriate <strong>design principals</strong> to create effective <strong>user experience</strong></li>
 </ul>
 </blockquote>
 </div></li>
@@ -417,7 +418,6 @@
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -436,6 +436,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -456,6 +457,10 @@ gitbook.start({
 "text": null
 },
 "download": ["IDSC4210_Course_Notes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Intro to ggplot | Course Notes - IDSC 4210</title>
   <meta name="description" content="6 Intro to ggplot | Course Notes - IDSC 4210" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Intro to ggplot | Course Notes - IDSC 4210" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="r-and-the-tidyverse.html"/>
 <link rel="next" href="data-types.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,15 +50,15 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 </head>
 
@@ -233,6 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#ggplot2-vs-base-r"><i class="fa fa-check"></i><b>6.3</b> ggplot2 vs Base R</a></li>
 <li class="chapter" data-level="6.4" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>6.4</b> Grammar of Graphics</a></li>
 <li class="chapter" data-level="6.5" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#themes"><i class="fa fa-check"></i><b>6.5</b> Themes</a></li>
+<li class="chapter" data-level="6.6" data-path="intro-to-ggplot.html"><a href="intro-to-ggplot.html#esquisse---a-ggplot-gui"><i class="fa fa-check"></i><b>6.6</b> Esquisse - a ggplot GUI</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>7</b> Data Types</a>
 <ul>
@@ -502,6 +505,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-4"><a href="intro-to-ggplot.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_economist</span>()</span></code></pre></div>
 <p><img src="IDSC4210_Course_Notes_files/figure-html/ggthemes-4.png" width="672" /></p>
 <p>Other themes that work well are <code>theme_minimal</code> and <code>theme_bw</code>. You can also specify any element yourself to adjust a pre-existing theme, or to create your own theme.</p>
+</div>
+<div id="esquisse---a-ggplot-gui" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Esquisse - a ggplot GUI</h2>
+<p>Most of the interactions we have with R are by coding, but the <code>esquisse</code> package offers a graphical user interface for ggplot. You can either create a finished graphic or get a jump start on the code and then refine it.</p>
+<p><em>Trivia: esquisse means “sketch” in French.</em></p>
+<p>As with any other package, the <a href="https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html">package page on the CRAN site</a> is a good place to start. I’ll show a brief overview of how to use the package here.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro-to-ggplot.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the esquisse package</span></span>
+<span id="cb7-2"><a href="intro-to-ggplot.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(esquisse)</span>
+<span id="cb7-3"><a href="intro-to-ggplot.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="intro-to-ggplot.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Launch esquisse</span></span>
+<span id="cb7-5"><a href="intro-to-ggplot.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">esquisser</span>()</span></code></pre></div>
+<p>When you launch <code>esquisse</code>, it will ask which dataframe you want to look at. If you have already loaded data into R, look at the &lt;/&gt; Environment.</p>
+<p><img src="5_esquisse1.png" title="Esquisse data input prompt" /></p>
+<p>In this case, I’ll select the <code>bookingdata</code>.</p>
+<p><img src="5_esquisse2.png" title="Booking Data successfully loaded." /></p>
+<p>Then we’re presented with an interface that lets us select all of the aesthetics, attributes, labels, stats, geoms, etc.</p>
+<p><img src="5_esquisse3.png" title="Selecting geoms and aesthetics in esquisse." /></p>
+<p>We can adjust a range of settings. It’s pretty intuitive (refer to the rest of the course for when you might want to make one choice vs another).</p>
+<p><img src="5_esquisse4.png" title="Esquisse settings" /></p>
+<p>Finally, we can copy the code to the clipboard or insert it into our script, either as the final graph or to fine tune through the code.</p>
+<p><img src="5_esquisse5.png" title="Esquisse code export" /></p>
 
 </div>
 </div>
@@ -515,7 +539,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -534,6 +557,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -554,6 +578,10 @@ gitbook.start({
 "text": null
 },
 "download": ["IDSC4210_Course_Notes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
