@@ -188,3 +188,5 @@ scaling-axes
 rescaling-and-rounding-currency
 percent-format
 specifying-colors
+esquisse---a-ggplot-gui
+dual-scale-y-axes
